@@ -5,10 +5,33 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+var index = require('./routes/index').router;
+var users = require('./routes/users').router;
+var form = require('./routes/form').router;
 
 var app = express();
+
+//  Global selectors
+// Main filter options
+var test = "hallo";
+
+var tester = {
+    sector : ["landelijk", "stedelijk", "industrie"],
+    branch : ["bodem", "afval", "grondstoffen", "ecologie", "water", "inspectie", "waterbodem", "infrastructuur"],
+    tags : ["Chemisch", "3D model", "Volume bepaling", "Fysisch"],
+    level : ["Bodemlucht", "Maaiveld", "Textruur", "Lutum", "Organisch stof", "Metalen", "PAK", "PCB", "Bodemvreemde materialen", "Onderscheidt in chemische verbindingen"],
+    scale : ["Handmatig", "Lokaal", "Regionaal", "Provinciaal", "Landelijk", "Internationaal", "n.v.t"],
+    resolution: [],
+    accuracy: [],
+    interval : [],
+    duration : [],
+    innovatie : [],
+    cost : [],
+    shortSummary : [],
+    longSummary : [],
+    referenceProject : [],
+};
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,6 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/form', form);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -43,4 +67,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+module.exports = {app: app, test: test, tester: tester}
