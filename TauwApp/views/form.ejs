@@ -10,156 +10,133 @@
         <p>Nieuw meetmethode toevoegen.</p>
     </header>
     <main>
-        <form class="userInput" action="/form" method="post" >
-            <!-- Algemene Contact informatie -->
-            <legend>Contact informatie</legend>
-            <label for="contactpersoon">Voor- en achternaam <span>*required</span></label>
-            <input id="contactpersoon" type="text" name="contactpersoon" required><br>
-            <label for="email">Email adres <span>*required</span></label>
-            <input id="email" type="email" name="email" required><br>
-            <label for="mobile">Telefoon nummer <span>*required</span></label>
-            <input id="mobile" type="tel" name="mobile" required><br>
-            <label for="profielfoto">Profielfoto</label>
-            <input id="profielfoto" type="file" name="profielfoto" accept="image/*"><br><br>
+        <div class="progressbarContainer">
+            <div class="progressbar"></div>
 
-            <!-- De sector, vakgebied, categorie en niveau -->
-            <legend>Categorieën</legend>
-            <p>Selecteer de overeenkomende sectoren:</p>
-            <label for="landelijk">Landelijk</label>
-            <input type="checkbox" name="sector" id="landelijk" value="landelijk"><br>
-            <label for="stedelijk">Stedelijk</label>
-            <input type="checkbox" name="sector" id="stedelijk" value="stedelijk"><br>
-            <label for="industrie">Industrie</label>
-            <input type="checkbox" name="sector" id="industrie" value="industrie"><br>
+        </div>
+        <div class="progressbarDetails"></div>
+        <form class="userInput" action="/form" method="post">
+            <div>
+                <legend>Contact informatie</legend>
+                <label for="contactpersoon">Voor- en achternaam <span>*required</span></label>
+                <input id="contactpersoon" type="text" name="contactpersoon"><br>
+                <label for="email">Email adres <span>*required</span></label>
+                <input id="email" type="email" name="email"><br>
+                <label for="mobile">Telefoon nummer <span>*required</span></label>
+                <input id="mobile" type="tel" name="mobile"><br>
+                <label for="profielfoto">Profielfoto</label>
+                <input id="profielfoto" type="file" name="profielfoto" accept="image/*"><br><br>
+            </div>
 
-            <label for="nieuw-sector">Nieuw</label>
-            <input type="checkbox" name="sector" id="nieuw-sector" class="nieuw" value="nieuw">
-            <input type="text" name="sector" id="nieuw-sector"><br><br>
+            <div>
+                <legend>Sector</legend>
+                <p>Selecteer de overeenkomende sector(en):</p>
+                    <% for(var i=0; i<filters.sector.length; i++) {%>
+                       <label for="<%= filters.sector[i] %>"><%= filters.sector[i] %></label>
+                       <input type="checkbox" name="sector" id="<%= filters.sector[i] %>" value="<%= filters.sector[i] %>"><br>
+                    <% } %>
+                <label for="nieuw-sector">Nieuw</label>
+                <input type="checkbox" name="sector" id="nieuw-sector" class="nieuw" value="nieuw">
+                <input type="text" name="sector" id="nieuw-sector"><br><br>
 
-            <legend>Vakgebied (waarin)</legend>
-            <p>Selecteer de overeenkomende vakgebieden (waarin):</p>
-            <label for="bodem">Bodem</label>
-            <input type="checkbox" name="vakgebied" id="bodem" value="bodem"><br>
-            <label for="afval">Afval</label>
-            <input type="checkbox" name="vakgebied" id="afval" value="Afval"><br>
-            <label for="grondstoffen">Grondstoffen</label>
-            <input type="checkbox" name="vakgebied" id="grondstoffen" value="grondstoffen"><br>
-            <label for="ecologie">Ecologie</label>
-            <input type="checkbox" name="vakgebied" id="ecologie" value="ecologie"><br>
-            <label for="water">Water</label>
-            <input type="checkbox" name="vakgebied" id="water" value="water"><br>
-            <label for="inspectie">Inspectie</label>
-            <input type="checkbox" name="vakgebied" id="inspectie" value="inspectie"><br>
-            <label for="waterbodem">Waterbodem</label>
-            <input type="checkbox" name="vakgebied" id="waterbodem" value="waterbodem"><br>
-            <label for="infrastructuur">Infrastructuur</label>
-            <input type="checkbox" name="vakgebied" id="infrastructuur" value="infrastructuur"><br>
+                <legend>Vakgebied (branch)</legend>
+                <p>Selecteer de overeenkomende vakgebieden (waarin):</p>
+                    <% for(var i=0; i<filters.branch.length; i++) {%>
+                       <label for="<%= filters.branch[i] %>"><%= filters.branch[i] %></label>
+                       <input type="checkbox" name="branch" id="<%= filters.branch[i] %>" value="<%= filters.branch[i] %>"><br>
+                    <% } %>
+                <label for="nieuw-branch">Nieuw</label>
+                <input type="checkbox" name="branch" id="nieuw-branch" class="nieuw" value="nieuw">
+                <input type="text" name="branch" id="nieuw-branch"><br><br>
 
-            <label for="nieuw-vakgebied">Nieuw</label>
-            <input type="checkbox" name="vakgebied" id="nieuw-vakgebied" class="nieuw" value="nieuw">
-            <input type="text" name="vakgebied" id="nieuw-vakgebied"><br><br>
+                <legend>Categorie (tags)</legend>
+                <p>Selecteer de overeenkomende categorie(en):</p>
+                <% for(var i=0; i<filters.tags.length; i++) {%>
+                   <label for="<%= filters.tags[i] %>"><%= filters.tags[i] %></label>
+                   <input type="checkbox" name="tags" id="<%= filters.tags[i] %>" value="<%= filters.tags[i] %>"><br>
+                <% } %>
+                <label for="nieuw-tags">Nieuw</label>
+                <input type="checkbox" name="tags" id="nieuw-tags" class="nieuw" value="nieuw">
+                <input type="text" name="tags" id="nieuw-tags"><br><br>
 
+                <legend>Niveau (Op welk niveau)</legend>
+                <p>Selecteer de overeenkomende categorie(en):</p>
+                <% for(var i=0; i<filters.level.length; i++) {%>
+                   <label for="<%= filters.level[i] %>"><%= filters.level[i] %></label>
+                   <input type="checkbox" name="level" id="<%= filters.level[i] %>" value="<%= filters.level[i] %>"><br>
+                <% } %>
+            </div>
 
-            <label for="categorie">Categorie (wat)</label>
-            <select id="categorie" name="categorie">
-                <option value="landelijk">Chemisch</option>
-                <option value="stedelijk">3D model</option>
-                <option value="Industrie">Volume bepaling</option>
-                <option value="fysisch">Fysisch</option>
-                <option value="nieuw">Nieuw</option>
-            </select><br>
+            <div>
+                <legend>Details</legend>
+                <label for="scale">Schaal (scale)</label>
+                <select id="scale" name="scale">
+                <% for(var i=0; i<filters.level.length; i++) {%>
+                    <option value="<%= filters.level[i] %>"><%= filters.level[i] %></option>
+                <% } %>
+                </select><br>
 
-            <label for="niveau">Niveau (Op welk niveau)</label>
-            <select id="niveau" name="niveau">
-                <option value="landelijk">Bodemlucht</option>
-                <option value="stedelijk">Maaiveld</option>
-                <option value="industrie">Textruur</option>
-                <option value="lutum">Lutum</option>
-                <option value="organisch stof">Organisch stof</option>
-                <option value="metalen">Metalen</option>
-                <option value="pak">PAK</option>
-                <option value="pcb">PCB</option>
-                <option value="bodemvreemde materialen">Bodemvreemde materialen</option>
-                <option value="onderscheidt in chemische verbindingen">Onderscheidt in chemische verbindingen</option>
-                <option value="nieuw">Nieuw</option>
-            </select><br><br><br>
+                <label for="resolution">Resolutie (Resolutie)</label>
+                <select id="resolution" name="resolution">
+                    <% for(var i=0; i<filters.resolution.length; i++) {%>
+                        <option value="<%= filters.resolution[i] %>"><%= filters.resolution[i] %></option>
+                    <% } %>
+                </select><br>
 
-            <legend>Details</legend>
-            <label for="schaal">Schaal (Schaal)</label>
-            <select id="schaal" name="schaal">
-                <option value="Handmatig">Handmatig</option>
-                <option value="Lokaal">Lokaal</option>
-                <option value="Regionaal">Regionaal</option>
-                <option value="Provinciaal">Provinciaal</option>
-                <option value="Landelijk">Landelijk</option>
-                <option value="Internationaal">Internationaal</option>
-                <option value="nvt">n.v.t</option>
-            </select><br>
+                <label for="accuracy">Nauwkeurigheid (accuracy)</label>
+                <select id="accuracy" name="accuracy">
+                    <% for(var i=0; i<filters.accuracy.length; i++) {%>
+                        <option value="<%= filters.accuracy[i] %>"><%= filters.accuracy[i] %></option>
+                    <% } %>
+                </select><br>
 
-            <label for="resolutie">Resolutie (Resolutie)</label>
-            <select id="resolutie" name="resolutie">
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="nvt">n.v.t</option>
-            </select><br>
+                <label for="interval">Termijn resultaat (interval)</label>
+                <select id="interval" name="interval">
+                    <% for(var i=0; i<filters.interval.length; i++) {%>
+                        <option value="<%= filters.interval[i] %>"><%= filters.interval[i] %></option>
+                    <% } %>
+                </select><br>
 
-            <label for="nauwkeurigheid">Nauwkeurigheid (Nauwkeurigheid)</label>
-            <select id="nauwkeurigheid" name="nauwkeurigheid">
-                <option value="0">Niet nauwkeurig</option>
-                <option value="1">Matig nauwkeurig</option>
-                <option value="2">Redelijk nauwkeurig</option>
-                <option value="3">Zeer nauwkeurig</option>
-                <option value="nvt">n.v.t</option>
-            </select><br>
+                <label for="duration">Tijdreeks (duration)</label>
+                <select id="duration" name="duration">
+                    <% for(var i=0; i<filters.duration.length; i++) {%>
+                        <option value="<%= filters.duration[i] %>"><%= filters.duration[i] %></option>
+                    <% } %>
+                </select><br>
 
-            <label for="termijn">Termijn resultaat (Termijn resultaat)</label>
-            <select id="termijn" name="termijn">
-                <option value="0">Jaren</option>
-                <option value="1">Weken</option>
-                <option value="2">Uren</option>
-                <option value="3">Direct</option>
-                <option value="nvt">n.v.t</option>
-            </select><br>
+                <label for="innovation">Innovatie (innovation)</label>
+                <select id="innovation" name="innovation">
+                    <% for(var i=0; i<filters.innovation.length; i++) {%>
+                        <option value="<%= filters.innovation[i] %>"><%= filters.innovation[i] %></option>
+                    <% } %>
+                </select><br>
 
-            <label for="tijdreeks">Tijdreeks (Tijdreeks)</label>
-            <select id="tijdreeks" name="tijdreeks">
-                <option value="0">Jaren</option>
-                <option value="1">Weken</option>
-                <option value="2">Uren</option>
-                <option value="3">Minuten</option>
-                <option value="nvt">n.v.t</option>
-            </select><br>
+                <label for="costs">Kosten (costs)</label>
+                <select id="costs" name="costs">
+                    <% for(var i=0; i<filters.costs.length; i++) {%>
+                        <option value="<%= filters.costs[i] %>"><%= filters.costs[i] %></option>
+                    <% } %>
+                </select>
+            </div>
 
-            <label for="innovatie">Innovatie (Innovatie)</label>
-            <select id="innovatie" name="innovatie">
-                <option value="0">Nog weinig bewijs</option>
-                <option value="1">Alleen wetenschappelijk bewezig</option>
-                <option value="2">Reeds in enkele projecten toegepast</option>
-                <option value="3">Bewezen techniek</option>
-                <option value="nvt">n.v.t</option>
-            </select><br>
+            <div>
+                <legend>Beschrijving</legend>
+                <label for="samenvatting">Samenvatting/ zoektermen (Samenvatting/ zoektermen)</label><br/>
+                <textarea id="samenvatting" name="samenvatting" rows="4" cols="50"></textarea><br><br>
+                <label for="referentieproject">Referentieproject (Referentieproject)</label>
+                <input id="referentieproject" type="url" name="referentieproject"><br><br><br>
+            </div>
 
-            <label for="kosten">Kosten (Kosten)</label>
-            <select id="kosten" name="kosten">
-                <option value="0">Gratis tot goedkoop</option>
-                <option value="1">Gemiddeld tot duur</option>
-                <option value="2">Zeer duur</option>
-                <option value="nvt">n.v.t</option>
-            </select><br><br><br>
-
-            <legend>Beschrijving</legend>
-            <label for="samenvatting">Samenvatting/ zoektermen (Samenvatting/ zoektermen)</label><br/>
-            <textarea id="samenvatting" name="samenvatting" rows="4" cols="50"></textarea><br><br>
-            <label for="referentieproject">Referentieproject (Referentieproject)</label>
-            <input id="referentieproject" type="text" name="referentieproject"><br><br><br>
-
-          <input type="submit" value="Submit">
+              <input type="submit" value="Submit">
         </form>
-    </main>
 
+        <section class="controlButtons">
+        <!-- <button class="previous">Vorige</button> -->
+        <!-- <button class="next">Volgende</button> -->
+        </section>
+
+
+    </main>
+    <script src="/javascripts/formulier.js"></script>
   </body>
 </html>
