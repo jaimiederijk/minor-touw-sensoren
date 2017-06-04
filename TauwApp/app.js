@@ -9,28 +9,25 @@ var index = require('./routes/index').router;
 var users = require('./routes/users').router;
 var form = require('./routes/form').router;
 
+var appJS = require('./routes/form.js');
+var filters = appJS.filters;
+
 var app = express();
 
-//  Global selectors
-// Main filter options
-var test = "hallo";
-
-var tester = {
-    sector : ["landelijk", "stedelijk", "industrie"],
-    branch : ["bodem", "afval", "grondstoffen", "ecologie", "water", "inspectie", "waterbodem", "infrastructuur"],
-    tags : ["Chemisch", "3D model", "Volume bepaling", "Fysisch"],
-    level : ["Bodemlucht", "Maaiveld", "Textruur", "Lutum", "Organisch stof", "Metalen", "PAK", "PCB", "Bodemvreemde materialen", "Onderscheidt in chemische verbindingen"],
-    scale : ["Handmatig", "Lokaal", "Regionaal", "Provinciaal", "Landelijk", "Internationaal", "n.v.t"],
-    resolution: [],
-    accuracy: [],
-    interval : [],
-    duration : [],
-    innovatie : [],
-    cost : [],
-    shortSummary : [],
-    longSummary : [],
-    referenceProject : [],
-};
+// //  Global selectors
+// var filters = {
+//     sector : ["landelijk", "stedelijk", "industrie"],
+//     branch : ["bodem", "afval", "grondstoffen", "ecologie", "water", "inspectie", "waterbodem", "infrastructuur"],
+//     tags : ["Chemisch", "3D model", "Volume bepaling", "Fysisch"],
+//     level : ["Bodemlucht", "Maaiveld", "Textruur", "Lutum", "Organisch stof", "Metalen", "PAK", "PCB", "Bodemvreemde materialen", "Onderscheidt in chemische verbindingen"],
+//     scale : ["Handmatig", "Lokaal", "Regionaal", "Provinciaal", "Landelijk", "Internationaal", "n.v.t"],
+//     resolution: [0,1,2,3,4,5],
+//     accuracy: ["Niet nauwkeurig", "Matig nauwkeurig", "Redelijk nauwkeurig", "Zeer nauwkeurig"],
+//     interval : ["Jaren","Weken", "Uren", "Direct"],
+//     duration : ["Jaren","Weken", "Uren", "Minuten"],
+//     innovation : ["Nog weinig bewijs", "Alleen wetenschappelijk bewezig", "Reeds in enkele projecten toegepast", "Bewezen techniek"],
+//     costs : ["Gratis tot goedkoop", "?", "Zeer duur"]
+// };
 
 
 // view engine setup
@@ -67,4 +64,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = {app: app, test: test, tester: tester}
+module.exports = {app: app, filters: filters}
