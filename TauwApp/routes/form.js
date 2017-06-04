@@ -6,8 +6,8 @@ var filters = appJS.filters;
 
 //  Global selectors
 var filters = {
-    sector : ["landelijk", "stedelijk", "industrie"],
-    branch : ["bodem", "afval", "grondstoffen", "ecologie", "water", "inspectie", "waterbodem", "infrastructuur"],
+    sector : ["Landelijk", "Stedelijk", "Industrie"],
+    branch : ["Bodem", "Afval", "Grondstoffen", "Ecologie", "Water", "Inspectie", "Waterbodem", "Infrastructuur"],
     tags : ["Chemisch", "3D model", "Volume bepaling", "Fysisch"],
     level : ["Bodemlucht", "Maaiveld", "Textruur", "Lutum", "Organisch stof", "Metalen", "PAK", "PCB", "Bodemvreemde materialen", "Onderscheidt in chemische verbindingen"],
     scale : ["Handmatig", "Lokaal", "Regionaal", "Provinciaal", "Landelijk", "Internationaal", "n.v.t"],
@@ -30,6 +30,9 @@ router.post('/', function(req, res){
     res.render('form', { title: 'Formulier', filters: filters });
 });
 
+
+//  Made by Colin Dörr
+//---------------------------------------------------
 var data = {
     checkForNewData: function(req, res){
         data.checkForNew(req, res, "sector"); // Check for new sectors, when form is posted.
@@ -52,5 +55,5 @@ var data = {
             }
         },
 };
-
+//---------------------------------------------------
 module.exports = {router: router, filters: filters};
