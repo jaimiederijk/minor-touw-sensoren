@@ -9,134 +9,167 @@
         <h1><%= title %></h1>
         <p>Nieuw meetmethode toevoegen.</p>
     </header>
+
     <main>
+        <nav class="stepCounter">
+            <a href="#step1" class="round">Stap 1</a>
+            <a href="#step2" class="round">Stap 2</a>
+            <a href="#step3" class="round">Stap 3</a>
+        </nav>
+
         <div class="progressbarContainer">
             <div class="progressbar"></div>
-
         </div>
         <div class="progressbarDetails"></div>
+
         <form class="userInput" action="/form" method="post">
-            <div>
-                <legend>Contact informatie</legend>
-                <label for="contactpersoon">Voor- en achternaam <span>*required</span></label>
-                <input id="contactpersoon" type="text" name="contactpersoon"><br>
-                <label for="email">Email adres <span>*required</span></label>
-                <input id="email" type="email" name="email"><br>
-                <label for="mobile">Telefoon nummer <span>*required</span></label>
-                <input id="mobile" type="tel" name="mobile"><br>
-                <label for="profielfoto">Profielfoto</label>
-                <input id="profielfoto" type="file" name="profielfoto" accept="image/*"><br><br>
+            <div id="step1" class="formBlock">
+                <div>
+                    <legend>Contact informatie</legend>
+                    <label for="contactpersoon">Voor- en achternaam <span>*required</span></label>
+                    <input id="contactpersoon" type="text" name="contactpersoon">
+
+                    <label for="email">Email adres <span>*required</span></label>
+                    <input id="email" type="email" name="email">
+
+                    <label for="mobile">Telefoon nummer <span>*required</span></label>
+                    <input id="mobile" type="tel" name="mobile">
+                </div>
+                <div>
+                    <legend>Profielfoto</legend>
+                    <img id="output"/>
+                    <input id="profielfoto" type="file" name="profielfoto" accept="image/*" onchange="loadFile(event)">
+
+                    <script>
+                      var loadFile = function(event) {
+                        var output = document.getElementById('output');
+                        output.src = URL.createObjectURL(event.target.files[0]);
+                      };
+                    </script>
+
+
+                </div>
             </div>
 
-            <div>
-                <legend>Sector</legend>
-                <p>Selecteer de overeenkomende sector(en):</p>
-                    <% for(var i=0; i<filters.sector.length; i++) {%>
-                       <label for="<%= filters.sector[i] %>"><%= filters.sector[i] %></label>
-                       <input type="checkbox" name="sector" id="<%= filters.sector[i] %>" value="<%= filters.sector[i] %>"><br>
+            <div id="step2" class="formBlock">
+                <div>
+                    <legend>Sector</legend>
+                    <p>Selecteer de overeenkomende sector(en):</p>
+                        <% for(var i=0; i<filters.sector.length; i++) {%>
+                           <label for="<%= filters.sector[i] %>">
+                               <input type="checkbox" name="sector" id="<%= filters.sector[i] %>" value="<%= filters.sector[i] %>"> <%= filters.sector[i] %>
+                           </label>
+                        <% } %>
+                    <label for="nieuw-sector" class="nieuw">
+                        <input type="checkbox" name="sector" id="nieuw-sector" value="nieuw">Nieuw
+                        <input type="text" name="sector" id="nieuw-sector">
+                    </label>
+
+
+                    <legend>Vakgebied (branch)</legend>
+                    <p>Selecteer de overeenkomende vakgebieden (waarin):</p>
+                        <% for(var i=0; i<filters.branch.length; i++) {%>
+                           <label for="<%= filters.branch[i] %>">
+                               <input type="checkbox" name="branch" id="<%= filters.branch[i] %>" value="<%= filters.branch[i] %>"><%= filters.branch[i] %>
+                           </label>
+
+                        <% } %>
+                        <label for="nieuw-branch" class="nieuw">
+                            <input type="checkbox" name="branch" id="nieuw-branch" value="nieuw">Nieuw
+                            <input type="text" name="branch" id="nieuw-branch">
+                        </label>
+                </div>
+                <div>
+                    <legend>Categorie (tags)</legend>
+                    <p>Selecteer de overeenkomende categorie(en):</p>
+                    <% for(var i=0; i<filters.tags.length; i++) {%>
+                       <label for="<%= filters.tags[i] %>">
+                           <input type="checkbox" name="tags" id="<%= filters.tags[i] %>" value="<%= filters.tags[i] %>"><%= filters.tags[i] %>
+                       </label>
+
                     <% } %>
-                <label for="nieuw-sector">Nieuw</label>
-                <input type="checkbox" name="sector" id="nieuw-sector" class="nieuw" value="nieuw">
-                <input type="text" name="sector" id="nieuw-sector"><br><br>
+                    <label for="nieuw-tags" class="nieuw">
+                        <input type="checkbox" name="tags" id="nieuw-tags" value="nieuw">Nieuw
+                        <input type="text" name="tags" id="nieuw-tags">
+                    </label>
 
-                <legend>Vakgebied (branch)</legend>
-                <p>Selecteer de overeenkomende vakgebieden (waarin):</p>
-                    <% for(var i=0; i<filters.branch.length; i++) {%>
-                       <label for="<%= filters.branch[i] %>"><%= filters.branch[i] %></label>
-                       <input type="checkbox" name="branch" id="<%= filters.branch[i] %>" value="<%= filters.branch[i] %>"><br>
+                    <legend>Niveau (op welk niveau)</legend>
+                    <p>Selecteer de overeenkomende categorie(en):</p>
+                    <% for(var i=0; i<filters.level.length; i++) {%>
+                       <label for="<%= filters.level[i] %>">
+                           <input type="checkbox" name="level" id="<%= filters.level[i] %>" value="<%= filters.level[i] %>"><%= filters.level[i] %>
+                       </label>
+
                     <% } %>
-                <label for="nieuw-branch">Nieuw</label>
-                <input type="checkbox" name="branch" id="nieuw-branch" class="nieuw" value="nieuw">
-                <input type="text" name="branch" id="nieuw-branch"><br><br>
-
-                <legend>Categorie (tags)</legend>
-                <p>Selecteer de overeenkomende categorie(en):</p>
-                <% for(var i=0; i<filters.tags.length; i++) {%>
-                   <label for="<%= filters.tags[i] %>"><%= filters.tags[i] %></label>
-                   <input type="checkbox" name="tags" id="<%= filters.tags[i] %>" value="<%= filters.tags[i] %>"><br>
-                <% } %>
-                <label for="nieuw-tags">Nieuw</label>
-                <input type="checkbox" name="tags" id="nieuw-tags" class="nieuw" value="nieuw">
-                <input type="text" name="tags" id="nieuw-tags"><br><br>
-
-                <legend>Niveau (Op welk niveau)</legend>
-                <p>Selecteer de overeenkomende categorie(en):</p>
-                <% for(var i=0; i<filters.level.length; i++) {%>
-                   <label for="<%= filters.level[i] %>"><%= filters.level[i] %></label>
-                   <input type="checkbox" name="level" id="<%= filters.level[i] %>" value="<%= filters.level[i] %>"><br>
-                <% } %>
+                </div>
             </div>
 
-            <div>
-                <legend>Details</legend>
-                <label for="scale">Schaal (scale)</label>
-                <select id="scale" name="scale">
-                <% for(var i=0; i<filters.level.length; i++) {%>
-                    <option value="<%= filters.level[i] %>"><%= filters.level[i] %></option>
-                <% } %>
-                </select><br>
-
-                <label for="resolution">Resolutie (Resolutie)</label>
-                <select id="resolution" name="resolution">
-                    <% for(var i=0; i<filters.resolution.length; i++) {%>
-                        <option value="<%= filters.resolution[i] %>"><%= filters.resolution[i] %></option>
+            <div id="step3" class="formBlock">
+                <div>
+                    <legend>Details</legend>
+                    <label for="scale">Schaal (scale)</label>
+                    <select id="scale" name="scale">
+                    <% for(var i=0; i<filters.level.length; i++) {%>
+                        <option value="<%= filters.level[i] %>"><%= filters.level[i] %></option>
                     <% } %>
-                </select><br>
+                    </select>
 
-                <label for="accuracy">Nauwkeurigheid (accuracy)</label>
-                <select id="accuracy" name="accuracy">
-                    <% for(var i=0; i<filters.accuracy.length; i++) {%>
-                        <option value="<%= filters.accuracy[i] %>"><%= filters.accuracy[i] %></option>
-                    <% } %>
-                </select><br>
+                    <label for="resolution">Resolutie (Resolutie)</label>
+                    <select id="resolution" name="resolution">
+                        <% for(var i=0; i<filters.resolution.length; i++) {%>
+                            <option value="<%= filters.resolution[i] %>"><%= filters.resolution[i] %></option>
+                        <% } %>
+                    </select>
 
-                <label for="interval">Termijn resultaat (interval)</label>
-                <select id="interval" name="interval">
-                    <% for(var i=0; i<filters.interval.length; i++) {%>
-                        <option value="<%= filters.interval[i] %>"><%= filters.interval[i] %></option>
-                    <% } %>
-                </select><br>
+                    <label for="accuracy">Nauwkeurigheid (accuracy)</label>
+                    <select id="accuracy" name="accuracy">
+                        <% for(var i=0; i<filters.accuracy.length; i++) {%>
+                            <option value="<%= filters.accuracy[i] %>"><%= filters.accuracy[i] %></option>
+                        <% } %>
+                    </select>
 
-                <label for="duration">Tijdreeks (duration)</label>
-                <select id="duration" name="duration">
-                    <% for(var i=0; i<filters.duration.length; i++) {%>
-                        <option value="<%= filters.duration[i] %>"><%= filters.duration[i] %></option>
-                    <% } %>
-                </select><br>
+                    <label for="interval">Termijn resultaat (interval)</label>
+                    <select id="interval" name="interval">
+                        <% for(var i=0; i<filters.interval.length; i++) {%>
+                            <option value="<%= filters.interval[i] %>"><%= filters.interval[i] %></option>
+                        <% } %>
+                    </select>
 
-                <label for="innovation">Innovatie (innovation)</label>
-                <select id="innovation" name="innovation">
-                    <% for(var i=0; i<filters.innovation.length; i++) {%>
-                        <option value="<%= filters.innovation[i] %>"><%= filters.innovation[i] %></option>
-                    <% } %>
-                </select><br>
+                    <label for="duration">Tijdreeks (duration)</label>
+                    <select id="duration" name="duration">
+                        <% for(var i=0; i<filters.duration.length; i++) {%>
+                            <option value="<%= filters.duration[i] %>"><%= filters.duration[i] %></option>
+                        <% } %>
+                    </select>
 
-                <label for="costs">Kosten (costs)</label>
-                <select id="costs" name="costs">
-                    <% for(var i=0; i<filters.costs.length; i++) {%>
-                        <option value="<%= filters.costs[i] %>"><%= filters.costs[i] %></option>
-                    <% } %>
-                </select>
-            </div>
+                    <label for="innovation">Innovatie (innovation)</label>
+                    <select id="innovation" name="innovation">
+                        <% for(var i=0; i<filters.innovation.length; i++) {%>
+                            <option value="<%= filters.innovation[i] %>"><%= filters.innovation[i] %></option>
+                        <% } %>
+                    </select>
 
-            <div>
-                <legend>Beschrijving</legend>
-                <label for="samenvatting">Samenvatting/ zoektermen (Samenvatting/ zoektermen)</label><br/>
-                <textarea id="samenvatting" name="samenvatting" rows="4" cols="50"></textarea><br><br>
-                <label for="referentieproject">Referentieproject (Referentieproject)</label>
-                <input id="referentieproject" type="url" name="referentieproject"><br><br><br>
+                    <label for="costs">Kosten (costs)</label>
+                    <select id="costs" name="costs">
+                        <% for(var i=0; i<filters.costs.length; i++) {%>
+                            <option value="<%= filters.costs[i] %>"><%= filters.costs[i] %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <div>
+                    <legend>Beschrijving</legend>
+                    <label for="referentieproject">Link naar referentieproject (Referentieproject)</label>
+                    <input id="referentieproject" type="url" name="referentieproject">
+                    <label for="samenvatting">Samenvatting/ zoektermen (Samenvatting/ zoektermen)</label>
+                    <textarea id="samenvatting" name="samenvatting" rows="4" cols="50"></textarea>
+                </div>
             </div>
 
               <input type="submit" value="Submit">
         </form>
 
-        <section class="controlButtons">
-        <!-- <button class="previous">Vorige</button> -->
-        <!-- <button class="next">Volgende</button> -->
-        </section>
-
-
+        <section class="controlButtons"></section>
     </main>
-    <script src="/javascripts/formulier.js"></script>
+    <!-- <script src="/javascripts/formulier.js"></script> -->
   </body>
 </html>
