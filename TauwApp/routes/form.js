@@ -19,6 +19,12 @@ var filters = {
     costs : ["Gratis tot goedkoop", "?", "Zeer duur"]
 };
 
+var logFields = {
+    contact: ["contactpersoon", "email", "mobile", "profielfoto"],
+    categorie: ["sector", "branch", "tags", "level"],
+    details: ["scale", "resolution", "accuracy",  "interval", "duration", "innovation", "costs"],
+    summary: ["samenvatting", "referentieproject"]
+};
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -26,13 +32,35 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', function(req, res){
-    data.checkForNewData(req, res);
+    data.checkForNewData(req, res); //Check for new form data.
+    log.init(req, res); // Log all the form inputs.
     res.render('form', { title: 'Formulier', filters: filters });
 });
 
-
 //  Made by Colin Dörr
 //---------------------------------------------------
+var log = {
+    init: function (req, res, item) {
+        console.log("-------------------Form Inputs-----------------")
+        log.logFormInputs(req, res, "contact");
+        log.logFormInputs(req, res, "categorie");
+        log.logFormInputs(req, res, "details");
+        log.logFormInputs(req, res, "summary");
+        console.log("--------------------------------------------------")
+    },
+    logFormInputs: function(req, res, item) {
+        console.log("-----------------"+ item.toUpperCase() +"--------------------")
+        for (i = 0; i < logFields[item].length; i++) {
+            var current = logFields[item][i];
+            console.log(req.body[current])
+        }
+    },
+    logChanges: function (req, res, retrieved, item) {
+        console.log("-------------------CHANGES TO "+ item.toUpperCase() +"-----------------") // Log the cahnges to the console/terminal.
+        console.log("Added "+ retrieved.toLowerCase().charAt(0).toUpperCase() + retrieved.slice(1) + ", to "+ item + ".");
+    },
+}
+
 var data = {
     checkForNewData: function(req, res){
         data.checkForNew(req, res, "sector"); // Check for new sectors, when form is posted.
@@ -47,13 +75,12 @@ var data = {
             if (retrieved !== undefined && retrieved !== ''){   // Checks if the New input field is NOT undefined or empty.
                 if (!(data.isInArray((retrieved.toLowerCase().charAt(0).toUpperCase() + retrieved.toLowerCase().slice(1)), filters[item])) && req.body[item].length > 1){   // Check if the new value is already in the corresponding array, or not.
                     filters[item].push(retrieved.toLowerCase().charAt(0).toUpperCase() + retrieved.slice(1)); // Take the userinput, change it all to lowercase and change only the first letter, to a uppercase.
-                    console.log("-------------------CHANGED-----------------") // Log the cahnges to the console/terminal.
-                    console.log("Added "+ retrieved.toLowerCase().charAt(0).toUpperCase() + retrieved.slice(1) + ", to "+ item + ".")
-                    console.log(req.body[item])
-                    console.log("------------------------------------------")
+                    log.logChanges(req, res, retrieved, item);  //Log the new form data to the console/terminal.
                 }
             }
         },
 };
 //---------------------------------------------------
+
+
 module.exports = {router: router, filters: filters};
