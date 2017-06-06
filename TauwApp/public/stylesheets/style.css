@@ -132,3 +132,109 @@ img#output{
 .progressbarDetails{
     margin: 0.5em 0 1em 0.5em;
 }
+body{
+    display: flex;
+    background-color: #0099CB;
+}
+main{
+    width: 60%;
+}
+
+aside{
+    width: 40%;
+    max-height: 100%;
+    overflow-y: auto;
+}
+aside form{
+    margin: 0 0 3em 0;
+}
+aside form label{
+    color: #09526c;
+    margin: 0.5em 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+aside form label[for=search]{
+    font-size: 0.9em;
+    font-weight: 600;
+}
+aside input[name=search]{
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.2em;
+    border: 0.1em solid #ccc;
+    background-color: white;
+    background-image: url('../images/search.svg');
+    background-repeat: no-repeat;
+    background-position: 0.2em;
+    padding: 0.5em 0.5em 0.5em 3em;
+    transition: width 0.4s ease-in-out;
+}
+input[name=search]:focus,
+input[name=search]:hover  {
+    width: 100%;
+    box-sizing: border-box;
+}
+aside p{
+    color: white;
+    font-weight: lighter;
+    margin: 0 0 3em 0;
+    font-style: italic;
+}
+aside section{
+    display: flex;
+    flex-direction: column;
+}
+aside section label{
+    font-size: 1.3em;
+    color: #0a516a;
+    font-weight: 600;
+    margin: 0 0 0.7em 0;
+}
+aside section label:focus,
+aside section label:hover{
+    color: white;
+}
+
+aside section label span{
+    font-style:normal;
+}
+aside section input[type=checkbox]{
+    position: absolute;
+    top: -10em;
+}
+aside section ul {
+    margin: 0;
+    padding: 0;
+}
+aside section .dropdown + ul{
+    transition: opacity 0.5s ease-in;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+aside section input[type=checkbox].dropdown:checked  + ul{
+    opacity: 1;
+    height: auto;
+}
+
+aside section ul li{
+    list-style: none;
+    margin: 0;
+}
+aside section ul li{
+    color: white;
+    text-decoration: none;
+    width: 60%;
+    padding: 0.5em;
+    margin: 0.5em;
+    border-bottom: 0.1em solid #1f718e;
+}
+aside section ul li:last-of-type{
+    border: none;
+}
+aside section ul li a{
+    color: white;
+    text-decoration: none;
+    padding: 0.5em;
+}

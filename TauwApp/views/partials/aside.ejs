@@ -1,0 +1,19 @@
+<aside>
+    <form>
+        <label for="search">Zoek naar meettechnieken of sensoren</label>
+        <input type="text" name="search" placeholder="Search..">
+    </form>
+    <p>Hieronder staan alle meettechnieken en sensoren, die tot de <span>gekozen</span> sector behoren.</p>
+    <section>
+            <% for(var i=0; i<productList.branch.length; i++) {%>
+                <label for="<%= productList.branch[i] %>"><%= productList.branch[i] %> <span>V</span></label>
+                <input class="dropdown" type="checkbox" name="<%= productList.branch[i] %>" id="<%= productList.branch[i] %>" value="<%= productList.branch[i] %>">
+                        <ul>
+                            <% for(var x=0; x<productList.products.length; x++) {%>
+                                <li><a href=""><%= productList.products[x] %></a></li>
+                            <% } %>
+                        </ul>
+
+            <% } %>
+    </section>
+</aside>
