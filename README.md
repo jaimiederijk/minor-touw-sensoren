@@ -30,6 +30,8 @@ API_KEY=1234ThisWillBeTheFundaKey
 ```
 $ npm install
 $ npm start
+
+$ npm run sass
 ```
 It should return something like this:
 ```
