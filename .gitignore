@@ -3,3 +3,4 @@ thumbs.db
 *log
 .env
 node_modules/
+TauwApp/build/
