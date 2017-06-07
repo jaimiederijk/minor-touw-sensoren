@@ -38,7 +38,7 @@
                 <div>
                     <legend>Profielfoto</legend>
                     <img id="output"/>
-                    <input id="profielfoto" type="file" name="profielfoto" accept="image/*" onchange="loadFile(event)">
+                    <input id="profielfoto" type="file" name="profielfoto" multiple="true"  accept="image/*" onchange="loadFile(event)" >
 
                     <script>
                       var loadFile = function(event) {
@@ -158,10 +158,22 @@
                 </div>
                 <div>
                     <legend>Beschrijving</legend>
-                    <label for="referentieproject">Link naar referentieproject (Referentieproject)</label>
-                    <input id="referentieproject" type="url" name="referentieproject">
                     <label for="samenvatting">Samenvatting/ zoektermen (Samenvatting/ zoektermen)</label>
                     <textarea id="samenvatting" name="samenvatting" rows="4" cols="50"></textarea>
+                </div>
+            </div>
+            <div id="step4" class="formBlock">
+                <legend>Referentieproject</legend>
+                <div>
+                    <label for="referentieproject">Link naar referentieproject (Referentieproject)</label>
+                    <input id="referentieproject" type="url" name="referentieproject">
+                    <label for="refSummary">Samenvatting</label>
+                    <textarea id="refSummary" name="refSummary" rows="4" cols="50"></textarea>
+                </div>
+
+                <div>
+                    <!-- <label for="samenvatting">Samenvatting</label>
+                    <textarea id="samenvatting" name="samenvatting" rows="4" cols="50"></textarea> -->
                 </div>
             </div>
 

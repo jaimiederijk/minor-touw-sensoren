@@ -22,8 +22,8 @@ var filters = {
 var logFields = {
     contact: ["contactpersoon", "email", "mobile", "profielfoto"],
     categorie: ["sector", "branch", "tags", "level"],
-    details: ["scale", "resolution", "accuracy",  "interval", "duration", "innovation", "costs"],
-    summary: ["samenvatting", "referentieproject"]
+    details: ["scale", "resolution", "accuracy",  "interval", "duration", "innovation", "costs","samenvatting"],
+    reference: ["referentieproject","refSummary"]
 };
 
 /* GET home page. */
@@ -45,7 +45,7 @@ var log = {
         log.logFormInputs(req, res, "contact");
         log.logFormInputs(req, res, "categorie");
         log.logFormInputs(req, res, "details");
-        log.logFormInputs(req, res, "summary");
+        log.logFormInputs(req, res, "reference");
         console.log("--------------------------------------------------")
     },
     logFormInputs: function(req, res, item) {
