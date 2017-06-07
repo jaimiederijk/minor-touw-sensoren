@@ -25,6 +25,37 @@ API_KEY=1234ThisWillBeTheFundaKey
 - In the TauwApp folder use ``npm install`` to install the necessary node modules.
 - Afterwards use ``npm start``, to start the application. The applications is now running on your local host on http://localhost:3000/ .
 
+
+### mongodb
+- instal mongodb [instructies](https://www.mkyong.com/mongodb/how-to-install-mongodb-on-windows/)
+- run config die aangeeft waar data folder staat in de instalatie map van mongo
+```
+(win7)
+$ \mongodb\bin>./mongod --config D:\mongodb\mongo.config (win7)
+```
+- of geef het direct aan in dezelfde map
+```
+(win7)
+$ .\mongod --dbpath C:\Users\jaimie\Documents\GitHub\minor-tauw-sensoren\mongodb\data
+```
+
+- open mongo shell
+```
+$ H:\Program Files\MongoDB\Server\3.4\bin> ./mongo
+```
+- use tauwSensors Database. (maakt db met deze naam)
+voer dit uit in de mongo shell
+```
+$ use tauwSensors
+```
+- import json en maak collection.
+voer uit in nieuw terminal venster. navigeer weer naar mongo bin folder
+```
+$ \mongodb\bin> ./mongoimport --db tauwSensors --collection meettechnieken --drop --file  C:\Users\jaimie\downloads/TauwSensoren.json
+```
+- conectie maken vanuit node:
+[node mongo quickstart](http://mongodb.github.io/node-mongodb-native/2.2/quick-start/quick-start/)
+
 #### Localhost
 - To install the node modules
 ```
