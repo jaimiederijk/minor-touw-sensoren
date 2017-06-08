@@ -14,6 +14,8 @@ var appJS = require('./routes/form.js');
 var filters = appJS.filters;
 
 var app = express();
+app.locals.test = 1000;
+app.locals.parsedJSON = require('./TauwSensoren.json');
 
 // //  Global selectors
 // var filters = {
