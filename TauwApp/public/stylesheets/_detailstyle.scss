@@ -1,46 +1,51 @@
 .detail {
   width: 100%;
   background-color: #f3f3f3;
-  color: #444444; }
+  color: #444444;
 
-.detail header {
+ header {
   padding-left: 1rem; }
 
-.detail header article {
+header article {
   display: inline-block;
   width: 40%;
   max-width: 30em; }
 
-.detail header img {
+ header img {
   display: inline-block;
   width: 40%;
   max-width: 15rem; }
 
-.detail header article {
+ header article {
   padding: 1rem; }
 
-.detail #selection_info > div {
+ #selection_info > div {
   display: inline-block;
   vertical-align: top;
   padding-left: 1rem;
   padding-top: 1rem; }
 
-.detail #selection_info_what {
+ #selection_info_what {
   width: 40%;
   max-width: 15rem; }
 
-.detail table {
+ table {
   margin-bottom: 1rem; }
 
-.detail th {
+ th {
   height: 2em;
   width: 10em;
   text-align: left; }
 
-.detail td {
+ td {
   background-color: #c1c1c1;
   text-align: center;
   padding: 0 1rem; }
 
-.detail #selection_info_what th {
+  .selected {
+    border: solid red 2px;
+  }
+
+ #selection_info_what th {
   width: 5em; }
+}
