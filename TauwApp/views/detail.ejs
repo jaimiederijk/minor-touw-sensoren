@@ -2,94 +2,11 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/detailstyle.css' />
+    <link rel='stylesheet' href='/build/css/main.css' />
   </head>
   <body>
-     <header>
-        <h1><%= title %></h1>
-        <p></p>
-    </header>
-    <main>
-      <section>
-        <img src="" alt="sensor image">
-        <article class="sensor_discription">
-          <h2>Bescrijving</h2>
-          <p>Exacte meting, direct af te lezen</p>
-        </article>
-      </section>
-      <section>
-        <table>
-          <tr>
-            <th>Wat</th>
-            <td>Chemisch</td>
-          </tr>
-          <tr>
-            <th>niveau</th>
-            <td>Metalen</td>
-          </tr>
-          <tr>
-            <th>Waarin</th>
-            <td>Bodem</td>
-          </tr>
-        </table>
-        <table>
 
-          <tr>
-            <th>Waar</th>
-            <td>Landelijk</td>
-            <td>Provinciaal</td>
-            <td>Regionaal</td>
-          </tr>
-          <tr>
-            <th>Schaal</th>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <th>Resolutie</th>
-            <td>n.v.t.</td>
-          </tr>
-          <tr>
-            <th>Nauwkeurigheid</th>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <th>Termijn resultaat</th>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <th>Tijdsreeks</th>
-            <td>n.v.t.</td>
-          </tr>
-          <tr>
-            <th>Innovatie</th>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <th>Kosten</th>
-            <td>$</td>
-            <td>$$</td>
-            <td>$$$</td>
-          </tr>
-        </table>
-      </section>
-
-    </main>
+    <% include partials/detail %>
 
   </body>
 </html>

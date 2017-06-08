@@ -1,0 +1,297 @@
+body{
+    padding: 1em;
+    margin: 0;
+    font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+}
+main,
+header,
+footer{
+    width: 100%;
+    box-sizing: border-box;
+}
+h1 {
+    margin: 0;
+}
+header{
+    margin: 0 0 1em 0;
+}
+
+a {
+  color: #00B7FF;
+}
+
+legend{
+    font-weight: bold;
+}
+span{
+    font-style: italic;
+}
+form label{
+    margin-left: 0.5em;
+}
+p{
+    margin: 0;
+}
+
+.nieuw + input{
+    display: none;
+}
+
+.nieuw:checked + input{
+    display: block;
+}
+
+.controlButtons{
+    margin: 5em 0 0 0;
+}
+
+.round{
+    padding: 0.5em;
+    height: 2.5em;
+    width: 5em;
+    border-radius: 50%;
+    border: none;
+    font-weight: bold;
+    color: white;
+    background: darkblue;
+    text-decoration: none;
+}
+.round:hover, .round:focus, .round:active{
+    border:none;
+    color: black;
+    background: lightblue;
+}
+
+/*CSS for the form layout*/
+.stepCounter{
+    width: 80%;
+    margin: 0 auto;
+}
+
+form {
+    margin: 1em 0 0 0;
+}
+.formBlock{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 1em 0;
+    justify-content: center;
+    border: solid;
+    padding: 1em;
+    box-sizing: border-box;
+}
+.formBlock > div{
+    margin: 0 0.5em;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+legend{
+    margin: 1em 0 0 0;
+}
+form div input{
+    margin: 0 0.5em 0 0
+}
+.nieuw input:last-child{
+    display: none;
+}
+input[type=checkbox]:checked + input[type=text] {
+    display: block;
+}
+div > legend{
+    width: 80%;
+}
+form select{
+    margin: 0 0 0.5em 0;
+}
+
+img#output{
+    width: auto;
+    max-width: 5em;
+    max-height: 7em;
+}
+.hideForm{
+    display: none;
+}
+
+/*CSS for the Progressbar*/
+.progressbarContainer{
+    width: 100%;
+    margin: 1em 0 0 0;
+    border-radius: 0.5em;
+    background: lightgrey;
+}
+.progressbar{
+    width: 0%;
+    background-color: green;
+    border-radius: 0.5em;
+}
+.progressbarDetails{
+    margin: 0.5em 0 1em 0.5em;
+}
+body {
+    display: flex;
+    background-color: #0099CB;
+}
+
+aside {
+    width: 30%;
+    max-height: 100%;
+    overflow-y: scroll;
+    overflow-y: auto;
+}
+aside form {
+    margin: 0 0 3em 0;
+}
+aside form label {
+    color: #09526c;
+    margin: 0.5em 0;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+aside form label[for=search] {
+    font-size: 0.9em;
+    font-weight: 600;
+}
+aside input[name=search] {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.2em;
+    border: 0.1em solid #ccc;
+    background-color: white;
+    background-image: url('/images/search.svg');
+    background-repeat: no-repeat;
+    background-position: 0.2em;
+    padding: 0.5em 0.5em 0.5em 3em;
+    transition: width 0.4s ease-in-out;
+}
+input[name=search]:focus,
+input[name=search]:hover  {
+    width: 100%;
+    box-sizing: border-box;
+}
+aside p{
+    color: white;
+    font-weight: lighter;
+    margin: 0 0 3em 0;
+    font-style: italic;
+}
+aside section{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+aside section label{
+    font-size: 1.3em;
+    color: #0a516a;
+    font-weight: 600;
+    margin: 0 0 0.5em 0;
+}
+aside section label:focus,
+aside section label:hover{
+    color: white;
+}
+
+aside section label span{
+    font-style:normal;
+}
+aside section label span.count{
+    font-size: 0.8em;
+    color: #eb008b;
+}
+aside section label span.arrow{
+    position: absolute;
+    right: 5em;
+    transition: all 0.5s ease-in-out;
+}
+aside section input[type=checkbox]{
+    position: absolute;
+    top: -10em;
+}
+aside section ul {
+    margin: 0;
+    padding: 0;
+}
+aside section .dropdown + ul{
+    transition: opacity 0.5s ease-in;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+}
+aside section input[type=checkbox].dropdown:checked  + ul{
+    opacity: 1;
+    height: auto;
+}
+
+aside section ul li{
+    list-style: none;
+    margin: 0;
+}
+aside section ul li h4{
+    color: white;
+    text-decoration: none;
+    width: 60%;
+    padding: 0.5em 0 0 0;
+    margin: 0.5em;
+    border-bottom: 0.1em solid #1f718e;
+}
+/*aside section ul li :last-of-type{
+    border: none;
+}*/
+aside section ul li a{
+    color: white;
+    text-decoration: none;
+    /*padding: 0.5em;*/
+}
+.noMatches{
+    display: none;
+}
+aside section.listItem{
+    margin: 0 0 1em 0;
+}
+.listItem h4,
+.listItem p{
+    padding: 0;
+    margin: 0;
+}
+.listItem > p:first-of-type{
+    margin: 0.5em 0 0 0;
+    font-size: 0.9em;
+}
+.listItem h4,
+.listItem p{
+    margin: 0;
+}
+.tags{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    margin: 0.5em 0 0 0;
+}
+.tags > p{
+    width: max-content;
+    max-width: 90%;
+    padding:0.5em;
+    margin: 0 0.5em 0 0;
+    font-size: 0.8em;
+    font-style:normal;
+    background: RGBA(255,255,255,0.5);
+}
+.showMore{
+    margin: 1em 0;
+    width: max-content;
+    padding:0.5em;
+    background-color: #eb008b;
+    border: none;
+    box-shadow: 0.1em 0.1em 0.1em #666;
+}
+
+.showMore:focus,
+.showMore:hover{
+    background-color: #fff;
+    color: #000;
+}

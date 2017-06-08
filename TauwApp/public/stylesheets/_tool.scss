@@ -1,21 +1,21 @@
 @font-face {
     font-family: 'open_sansitalic';
-    src: url('../fonts/opensans-italic-webfont.woff2') format('woff2'),
-         url('../fonts/opensans-italic-webfont.woff') format('woff');
+    src: url('/fonts/opensans-italic-webfont.woff2') format('woff2'),
+         url('/fonts/opensans-italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'open_sansregular';
-    src: url('../fonts/opensans-regular-webfont.woff2') format('woff2'),
-         url('../fonts/opensans-regular-webfont.woff') format('woff');
+    src: url('/fonts/opensans-regular-webfont.woff2') format('woff2'),
+         url('/fonts/opensans-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'open_sanssemibold';
-    src: url('../fonts/opensans-semibold-webfont.woff2') format('woff2'),
-         url('../fonts/opensans-semibold-webfont.woff') format('woff');
+    src: url('/fonts/opensans-semibold-webfont.woff2') format('woff2'),
+         url('/fonts/opensans-semibold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -28,7 +28,7 @@ h1 {
   text-align: left;
   color: #0a5169;
 }
-p{
+p {
   font-family: 'open_sansregular';
   color: #313131;
   text-align: left;
@@ -39,13 +39,13 @@ span {
   font-style: normal;
 }
 header {
-  margin-top: 2em;
+  margin-top: 2rem;
 }
 a.logo {
   position: absolute;
   left: 4em;
   bottom: 3em;
-  background-image: url('../images/tauw_logo.png');
+  background-image: url('/images/tauw_logo.png');
   background-repeat: no-repeat;
   background-size: 100%;
   width: 9em;
@@ -55,8 +55,8 @@ a.logo {
 .map {
   float: left;
   position: relative;
-  width: 70%;
-  width: 70vw;
+  width: 69%;
+  width: 69vw;
   height: 100%;
   height: 100vh;
   text-align: center;
@@ -69,20 +69,12 @@ a.logo {
   bottom: 0;
   left: 0;
 	margin: auto;
-  background-image: url('../images/map.svg');
+  background-image: url('/images/map.svg');
   background-repeat: no-repeat;
   background-size: 100%;
   display: inline-block;
   width: 80%;
   height: 24.4em;
-}
-aside {
-  float: left;
-  width: 30%;
-  width: 30vw;
-  height: 100%;
-  height: 100vh;
-  background-color: #0099cc;
 }
 #landelijk-info h1,
 #industrial-info h1,
@@ -122,7 +114,7 @@ aside {
   position: absolute;
   top: .5em;
   right: .5em;
-  background-image: url('../images/satellite.svg');
+  background-image: url('/images/satellite.svg');
   background-repeat: no-repeat;
   background-size: 100%;
   width: 4em;
@@ -133,7 +125,7 @@ aside {
   position: absolute;
   top: .9em;
   left: 1.2em;
-  background-image: url('../images/drone.svg');
+  background-image: url('/images/drone.svg');
   background-repeat: no-repeat;
   background-size: 100%;
   width: 3em;
@@ -194,7 +186,7 @@ aside {
 }
 select.filter-dropdown {
   background-color: #ffffff;
-  background-image: url('../images/dropdown-select.png');
+  background-image: url('/images/dropdown-select.png');
   background-repeat: no-repeat;
   background-position: center right;
   background-size: 1.5em .5em;
