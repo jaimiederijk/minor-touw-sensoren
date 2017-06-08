@@ -18,7 +18,18 @@
                             <%if (sensorID.sector == "Landelijk") { %>
                                     <% sensorID.branch.forEach(function(sensorBranch) { %>
                                         <%if (sensorBranch == branchID) { %>
-                                            <li><a href=""><%= sensorID.name %></a></li>
+                                            <li>
+                                                <section class="listItem">
+                                                    <h4><%= sensorID.name %></h4>
+                                                    <p><%= sensorID.summary_small %></p>
+                                                        <section class="tags">
+                                                            <% sensorID.tags.forEach(function(sensorTag) { %>
+                                                                <p><%= sensorTag %></p>
+                                                            <% }) %>
+                                                        </section>
+                                                        <a href="" class="showMore">Meer informatie</a>
+                                                </section>
+                                            </li>
                                         <% } %>
                                     <% }) %>
                             <% } %>

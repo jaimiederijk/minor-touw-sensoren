@@ -234,22 +234,67 @@ aside section ul li{
     list-style: none;
     margin: 0;
 }
-aside section ul li{
+aside section ul li h4{
     color: white;
     text-decoration: none;
     width: 60%;
-    padding: 0.5em;
+    padding: 0.5em 0 0 0;
     margin: 0.5em;
     border-bottom: 0.1em solid #1f718e;
 }
-aside section ul li:last-of-type{
+/*aside section ul li :last-of-type{
     border: none;
-}
+}*/
 aside section ul li a{
     color: white;
     text-decoration: none;
-    padding: 0.5em;
+    /*padding: 0.5em;*/
 }
 .noMatches{
     display: none;
+}
+aside section.listItem{
+    margin: 0 0 1em 0;
+}
+.listItem h4,
+.listItem p{
+    padding: 0;
+    margin: 0;
+}
+.listItem > p:first-of-type{
+    margin: 0.5em 0 0 0;
+    font-size: 0.9em;
+}
+.listItem h4,
+.listItem p{
+    margin: 0;
+}
+.tags{
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    margin: 0.5em 0 0 0;
+}
+.tags > p{
+    width: max-content;
+    max-width: 90%;
+    padding:0.5em;
+    margin: 0 0.5em 0 0;
+    font-size: 0.8em;
+    font-style:normal;
+    background: RGBA(255,255,255,0.5);
+}
+.showMore{
+    margin: 1em 0;
+    width: max-content;
+    padding:0.5em;
+    background-color: #eb008b;
+    border: none;
+    box-shadow: 0.1em 0.1em 0.1em #666;
+}
+
+.showMore:focus,
+.showMore:hover{
+    background-color: #fff;
+    color: #000;
 }
