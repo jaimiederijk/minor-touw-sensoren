@@ -1,5 +1,6 @@
 .detail {
-  width: 100%;
+  width: 69%;
+  float: left;
   background-color: #f3f3f3;
   color: #444444;
 
@@ -9,15 +10,16 @@
 header article {
   display: inline-block;
   width: 40%;
-  max-width: 30em; }
+  max-width: 30em;
+  vertical-align: top;
+  padding: 1rem;
+}
 
  header img {
   display: inline-block;
   width: 40%;
-  max-width: 15rem; }
-
- header article {
-  padding: 1rem; }
+  max-width: 15rem;
+}
 
  #selection_info > div {
   display: inline-block;
