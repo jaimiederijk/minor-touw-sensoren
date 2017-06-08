@@ -2,11 +2,13 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='build/css/main.css' />
+    <link rel='stylesheet' href='/build/css/main.css' />
   </head>
   <body>
-        <main></main>
-        <% include partials/aside %>
-        <script src="/javascripts/search.js"></script>
+    <main>
+      <% include partials/map %>
+    </main>
+    
+    <script src="/javascripts/search.js"></script>
   </body>
 </html>
