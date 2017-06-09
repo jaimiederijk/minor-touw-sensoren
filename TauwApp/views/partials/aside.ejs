@@ -14,7 +14,7 @@
                     </label>
                     <input class="dropdown" type="checkbox" class="down" name="<%= branchID %>" id="<%= branchID %>" value="<%= branchID %>">
                     <ul class="<%= branchID %>">
-                        <% parsedJSON.sensors.forEach(function(sensorID) { %>
+                        <% parsedJSON.sensors.forEach(function(sensorID, index) { %>
                             <%if (sensorID.sector == "Landelijk") { %>
                                     <% sensorID.branch.forEach(function(sensorBranch) { %>
                                         <%if (sensorBranch == branchID) { %>
@@ -27,7 +27,7 @@
                                                                 <p><%= sensorTag %></p>
                                                             <% }) %>
                                                         </section>
-                                                        <a href="details/<%= sensorID.name %>" class="showMore">Meer informatie</a>
+                                                        <a href="/details/<%= sensorID.name %>" class="showMore">Meer informatie</a>
                                                 </section>
                                             </li>
                                         <% } %>
