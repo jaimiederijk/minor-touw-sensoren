@@ -20,6 +20,8 @@ var appJS = require('./routes/form.js');
 var filters = appJS.filters;
 
 var app = express();
+app.locals.test = 1000;
+app.locals.parsedJSON = require('./TauwSensoren.json');
 
 // //  Global selectors
 // var filters = {
@@ -73,7 +75,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/form', form);
-app.use('/detail', detail);
+app.use('/details', detail);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -5,3 +5,4 @@ thumbs.db
 node_modules/
 TauwApp/build/
 mongodb/
+TauwApp/public/build/
