@@ -1,5 +1,5 @@
 {
-    "name": "TauwSensoren",
+    "dbname": "TauwSensoren",
     "sectors" : ["Landelijk", "Stedelijk", "Industrie"],
     "branch" : ["Bodem", "Afval", "Grondstoffen", "Ecologie", "Water", "Inspectie", "Waterbodem", "Infrastructuur"],
     "sensors": [
