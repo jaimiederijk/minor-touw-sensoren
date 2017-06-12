@@ -5,7 +5,7 @@
     </form>
     <p>Hieronder staan alle meettechnieken en sensoren, die tot de <span id="chosenSector">gekozen</span> sector behoren.</p>
     <section>
-        <% if(sensor.sector !== "nothing"){ %>
+        <% if(allSensors.sector !== "nothing"){ %>
             <% parsedJSON.branch.forEach(function(branchID) { %>
                 <section>
                     <label for="<%= branchID %>"><%= branchID %>
@@ -14,7 +14,7 @@
                     </label>
                     <input class="dropdown" type="checkbox" class="down" name="<%= branchID %>" id="<%= branchID %>" value="<%= branchID %>">
                     <ul class="<%= branchID %>">
-                        <% sensor.forEach(function(sensorID) { %>
+                        <% allSensors.forEach(function(sensorID) { %>
                                 <% sensorID.branch.forEach(function(sensorBranch) { %>
                                     <%if (sensorBranch == branchID) { %>
                                         <li>
@@ -26,7 +26,7 @@
                                                             <p><%= sensorTag %></p>
                                                         <% }) %>
                                                     </section>
-                                                    <a href="/details/<%= sensor[0].sector %>/<%= sensorID.name %>" class="showMore">Meer informatie</a>
+                                                    <a href="/details/<%= allSensors[0].sector %>/<%= sensorID.name %>" class="showMore">Meer informatie</a>
                                             </section>
                                         </li>
                                     <% } %>

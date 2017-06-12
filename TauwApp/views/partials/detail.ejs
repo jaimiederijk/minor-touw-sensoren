@@ -2,11 +2,11 @@
 
  <section>
    <header>
-     <h2><%= sensor[0].name %></h2>
+     <h2><%= sensor.name %></h2>
      <img src="/images/xrf.jpg" alt="sensor image">
      <article class="sensor_discription">
        <h2>Beschrijving</h2>
-       <p><%= sensor[0].summary_big %></p>
+       <p><%= sensor.summary_big %></p>
      </article>
    </header>
  </section>
@@ -15,19 +15,19 @@
      <table>
        <tr>
          <th>Wat</th>
-         <% sensor[0].tags.forEach(function(tagElement) { %>
+         <% sensor.tags.forEach(function(tagElement) { %>
              <td><%= tagElement %></td>
          <% }) %>
        </tr>
        <tr>
          <th>Niveau</th>
-         <% sensor[0].level.forEach(function(levelElement) { %>
+         <% sensor.level.forEach(function(levelElement) { %>
              <td><%= levelElement %></td>
          <% }) %>
        </tr>
        <tr>
          <th>Waarin</th>
-         <% sensor[0].branch.forEach(function(branchElement) { %>
+         <% sensor.branch.forEach(function(branchElement) { %>
              <td><%= branchElement %></td>
          <% }) %>
        </tr>
@@ -104,7 +104,7 @@
      </table>
    </div>
    <table>
-       
+
    </table>
  </section>
 </section>
