@@ -39,15 +39,6 @@
                     <legend>Profielfoto</legend>
                     <img id="output"/>
                     <input id="profielfoto" type="file" name="profielfoto" multiple="true"  accept="image/*" onchange="loadFile(event)" >
-
-                    <script>
-                      var loadFile = function(event) {
-                        var output = document.getElementById('output');
-                        output.src = URL.createObjectURL(event.target.files[0]);
-                      };
-                    </script>
-
-
                 </div>
             </div>
 
@@ -182,6 +173,6 @@
 
         <section class="controlButtons"></section>
     </main>
-    <!-- <script src="/javascripts/formulier.js"></script> -->
+    <script src="/javascripts/formulier.js"></script>
   </body>
 </html>
