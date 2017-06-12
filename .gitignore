@@ -4,4 +4,5 @@ thumbs.db
 .env
 node_modules/
 TauwApp/build/
+mongodb/
 TauwApp/public/build/
