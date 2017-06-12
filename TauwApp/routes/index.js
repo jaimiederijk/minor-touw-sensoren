@@ -1,15 +1,28 @@
 var express = require('express');
 var router = express.Router();
-var fs = require("fs");
-
-// var JSONData = fs.readFileSync("./TauwSensoren.json");
-// JSONData = JSON.parse(JSONData)
-// console.log(JSONData)
-
+var connector  = require('../lib/connector');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', productList: productList});
+  res.render('index', {
+      title: 'Home',
+      productList: productList,
+      sensor: {sector: "nothing"}
+  });
+});
+
+router.get('/:sectorName', function(req, res, next) {
+  var query = {
+      sector: req.params.sectorName
+  }
+  connector.find( query, function(docs){
+    console.log(docs)
+    res.render('index', {
+        title: 'homepage2',
+        productList: productList,
+        sensor: docs
+    });
+  });
 });
 
 var productList = {

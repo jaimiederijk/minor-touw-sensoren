@@ -5,7 +5,7 @@
     </form>
     <p>Hieronder staan alle meettechnieken en sensoren, die tot de <span id="chosenSector">gekozen</span> sector behoren.</p>
     <section>
-        <%if (parsedJSON.sectors[0] == "Landelijk") { %>
+        <% if(sensor.sector !== "nothing"){ %>
             <% parsedJSON.branch.forEach(function(branchID) { %>
                 <section>
                     <label for="<%= branchID %>"><%= branchID %>
@@ -14,30 +14,34 @@
                     </label>
                     <input class="dropdown" type="checkbox" class="down" name="<%= branchID %>" id="<%= branchID %>" value="<%= branchID %>">
                     <ul class="<%= branchID %>">
-                        <% parsedJSON.sensors.forEach(function(sensorID, index) { %>
-                            <%if (sensorID.sector == "Landelijk") { %>
-                                    <% sensorID.branch.forEach(function(sensorBranch) { %>
-                                        <%if (sensorBranch == branchID) { %>
-                                            <li>
-                                                <section class="listItem">
-                                                    <h4><%= sensorID.name %></h4>
-                                                    <p><%= sensorID.summary_small %></p>
-                                                        <section class="tags">
-                                                            <% sensorID.tags.forEach(function(sensorTag) { %>
-                                                                <p><%= sensorTag %></p>
-                                                            <% }) %>
-                                                        </section>
-                                                        <a href="/details/<%= sensorID.name %>" class="showMore">Meer informatie</a>
-                                                </section>
-                                            </li>
-                                        <% } %>
-                                    <% }) %>
-                            <% } %>
+                        <% sensor.forEach(function(sensorID) { %>
+                                <% sensorID.branch.forEach(function(sensorBranch) { %>
+                                    <%if (sensorBranch == branchID) { %>
+                                        <li>
+                                            <section class="listItem">
+                                                <h4><%= sensorID.name %></h4>
+                                                <p><%= sensorID.summary_small %></p>
+                                                    <section class="tags">
+                                                        <% sensorID.tags.forEach(function(sensorTag) { %>
+                                                            <p><%= sensorTag %></p>
+                                                        <% }) %>
+                                                    </section>
+                                                    <a href="/details/<%= sensor[0].sector %>/<%= sensorID.name %>" class="showMore">Meer informatie</a>
+                                            </section>
+                                        </li>
+                                    <% } %>
+                                <% }) %>
+
+
                         <% }) %>
+
                     </ul>
                 </section>
             <% }) %>
+
+
+         <% } else{ %>
+           <div><p>Geen overeenkomende sensoren gevonden.</p></div>
         <% } %>
-        <div class="noMatches"><p>Geen overeenkomende sensoren gevonden.</p></div>
     </section>
 </aside>
