@@ -12,7 +12,6 @@ var MongoClient = require('mongodb').MongoClient
 var url = 'mongodb://localhost:27017/tauw';
 
 var index = require('./routes/index').router;
-var users = require('./routes/users').router;
 var detail = require('./routes/detail').router;
 var form = require('./routes/form').router;
 
@@ -58,7 +57,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
 app.use('/form', form);
 app.use('/details', detail);
 

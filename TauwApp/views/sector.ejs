@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= sensor.name %></title>
+    <title><%= title %></title>
     <link rel='stylesheet' href='/build/css/main.css' />
   </head>
   <body>
-      
-    <% include partials/header %>
-    <% include partials/detail %>
+      <% include partials/header %>
+      <% include partials/filters %>
+      <% include partials/results %>
 
     <script src="/javascripts/search.js"></script>
   </body>
