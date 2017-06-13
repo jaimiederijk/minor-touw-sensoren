@@ -5,6 +5,7 @@
     </form>
     <p>Hieronder staan alle meettechnieken en sensoren, die tot de <span id="chosenSector">gekozen</span> sector behoren.</p>
     <section>
+
         <h2><%= curentSector %></h2>
         <% if(allSensors.sector !== "nothing"){ %>
             <% parsedJSON.branch.forEach(function(branchID) { %>

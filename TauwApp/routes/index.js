@@ -7,6 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('index', {
       title: 'Home',
       curentSector: "",
+
       allSensors: {sector: "nothing"}
   });
 });
@@ -20,6 +21,7 @@ router.get('/:sectorName', function(req, res, next) {
     res.render('index', {
         title: 'homepage2',
         curentSector: query.sector,
+
         allSensors: docs
     });
   });

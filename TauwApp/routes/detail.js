@@ -18,7 +18,6 @@ router.get('/:sectorName/:sensorName', function(req, res) {
         res.render('detail', {
             title: 'homepage2',
             allSensors: docs,
-            curentSector: query.sector,
             sensor: filterOnSensor(docs)
         });
       });
