@@ -23,21 +23,6 @@ var app = express();
 app.locals.test = 1000;
 app.locals.parsedJSON = require('./TauwSensoren.json');
 
-// //  Global selectors
-// var filters = {
-//     sector : ["landelijk", "stedelijk", "industrie"],
-//     branch : ["bodem", "afval", "grondstoffen", "ecologie", "water", "inspectie", "waterbodem", "infrastructuur"],
-//     tags : ["Chemisch", "3D model", "Volume bepaling", "Fysisch"],
-//     level : ["Bodemlucht", "Maaiveld", "Textruur", "Lutum", "Organisch stof", "Metalen", "PAK", "PCB", "Bodemvreemde materialen", "Onderscheidt in chemische verbindingen"],
-//     scale : ["Handmatig", "Lokaal", "Regionaal", "Provinciaal", "Landelijk", "Internationaal", "n.v.t"],
-//     resolution: [0,1,2,3,4,5],
-//     accuracy: ["Niet nauwkeurig", "Matig nauwkeurig", "Redelijk nauwkeurig", "Zeer nauwkeurig"],
-//     interval : ["Jaren","Weken", "Uren", "Direct"],
-//     duration : ["Jaren","Weken", "Uren", "Minuten"],
-//     innovation : ["Nog weinig bewijs", "Alleen wetenschappelijk bewezig", "Reeds in enkele projecten toegepast", "Bewezen techniek"],
-//     costs : ["Gratis tot goedkoop", "?", "Zeer duur"]
-// };
-
 // example voor data ophalen
 // var findDocuments = function(db, callback) {
 //   // Get the documents collection
