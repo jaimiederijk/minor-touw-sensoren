@@ -11,10 +11,6 @@ router.get('/:sectorName/:sensorName', function(req, res) {
         //   name: req.params.sensorName
     }
     connector.find( query, function(docs){
-        console.log("DOCS")
-        console.log("------------------------------")
-        console.log(docs)
-        console.log("------------------------------")
         res.render('detail', {
             title: 'homepage2',
             allSensors: docs,

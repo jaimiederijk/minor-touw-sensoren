@@ -29,55 +29,44 @@
      </table>
    </div>
    <div id="selection_info_criteria">
-     <% if(sensor.resolution !== "n.v.t." ) { %>
-      <table>
+     <table>
+     <% if(sensor.resolution !== "n.v.t." && sensor.resolution !== "undefined" ) { %>      
         <tr>
           <th>Resolutie</th>
           <td><%= sensor.resolution %></td>
         </tr>
-      </table>
      <% } %>
-     <% if(sensor.accuracy !== "n.v.t." && sensor.accuracy!== "undefined" ) { %>
-      <table>
+     <% if(sensor.accuracy !== "n.v.t." && sensor.accuracy !== "undefined" ) { %>
         <tr>
           <th>Acuraatheid</th>
           <td><%= sensor.accuracy %></td>
         </tr>
-      </table>
      <% } %>
-     <% if(sensor.interval !== "n.v.t." ) { %>
-      <table>
+     <% if(sensor.interval !== "n.v.t." && sensor.interval !== "undefined" ) { %>
         <tr>
           <th>interval</th>
           <td><%= sensor.interval %></td>
         </tr>
-      </table>
      <% } %>
-     <% if(sensor.duration !== "n.v.t." ) { %>
-      <table>
+     <% if(sensor.duration !== "n.v.t." && sensor.duration !== "undefined" ) { %>
         <tr>
           <th>tijdsduur</th>
           <td><%= sensor.duration %></td>
         </tr>
-      </table>
      <% } %>
-     <% if(sensor.innovation !== "n.v.t." ) { %>
-      <table>
+     <% if(sensor.innovation !== "n.v.t." && sensor.innovation !== "undefined" ) { %>
         <tr>
           <th>innovatie</th>
           <td><%= sensor.innovation %></td>
         </tr>
-      </table>
      <% } %>
-     <% if(sensor.costs !== "n.v.t." ) { %>
-      <table>
+     <% if(sensor.costs !== "n.v.t." && sensor.costs !== "undefined" ) { %>
         <tr>
           <th>kosten</th>
           <td><%= sensor.costs %></td>
         </tr>
-      </table>
      <% } %>
-
+    </table>
    </div>
  </section>
  <article class="sensor_discription">
