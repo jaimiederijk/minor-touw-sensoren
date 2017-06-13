@@ -34,12 +34,17 @@
      </table>
    </div>
    <div id="selection_info_criteria">
+     <% if(sensor.resolution !== "n.v.t." ) { %>
+      <table>
+        <tr>
+          <th>Resolutie</th>
+          <td><%= sensor.resolution %></td>
+        </tr>
+      </table>
+     <% } %>
      <table>
        <tr>
-         <th>Waar</th>
-         <td class="selected">Landelijk</td>
-         <td>Provinciaal</td>
-         <td>Regionaal</td>
+         <td></td>
        </tr>
      </table>
      <table>
