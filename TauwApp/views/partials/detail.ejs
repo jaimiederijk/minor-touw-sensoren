@@ -6,7 +6,7 @@
      <img src="/images/xrf.jpg" alt="sensor image">
      <article class="sensor_discription">
        <h2>Beschrijving</h2>
-       <p>Exacte meting, direct af te lezen. Röntgenfluorescentie is een proces van fluorescentie waarbij een materiaal bij bestraling met röntgenstraling ook weer röntgenstraling uitzendt.</p>
+       <p><%= sensor.summary_big %></p>
      </article>
    </header>
  </section>
@@ -15,15 +15,21 @@
      <table>
        <tr>
          <th>Wat</th>
-         <td>Chemisch</td>
+         <% sensor.tags.forEach(function(tagElement) { %>
+             <td><%= tagElement %></td>
+         <% }) %>
        </tr>
        <tr>
-         <th>niveau</th>
-         <td>Metalen</td>
+         <th>Niveau</th>
+         <% sensor.level.forEach(function(levelElement) { %>
+             <td><%= levelElement %></td>
+         <% }) %>
        </tr>
        <tr>
          <th>Waarin</th>
-         <td>Bodem</td>
+         <% sensor.branch.forEach(function(branchElement) { %>
+             <td><%= branchElement %></td>
+         <% }) %>
        </tr>
      </table>
    </div>
@@ -98,13 +104,6 @@
      </table>
    </div>
    <table>
-
-
-
-
-
-
-
 
    </table>
  </section>
