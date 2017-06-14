@@ -207,10 +207,12 @@ a#filter-button {
   color: $color_pink;
 }
 aside {
+  float: left;
   background-color: $color_background;
   box-sizing: border-box;
   width: 25%;
   @include breakpoint(mobileonly) {
+    float: none;
     display: none;
     position: absolute;
     top: 0;
