@@ -17,6 +17,7 @@ router.get('/:sectorName/:sensorName', function(req, res) {
         console.log("------------------------------")
         res.render('detail', {
             title: 'homepage2',
+            page: "detail",
             allSensors: docs,
             sensor: filterOnSensor(docs)
         });

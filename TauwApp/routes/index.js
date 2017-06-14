@@ -18,7 +18,7 @@ router.get('/:sectorName', function(req, res, next) {
   }
   connector.find( query, function(docs){
     console.log(docs)
-    res.render('index', {
+    res.render('sector', {
         title: query.sector,
         page: "filters",
         curentSector: query.sector,
