@@ -1,11 +1,66 @@
 # Minor Webdevelopment | Tauw-sensoren
 Repository for the "Tauw Sensor Selectiontool"
-
-`
+<!-- `
 V 0.1.0
-`
+` -->
 
-## Ontwikkelplan
+![Logo Tauw](./repo-images/tauw-logo.jpg)
+
+## Introduction
+This is a project, for the Dutch company named <a href="http://www.tauw.nl">'Tauw'</a>. Tauw is a European  Europees consulting and engineering firm, that gives environmental friendly and sustainable advices to businesses. To help with the creation of a more sustainable world.
+
+They have offices in the Netherlands, Belgium, Germany, France, Spain and Italy and have more than 1,000 people working to achive there goal, to make the world better and cleaner.
+
+## Users
+- <strong>User 1: </strong> At the moment, whenever someone wants to start a project, that requires a type of sensor. That person needs to talk to someone else in the company, to ask what sensors would be best to use.
+
+ <strong>Current problem: </strong> That person is also busy, so a response could take a while and during that time a project could not continue.
+
+- <strong>User 2: </strong> The second type of user, is a project leader, that knows what sensor is going to be used, but wants to check what the functionalities of that sensor are and how it work.
+
+ <strong>Current problem: </strong> Because there is no accessible database, that contains all the sensors, the project leader needs to ask someone, what interrupts the progress of the project or he/she needs to search on the internet, what could take a while.
+
+- <strong>User 3: </strong> External companies want to share information, about sensors with Tauw and want to help each other.
+
+ <strong>Current problem: </strong> There is no database or public accessible document, where they could place the information. So sharing data is currently very inefficient.
+
+## User stories (will become English soon)
+- De tool bevat selectiecriteria. Het belangrijkste criterium is een plaatje, waarop je het werkveld kan selecteren waarvoor je een vraag hebt (bijvoorbeeld, industrie  luchtmetingen; of bijvoorbeeld stedelijk gebied  > Water  > Riolering). Overige criteria zijn een range in prijs en andere randvoorwaarden.
+
+- Op basis van je selectiecriteria wordt een voorstel geselecteerd van een meettechniek of sensor. Er wordt een korte beschrijving van de meettechniek of de sensor getoond, daarbij wordt een contactpersoon binnen Tauw getoond en, als deze beschikbaar, een voorbeeldproject waar de techniek is toegepast.
+- De database moet van buitenaf ingevuld kunnen worden, in eerste instantie alleen door medewerkers van Tauw, later mogelijk door externe partijen.
+
+## Concept
+Our idea, is a responsive website, where the users can easally find the best possible sensors for theire projects, by only knowing where they want to use it.
+
+The webside also gives the user the ability, to find a specific sensor, by name. They than get to see a complete list with a summarty of the sensor, its functionalities, contact persons and example projects.
+
+Currently we are also working on a databse, connected to a online form, where internal or external personal can add a new sensors, that will automaticly be added to the database and show on the side.
+
+## Dependencies
+- A basic MVC server: Nodejs, for Server-side scripting.
+- A Node.js setup: Express.
+- EJS as serverside templating engine
+- A clean and widly supported HTML structure.
+- Multiple SCSS style sheets (sass)
+- JavaScript on Clien-side.
+- Gulp to bundle the SCSS in one css, and to automaticly show the changes.
+- MongoDB: to store and retrieve data from a database.
+
+## Code conventions
+- When making a new branch give it a clear name. (example: /partail/header/colin)
+- Work modulair as much as possible, to prefent merge conflicts.
+- Templating engine is EJS and try to keep the code clean and logical.
+- Use tabs instaid of spaces.
+- Give functions and variables clear names.
+- Each function handeks on thing/action.
+- No jQuery.
+- Use Comments in your code, when needed.
+- Write all code and comments in English. (!!).
+- Use camelcase, when naming items.
+- Everything gets it's own SCSS stylesheet (will be merged later).
+
+## Personal development plan (will become English soon)
 Binnen dit project is per persoon een ontwikkelplan opgesteld dat gedurende dit project zal worden doorlopen.
 
 ### Colin Dörr – 500704926
@@ -56,7 +111,7 @@ Het onderdeel *Performance Matters* zal worden voldaan door een service worker t
 Dit onderdeel wordt toegepast door al bij het coderen ervoor te zorgen dat de code die geschreven wordt op meerdere web browsers wordt ondersteund en al dan niet een fallback wordt gemaakt.
 
 
-## Installing
+## Installation
 ### Stap 1: Cloning
 ```
 $ git clone https://github.com/ColinDorr/minor-tauw-sensoren
