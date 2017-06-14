@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('index', {
       title: 'Home',
       curentSector: "",
-
+      page: "index",
       allSensors: {sector: "nothing"}
   });
 });
@@ -20,6 +20,7 @@ router.get('/:sectorName', function(req, res, next) {
     console.log(docs)
     res.render('index', {
         title: 'homepage2',
+        page: "filters",
         curentSector: query.sector,
 
         allSensors: docs
