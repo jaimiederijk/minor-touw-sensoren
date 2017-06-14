@@ -206,22 +206,16 @@ a#filter-button {
   text-decoration: none;
   color: $color_pink;
 }
-
-// a.filter-button:focus + aside,
-// a.filter-button:active + aside
-//  {
-//   display: block;
-// }
-
 aside {
   background-color: $color_background;
   box-sizing: border-box;
-  width: 100%;
+  width: 25%;
   @include breakpoint(mobileonly) {
     display: none;
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
     min-height: 100%;
   }
   padding: 2.5em;
@@ -266,6 +260,10 @@ aside {
     margin-right: 1em;
   }
   input[type="submit"] {
+    display: none;
+    @include breakpoint(mobileonly) {
+      display: inline-block;
+    }
     background-color: $color_pink;
     border: 0;
     margin-top: 1em;
