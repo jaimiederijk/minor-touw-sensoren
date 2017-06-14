@@ -1,49 +1,12 @@
-<aside>
-
-    <!-- <form>
-      <select class="filter-dropdown">
-        <option disabled selected>Schaal</option>
-        <option value="Handmatig">Handmatig</option>
-        <option value="Lokaal">Lokaal</option>
-        <option value="Regionaal">Regionaal</option>
-        <option value="Provinciaal">Provinciaal</option>
-        <option value="Landelijk">Landelijk</option>
-        <option value="Internationaal">Internationaal</option>
-      </select>
-      <select class="filter-dropdown">
-        <option disabled selected>Resolutie</option>
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <select class="filter-dropdown">
-        <option disabled selected>Nauwkeurigheid</option>
-        <option value="Niet nauwkeurig">Niet nauwkeurig</option>
-        <option value="Matig nauwkeurig">Matig nauwkeurig</option>
-        <option value="Redelijk nauwkeurig">Redelijk nauwkeurig</option>
-        <option value="Zeer nauwkeurig">Zeer nauwkeurig</option>
-      </select>
-      <select class="filter-dropdown">
-        <option disabled selected>Tijdreeks</option>
-        <option value="Jaren">Jaren</option>
-        <option value="Weken">Weken</option>
-        <option value="Uren">Uren</option>
-        <option value="Minuten">Minuten</option>
-      </select>
-      <select class="filter-dropdown">
-        <option disabled selected>Innovatie</option>
-        <option value="Nog weinig bewijs">Nog weinig bewijs</option>
-        <option value="Alleen wetenschappelijk bewezig">Alleen wetenschappelijk bewezig</option>
-        <option value="Reeds in enkele projecten toegepast">Reeds in enkele projecten toegepast</option>
-        <option value="Bewezen techniek">Bewezen techniek</option>
-      </select>
-    </form> -->
+<a href="#" title="Filter" id="filter-button">Filter</a>
+<aside id="filter">
 
     <form>
+      
       <h2>Filter</h2>
+
+      <a href="" title="sluiten" class="close-filter" id="close-filter"></a>
+
       <details open>
         <summary>Schaal</summary>
         <label><input type="radio" name="scale" value="Handmatig" />Handmatig</label>
@@ -83,6 +46,11 @@
         <label><input type="radio" name="innovation" value="Reeds in enkele projecten toegepast" />Reeds in enkele projecten toegepast</label>
         <label><input type="radio" name="innovation" value="Bewezen techniek" />Bewezen techniek</label>
       </details>
+
+      <input type="submit" class="close-filter" value="Toepassen" />
+
     </form>
 
 </aside>
+
+<script src="javascripts/filters.js"></script>
