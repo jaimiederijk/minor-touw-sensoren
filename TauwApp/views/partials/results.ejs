@@ -1,0 +1,36 @@
+<main>
+        <h2><%= curentSector %></h2>
+        <% if(allSensors.sector !== "nothing"){ %>
+            <% parsedJSON.branch.forEach(function(branchID) { %>
+                <section>
+                    <label for="<%= branchID %>"><%= branchID %>
+                        <span class="count"></span>
+                        <span class="arrow"></span>
+                    </label>
+                    <input class="dropdown" type="checkbox" class="down" name="<%= branchID %>" id="<%= branchID %>" value="<%= branchID %>">
+                    <ul class="<%= branchID %>">
+                        <% allSensors.forEach(function(sensorID) { %>
+                                <% sensorID.branch.forEach(function(sensorBranch) { %>
+                                    <%if (sensorBranch == branchID) { %>
+                                            <a href="/details/<%= allSensors[0].sector %>/<%= sensorID.name %>">
+                                                <li class="listItem">
+                                                    <h4> <%= sensorID.name %> </h4>
+                                                    <p> <%= sensorID.summary_small %> </p>
+                                                    <section class="tags">
+                                                        <% sensorID.tags.forEach(function(sensorTag) { %>
+                                                            <p> <%= sensorTag %> </p>
+                                                        <% }) %>
+                                                    </section>
+                                                    <button class="showMore">Lees meer</button>
+                                                </li>
+                                            </a>
+                                    <% } %>
+                                <% }) %>
+                        <% }) %>
+                    </ul>
+                </section>
+            <% }) %>
+         <% } else{ %>
+           <div><p>Geen overeenkomende sensoren gevonden.</p></div>
+        <% } %>
+</main>

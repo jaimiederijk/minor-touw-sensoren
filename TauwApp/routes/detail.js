@@ -13,6 +13,7 @@ router.get('/:sectorName/:sensorName', function(req, res) {
     connector.find( query, function(docs){
         res.render('detail', {
             title: 'homepage2',
+            page: "detail",
             allSensors: docs,
             sensor: filterOnSensor(docs)
         });
