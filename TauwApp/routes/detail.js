@@ -3,6 +3,21 @@ var router = express.Router();
 var connector  = require('../lib/connector');
 var sensorName =""
 
+router.get('/:sectorName', function(req, res, next) {
+  var query = {
+      sector: req.params.sectorName
+  }
+  connector.find( query, function(docs){
+    console.log(docs)
+    res.render('sector', {
+        title: query.sector,
+        page: "filters",
+        curentSector: query.sector,
+        allSensors: docs
+    });
+  });
+});
+
 router.get('/:sectorName/:sensorName', function(req, res) {
     sensorName = req.params.sensorName;
 
@@ -17,6 +32,7 @@ router.get('/:sectorName/:sensorName', function(req, res) {
         console.log("------------------------------")
         res.render('detail', {
             title: 'homepage2',
+            page: "detail",
             allSensors: docs,
             sensor: filterOnSensor(docs)
         });

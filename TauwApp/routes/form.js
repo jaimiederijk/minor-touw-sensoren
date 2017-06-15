@@ -28,13 +28,21 @@ var logFields = {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('form', { title: 'Formulier', filters: filters});
+    res.render('form', {
+        title: 'Formulier',
+        page: "form",
+        filters: filters
+    });
 });
 
 router.post('/', function(req, res){
     data.checkForNewData(req, res); //Check for new form data.
     log.init(req, res); // Log all the form inputs.
-    res.render('form', { title: 'Formulier', filters: filters });
+    res.render('form', {
+        title: 'Formulier',
+        page: "form",
+        filters: filters
+    });
 });
 
 //  Made by Colin Dörr
