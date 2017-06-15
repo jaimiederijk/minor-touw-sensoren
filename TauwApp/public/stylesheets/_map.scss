@@ -5,6 +5,7 @@
 .map {
   width: 100%;
 
+
   .full-map {
     width: 100%;
     position: relative;
@@ -16,7 +17,8 @@
     a {
       display: inline-block;
       position: relative;
-
+      transition: 1s;
+      left:0;
       img {
         height: 100vw;
         width: auto;
@@ -26,10 +28,13 @@
         text-align: center;
       }
     }
+    .selectedSector {
+
+    }
     button {
       position: absolute;
       top: 40%;
-      left: 0%;
+      right: 0%;
       background-image: url(/images/arrow.svg);
       background-color: transparent;
       border-style: none;
@@ -37,20 +42,21 @@
       width: 3rem;
       background-repeat: no-repeat;
       background-size: contain;
-      -webkit-transform: rotate(90deg);
-      -moz-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-      -o-transform: rotate(90deg);
-      transform: rotate(90deg);
-    }
-    button:first-of-type {
+
       -webkit-transform: rotate(-90deg);
       -moz-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
       -o-transform: rotate(-90deg);
       transform: rotate(-90deg);
-      left: auto;
-      right: 0%;
+    }
+    button:first-of-type {
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+      left: 0%;
+      right: auto;
 
     }
     .satellite {
@@ -78,6 +84,9 @@
     .hide {
       display: none !important;
     }
+  }
+  .removedScroll {
+    overflow-x: hidden;
   }
 
 }
