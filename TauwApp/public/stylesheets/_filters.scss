@@ -192,9 +192,9 @@
 // }
 
 a#filter-button {
-  display: none;
-  @include breakpoint(mobileonly) {
-    display: inline-block;
+  display: inline-block;
+  @include breakpoint(laptop) {
+    display: none;
   }
   position: absolute;
   bottom: 0;
@@ -211,6 +211,19 @@ aside {
   background-color: $color_background;
   box-sizing: border-box;
   width: 25%;
+  height: 90vh;
+  padding: 2.5em;
+  color: #f5f5f5;
+  overflow-x: scroll;
+  @include breakpoint(phablet) {
+    float: none;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+  }
   @include breakpoint(mobileonly) {
     float: none;
     display: none;
@@ -218,10 +231,8 @@ aside {
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 100%;
+    z-index: 9999;
   }
-  padding: 2.5em;
-  color: #f5f5f5;
   #close-filter {
     background-image: url('/images/close.svg');
     background-repeat: no-repeat;
