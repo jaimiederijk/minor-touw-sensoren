@@ -12,18 +12,18 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/:sectorName', function(req, res, next) {
-  var query = {
-      sector: req.params.sectorName
-  }
-  connector.find( query, function(docs){
-    console.log(docs)
-    res.render('sector', {
-        title: query.sector,
-        page: "filters",
-        curentSector: query.sector,
-        allSensors: docs
-    });
-  });
-});
+// router.get('/:sectorName', function(req, res, next) {
+//   var query = {
+//       sector: req.params.sectorName
+//   }
+//   connector.find( query, function(docs){
+//     console.log(docs)
+//     res.render('sector', {
+//         title: query.sector,
+//         page: "filters",
+//         curentSector: query.sector,
+//         allSensors: docs
+//     });
+//   });
+// });
 module.exports = {router: router};
