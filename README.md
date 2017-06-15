@@ -66,7 +66,7 @@ Currently we are also working on a databse, connected to a online form, where in
 ## Personal development plan (will become English soon)
 Binnen dit project is per persoon een ontwikkelplan opgesteld dat gedurende dit project zal worden doorlopen.
 
-### Colin Dörr – 500704926
+### Colin Dörr
 <details>
 <h4>Korte intro</h4>
 <p>In 2014 ben ik begonnen met de opleiding Communication en Multimedia Design (CMD). In eerste instantie wilde ik geen Front-end Developer worden, maar sinds dien, ben ik mijzelf steeds meer gaan verdiepen in de Front-end. Met als uiteindelijke doel, om een zo goed mogelijke Front-end Developer te worden, die niet alleen de basis kent, maar die daarnaast ook nog diverse tools tot zijn beschikking heeft, waarmee hij tot het best mogelijke eind product kan komen. Waardoor mijn producten niet alleen op dat moment, maar ook in de toekomst eenvoudig gebruikt en/of aangepast kan worden. </p>
@@ -88,7 +88,7 @@ Binnen dit project is per persoon een ontwikkelplan opgesteld dat gedurende dit 
 </details>
 
 
-### Nooroel Imamdi - 500706701
+### Nooroel Imamdi
 <details>
 
 #### Korte intro
@@ -101,20 +101,36 @@ In de meesterproef is het de bedoeling om tenminste vier vakken uit de minor toe
 - Performance Matters
 - Browser Technologies
 
-**Web App from Scratch**
+##### Web App from Scratch
 Bij dit onderdeel is het van belang dat **JavaScript** wordt toegepast volgens de standaarden van het vak *Web App from Scratch*. Het plan is om deze toe te passen op de *map* die wordt aangelegd in de interface.
 
-**CSS to the Rescue**
+##### CSS to the Rescue
 Het toepassen van CSS zal plaatsvinden bij het omzetten van het Visueel Design naar een werkend prototype.
 
-**Performance Matters**
+##### Performance Matters
 Het onderdeel *Performance Matters* zal worden voldaan door een service worker toe te voegen. Hiermee is het mogelijk om de website ook in offline-modus te blijven bezoekers als een gebruiker al eerder op de website is geweest.
 
-**Browser Technologies**
+##### Browser Technologies
 Dit onderdeel wordt toegepast door al bij het coderen ervoor te zorgen dat de code die geschreven wordt op meerdere web browsers wordt ondersteund en al dan niet een fallback wordt gemaakt.
+
+###### Documentation
+
+**part: filter**
+The filter-part contains the option to folding out relevant content. `html5` makes this possible by the `details`-tag. The problem that occurred is that this tag is not supported in `Internet Explorer` and `Microsoft Edge` while the main users use a Microsoft-machine with these browsers.
+
+![HTML5 details support by Can I Use](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/readme-files/html5-details-tag-support-caniuse.png?raw=true)
+*Can I Use* about support `details` in webbrowsers
+
+I solved this with `CSS` by using the `checked`-selector to display an unordered list with the results. Example:
+```
+input:checked + ul {}
+```
+
+With this method we don't need to use JavaScript and the support of this method starts from `Internet Explorer` 10.
+
 </details>
 
-### Jaimie de Rijk - 500698514
+### Jaimie de Rijk
 
 <details>
 
