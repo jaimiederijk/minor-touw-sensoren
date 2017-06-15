@@ -88,8 +88,8 @@ Binnen dit project is per persoon een ontwikkelplan opgesteld dat gedurende dit 
 </details>
 
 
-### Nooroel Imamdi
-500706701
+### Nooroel Imamdi - 500706701
+<details>
 
 #### Korte intro
 Ik ben in 2014 tot de opleiding *Communication and Multimedia Design* (CMD) toegetreden als Visual Interface Designer. In de loop van de tijd ben ik me gaan richten op de techniek, met als doel om diversiteit te creëren in mijn werkzaamheden als CMD-er. De minor *Webdevelopment* was voor mij de uitgelezen mogelijkheid om verder tot verdieping over te gaan in code-land.
@@ -112,7 +112,39 @@ Het onderdeel *Performance Matters* zal worden voldaan door een service worker t
 
 **Browser Technologies**
 Dit onderdeel wordt toegepast door al bij het coderen ervoor te zorgen dat de code die geschreven wordt op meerdere web browsers wordt ondersteund en al dan niet een fallback wordt gemaakt.
+</details>
 
+### Jaimie de Rijk - 500698514
+
+<details>
+
+#### Korte intro
+Ik ben een vierde jaars CMDer die zich focust op webdevelopment. Vorig jaar heb ik mij bij de meesterproef te veel gefocust op backend development. Dus bij deze herkansing zal ik mij veel meer richten op frontend.
+
+De vier vakken die ik wil toepassen:
+
+- Web App from Scratch
+- CSS to the Rescue
+- Performance Matters
+- Browser Technologies
+- real time web
+
+**Web App from Scratch**
+Interactie bouwen volgens de standaarden van het vak *Web App from Scratch* met behulp van javascript.
+
+**CSS to the Rescue**
+CSS die ik me kan herineren uit de minor toepassen op het werkende prototype.
+
+**Performance Matters**
+Tijdens het coderen bewust zijn van performance. En andere trucjes toepassen om snelheid te behouden.
+
+**Browser Technologies**
+Wij bouwen de app volgens progressive enhancement principe op.
+
+**Realtime web ?**
+Realtime resultaten van filter en zoek acties
+
+</details>
 
 ## Installation
 ### Stap 1: Cloning
