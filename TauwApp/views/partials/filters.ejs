@@ -2,12 +2,63 @@
 <aside id="filter">
 
     <form>
-      
+
       <h2>Filter</h2>
 
       <a href="" title="sluiten" class="close-filter" id="close-filter"></a>
 
-      <details open>
+      <fieldset>
+        <label for="scale">Schaal<span class="filter-arrow"></span></label><input type="checkbox" id="scale" name="scale" value="schaal" class="filter-dropdown" />
+        <ul>
+          <li><label><input type="checkbox" name="manual" value="handmatig" />Handmatig</label></li>
+          <li><label><input type="checkbox" name="local" value="lokaal" />Lokaal</label></li>
+          <li><label><input type="checkbox" name="regional" value="regionaal" />Regionaal</label></li>
+          <li><label><input type="checkbox" name="provincial" value="provinciaal" />Provinciaal</label></li>
+          <li><label><input type="checkbox" name="rural" value="landelijk" />Landelijk</label></li>
+          <li><label><input type="checkbox" name="international" value="internationaal" />Internationaal</label></li>
+
+        </ul>
+      </fieldset>
+      <fieldset>
+        <label for="resolution">Resolutie<span class="filter-arrow"></label><input type="checkbox" id="resolution" name="resolution" value="resolutie" class="filter-dropdown" />
+        <ul>
+          <li><label><input type="checkbox" name="0" value="0" />0</label></li>
+          <li><label><input type="checkbox" name="1" value="1" />1</label></li>
+          <li><label><input type="checkbox" name="2" value="2" />2</label></li>
+          <li><label><input type="checkbox" name="3" value="3" />3</label></li>
+          <li><label><input type="checkbox" name="4" value="4" />4</label></li>
+          <li><label><input type="checkbox" name="5" value="5" />5</label></li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <label for="accuracy">Nauwkeurigheid<span class="filter-arrow"></label><input type="checkbox" id="accuracy" name="accuracy" value="nauwkeurigheid" class="filter-dropdown" />
+        <ul>
+          <li><label><input type="checkbox" name="not-accuracy" value="niet nauwkeurig" />Niet nauwkeurig</label></li>
+          <li><label><input type="checkbox" name="moderately-accurate" value="matig nauwkeurig" />Matig nauwkeurig</label></li>
+          <li><label><input type="checkbox" name="reasonable-accurate" value="redelijk nauwkeurig" />Redelijk nauwkeurig</label></li>
+          <li><label><input type="checkbox" name="very--accurate" value="zeer nauwkeurig" />Zeer nauwkeurig</label></li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <label for="interval">Tijdreeks<span class="filter-arrow"></label><input type="checkbox" id="interval" name="interval" value="tijdreeks" class="filter-dropdown" />
+        <ul>
+          <li><label><input type="checkbox" name="years" value="Jaren" />Jaren</label></li>
+          <li><label><input type="checkbox" name="weeks" value="Weken" />Weken</label></li>
+          <li><label><input type="checkbox" name="hours" value="Uren" />Uren</label></li>
+          <li><label><input type="checkbox" name="minutes" value="Minuten" />Minuten</label></li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <label for="innovation">Innovatie<span class="filter-arrow"></label><input type="checkbox" id="innovation" name="innovation" value="innovatie" class="filter-dropdown" />
+        <ul>
+          <li><label><input type="checkbox" name="little-evidence" value="Weinig bewijs" />Weinig bewijs</label></li>
+          <li><label><input type="checkbox" name="scientific-evidence" value="Wetenschappelijk bewezig" />Wetenschappelijk bewezig</label></li>
+          <li><label><input type="checkbox" name="applied-in-projects" value="In projecten toegepast" />In projecten toegepast</label></li>
+          <li><label><input type="checkbox" name="proven-technique" value="Bewezen techniek" />Bewezen techniek</label></li>
+        </ul>
+      </fieldset>
+
+      <!-- <details open>
         <summary>Schaal</summary>
         <label><input type="radio" name="scale" value="Handmatig" />Handmatig</label>
         <label><input type="radio" name="scale" value="Lokaal" />Lokaal</label>
@@ -45,7 +96,7 @@
         <label><input type="radio" name="innovation" value="Alleen wetenschappelijk bewezig" />Alleen wetenschappelijk bewezig</label>
         <label><input type="radio" name="innovation" value="Reeds in enkele projecten toegepast" />Reeds in enkele projecten toegepast</label>
         <label><input type="radio" name="innovation" value="Bewezen techniek" />Bewezen techniek</label>
-      </details>
+      </details> -->
 
       <input type="submit" class="close-filter" value="Toepassen" />
 

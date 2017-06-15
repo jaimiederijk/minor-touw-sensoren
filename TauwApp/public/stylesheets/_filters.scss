@@ -206,6 +206,50 @@ a#filter-button {
   text-decoration: none;
   color: $color_pink;
 }
+aside#filter {
+  fieldset {
+    border: 0;
+    margin: 0 0 1.5em;
+    padding: 0;
+    > input[type="checkbox"] {
+      -webkit-appearance: none;
+      -moz-appearance:    none;
+      appearance:         none;
+    }
+    > label {
+      position: relative;
+      margin: 0;
+      padding-bottom: 1em;
+      border-bottom: 1px solid #047d9e;
+      .filter-arrow {
+        position: absolute;
+        top: .3rem;
+        right: .5em;
+        background-image: url(/images/arrow.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+      }
+    }
+  }
+  input.filter-dropdown + ul {
+    display: none;
+  }
+  input.filter-dropdown:checked + ul {
+    display: block;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    line-height: 2.5;
+    input {
+      margin-right: 1em;
+    }
+  }
+}
 aside {
   float: left;
   background-color: $color_background;
