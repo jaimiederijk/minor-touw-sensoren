@@ -113,16 +113,20 @@ Het onderdeel *Performance Matters* zal worden voldaan door een service worker t
 ##### Browser Technologies
 Dit onderdeel wordt toegepast door al bij het coderen ervoor te zorgen dat de code die geschreven wordt op meerdere web browsers wordt ondersteund en al dan niet een fallback wordt gemaakt.
 
-###### Documentatie
+###### Documentation
 
-**Onderdeel: filter**
-Het onderdeel *filter* bevat opties die uitklapbaar zijn. Binnen `html5` is dat op te lossen met de tag `details`. Deze zorgt ervoor dat je
-
-The filter-part contains the option to folding out relevant content. `html5` makes this possible by the `details`-tag. The problem that occurred is that this tag is not supported in `Internet Explorer` and `Microsoft Edge`.
+**part: filter**
+The filter-part contains the option to folding out relevant content. `html5` makes this possible by the `details`-tag. The problem that occurred is that this tag is not supported in `Internet Explorer` and `Microsoft Edge` while the main users use a Microsoft-machine with these browsers.
 
 ![HTML5 details support by Can I Use](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/readme-files/html5-details-tag-support-caniuse.png?raw=true)
-HTML5
+*Can I Use* about support `details` in webbrowsers
 
+I solved this with `CSS` by using the `checked`-selector to display an unordered list with the results. Example:
+```
+input:checked + ul {}
+```
+
+With this method we don't need to use JavaScript and the support of this method starts from `Internet Explorer` 10.
 
 </details>
 
