@@ -13,41 +13,46 @@ router.get('/:sectorName', function(req, res, next) {
         title: query.sector,
         page: "filters",
         curentSector: query.sector,
-        allSensors: docs
+        sensors: docs
     });
   });
 });
 
-router.get('/:sectorName/:sensorName', function(req, res) {
-    sensorName = req.params.sensorName;
-
+router.get('/:sectorName/:branchName', function(req, res) {
     var query = {
-          sector: req.params.sectorName,
-        //   name: req.params.sensorName
+        sector: req.params.sectorName,
+        branch: req.params.branchName
     }
     connector.find( query, function(docs){
         console.log("DOCS")
         console.log("------------------------------")
         console.log(docs)
         console.log("------------------------------")
-        res.render('detail', {
-            title: 'homepage2',
+        res.render('branch', {
+            title: query.branch,
             page: "detail",
-            allSensors: docs,
-            sensor: filterOnSensor(docs)
+            allSensors: docs
         });
       });
 });
 
-function filterOnSensor(object, item){
-    for (i = 0; i < object.length; i++) {
-        if (object[i].name == sensorName){
-            console.log("It's the same");
-            console.log(object[i])
-            return object[i];
-        }
-    }
-}
+router.get('/:sectorName/:branchName/:sensorName', function(req, res) {
+    sensorName = req.params.sensorName;
+    console.log(sensorName);
 
+    var query = {
+          sector: req.params.sectorName,
+          branch: req.params.branchName,
+          name: req.params.sensorName
+    }
+    console.log("/:sectorName/:branchName/:sensorName")
+    connector.find( query, function(docs){
+        res.render('detail', {
+            title: query.sensor,
+            page: "detail",
+            sensor: docs[0]
+        });
+      });
+});
 
 module.exports = {router: router};
