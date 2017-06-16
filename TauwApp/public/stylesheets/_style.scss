@@ -1,12 +1,15 @@
 @import 'common/_breakpoint';
 @import 'common/_colors';
+@import 'common/_fonts';
 
 body{
     padding: 1em;
     margin: 0;
-    font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
+    font-family: 'open_sansregular', Helvetica, Arial, sans-serif;
+    font-size: 1em;
     box-sizing: border-box;
     width: 100%;
+    line-height: 1.5;
 }
 main,
 header,
@@ -135,43 +138,43 @@ img#output{
 .progressbarDetails{
     margin: 0.5em 0 1em 0.5em;
 }
-body {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #0099CB;
-}
+// body {
+//     display: flex;
+//     flex-wrap: wrap;
+//     background-color: #0099CB;
+// }
 
-aside {
-    width: 30%;
-    max-height: 100%;
-    overflow-y: scroll;
-    overflow-y: auto;
-}
-aside form {
-    margin: 0 0 3em 0;
-}
-aside form label {
-    color: #09526c;
-    margin: 0.5em 0;
-    font-size: 1.2em;
-    font-weight: 600;
-}
-aside form label[for=search] {
-    font-size: 0.9em;
-    font-weight: 600;
-}
-aside input[name=search] {
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 0.2em;
-    border: 0.1em solid #ccc;
-    background-color: white;
-    background-image: url('/images/search.svg');
-    background-repeat: no-repeat;
-    background-position: 0.2em;
-    padding: 0.5em 0.5em 0.5em 3em;
-    transition: width 0.4s ease-in-out;
-}
+// aside {
+//     width: 30%;
+//     max-height: 100%;
+//     overflow-y: scroll;
+//     overflow-y: auto;
+// }
+// aside form {
+//     margin: 0 0 3em 0;
+// }
+// aside form label {
+//     color: #09526c;
+//     margin: 0.5em 0;
+//     font-size: 1.2em;
+//     font-weight: 600;
+// }
+// aside form label[for=search] {
+//     font-size: 0.9em;
+//     font-weight: 600;
+// }
+// aside input[name=search] {
+//     width: 100%;
+//     box-sizing: border-box;
+//     border-radius: 0.2em;
+//     border: 0.1em solid #ccc;
+//     background-color: white;
+//     background-image: url('/images/search.svg');
+//     background-repeat: no-repeat;
+//     background-position: 0.2em;
+//     padding: 0.5em 0.5em 0.5em 3em;
+//     transition: width 0.4s ease-in-out;
+// }
 input[name=search]:focus,
 input[name=search]:hover  {
     width: 100%;

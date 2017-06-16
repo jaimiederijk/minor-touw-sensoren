@@ -2,6 +2,8 @@
 @import 'common/_colors';
 body{
     justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
 }
 main {
     width: 100% !important;
