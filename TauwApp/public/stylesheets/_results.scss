@@ -2,6 +2,8 @@
 @import 'common/_colors';
 body{
     justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
 }
 main {
     width: 100% !important;
@@ -31,14 +33,27 @@ main {
                     margin-left: 1rem;
                     flex: 1;
                  }
-                span.arrow {
+                span.arrow{
                     display: flex;
                     width: 1em;
                     height: 1em;
                     background-image: url("/images/arrow.svg");
                     background-repeat: no-repeat;
                     background-size: contain;
+                }
+                span.down{
+                    transition: transform  0.5s ease;
+                    -ms-transform: rotate(0deg);
+                    -webkit-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                }
+                 span.up{
+                     transition: transform  0.5s ease;
+                     -ms-transform: rotate(180deg);
+                     -webkit-transform: rotate(180deg);
+                     transform: rotate(180deg);
                  }
+
             }
             input[type=checkbox]{
                 position: relative;

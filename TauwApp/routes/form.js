@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var appJS = require('../app.js');
 var filters = appJS.filters;
+var connector  = require('../lib/connector');
 
 
 //  Global selectors
@@ -28,10 +29,14 @@ var logFields = {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('form', {
-        title: 'Formulier',
-        page: "form",
-        filters: filters
+    connector.find2( function(){
+      console.log(docs)
+      res.render('form', {
+          title: 'Form',
+          page: "form",
+          filters: filters,
+        //   allSettings: docs
+      });
     });
 });
 
