@@ -88,6 +88,11 @@
   .removedScroll {
     overflow-x: hidden;
   }
+  @include breakpoint(mobile) {
+    .full-map a img {
+      height: 41vw;
+    }
+  }
 
 }
 

@@ -11,18 +11,15 @@
       // declare html elements
       var init = function () {
         interaction.createEventListeners();
-        interaction.createArrowNav();
+        if (htmlElements.fullMap.clientWidth < 680) {
+            interaction.createArrowNav();
+        }
+
       };
 
       var htmlElements = {
         fullMap: document.querySelector('.full-map'),
         allSections: document.querySelectorAll('.full-map > a'),
-        rural : document.getElementById('rural'),
-
-        industrial : document.getElementById('industrial'),
-
-        urban : document.getElementById('urban'),
-
         // satelliteSensorRural : document.querySelector('#rural .satellite'),
         // droneSensorRural : document.querySelector('#rural .drone'),
         // satelliteSensorIndustrial : document.querySelector('#industrial .satellite'),
