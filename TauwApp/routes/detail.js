@@ -7,8 +7,7 @@ router.get('/:sectorName', function(req, res, next) {
   var query = {
       sector: req.params.sectorName
   }
-  connector.find( query, function(docs){
-    console.log(docs)
+  connector.find.findSensors( query, function(docs){
     res.render('sector', {
         title: query.sector,
         page: "filters",
@@ -21,15 +20,18 @@ router.get('/:sectorName', function(req, res, next) {
 router.get('/:sectorName/:sensorName', function(req, res) {
     sensorName = req.params.sensorName;
 
+    // EXAMPLE FOR Second connector !!!!!
+    var query2 = {};
+    var field = { branch: 1 };
+    connector.find.findSettings(query2, field, function(docs){
+      console.log("branch");
+      console.log(docs);
+    })
+
     var query = {
-          sector: req.params.sectorName,
-        //   name: req.params.sensorName
+          sector: req.params.sectorName
     }
-    connector.find( query, function(docs){
-        console.log("DOCS")
-        console.log("------------------------------")
-        console.log(docs)
-        console.log("------------------------------")
+    connector.find.findSensors( query, function(docs){
         res.render('detail', {
             title: 'homepage2',
             page: "detail",
@@ -42,8 +44,6 @@ router.get('/:sectorName/:sensorName', function(req, res) {
 function filterOnSensor(object, item){
     for (i = 0; i < object.length; i++) {
         if (object[i].name == sensorName){
-            console.log("It's the same");
-            console.log(object[i])
             return object[i];
         }
     }
