@@ -4,7 +4,6 @@
 .map {
   width: 100%;
 
-
   .full-map {
     width: 100%;
     position: relative;
@@ -95,120 +94,6 @@
 
 }
 
-
-
-// #landelijk-info h1,
-// #industrial-info h1,
-// #urban-info h1  {
-//   font-family: 'open_sansitalic';
-//   font-style: normal;
-//   margin-bottom: .7em;
-// }
-// #landelijk:hover,
-// #industrial:hover,
-// #urban:hover {
-//   border: 2px solid #ec008c;
-// }
-
-// #landelijk {
-//   position: absolute;
-//   right: 0;
-//   bottom: 5em;
-//   display: inline-block;
-//   width: 16em;
-//   width: 33%;
-//   height: 14em;
-// }
-// #landelijk-info {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   display: inline-block;
-//   background-color: #ffffff;
-//   width: 25em;
-//   padding: 2em;
-//   -webkit-box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-//   -moz-box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-//   box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-// }
-
-// #industrial {
-//   position: absolute;
-//   left: 0;
-//   bottom: 3em;
-//   display: inline-block;
-//   width: 19em;
-//   height: 20em;
-// }
-// #industrial-info {
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   display: inline-block;
-//   background-color: #ffffff;
-//   width: 25em;
-//   padding: 2em;
-//   -webkit-box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-//   -moz-box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-//   box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-// }
-// #urban {
-//   position: absolute;
-//   right: 17em;
-//   bottom: 3em;
-//   display: inline-block;
-//   width: 7em;
-//   height: 17em;
-// }
-// #urban-info {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   display: inline-block;
-//   background-color: #ffffff;
-//   width: 25em;
-//   padding: 2em;
-//   -webkit-box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-//   -moz-box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-//   box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-// }
-// .close {
-//   position: absolute;
-//   top: .5em;
-//   right: .5em;
-//   display: inline-block;
-//   text-align: center;
-//   width: 2em;
-//   height: 2em;
-//   line-height: 2em;
-//   text-decoration: none;
-//   font-size: 1.2em;
-// }
-// select.filter-dropdown {
-//   background-color: #ffffff;
-//   background-image: url('/images/dropdown-select.png');
-//   background-repeat: no-repeat;
-//   background-position: center right;
-//   background-size: 1.5em .5em;
-//   display: inline-block;
-//   padding: 1em 2.8em 1em 1.5em;
-//   font-size: .8em;
-//   -webkit-appearance: button;
-//   -moz-appearance:    button;
-//   appearance:         button;
-//   border: none;
-//   -webkit-border-radius: 0;
-//   -moz-border-radius: 0;
-//   border-radius: 0;
-//   -webkit-box-shadow: 2px 2px 0px -1px rgba(0,0,0,0.1);
-//   -moz-box-shadow: 2px 2px 0px -1px rgba(0,0,0,0.1);
-//   box-shadow: 2px 2px 0px -1px rgba(0,0,0,0.1);
-// }
-// .area-active {
-//   border: 2px solid #ec008c;
-// }
-
-//
 /* animaties */
 .expandUp{
   animation-name:expandUp;
