@@ -12,7 +12,7 @@
                         <% allSensors.forEach(function(sensorID) { %>
                                 <% sensorID.branch.forEach(function(sensorBranch) { %>
                                     <%if (sensorBranch == branchID) { %>
-                                            <a href="/details/<%= allSensors[0].sector %>/Bodem/<%= sensorID.name %>">
+                                            <a href="/details/<%= allSensors[0].sector %>/<%= branchID %>/<%= sensorID.name %>">
                                                 <li class="listItem">
                                                     <h4> <%= sensorID.name %> </h4>
                                                     <p> <%= sensorID.summary_small %> </p>
