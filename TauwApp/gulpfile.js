@@ -25,7 +25,7 @@ gulp.task('start-mongo', runCommand('mongod --dbpath ./mongodb/data/'));
 gulp.task('stop-mongo', runCommand('mongo --eval "use admin; db.shutdownServer();"'));
 gulp.task('create-db', runCommand('mongo tauw --eval "db.getCollectionNames()"'));
 gulp.task('import-data', runCommand('mongoimport --db tauw --collection sensors --drop --file ./sensorseed.json'));
-gulp.task('import-data2', runCommand('mongoimport --db tauw --collection tauwapp --drop --file ./TauwSensoren.json'));
+gulp.task('import-data2', runCommand('mongoimport --db tauw --collection settings --drop --file ./settingsseed.json'));
 gulp.task('drop-collection', runCommand('mongo tauw --eval "db.sensors.drop()"'));
 
 gulp.task('setup-db',['create-data-folder','start-mongo','create-db','import-data']);

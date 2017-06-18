@@ -1,196 +1,97 @@
 @import 'common/_breakpoint';
 @import 'common/_colors';
 
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #0099cc;
-}
-h1 {
-  text-align: left;
-  color: #0a5169;
-}
-p {
-  font-family: 'open_sansregular', Helvetica, Arial, sans-serif;
-  color: #313131;
-  text-align: left;
-  font-style: normal;
-  line-height: 1.5;
-}
-span {
-  font-style: normal;
-}
-header {
-  margin-top: 2rem;
-}
-a.logo {
-  position: absolute;
-  left: 4em;
-  bottom: 3em;
-  // background-image: url('/images/tauw_logo.png');
-  // background-repeat: no-repeat;
-  // background-size: 100%;
-  width: 9em;
-  height: 2.8em;
-  display: inline-block;
-}
 .map {
-  float: left;
-  position: relative;
-  width: 69%;
-  width: 69vw;
-  height: 100%;
-  height: 100vh;
-  text-align: center;
-  background-color: #f0f0eb;
-}
-.full-map {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-	margin: auto;
-  background-image: url('/images/map.svg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  display: inline-block;
-  width: 80%;
-  height: 24.4em;
-}
-#landelijk-info h1,
-#industrial-info h1,
-#urban-info h1  {
-  font-family: 'open_sansitalic';
-  font-style: normal;
-  margin-bottom: .7em;
-}
-#landelijk:hover,
-#industrial:hover,
-#urban:hover {
-  border: 2px solid #ec008c;
-}
+  width: 100%;
 
-#landelijk {
-  position: absolute;
-  right: 0;
-  bottom: 5em;
-  display: inline-block;
-  width: 16em;
-  width: 33%;
-  height: 14em;
-}
-#landelijk-info {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: inline-block;
-  background-color: #ffffff;
-  width: 25em;
-  padding: 2em;
-  -webkit-box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-  -moz-box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-  box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-}
-#satellite {
-  position: absolute;
-  top: .5em;
-  right: .5em;
-  background-image: url('/images/satellite.svg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  width: 4em;
-  height: 4em;
-  display: inline-block;
-}
-#drone {
-  position: absolute;
-  top: .9em;
-  left: 1.2em;
-  background-image: url('/images/drone.svg');
-  background-repeat: no-repeat;
-  background-size: 100%;
-  width: 3em;
-  height: 3em;
-  display: inline-block;
-}
-#industrial {
-  position: absolute;
-  left: 0;
-  bottom: 3em;
-  display: inline-block;
-  width: 19em;
-  height: 20em;
-}
-#industrial-info {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: inline-block;
-  background-color: #ffffff;
-  width: 25em;
-  padding: 2em;
-  -webkit-box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-  -moz-box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-  box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-}
-#urban {
-  position: absolute;
-  right: 17em;
-  bottom: 3em;
-  display: inline-block;
-  width: 7em;
-  height: 17em;
-}
-#urban-info {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: inline-block;
-  background-color: #ffffff;
-  width: 25em;
-  padding: 2em;
-  -webkit-box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-  -moz-box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-  box-shadow: 3px 3px 0px -1px rgba(0,0,0,0.2);
-}
-.close {
-  position: absolute;
-  top: .5em;
-  right: .5em;
-  display: inline-block;
-  text-align: center;
-  width: 2em;
-  height: 2em;
-  line-height: 2em;
-  text-decoration: none;
-  font-size: 1.2em;
-}
-select.filter-dropdown {
-  background-color: #ffffff;
-  background-image: url('/images/dropdown-select.png');
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-size: 1.5em .5em;
-  display: inline-block;
-  padding: 1em 2.8em 1em 1.5em;
-  font-size: .8em;
-  -webkit-appearance: button;
-  -moz-appearance:    button;
-  appearance:         button;
-  border: none;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  -webkit-box-shadow: 2px 2px 0px -1px rgba(0,0,0,0.1);
-  -moz-box-shadow: 2px 2px 0px -1px rgba(0,0,0,0.1);
-  box-shadow: 2px 2px 0px -1px rgba(0,0,0,0.1);
-}
-.area-active {
-  border: 2px solid #ec008c;
-}
-.hide {
-  display: none !important;
+  .full-map {
+    width: 100%;
+    position: relative;
+    background-color: $color_lightbackground;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    a {
+      display: inline-block;
+      position: relative;
+      transition: 1s;
+      left:0;
+      img {
+        height: 100vw;
+        width: auto;
+      }
+      span {
+        display: block;
+        text-align: center;
+      }
+    }
+    .selectedSector {
+
+    }
+    button {
+      position: absolute;
+      top: 40%;
+      right: 0%;
+      background-image: url(/images/arrow.svg);
+      background-color: transparent;
+      border-style: none;
+      height: 3rem;
+      width: 3rem;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+    }
+    button:first-of-type {
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+      left: 0%;
+      right: auto;
+
+    }
+    .satellite {
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+      background-image: url('/images/satellite.svg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 4rem;
+      height: 4rem;
+      display: inline-block;
+    }
+    .drone {
+      position: absolute;
+      top: .9rem;
+      left: 1.2rem;
+      background-image: url('/images/drone.svg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 3rem;
+      height: 3rem;
+      display: inline-block;
+    }
+    .hide {
+      display: none !important;
+    }
+  }
+  .removedScroll {
+    overflow-x: hidden;
+  }
+  @include breakpoint(mobile) {
+    .full-map a img {
+      height: 41vw;
+    }
+  }
+
 }
 
 /* animaties */
