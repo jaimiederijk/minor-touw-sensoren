@@ -12,7 +12,7 @@
          <th>Wat</th>
          <% sensor.tags.forEach(function(tagElement) { %>
              <td><%= tagElement %></td>
-         <% }) %>-
+         <% }) %>
        </tr>
        <tr>
          <th>Niveau</th>
@@ -30,37 +30,37 @@
    </div>
    <div id="selection_info_criteria">
      <table>
-     <% if(sensor.resolution !== "n.v.t." && sensor.resolution !== "undefined" ) { %>      
+     <% if(sensor.resolution !== "n.v.t." && sensor.resolution !== "undefined" && sensor.resolution !== "" ) { %>
         <tr>
           <th>Resolutie</th>
           <td><%= sensor.resolution %></td>
         </tr>
      <% } %>
-     <% if(sensor.accuracy !== "n.v.t." && sensor.accuracy !== "undefined" ) { %>
+     <% if(sensor.accuracy !== "n.v.t." && sensor.accuracy !== "undefined" && sensor.accuracy !== "" ) { %>
         <tr>
           <th>Acuraatheid</th>
           <td><%= sensor.accuracy %></td>
         </tr>
      <% } %>
-     <% if(sensor.interval !== "n.v.t." && sensor.interval !== "undefined" ) { %>
+     <% if(sensor.interval !== "n.v.t." && sensor.interval !== "undefined" && sensor.interval !== "" ) { %>
         <tr>
           <th>interval</th>
           <td><%= sensor.interval %></td>
         </tr>
      <% } %>
-     <% if(sensor.duration !== "n.v.t." && sensor.duration !== "undefined" ) { %>
+     <% if(sensor.duration !== "n.v.t." && sensor.duration !== "undefined" && sensor.duration !== "" ) { %>
         <tr>
           <th>tijdsduur</th>
           <td><%= sensor.duration %></td>
         </tr>
      <% } %>
-     <% if(sensor.innovation !== "n.v.t." && sensor.innovation !== "undefined" ) { %>
+     <% if(sensor.innovation !== "n.v.t." && sensor.innovation !== "undefined" && sensor.innovation !== "" ) { %>
         <tr>
           <th>innovatie</th>
           <td><%= sensor.innovation %></td>
         </tr>
      <% } %>
-     <% if(sensor.costs !== "n.v.t." && sensor.costs !== "undefined" ) { %>
+     <% if(sensor.costs !== "n.v.t." && sensor.costs !== "undefined" && sensor.costs !== "" ) { %>
         <tr>
           <th>kosten</th>
           <td><%= sensor.costs %></td>

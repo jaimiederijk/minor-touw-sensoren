@@ -86,9 +86,46 @@
   .removedScroll {
     overflow-x: hidden;
   }
-  @include breakpoint(mobile) {
+}
+@include breakpoint(mobile) {
+  .map {
+    width: 74%;
+    float: left;
+
     .full-map a img {
       height: 41vw;
+    }
+  }
+
+}
+@include breakpoint(tablet) {
+  .map {
+
+    .full-map {
+      display: flex;
+      justify-content: center;
+
+      a img {
+        height: 20rem;
+      }
+    }
+  }
+
+}
+@include breakpoint(laptop) {
+  .map {
+
+    .full-map a img {
+      height: 22rem;
+    }
+  }
+
+}
+@include breakpoint(desktop) {
+  .map {
+
+    .full-map a img {
+      height: 26rem;
     }
   }
 
