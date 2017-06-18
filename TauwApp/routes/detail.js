@@ -3,6 +3,7 @@ var router = express.Router();
 var connector  = require('../lib/connector');
 var sensorName =""
 
+
 router.get('/:sectorName', function(req, res, next) {
   var query = {
       sector: req.params.sectorName

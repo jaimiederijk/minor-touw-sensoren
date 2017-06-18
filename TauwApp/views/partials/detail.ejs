@@ -1,23 +1,18 @@
 <section class="detail">
 
- <section>
-   <header>
-     <h2><%= sensor.name %></h2>
-     <img src="/images/xrf.jpg" alt="sensor image">
-     <article class="sensor_discription">
-       <h2>Beschrijving</h2>
-       <p><%= sensor.summary_big %></p>
-     </article>
-   </header>
- </section>
+ <header>
+   <h2><%= sensor.name %></h2>
+ </header>
+
  <section id="selection_info">
+   <img src="/images/xrf.jpg" alt="sensor image">
    <div id="selection_info_what">
      <table>
        <tr>
          <th>Wat</th>
          <% sensor.tags.forEach(function(tagElement) { %>
              <td><%= tagElement %></td>
-         <% }) %>
+         <% }) %>-
        </tr>
        <tr>
          <th>Niveau</th>
@@ -34,82 +29,48 @@
      </table>
    </div>
    <div id="selection_info_criteria">
-     <% if(sensor.resolution !== "n.v.t." ) { %>
-      <table>
+     <table>
+     <% if(sensor.resolution !== "n.v.t." && sensor.resolution !== "undefined" ) { %>      
         <tr>
           <th>Resolutie</th>
           <td><%= sensor.resolution %></td>
         </tr>
-      </table>
      <% } %>
-     <table>
-       <tr>
-         <td></td>
-       </tr>
-     </table>
-     <table>
-       <tr>
-         <th>Schaal</th>
-         <td class="selected">1</td>
-         <td>2</td>
-         <td>3</td>
-         <td>4</td>
-         <td>5</td>
-       </tr>
-     </table>
-     <table>
-       <tr>
-         <th>Resolutie</th>
-         <td>n.v.t.</td>
-       </tr>
-     </table>
-     <table>
-       <tr>
-         <th>Nauwkeurigheid</th>
-         <td>1</td>
-         <td class="selected">2</td>
-         <td>3</td>
-         <td>4</td>
-         <td>5</td>
-       </tr>
-     </table>
-     <table>
-       <tr>
-         <th>Termijn resultaat</th>
-         <td>1</td>
-         <td>2</td>
-         <td class="selected">3</td>
-         <td>4</td>
-         <td>5</td>
-       </tr>
-     </table>
-     <table>
-       <tr>
-         <th>Tijdsreeks</th>
-         <td>n.v.t.</td>
-       </tr>
-     </table>
-     <table>
-       <tr>
-         <th>Innovatie</th>
-         <td>1</td>
-         <td>2</td>
-         <td class="selected">3</td>
-         <td>4</td>
-         <td>5</td>
-       </tr>
-     </table>
-     <table>
-      <tr>
-        <th>Kosten</th>
-        <td>$</td>
-        <td class="selected">$$</td>
-        <td>$$$</td>
-      </tr>
-     </table>
+     <% if(sensor.accuracy !== "n.v.t." && sensor.accuracy !== "undefined" ) { %>
+        <tr>
+          <th>Acuraatheid</th>
+          <td><%= sensor.accuracy %></td>
+        </tr>
+     <% } %>
+     <% if(sensor.interval !== "n.v.t." && sensor.interval !== "undefined" ) { %>
+        <tr>
+          <th>interval</th>
+          <td><%= sensor.interval %></td>
+        </tr>
+     <% } %>
+     <% if(sensor.duration !== "n.v.t." && sensor.duration !== "undefined" ) { %>
+        <tr>
+          <th>tijdsduur</th>
+          <td><%= sensor.duration %></td>
+        </tr>
+     <% } %>
+     <% if(sensor.innovation !== "n.v.t." && sensor.innovation !== "undefined" ) { %>
+        <tr>
+          <th>innovatie</th>
+          <td><%= sensor.innovation %></td>
+        </tr>
+     <% } %>
+     <% if(sensor.costs !== "n.v.t." && sensor.costs !== "undefined" ) { %>
+        <tr>
+          <th>kosten</th>
+          <td><%= sensor.costs %></td>
+        </tr>
+     <% } %>
+    </table>
    </div>
-   <table>
-
-   </table>
  </section>
+ <article class="sensor_discription">
+   <h2>Beschrijving</h2>
+   <p><%= sensor.summary_big %></p>
+ </article>
 </section>

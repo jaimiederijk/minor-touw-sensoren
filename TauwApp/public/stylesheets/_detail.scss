@@ -2,55 +2,63 @@
 @import 'common/_colors';
 
 .detail {
-  width: 69%;
-  float: left;
-  background-color: #f3f3f3;
-  color: #444444;
+  width: 100%;
+  background-color: $color_background;
+  color: $color_black;
 
- header {
-  padding-left: 1rem; }
+  header {
+    padding-left: 1rem;
 
-header article {
-  display: inline-block;
-  width: 40%;
-  max-width: 30em;
-  vertical-align: top;
-  padding: 1rem;
-}
-
- header img {
-  display: inline-block;
-  width: 40%;
-  max-width: 15rem;
-}
-
- #selection_info > div {
-  display: inline-block;
-  vertical-align: top;
-  padding-left: 1rem;
-  padding-top: 1rem; }
-
- #selection_info_what {
-  width: 40%;
-  max-width: 15rem; }
-
- table {
-  margin-bottom: 1rem; }
-
- th {
-  height: 2em;
-  width: 10em;
-  text-align: left; }
-
- td {
-  background-color: #c1c1c1;
-  text-align: center;
-  padding: 0 1rem; }
-
-  .selected {
-    border: solid red 2px;
   }
 
- #selection_info_what th {
-  width: 5em; }
+  article {
+    width: 100%;
+    max-width: 30em;
+    padding: 1rem;
+  }
+
+  table {
+    margin-bottom: 1rem;
+    border-spacing: 0.5rem;
+  }
+
+  th {
+    height: 2em;
+    width: 10em;
+    text-align: left;
+  }
+
+  td {
+    background-color: $color_shadow;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  #selection_info  {
+    // background-color: $color_white;
+
+    img {
+      display: inline-block;
+      vertical-align: top;
+      width: 40%;
+      max-width: 15rem;
+      padding-left: 1rem;
+    }
+    > div {
+
+      padding-left: 1rem;
+      padding-top: 1rem;
+    }
+  }
+
+  #selection_info_what {
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    max-width: 15rem;
+
+    th {
+      width: 5em;
+    }
+  }
 }
