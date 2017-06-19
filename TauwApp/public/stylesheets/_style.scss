@@ -25,9 +25,17 @@ main {
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: auto;
+  @include breakpoint(mobileonly) {
+    float: none;
+    width: 100%;
+    height: auto;
+  }
+  @include breakpoint(phablet) {
+    width: 100%;
+  }
 }
 main > section {
-  width: 80%;
+  width: 90%;
 }
 a {
   color: #00B7FF;

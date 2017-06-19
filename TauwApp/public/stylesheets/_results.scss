@@ -14,12 +14,23 @@ ul.branch {
     padding: .9rem;
     background-color: #ffffff;
     box-sizing: border-box;
-    -webkit-box-shadow: 2px 2px 0px -1px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 2px 2px 0px -1px rgba(0, 0, 0, 0.1);
-    box-shadow: 2px 2px 0px -1px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 3px 3px 0px -1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 3px 3px 0px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 0px -1px rgba(0, 0, 0, 0.1);
     cursor: pointer;
+    @include breakpoint(mobileonly) {
+      float: none;
+      width: 100%;
+      min-height: 0;
+    }
+    @include breakpoint(phablet) {
+      width: 45%;
+    }
     &:nth-child(even) {
       float: right;
+      @include breakpoint(mobileonly) {
+        float: none;
+      }
     }
     a {
       color: #333333;
@@ -50,7 +61,9 @@ ul.branch {
     }
   }
   aside {
-    float: left;
+    float: left !important;
+    display: inline-block;
+    position: relative;
     width: 21%;
     height: 4rem;
     background-color: #ffffff;
