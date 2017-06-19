@@ -1,38 +1,26 @@
 <main>
-  <!-- <h2><%= curentSector %></h2> -->
-  <% if(allSensors.sector !== "nothing"){ %>
-      <% parsedJSON.branch.forEach(function(branchID) { %>
-
         <section>
-
-          <header>
-            <h1><%= branchID %></h1>
-          </header>
+            <h1 class="current"><%= currentBranch%></h1>
 
           <ul class="branch clearfix">
           <% allSensors.forEach(function(sensorID) { %>
-            <% sensorID.branch.forEach(function(sensorBranch) { %>
-              <%if (sensorBranch == branchID) { %>
-
                 <li class="clearfix">
-                  <aside>
-                    <img src="/images/xrf.jpg" alt="<%= sensorID.name %>" />
-                  </aside>
+                    <div>
+                        <img src="/images/XRF.jpg" alt="<%= sensorID.name %>" />
+                    </div>
                   <section>
-                    <h4><a href="/details/<%= allSensors[0].sector %>/<%= branchID %>/<%= sensorID.name %>" title="<%= sensorID.name %>"><%= sensorID.name %></a></h4>
+                    <h4><a href="/details/<%= currentSector %>/<%= currentBranch %>/<%= sensorID.name %>" title="<%= sensorID.name %>"><%= sensorID.name %></a></h4>
                     <p><%= sensorID.summary_small %></p>
-                    <a href="/details/<%= allSensors[0].sector %>/<%= branchID %>/<%= sensorID.name %>" title="meer..." class="more-url">meer...</a>
+                    <a href="/details/<%= currentSector %>/<%= currentBranch  %>/<%= sensorID.name %>" title="meer..." class="more-url">meer...</a>
                   </section>
 
                 </li>
-
-              <% } %>
-            <% }) %>
           <% }) %>
           </ul>
+
+
         </section>
-      <% }) %>
-   <% } else{ %>
-     <section><p>Geen overeenkomende sensoren gevonden.</p></section>
-  <% } %>
+
+     <!-- <section><p>Geen overeenkomende sensoren gevonden.</p></section> -->
+
 </main>

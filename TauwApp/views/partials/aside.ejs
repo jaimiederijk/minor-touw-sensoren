@@ -23,29 +23,29 @@
     else if (page === "sector") { %>
         <div class="breadcrumbs">
             <a href="../../../" title="Tauw">Home /</a>
-            <a href="../" title="Tauw"><%= curentSector %></a>
+            <a href="../" title="Tauw"><%= currentSector %></a>
         </div>
         <form>
             <input type="search" name="search" id="search" class="search" placeholder="Uw zoekopdracht">
         </form>
-        <img src="/images/<%= curentSector %>.svg" class="sector" alt="sector <%= curentSector %>">
+        <img src="/images/<%= currentSector %>.svg" class="sector" alt="sector <%= currentSector %>">
         <h3>Uw keuzes</h3>
-        <p><strong>Sector: </strong> <%= curentSector %> </p>
+        <p><strong>Sector: </strong> <%= currentSector %> </p>
 
     <% }
 
     else if (page === "branch") { %>
         <div class="breadcrumbs">
             <a href="../../../" title="Tauw">Home /</a>
-            <a href="../" title="Tauw"><%= curentSector %> /</a>
-            <a href="./" title="Tauw"><%= currentBranch %></a>
+            <a href="./" title="Tauw"><%= currentSector %> /</a>
+            <a href="" title="Tauw"><%= currentBranch %></a>
         </div>
         <form>
             <input type="search" name="search" id="search" class="search" placeholder="Uw zoekopdracht">
         </form>
-        <img src="/images/<%= curentSector %>.svg" class="sector" alt="sector industrie">
+        <img src="/images/<%= currentSector %>.svg" class="sector" alt="sector industrie">
         <h3>Uw keuzes</h3>
-        <p><strong>Sector: </strong> <%= curentSector %> </p>
+        <p><strong>Sector: </strong> <%= currentSector %> </p>
         <p><strong>Werkgebied: </strong> <%= currentBranch %> </p>
         <% include filters %>
 
@@ -54,15 +54,15 @@
     else if (page === "detail") { %>
         <div class="breadcrumbs">
             <a href="../../../" title="Tauw">Home /</a>
-            <a href="../" title="Tauw"><%= curentSector %> /</a>
+            <a href="../" title="Tauw"><%= currentSector %> /</a>
             <a href="./" title="Tauw"><%= currentBranch %></a>
         </div>
         <form>
             <input type="search" name="search" id="search" class="search" placeholder="Uw zoekopdracht">
         </form>
-        <img src="/images/<%= curentSector %>.svg" class="sector" alt="sector industrie">
+        <img src="/images/<%= currentSector %>.svg" class="sector" alt="sector industrie">
         <h3>Uw keuzes</h3>
-        <p><strong>Sector: </strong> <%= curentSector %> </p>
+        <p><strong>Sector: </strong> <%= currentSector %> </p>
         <p><strong>Werkgebied: </strong> <%= currentBranch %> </p>
     <% }
 

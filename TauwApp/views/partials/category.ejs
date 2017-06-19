@@ -1,0 +1,15 @@
+
+<main class="category">
+
+    <h1 class="current"><%= currentSector %></h1>
+    <img src="/images/<%= currentSector %>.svg" alt="Currently in sector: <%= currentSector %>" />
+
+    <ul class="branches">
+        <% allSensors.forEach(function(sensorID) { %>
+              <li>
+                  <a href="/details/Industrie/Bodem" alt="<%= currentSector %>">Bodem</a>
+              </li>
+        <% }) %>
+    </ul>
+
+</main>

@@ -43,6 +43,7 @@ aside{
     z-index: 9999;
     box-sizing: border-box;
     @include breakpoint(tablet) {
+      position: relative;
       width: 24%;
       margin: 0;
       display: block;

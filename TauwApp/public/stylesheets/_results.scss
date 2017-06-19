@@ -1,6 +1,8 @@
 @import 'common/_breakpoint';
 @import 'common/_colors';
-
+h1.current{
+    color: $color_pink;
+}
 ul.branch {
   padding: 0;
   margin: 1rem 0 0;
@@ -60,7 +62,7 @@ ul.branch {
       font-size: .8em;
     }
   }
-  aside {
+  div {
     float: left !important;
     display: inline-block;
     position: relative;

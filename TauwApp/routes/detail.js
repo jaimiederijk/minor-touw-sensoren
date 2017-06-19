@@ -19,7 +19,7 @@ router.get('/:sectorName', function(req, res, next) {
         res.render('sector', {
             title: query.sector,
             page: "sector",
-            curentSector: query.sector,
+            currentSector: query.sector,
             allSensors: docs
         });
       });
@@ -41,8 +41,9 @@ router.get('/:sectorName/:branchName', function(req, res, next) {
         res.render('branch', {
             title: query.sector,
             page: "branch",
-            curentSector: query.sector,
-            currentBranch: query.branch
+            currentSector: query.sector,
+            currentBranch: query.branch,
+            allSensors: docs
         });
       });
   }
@@ -64,7 +65,7 @@ router.get('/:sectorName/:branchName/:sensorName', function(req, res, next) {
         res.render('detail', {
             title: query.sector,
             page: "detail",
-            curentSector: query.sector,
+            currentSector: query.sector,
             currentBranch: query.branch,
             sensor: docs[0]
         });

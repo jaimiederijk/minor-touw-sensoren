@@ -1,7 +1,7 @@
 (function(){
     var arrows = {
         init: function() {
-            document.querySelector('main').onclick = function(e) {
+            document.querySelector('aside').onclick = function(e) {
                 if (e.target.tagName.toUpperCase() == 'INPUT'){
                     var current = e.target.parentElement;
                     arrows.checkInputStatus(e.target.parentElement, current);
