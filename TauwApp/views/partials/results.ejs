@@ -1,8 +1,41 @@
 <main>
-        <h2><%= curentSector %></h2>
+        <!-- <h2><%= curentSector %></h2> -->
         <% if(allSensors.sector !== "nothing"){ %>
             <% parsedJSON.branch.forEach(function(branchID) { %>
-                <section>
+
+              <section>
+
+                <header>
+                  <h1><%= branchID %></h1>
+                </header>
+
+                <% allSensors.forEach(function(sensorID) { %>
+                  <% sensorID.branch.forEach(function(sensorBranch) { %>
+                    <%if (sensorBranch == branchID) { %>
+
+                    <ul class="branch">
+
+                      <li>
+                        <aside>
+                          <img src="/images/xrf.jpg" alt="<%= sensorID.name %>" />
+                        </aside>
+                        <section>
+                          <h4><a href="/details/<%= allSensors[0].sector %>/<%= branchID %>/<%= sensorID.name %>" title="<%= sensorID.name %>"><%= sensorID.name %></a></h4>
+                          <p><%= sensorID.summary_small %></p>
+                          <a href="/details/<%= allSensors[0].sector %>/<%= branchID %>/<%= sensorID.name %>" title="meer..." class="showMore">meer...</a>
+                        </section>
+
+                      </li>
+
+                    </ul>
+
+                    <% } %>
+                  <% }) %>
+                <% }) %>
+
+              </section>
+
+                <!-- <section>
                     <label for="<%= branchID %>"><%= branchID %>
                         <span class="count"></span>
                         <span class="arrow down"></span>
@@ -28,9 +61,9 @@
                                 <% }) %>
                         <% }) %>
                     </ul>
-                </section>
+                </section> -->
             <% }) %>
          <% } else{ %>
-           <div><p>Geen overeenkomende sensoren gevonden.</p></div>
+           <section><p>Geen overeenkomende sensoren gevonden.</p></section>
         <% } %>
 </main>
