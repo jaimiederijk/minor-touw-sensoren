@@ -12,19 +12,31 @@ body{
     line-height: 1.5;
     background-color: $color_lightbackground;
 }
-main,
-header,
-footer{
-    width: 100%;
-    box-sizing: border-box;
-}
 h1 {
     margin: 0;
+    font-family: 'open_sanssemibold';
 }
-header{
-    margin: 0 0 1em 0;
+main {
+  float: left;
+  width: 70%;
+  height: 100vh;
+  margin-left: 5%;
+  padding-top: 2.5rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @include breakpoint(mobileonly) {
+    float: none;
+    width: 100%;
+    height: auto;
+  }
+  @include breakpoint(phablet) {
+    width: 100%;
+  }
 }
-
+main > section {
+  width: 90%;
+}
 a {
   color: #00B7FF;
 }
@@ -266,4 +278,35 @@ aside section.listItem{
 .showMore:hover{
     background-color: #fff;
     color: #000;
+}
+
+/*
+* Clearfix: contain floats
+*
+* For modern browsers
+* 1. The space content is one way to avoid an Opera bug when the
+* contenteditable attribute is included anywhere else in the document.
+* Otherwise it causes space to appear at the top and bottom of elements
+* that receive the clearfix class.
+* 2. The use of table rather than block is only necessary if using
+* :before to contain the top-margins of child elements.
+*/
+
+.clearfix:before,
+.clearfix:after {
+content: " ";
+display: table;
+}
+
+.clearfix:after {
+clear: both;
+}
+
+/*
+* For IE 6/7 only
+* Include this rule to trigger hasLayout and contain floats.
+*/
+
+.clearfix {
+*zoom: 1;
 }
