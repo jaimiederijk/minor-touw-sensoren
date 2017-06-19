@@ -1,0 +1,64 @@
+<a href="#" title="Filter" id="filter-button">Menu</a>
+
+<aside>
+    <a href="" title="Tauw">
+        <img src="/images/tauw_logo_white.svg" alt="Tauw logo">
+    </a>
+
+<% if (page === "index") { %>
+    <h2>Tauw selectietool</h2>
+    <p>De selectietool maakt het mogelijk, om de geschikte meetmethode te vinden, om de toepassing te verwezenlijken, die u voor ogen heeft.</p>
+
+    <strong>Kies een sector op de kaart hiernaast </strong>
+    <p>of</p>
+    <form>
+        <input type="search" name="search" class="search" placeholder="Voer een zoekopdracht in">
+    </form>
+<% }
+
+else if (page === "sector") { %>
+    <a href="../../../" title="Tauw">Home / </a>
+    <a href="../" title="Tauw"><%= curentSector %> </a>
+    <form>
+        <input type="search" name="search" class="search" placeholder="Voer een zoekopdracht in">
+    </form>
+    <img src="/images/<%= curentSector %>.svg" alt="sector <%= curentSector %>">
+    <h3>Uw keuzes</h3>
+    <p><strong>Sector: </strong> <%= curentSector %> </p>
+
+<% }
+
+else if (page === "branch") { %>
+    <a href="../../../" title="Tauw">Home / </a>
+    <a href="../" title="Tauw"><%= curentSector %> / </a>
+    <a href="./" title="Tauw"><%= currentBranch %> </a>
+    <form>
+        <input type="search" name="search" class="search" placeholder="Voer een zoekopdracht in">
+    </form>
+    <img src="/images/<%= curentSector %>.svg" alt="sector industrie">
+    <h3>Uw keuzes</h3>
+    <p><strong>Sector: </strong> <%= curentSector %> </p>
+    <p><strong>Werkgebied: </strong> <%= currentBranch %> </p>
+
+<% }
+
+else if (page === "detail") { %>
+    <a href="../../../" title="Tauw">Home / </a>
+    <a href="../" title="Tauw"><%= curentSector %> / </a>
+    <a href="./" title="Tauw"><%= currentBranch %> </a>
+    <form>
+        <input type="search" name="search" class="search" placeholder="Voer een zoekopdracht in">
+    </form>
+    <img src="/images/<%= curentSector %>.svg" alt="sector industrie">
+    <h3>Uw keuzes</h3>
+    <p><strong>Sector: </strong> <%= curentSector %> </p>
+    <p><strong>Werkgebied: </strong> <%= currentBranch %> </p>
+<% }
+
+else { %>
+
+<% } %>
+
+
+
+</aside>
