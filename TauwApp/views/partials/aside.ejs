@@ -1,64 +1,74 @@
-<a href="#" title="Filter" id="filter-button">Menu</a>
 
-<aside>
-    <a href="" title="Tauw">
+<header>
+    <a href="#" title="Filter" id="open-menu">Menu</a>
+    <a href="#" title="Filter" id="close-menu">Close</a>
+</header>
+
+<aside id="menu">
+    <div class="content">
+    <a href="../../../" title="Tauw">
         <img src="/images/tauw_logo_white.svg" alt="Tauw logo">
     </a>
 
-<% if (page === "index") { %>
-    <h2>Tauw selectietool</h2>
-    <p>De selectietool maakt het mogelijk, om de geschikte meetmethode te vinden, om de toepassing te verwezenlijken, die u voor ogen heeft.</p>
+    <% if (page === "index") { %>
+        <h2>Tauw selectietool</h2>
+        <p>De selectietool maakt het mogelijk, om de geschikte meetmethode te vinden, om de toepassing te verwezenlijken, die u voor ogen heeft.</p>
+        <p><strong>Kies een sector op de kaart hiernaast </strong></p>
+        <p>of</p>
+        <form>
+            <input type="search" name="search" id="search" class="search" placeholder="Uw zoekopdracht">
+        </form>
+    <% }
 
-    <strong>Kies een sector op de kaart hiernaast </strong>
-    <p>of</p>
-    <form>
-        <input type="search" name="search" class="search" placeholder="Voer een zoekopdracht in">
-    </form>
-<% }
+    else if (page === "sector") { %>
+        <div class="breadcrumbs">
+            <a href="../../../" title="Tauw">Home /</a>
+            <a href="../" title="Tauw"><%= curentSector %></a>
+        </div>
+        <form>
+            <input type="search" name="search" id="search" class="search" placeholder="Uw zoekopdracht">
+        </form>
+        <img src="/images/<%= curentSector %>.svg" class="sector" alt="sector <%= curentSector %>">
+        <h3>Uw keuzes</h3>
+        <p><strong>Sector: </strong> <%= curentSector %> </p>
 
-else if (page === "sector") { %>
-    <a href="../../../" title="Tauw">Home / </a>
-    <a href="../" title="Tauw"><%= curentSector %> </a>
-    <form>
-        <input type="search" name="search" class="search" placeholder="Voer een zoekopdracht in">
-    </form>
-    <img src="/images/<%= curentSector %>.svg" alt="sector <%= curentSector %>">
-    <h3>Uw keuzes</h3>
-    <p><strong>Sector: </strong> <%= curentSector %> </p>
+    <% }
 
-<% }
+    else if (page === "branch") { %>
+        <div class="breadcrumbs">
+            <a href="../../../" title="Tauw">Home /</a>
+            <a href="../" title="Tauw"><%= curentSector %> /</a>
+            <a href="./" title="Tauw"><%= currentBranch %></a>
+        </div>
+        <form>
+            <input type="search" name="search" id="search" class="search" placeholder="Uw zoekopdracht">
+        </form>
+        <img src="/images/<%= curentSector %>.svg" class="sector" alt="sector industrie">
+        <h3>Uw keuzes</h3>
+        <p><strong>Sector: </strong> <%= curentSector %> </p>
+        <p><strong>Werkgebied: </strong> <%= currentBranch %> </p>
+        <% include filters %>
 
-else if (page === "branch") { %>
-    <a href="../../../" title="Tauw">Home / </a>
-    <a href="../" title="Tauw"><%= curentSector %> / </a>
-    <a href="./" title="Tauw"><%= currentBranch %> </a>
-    <form>
-        <input type="search" name="search" class="search" placeholder="Voer een zoekopdracht in">
-    </form>
-    <img src="/images/<%= curentSector %>.svg" alt="sector industrie">
-    <h3>Uw keuzes</h3>
-    <p><strong>Sector: </strong> <%= curentSector %> </p>
-    <p><strong>Werkgebied: </strong> <%= currentBranch %> </p>
+    <% }
 
-<% }
+    else if (page === "detail") { %>
+        <div class="breadcrumbs">
+            <a href="../../../" title="Tauw">Home /</a>
+            <a href="../" title="Tauw"><%= curentSector %> /</a>
+            <a href="./" title="Tauw"><%= currentBranch %></a>
+        </div>
+        <form>
+            <input type="search" name="search" id="search" class="search" placeholder="Uw zoekopdracht">
+        </form>
+        <img src="/images/<%= curentSector %>.svg" class="sector" alt="sector industrie">
+        <h3>Uw keuzes</h3>
+        <p><strong>Sector: </strong> <%= curentSector %> </p>
+        <p><strong>Werkgebied: </strong> <%= currentBranch %> </p>
+    <% }
 
-else if (page === "detail") { %>
-    <a href="../../../" title="Tauw">Home / </a>
-    <a href="../" title="Tauw"><%= curentSector %> / </a>
-    <a href="./" title="Tauw"><%= currentBranch %> </a>
-    <form>
-        <input type="search" name="search" class="search" placeholder="Voer een zoekopdracht in">
-    </form>
-    <img src="/images/<%= curentSector %>.svg" alt="sector industrie">
-    <h3>Uw keuzes</h3>
-    <p><strong>Sector: </strong> <%= curentSector %> </p>
-    <p><strong>Werkgebied: </strong> <%= currentBranch %> </p>
-<% }
+    else { %>
 
-else { %>
-
-<% } %>
-
-
-
+    <% } %>
+</div>
+<script src="/javascripts/filters.js"></script>
 </aside>

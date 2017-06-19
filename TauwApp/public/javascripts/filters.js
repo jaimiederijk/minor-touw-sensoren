@@ -1,21 +1,25 @@
-var filterBtn = document.getElementById('filter-button');
-var filterList = document.getElementById('filter');
-// var filterClose = document.getElementById('close-filter');
-var filterClose = document.querySelectorAll('.close-filter');
+var openMenu = document.getElementById('open-menu');
+var closeMenu = document.getElementById('close-menu');
+var menu = document.getElementById('menu');
 
-filterBtn.addEventListener('click', function(e){
-  e.preventDefault();
-  filterList.style.display = "block";
-});
+var events = {
+    init: function(){
+        openMenu.style.display = "block";
+        openMenu.addEventListener('click', function(e){events.open(e);});
+        closeMenu.addEventListener('click', function(e){events.close(e);});
+    },
+    open: function (e) {
+        e.preventDefault();
+        closeMenu.style.display = "block";
+        openMenu.style.display = "none";
+        menu.style.display = "block";
+    },
+    close: function (e) {
+        e.preventDefault();
+        closeMenu.style.display = "none";
+        openMenu.style.display = "block";
+        menu.style.display = "none";
+    }
+}
 
-filterClose.forEach(function(e) {
-  e.addEventListener('click', function(e){
-    e.preventDefault();
-    filterList.style.display = "none";
-  });
-});
-
-// filterClose.addEventListener("click", function(e){
-//   e.preventDefault();
-//   filterList.style.display = "none";
-// });
+events.init();

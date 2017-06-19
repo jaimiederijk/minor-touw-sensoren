@@ -7,7 +7,10 @@
       <a href="" title="sluiten" class="close-filter" id="close-filter"></a>
 
       <fieldset>
-        <label for="scale">Schaal<span class="filter-arrow"></span></label><input type="checkbox" id="scale" name="scale" value="schaal" class="filter-dropdown" />
+        <label for="scale">Schaal
+            <span class="arrow down"></span>
+        </label>
+        <input type="checkbox" id="scale" name="scale" value="schaal" class="filter-dropdown" />
         <ul>
           <li><label><input type="checkbox" name="manual" value="handmatig" />Handmatig</label></li>
           <li><label><input type="checkbox" name="local" value="lokaal" />Lokaal</label></li>
@@ -19,7 +22,10 @@
         </ul>
       </fieldset>
       <fieldset>
-        <label for="resolution">Resolutie<span class="filter-arrow"></label><input type="checkbox" id="resolution" name="resolution" value="resolutie" class="filter-dropdown" />
+        <label for="resolution">Resolutie
+            <span class="arrow down"></span>
+        </label>
+        <input type="checkbox" id="resolution" name="resolution" value="resolutie" class="filter-dropdown" />
         <ul>
           <li><label><input type="checkbox" name="0" value="0" />0</label></li>
           <li><label><input type="checkbox" name="1" value="1" />1</label></li>
@@ -30,7 +36,10 @@
         </ul>
       </fieldset>
       <fieldset>
-        <label for="accuracy">Nauwkeurigheid<span class="filter-arrow"></label><input type="checkbox" id="accuracy" name="accuracy" value="nauwkeurigheid" class="filter-dropdown" />
+        <label for="accuracy">Nauwkeurigheid
+            <span class="arrow down"></span>
+        </label>
+        <input type="checkbox" id="accuracy" name="accuracy" value="nauwkeurigheid" class="filter-dropdown" />
         <ul>
           <li><label><input type="checkbox" name="not-accuracy" value="niet nauwkeurig" />Niet nauwkeurig</label></li>
           <li><label><input type="checkbox" name="moderately-accurate" value="matig nauwkeurig" />Matig nauwkeurig</label></li>
@@ -39,7 +48,10 @@
         </ul>
       </fieldset>
       <fieldset>
-        <label for="interval">Tijdreeks<span class="filter-arrow"></label><input type="checkbox" id="interval" name="interval" value="tijdreeks" class="filter-dropdown" />
+        <label for="interval">Tijdreeks
+            <span class="arrow down"></span>
+            </label>
+            <input type="checkbox" id="interval" name="interval" value="tijdreeks" class="filter-dropdown" />
         <ul>
           <li><label><input type="checkbox" name="years" value="Jaren" />Jaren</label></li>
           <li><label><input type="checkbox" name="weeks" value="Weken" />Weken</label></li>
@@ -48,7 +60,10 @@
         </ul>
       </fieldset>
       <fieldset>
-        <label for="innovation">Innovatie<span class="filter-arrow"></label><input type="checkbox" id="innovation" name="innovation" value="innovatie" class="filter-dropdown" />
+        <label for="innovation">Innovatie
+            <span class="arrow down"></span>
+        </label>
+            <input type="checkbox" id="innovation" name="innovation" value="innovatie" class="filter-dropdown" />
         <ul>
           <li><label><input type="checkbox" name="little-evidence" value="Weinig bewijs" />Weinig bewijs</label></li>
           <li><label><input type="checkbox" name="scientific-evidence" value="Wetenschappelijk bewezig" />Wetenschappelijk bewezig</label></li>
@@ -62,4 +77,5 @@
 
 </section>
 
+<script src="/javascripts/rotateArrows.js"></script>
 <script src="/javascripts/filters.js"></script>
