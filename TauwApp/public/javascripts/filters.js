@@ -2,7 +2,7 @@ var openMenu = document.getElementById('open-menu');
 var closeMenu = document.getElementById('close-menu');
 var menu = document.getElementById('menu');
 
-var events = {
+var events = { 
     init: function(){
         openMenu.style.display = "block";
         openMenu.addEventListener('click', function(e){events.open(e);});

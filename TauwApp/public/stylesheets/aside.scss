@@ -3,11 +3,15 @@
 
 header{
     height: 2em;
-    @include breakpoint(laptop) {
+    top: 0;
+    position: fixed;
+    z-index: 99999;
+    @include breakpoint(tablet) {
       display: none;
     }
     a#close-menu,
     a#open-menu{
+        text-align: right;
         background: none;
         color: white;
         display: none;
@@ -19,26 +23,26 @@ header{
          padding: 0.2rem 0.5rem;
          box-sizing: border-box;
          text-decoration: none;
-      @include breakpoint(laptop) {
+      @include breakpoint(tablet) {
         display: none;
       }
     }
 }
-
 aside{
+    position: fixed;
+    top: 0;
     display: none;
     float: left;
     width: 100%;
+    margin-top: 2rem;
     height: 100vh;
-    max-height: 100%;
-    // margin: 2rem 0 0 0;
     padding: 1rem;
     background: $color_background;
     overflow-x: hidden;
     overflow-y: auto;
     z-index: 9999;
     box-sizing: border-box;
-    @include breakpoint(laptop) {
+    @include breakpoint(tablet) {
       width: 24%;
       margin: 0;
       display: block;
@@ -90,7 +94,10 @@ aside{
                   width: 50%;
                 }
                 @include breakpoint(phablet) {
-                  width: 30%;
+                  width: 50%;
+                }
+                @include breakpoint(tablet) {
+                  width: 100%;
                 }
                 @include breakpoint(laptop) {
                   width: 100%;
@@ -106,6 +113,9 @@ aside{
         img.sector{
             width: 90%;
             margin: 0.5rem auto;
+            @include breakpoint(mobile) {
+                width: 50%;
+            }
         }
 
         // Filters
@@ -113,18 +123,20 @@ aside{
             border: none;
             margin: 0 0 0.3rem;
             padding: 0 0.5rem;
-            > label{
+
+            > label {
                 font-size: 1em;
                 margin: 0;
+                width: 100%;
+                padding-right: 1rem;
+                border-bottom: 1px solid black;
+                box-sizing: border-box;
                 span.arrow{
-                    margin: auto 0;
-                    width: 0.8em;
-                    background-position: center;
+                    width: 1em;
                     height: 1em;
-                    background-image: url(/images/arrow.svg);
+                    background-image: url("/images/arrow.svg");
                     background-repeat: no-repeat;
                     background-size: contain;
-                    position: relative;
                 }
                 span.down{
                     transition: transform  0.5s ease;
@@ -138,7 +150,34 @@ aside{
                      -webkit-transform: rotate(180deg);
                      transform: rotate(180deg);
                  }
+
             }
+            // > label{
+            //     font-size: 1em;
+            //     margin: 0;
+            //     span.arrow{
+            //         margin: auto 0;
+            //         width: 0.8em;
+            //         background-position: center;
+            //         height: 1em;
+            //         background-image: url(/images/arrow.svg);
+            //         background-repeat: no-repeat;
+            //         background-size: contain;
+            //         position: relative;
+            //     }
+            //     span.down{
+            //         transition: transform  0.5s ease;
+            //         -ms-transform: rotate(0deg);
+            //         -webkit-transform: rotate(0deg);
+            //         transform: rotate(0deg);
+            //     }
+            //      span.up{
+            //          transition: transform  0.5s ease;
+            //          -ms-transform: rotate(180deg);
+            //          -webkit-transform: rotate(180deg);
+            //          transform: rotate(180deg);
+            //      }
+            // }
             > input[type="checkbox"]{
                 margin-right: 0.5rem;
                 height: 0;
