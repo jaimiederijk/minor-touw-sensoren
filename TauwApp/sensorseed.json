@@ -135,8 +135,8 @@
    {
       "name": "Drone - RGB 3D model",
       "sector": "Stedelijk",
-      "branch": ["> Inspectie","> Ecologie","> Bodem"],
-      "tags": ["> 3D model","> Volume bepaling"],
+      "branch": ["Inspectie","Ecologie","Bodem"],
+      "tags": ["3D model","Volume bepaling"],
       "level": ["Maaiveld"],
       "scale": "",
       "resolution": "",

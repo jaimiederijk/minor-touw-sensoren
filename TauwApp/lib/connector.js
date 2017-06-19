@@ -21,10 +21,29 @@ var findDocumentsWithField = function(collection, query, field, db, callback) {
   // Find some documents
   collection.find( query,field ).toArray(function(err, docs) {
     assert.equal(err, null);
-    // console.log("Found the following records example");
-    // console.log(docs)
+
     callback(docs);
   });
+}
+
+var searchText = function(collection, query, db, callback) {
+  var collection = db.collection(collection);
+
+  collection.ensureIndex({
+      name:"text",
+      sector:"text",
+      branch:"text",
+      tags:"text",
+      level:"text",
+      contact: "text"
+    }, function(err, indexName ){
+
+    collection.find( {$text: {$search: query, $caseSensitive:false} }).toArray(function(err, docs) {
+      assert.equal(err, null);
+
+      callback(docs);
+    });
+  })
 }
 
 var find = {
@@ -49,6 +68,16 @@ var find = {
        db.close();
      });
    });
+ },
+ searchText : function (query, callback) {
+   MongoClient.connect(url, function(err, db) {
+     assert.equal(null,err);
+
+     searchText("sensors", query, db, function(docs) {
+       callback(docs);
+       db.close();
+     });
+   })
  }
 
 }
