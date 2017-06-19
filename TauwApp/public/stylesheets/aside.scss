@@ -13,11 +13,10 @@ header{
     a#open-menu{
         text-align: right;
         background: none;
-        color: white;
+        color: $color_pink;
         display: none;
         position: absolute;
          top: 0;
-         left: 0;
          height: 2rem;
          width: 100%;
          padding: 0.2rem 0.5rem;

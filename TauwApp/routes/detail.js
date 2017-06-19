@@ -67,6 +67,7 @@ router.get('/:sectorName/:branchName/:sensorName', function(req, res, next) {
             page: "detail",
             currentSector: query.sector,
             currentBranch: query.branch,
+            currentSensor: query.name,
             sensor: docs[0]
         });
       });
