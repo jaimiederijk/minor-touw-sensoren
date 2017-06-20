@@ -8,9 +8,9 @@ main.category{
     @include breakpoint(tablet) {
       width: 70%;
     }
-    h1.current{
+    h1{
         margin-left: 5%;
-        color: $color_pink;
+        color: $color_black;
     }
     img{
         width: 60%;
