@@ -6,20 +6,11 @@
     <link rel='stylesheet' href='/build/css/main.css' />
   </head>
   <body>
+    <% include partials/aside %>
+    <% include partials/search_results %>
 
-    <h2> search results for <%= searchQuery %> :</h2>
-    <main>
-        <ul>
-            <% allSensors.forEach(function(sensorID) { %>
-                <li class="listItem">
-                    <h4> <%= sensorID.name %> </h4>
-                    <% sensorID.branch.forEach(function(branchID) { %>
-                        <p><%= branchID %></p>
-                    <% }) %>
-                </li>
-            <% }) %>
-        </ul>
-    </main>
+
+
 
     <script src="/javascripts/search.js"></script>
   </body>

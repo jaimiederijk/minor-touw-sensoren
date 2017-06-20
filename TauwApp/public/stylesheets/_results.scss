@@ -11,7 +11,9 @@ ul.branch {
     position: relative;
     float: left;
     width: 45%;
-    min-height: 6em;
+    // min-height: 6em;
+    min-height: 9em;
+    max-height: 9em;
     margin: 0 0 1.5rem;
     padding: .9rem;
     background-color: #ffffff;
@@ -55,8 +57,12 @@ ul.branch {
       text-decoration: underline;
     }
     h4 {
-      margin: 0;
-      font-family: 'open_sanssemibold', Helvetica, Arial, sans-serif;
+        margin: 0;
+        font-family: 'open_sanssemibold', Helvetica, Arial, sans-serif;
+        display: block;
+    }
+    h4.sector{
+        color: $color_pink;
     }
     p {
       font-size: .8em;

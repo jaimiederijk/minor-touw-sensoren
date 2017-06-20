@@ -1,7 +1,7 @@
 <main>
     <% if(allSensors.length > 0){ %>
         <section>
-            <h1 class="current"><%= currentBranch%></h1>
+            <h1 class="current">Zoek resultaten voor <%= searchQuery %></h1>
 
           <ul class="branch clearfix">
           <% allSensors.forEach(function(sensorID) { %>
@@ -10,10 +10,10 @@
                         <img src="/images/XRF.jpg" alt="<%= sensorID.name %>" />
                     </div>
                   <section>
-                        <h4><a href="/details/<%= currentSector %>/<%= currentBranch %>/<%= sensorID.name %>" title="<%= sensorID.name %>"><%= sensorID.name %>, </a></h4>
+                        <h4><a href="/details/<%= sensorID.sector %>/<%= sensorID.branch %>/<%= sensorID.name %>" title="<%= sensorID.name %>"><%= sensorID.name %>, </a></h4>
                         <h4 class="sector"><%= sensorID.sector%></h4>
                     <p><%= sensorID.summary_small %></p>
-                    <a href="/details/<%= currentSector %>/<%= currentBranch  %>/<%= sensorID.name %>" title="meer..." class="more-url">meer...</a>
+                    <a href="/details/<%= sensorID.sector %>/<%= sensorID.branch %>/<%= sensorID.name %>" title="meer..." class="more-url">meer...</a>
                   </section>
 
                 </li>
