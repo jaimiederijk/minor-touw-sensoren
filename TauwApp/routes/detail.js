@@ -31,13 +31,40 @@ router.get('/:sectorName/:branchName', function(req, res, next) {
       sector: req.params.sectorName,
       branch: req.params.branchName
   }
-  if( req.query.scalecheckbox !== undefined) {
-    query.scale = req.query.scalecheckbox;
-  }
-  if( req.query.accuracycheckbox !== undefined) {
-    query.accuracy= Number(req.query.accuracycheckbox);
+  var activeFilters = {};
+  var filters = ["scale", "accuracy","resolution","interval","innovation"];
+  // loop door alle filters
+  for (var i = 0; i < filters.length; i++) {
+    // if de filter ook echt is ingevuld
+    if (req.query[filters[i]] !== undefined) {
+      // kijk of er meerdere checkboxes zijn geselecteerd
+      if ( Array.isArray(req.query[filters[i]]) ) {
+        // als het geen number is
+        if (isNaN(req.query[filters[i]][0])) {
+          query[filters[i]]={$in : req.query[filters[i]]};
+        // wel een number
+        } else {
+          var newArray = [];
+          for (var t = 0; t < req.query[filters[i]].length; t++) {
+            newArray.push(Number(req.query[filters[i]][t]));
+          }
+          query[filters[i]]={$in : newArray};
+        }
+      // geen array dus maar één checkbox
+      } else {
+        // not number
+        if (isNaN(req.query[filters[i]])) {
+          query[filters[i]] = req.query[filters[i]];
+        } else {
+          query[filters[i]] = Number(req.query[filters[i]]);
+        }
+
+      }
+    }
   }
 
+
+console.log(query);
   if (req.query.search !== undefined){
       searchMachine.search.renderSearchResults(req, res, req.query.search);
   }
@@ -47,6 +74,7 @@ router.get('/:sectorName/:branchName', function(req, res, next) {
         res.render('branch', {
             title: query.sector,
             page: "branch",
+            activeFilters: activeFilters,
             currentSector: query.sector,
             currentBranch: query.branch,
             allSensors: docs
