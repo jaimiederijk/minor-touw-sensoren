@@ -136,7 +136,6 @@ aside {
     margin-right: 1em;
   }
   input[type="submit"] {
-    display: none;
     @include breakpoint(mobileonly) {
       display: inline-block;
     }

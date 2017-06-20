@@ -31,6 +31,12 @@ router.get('/:sectorName/:branchName', function(req, res, next) {
       sector: req.params.sectorName,
       branch: req.params.branchName
   }
+  if( req.query.scalecheckbox !== undefined) {
+    query.scale = req.query.scalecheckbox;
+  }
+  if( req.query.accuracycheckbox !== undefined) {
+    query.accuracy= Number(req.query.accuracycheckbox);
+  }
 
   if (req.query.search !== undefined){
       searchMachine.search.renderSearchResults(req, res, req.query.search);
