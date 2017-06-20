@@ -9,7 +9,7 @@ body{
     font-size: 1em;
     box-sizing: border-box;
     width: 100%;
-    line-height: 1.5;
+    line-height: 1.7;
     background-color: $color_lightbackground;
 }
 
@@ -18,7 +18,13 @@ img{
 }
 h1 {
     margin: 0;
-    font-family: 'open_sanssemibold';
+    font-family: 'open_sansbold', Helvetica, Arial, sans-serif;
+}
+.strong {
+    font-family: 'open_sanssemibold', Helvetica, Arial, sans-serif !important;
+}
+.italic {
+  font-style: italic !important;
 }
 main {
   float: left;
@@ -161,12 +167,12 @@ input[name=search]:hover  {
     width: 100%;
     box-sizing: border-box;
 }
-aside p{
-    color: white;
-    font-weight: lighter;
-    margin: 0 0 3em 0;
-    font-style: italic;
-}
+// aside p{
+//     color: white;
+//     font-weight: lighter;
+//     margin: 0 0 3em 0;
+//     font-style: italic;
+// }
 aside section{
     display: flex;
     flex-direction: column;

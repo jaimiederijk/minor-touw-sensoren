@@ -1,8 +1,11 @@
 <main>
     <% if(allSensors.length > 0){ %>
         <section>
-            <h1 class="current">Zoek resultaten voor <%= searchQuery %></h1>
 
+          <header>
+            <h1 class="current">Zoek resultaten voor <%= searchQuery %></h1>
+          </header>
+          
           <ul class="branch clearfix">
           <% allSensors.forEach(function(sensorID) { %>
                 <li class="clearfix">

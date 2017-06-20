@@ -1,18 +1,15 @@
 @import 'common/_breakpoint';
 @import 'common/_colors';
 
-main.category{
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    @include breakpoint(tablet) {
-      width: 70%;
+main.category {
+    h2 {
+      text-align: center;
+      font-family: 'open_sansregular', Helvetica, Arial, sans-serif;
+      span {
+        font-family: 'open_sansbold', Helvetica, Arial, sans-serif;
+      }
     }
-    h1{
-        margin-left: 5%;
-        color: $color_black;
-    }
-    img{
+    img {
         width: 60%;
         margin-left: 20%;
         @include breakpoint(tablet) {
@@ -34,11 +31,15 @@ main.category{
             width: min-content;
             margin: 1rem 0.5rem;
 
-            a{
+            a,
+            a:visited   {
                 color: $color_white;
                 text-decoration: none;
-                padding: 0.5rem;
-                background: $color_pink;
+                padding: 0.7rem 1.5rem;
+                background-color: $color_pink;
+            }
+            a:hover {
+                background-color: #414141;
             }
         }
     }

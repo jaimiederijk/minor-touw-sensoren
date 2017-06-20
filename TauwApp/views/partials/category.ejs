@@ -1,8 +1,15 @@
 
 <main class="category">
 
-    <h1 class="current"><%= currentSector %></h1>
-    <img src="/images/<%= currentSector %>.svg" alt="Currently in sector: <%= currentSector %>" />
+  <section>
+
+    <!-- <h1><%= currentSector %></h1> -->
+
+    <div>
+      <img src="/images/<%= currentSector %>.svg" alt="Currently in sector: <%= currentSector %>" />
+    </div>
+
+    <h2>Werkgebieden binnen <span><%= currentSector %></span></h2>
 
     <ul class="branches">
         <% allSensors.forEach(function(sensorID) { %>
@@ -11,5 +18,7 @@
               </li>
         <% }) %>
     </ul>
+
+  </section>
 
 </main>

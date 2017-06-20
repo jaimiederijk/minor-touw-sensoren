@@ -1,7 +1,10 @@
 <main>
     <% if(allSensors.length > 0){ %>
         <section>
-            <h1 class="current"><%= currentBranch%></h1>
+          
+          <header>
+            <h1><%= currentBranch%></h1>
+          </header>
 
           <ul class="branch clearfix">
           <% allSensors.forEach(function(sensorID) { %>
