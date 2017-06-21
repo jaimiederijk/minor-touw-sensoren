@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var searchMachine  = require('../lib/search');
 var connector  = require('../lib/connector');
+var queryCreator = require('../lib/querycreator');
 
 var sensorName =""
 
@@ -27,41 +28,14 @@ router.get('/:sectorName', function(req, res, next) {
 });
 
 router.get('/:sectorName/:branchName', function(req, res, next) {
-  var query = {
+  var currentQuery = {
       sector: req.params.sectorName,
       branch: req.params.branchName
   }
   var activeFilters = {};
   var filters = ["scale", "accuracy","resolution","interval","innovation"];
   // loop door alle filters
-  for (var i = 0; i < filters.length; i++) {
-    // if de filter ook echt is ingevuld
-    if (req.query[filters[i]] !== undefined) {
-      // kijk of er meerdere checkboxes zijn geselecteerd
-      if ( Array.isArray(req.query[filters[i]]) ) {
-        // als het geen number is
-        if (isNaN(req.query[filters[i]][0])) {
-          query[filters[i]]={$in : req.query[filters[i]]};
-        // wel een number
-        } else {
-          var newArray = [];
-          for (var t = 0; t < req.query[filters[i]].length; t++) {
-            newArray.push(Number(req.query[filters[i]][t]));
-          }
-          query[filters[i]]={$in : newArray};
-        }
-      // geen array dus maar één checkbox
-      } else {
-        // not number
-        if (isNaN(req.query[filters[i]])) {
-          query[filters[i]] = req.query[filters[i]];
-        } else {
-          query[filters[i]] = Number(req.query[filters[i]]);
-        }
-
-      }
-    }
-  }
+  var query = queryCreator.queryCreator.orFilterQuery(currentQuery, req.query, filters);
 
 
 console.log(query);
