@@ -9,11 +9,9 @@ ul.branch {
     position: relative;
     float: left;
     width: 45%;
-    // min-height: 6em;
-    min-height: 9em;
-    max-height: 9em;
+    min-height: 8em;
     margin: 0 0 1.5rem;
-    padding: .9rem;
+    padding: 1.2rem;
     background-color: #ffffff;
     box-sizing: border-box;
     -webkit-box-shadow: 3px 3px 0px -1px rgba(0, 0, 0, 0.1);
@@ -59,18 +57,19 @@ ul.branch {
         font-family: 'open_sanssemibold', Helvetica, Arial, sans-serif;
         display: block;
     }
-    h4.sector{
-        color: $color_pink;
+    h5.sector{
+        color: #919191;
+        margin: 0;
     }
     p {
       font-size: .8em;
     }
   }
-  div {
+  div.image-wrap {
     float: left !important;
     display: inline-block;
     position: relative;
-    width: 21%;
+    width: 4rem;
     height: 4rem;
     background-color: #ffffff;
     border: 1px solid #dadad6;
