@@ -22,10 +22,10 @@
     <% }
 
     else if (page === "sector") { %>
-        <div class="breadcrumbs">
-            <a href="../../../" title="Tauw">Home /</a>
-            <a href="../" title="Tauw"><%= currentSector %></a>
-        </div>
+        <ul class="breadcrumbs">
+          <li><a href="../../../" title="Home">Home</a></li>
+          <li><%= currentSector %></li>
+        </ul>
         <form>
             <span class="search-icon"></span>
             <input type="search" name="search" id="search" class="search" placeholder="voer een zoekopdracht in">
@@ -39,11 +39,11 @@
     <% }
 
     else if (page === "branch") { %>
-        <div class="breadcrumbs">
-            <a href="../../../" title="Tauw">Home /</a>
-            <a href="./" title="Tauw"><%= currentSector %> /</a>
-            <a href="" title="Tauw"><%= currentBranch %></a>
-        </div>
+        <ul class="breadcrumbs">
+          <li><a href="../../../" title="Home">Home</a></li>
+          <li><a href="./" title="<%= currentSector %>"><%= currentSector %></a></li>
+          <li><%= currentBranch %></li>
+        </ul>
         <form>
             <span class="search-icon"></span>
             <input type="search" name="search" id="search" class="search" placeholder="voer een zoekopdracht in">
@@ -59,11 +59,11 @@
     <% }
 
     else if (page === "detail") { %>
-        <div class="breadcrumbs">
-            <a href="../../../" title="Tauw">Home /</a>
-            <a href="../" title="Tauw"><%= currentSector %> /</a>
-            <a href="./" title="Tauw"><%= currentBranch %></a>
-        </div>
+        <ul class="breadcrumbs">
+          <li><a href="../../../" title="Home">Home</a></li>
+          <li><a href="../" title="<%= currentSector %>"><%= currentSector %></a></li>
+          <li><%= currentBranch %></li>
+        </ul>
         <form>
             <span class="search-icon"></span>
             <input type="search" name="search" id="search" class="search" placeholder="voer een zoekopdracht in">
@@ -77,9 +77,10 @@
         <p><strong>Sensor: </strong> <%= currentSensor %> </p>
     <% }
     else if (page === "search") { %>
-        <div class="breadcrumbs">
-            <a href="../../../" title="Tauw">Home /</a>
-        </div>
+        <ul class="breadcrumbs">
+          <li><a href="../../../" title="Home">Home</a></li>
+          <li><%= searchQuery %></li>
+        </ul>
         <form>
             <span class="search-icon"></span>
             <input type="search" name="search" id="search" class="search" placeholder="voer een zoekopdracht in">

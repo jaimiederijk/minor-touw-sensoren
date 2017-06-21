@@ -153,7 +153,22 @@ aside {
             }
         }
         .breadcrumbs {
+          list-style-type: none;
+          padding: 0;
           margin: 2rem 0;
+          font-size: .9em;
+          li {
+            display: inline-block;
+            a, a:visited {
+              color: $color_white;
+              &:hover {
+                text-decoration: none;
+              }
+            }
+          }
+          li + li:before {
+            content: "/\00a0";
+          }
         }
         .img-sector {
           margin: 1rem 0 0;
@@ -168,6 +183,7 @@ aside {
         // Filters
         #filter {
           h3 {
+            font-family: 'open_sansbold', Helvetica, Arial, sans-serif;
             margin-bottom: 0;
           }
           fieldset {
@@ -214,7 +230,6 @@ aside {
                   -webkit-appearance: none;
                   -moz-appearance:    none;
                   appearance:         none;
-                  outline: 0;
                   cursor: pointer;
               }
               input[type="checkbox"]+ ul {
@@ -259,9 +274,6 @@ aside {
                   background-size: contain;
                 }
               }
-              // ul input[type="checkbox"]:checked {
-              //     color: white;
-              // }
           }
         }
 
