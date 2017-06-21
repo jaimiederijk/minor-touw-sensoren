@@ -1,9 +1,9 @@
 <main>
     <% if(allSensors.length > 0){ %>
         <section>
-          
+
           <header>
-            <h1><%= currentBranch%></h1>
+            <h1 class="current"><%= currentBranch%> <span id="count"></span></h1>
           </header>
 
           <ul class="branch clearfix">
@@ -25,7 +25,11 @@
 
         </section>
      <% } else{ %>
-       <section><p>Geen overeenkomende sensoren gevonden.</p></section>
+       <section>
+           <h1 class="current"><%= currentBranch%></h1>
+           <p>Geen overeenkomende sensoren gevonden.</p>
+       </section>
     <% } %>
 
 </main>
+<script src="/javascripts/countItems.js"></script>

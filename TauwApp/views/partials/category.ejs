@@ -12,10 +12,10 @@
     <h2>Werkgebieden binnen <span><%= currentSector %></span></h2>
 
     <ul class="branches">
-        <% allSensors.forEach(function(sensorID) { %>
-              <li>
-                  <a href="/details/Industrie/Bodem" alt="<%= currentSector %>">Bodem</a>
-              </li>
+        <% allBranches.branch.forEach(function(branchID) { %>
+            <li>
+                  <a href="/details/<%= currentSector %>/<%= branchID %>" alt="<%= currentSector %>"><%= branchID %></a>
+            </li>
         <% }) %>
     </ul>
 
