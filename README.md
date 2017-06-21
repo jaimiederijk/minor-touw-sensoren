@@ -1,13 +1,17 @@
+# Master is up to date. Please review the content in the master.
+
 # Minor Webdevelopment | Tauw-sensoren
 Repository for the "Tauw Sensor Selectiontool"
 <!-- `
 V 0.1.0
 ` -->
 
-![Logo Tauw](./repo-images/tauw-logo.jpg)
+![Logo Tauw](./readme-files/tauw-logo.jpg)
+![Photos devicelab](./readme-files/photos_devicelab.zip)
 
-### Live Demo
-<a href="https://tauw-sensortool.herokuapp.com"> https://tauw-sensortool.herokuapp.com </a>
+
+<!-- ### Live Demo
+<a href="https://tauw-sensortool.herokuapp.com"> https://tauw-sensortool.herokuapp.com </a> -->
 
 ## Introduction
 This is a project, for the Dutch company named <a href="http://www.tauw.nl">'Tauw'</a>. Tauw is a European  Europees consulting and engineering firm, that gives environmental friendly and sustainable advices to businesses. To help with the creation of a more sustainable world.
