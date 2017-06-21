@@ -7,20 +7,20 @@ var sensorName =""
 
 
 router.get('/:sectorName', function(req, res, next) {
-  var query = {
-      sector: req.params.sectorName
-  }
+  var query = {};
+  var field = { branch: 1 };
 
   if (req.query.search !== undefined){
       searchMachine.search.renderSearchResults(req, res, req.query.search);
   }
   else {
-      connector.find.findSensors( query, function(docs){
+
+      connector.find.findSettings (query, field, function(docs) {
         res.render('sector', {
-            title: query.sector,
+            title: req.params.sectorName,
             page: "sector",
-            currentSector: query.sector,
-            allSensors: docs
+            currentSector: req.params.sectorName,
+            allBranches: docs[0]
         });
       });
   }

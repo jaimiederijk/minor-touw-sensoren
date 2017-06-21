@@ -8,7 +8,7 @@ var search = {
 
           res.render('searchResults', {
               title: text,
-              page: "branch",
+              page: "search",
               searchQuery: text,
               allSensors: docs
           });

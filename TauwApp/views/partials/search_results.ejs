@@ -1,0 +1,31 @@
+<main>
+    <% if(allSensors.length > 0){ %>
+        <section>
+          <header>
+            <h1 class="current">Zoekresultaten voor <%= searchQuery %> <span id="count"></span></h1>
+          </header>
+          
+          <ul class="branch clearfix">
+          <% allSensors.forEach(function(sensorID) { %>
+                <li class="clearfix">
+                    <div>
+                        <img src="/images/XRF.jpg" alt="<%= sensorID.name %>" />
+                    </div>
+                  <section>
+                        <h4><a href="/details/<%= sensorID.sector %>/<%= sensorID.branch %>/<%= sensorID.name %>" title="<%= sensorID.name %>"><%= sensorID.name %>, </a></h4>
+                        <h4 class="sector"><%= sensorID.sector%></h4>
+                    <p><%= sensorID.summary_small %></p>
+                    <a href="/details/<%= sensorID.sector %>/<%= sensorID.branch %>/<%= sensorID.name %>" title="meer..." class="more-url">meer...</a>
+                  </section>
+
+                </li>
+          <% }) %>
+          </ul>
+
+        </section>
+     <% } else{ %>
+       <section><p>Geen overeenkomende zoekresultaten gevonden.</p></section>
+    <% } %>
+
+</main>
+<script src="/javascripts/countItems.js"></script>

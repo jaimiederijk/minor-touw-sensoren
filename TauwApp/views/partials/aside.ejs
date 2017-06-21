@@ -1,5 +1,4 @@
-
-<header>
+<header class="aside">
     <a href="#" title="Filter" id="open-menu">Menu</a>
     <a href="#" title="Filter" id="close-menu">Close</a>
 </header>
@@ -12,62 +11,91 @@
 
     <% if (page === "index") { %>
         <h2>Tauw selectietool</h2>
-        <p>De selectietool maakt het mogelijk, om de geschikte meetmethode te vinden, om de toepassing te verwezenlijken, die u voor ogen heeft.</p>
-        <p><strong>Kies een sector op de kaart hiernaast </strong></p>
+        <p>De selectietool maakt het mogelijk om de geschikte meetmethode te vinden om de toepassing te verwezenlijken die u voor ogen heeft.</p>
+        <p class="strong italic">Kies een sector op de kaart hiernaast</p>
         <p>of</p>
         <form>
-            <input type="search" name="search" id="search" class="search" placeholder="Uw zoekopdracht">
+            <span class="search-icon"></span>
+            <input type="search" name="search" id="search" class="search" placeholder="voer een zoekopdracht in">
         </form>
     <% }
 
     else if (page === "sector") { %>
-        <div class="breadcrumbs">
-            <a href="../../../" title="Tauw">Home /</a>
-            <a href="../" title="Tauw"><%= currentSector %></a>
-        </div>
+        <ul class="breadcrumbs">
+          <li><a href="../../../" title="Home">Home</a></li>
+          <li><%= currentSector %></li>
+        </ul>
         <form>
-            <input type="search" name="search" id="search" class="search" placeholder="Uw zoekopdracht">
+            <span class="search-icon"></span>
+            <input type="search" name="search" id="search" class="search" placeholder="voer een zoekopdracht in">
         </form>
-        <img src="/images/<%= currentSector %>.svg" class="sector" alt="sector <%= currentSector %>">
-        <h3>Uw keuzes</h3>
-        <p><strong>Sector: </strong> <%= currentSector %> </p>
-
+        <div class="img-sector">
+          <img src="/images/<%= currentSector %>.svg" class="sector" alt="sector <%= currentSector %>">
+        </div>
+        <ul class="user-choice"><h3>Uw keuzes</h3>
+          <li>Sector: <span class="strong"><%= currentSector %></span></li>
+        </ul>
     <% }
 
     else if (page === "branch") { %>
-        <div class="breadcrumbs">
-            <a href="../../../" title="Tauw">Home /</a>
-            <a href="./" title="Tauw"><%= currentSector %> /</a>
-            <a href="" title="Tauw"><%= currentBranch %></a>
-        </div>
+        <ul class="breadcrumbs">
+          <li><a href="../../../" title="Home">Home</a></li>
+          <li><a href="./" title="<%= currentSector %>"><%= currentSector %></a></li>
+          <li><%= currentBranch %></li>
+        </ul>
         <form>
-            <input type="search" name="search" id="search" class="search" placeholder="Uw zoekopdracht">
+            <span class="search-icon"></span>
+            <input type="search" name="search" id="search" class="search" placeholder="voer een zoekopdracht in">
         </form>
-        <img src="/images/<%= currentSector %>.svg" class="sector" alt="sector industrie">
-        <h3>Uw keuzes</h3>
-        <p><strong>Sector: </strong> <%= currentSector %> </p>
-        <p><strong>Werkgebied: </strong> <%= currentBranch %> </p>
+        <div class="img-sector">
+          <img src="/images/<%= currentSector %>.svg" class="sector" alt="sector industrie">
+        </div>
+
+        <ul class="user-choice"><h3>Uw keuzes</h3>
+          <li>Sector: <span class="strong"><%= currentSector %></span></li>
+          <li>Werkgebied: <span class="strong"><%= currentBranch %></span></li>
+        </ul>
         <% include filters %>
 
     <% }
 
     else if (page === "detail") { %>
-        <div class="breadcrumbs">
-            <a href="../../../" title="Tauw">Home /</a>
-            <a href="../" title="Tauw"><%= currentSector %> /</a>
-            <a href="./" title="Tauw"><%= currentBranch %></a>
-        </div>
+        <ul class="breadcrumbs">
+          <li><a href="../../../" title="Home">Home</a></li>
+          <li><a href="../" title="<%= currentSector %>"><%= currentSector %></a></li>
+          <li><a href="./" title="<%= currentBranch %>"><%= currentBranch %></a></li>
+        </ul>
         <form>
-            <input type="search" name="search" id="search" class="search" placeholder="Uw zoekopdracht">
+            <span class="search-icon"></span>
+            <input type="search" name="search" id="search" class="search" placeholder="voer een zoekopdracht in">
         </form>
-        <img src="/images/<%= currentSector %>.svg" class="sector" alt="sector industrie">
-        <h3>Uw keuzes</h3>
-        <p><strong>Sector: </strong> <%= currentSector %> </p>
-        <p><strong>Werkgebied: </strong> <%= currentBranch %> </p>
-        <p><strong>Sensor: </strong> <%= currentSensor %> </p>
+        <div class="img-sector">
+          <img src="/images/<%= currentSector %>.svg" class="sector" alt="sector industrie">
+        </div>
+        <ul class="user-choice"><h3>Uw keuzes</h3>
+          <li>Sector: <span class="strong"><%= currentSector %></span></li>
+          <li>Werkgebied: <span class="strong"><%= currentBranch %></span></li>
+          <li>Sensor: <span class="strong"><%= currentSensor %></span></li>
+        </ul>
+    <% }
+    else if (page === "search") { %>
+        <ul class="breadcrumbs">
+          <li><a href="../../../" title="Home">Home</a></li>
+          <li><%= searchQuery %></li>
+        </ul>
+        <form>
+            <span class="search-icon"></span>
+            <input type="search" name="search" id="search" class="search" placeholder="voer een zoekopdracht in">
+        </form>
+
+        <ul class="user-choice"><h3>Uw keuze</h3>
+          <li>Zoekopdracht: <span class="strong"><%= searchQuery %></span></li>
+        </ul>
+
     <% }
 
     else { %>
+        <h2>Aside not found</h2>
 
     <% } %>
 </div>
