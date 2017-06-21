@@ -27,10 +27,9 @@ h1 {
   font-style: italic !important;
 }
 main {
-  float: left;
+  float: right;
   width: 70%;
   height: 100vh;
-  margin-left: 5%;
   padding-top: 2.5rem;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -179,12 +178,12 @@ aside section{
     flex-wrap: wrap;
     justify-content: flex-start;
 }
-aside section label{
-    font-size: 1.3em;
-    color: #0a516a;
-    font-weight: 600;
-    margin: 0 0 0.5em 0;
-}
+// aside section label{
+//     font-size: 1.3em;
+//     color: #0a516a;
+//     font-weight: 600;
+//     margin: 0 0 0.5em 0;
+// }
 aside section label:focus,
 aside section label:hover{
     color: white;
