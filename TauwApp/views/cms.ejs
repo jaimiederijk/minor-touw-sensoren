@@ -28,60 +28,51 @@
   <body>
       <% include partials/aside %>
       <main>
-          <h1>Data in Database</h1>
+          <% if (logged_in !== true) { %>
+              <form class="userInput" action="/cms" method="post">
+                  <label for="username">Accountnaam</label>
+                  <input id="username" type="text" name="username">
+                  <label for="password">Wachtwoord</label>
+                  <input id="password" type="text" name="password">
+                  <input type="submit" value="Submit">
+              </form>
+          <% } else{ %>
+              <h1>Data in Database</h1>
 
-          <form class="userInput" action="/cms" method="post">
-              <label for="username">Accountnaam</label>
-              <input id="username" type="text" name="username">
-              <label for="password">Wachtwoord</label>
-              <input id="password" type="text" name="password">
-              <input type="submit" value="Submit">
-          </form>
+              <form >
+                  <label for="search">search</label>
+                  <input id="search" type="text" name="search">
+                  <input type="submit" value="Submit">
+              </form>
 
-          <form >
-              <label for="search">search</label>
-              <input id="search" type="text" name="search">
-              <input type="submit" value="Submit">
-          </form>
+            <a href="./cms/add" alt="add a new sensor"><button>Nieuw (+)</button></a>
 
-          <%if (logged_in == true) { %>
-              <a href="./cms/add" alt="add a new sensor"><button>Nieuw (+)</button></a>
-          <% } %>
-
-
-
-          <table>
-              <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Sector</th>
-                <th>Link</th>
-                <th>Contact</th>
-
-                <%if (logged_in == true) { %>
+              <table>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Sector</th>
+                    <th>Link</th>
+                    <th>Contact</th>
                     <th>Aanpassen</th>
                     <th>Verijderen</th>
-                <% } %>
-
-              </tr>
-
-              <% allSensors.forEach(function(sensor) { %>
-                  <tr>
-                      <td><%= sensor._id %></td>
-                      <td><%= sensor.name %></td>
-                      <td><%= sensor.sector %></td>
-                      <td><a href="/details/<%= sensor.sector %>/<%= sensor.branch[0] %>/<%= sensor.name %>">Link</a></td>
-                      <td><%= sensor.contact %></td>
-
-                      <%if (logged_in == true) { %>
-                          <td><a href="/cms/edit/<%= sensor.sector %>/<%= sensor.branch[0] %>/<%= sensor.name %>">Aanpassen</a></td>
-                          <td><a href="/cms/remove/<%= sensor._id %>">Verwijderen</a></td>
-                      <% } %>
-
 
                   </tr>
-              <% }) %>
-        </table>
+
+                  <% allSensors.forEach(function(sensor) { %>
+                      <tr>
+                          <td><%= sensor._id %></td>
+                          <td><%= sensor.name %></td>
+                          <td><%= sensor.sector %></td>
+                          <td><a href="/details/<%= sensor.sector %>/<%= sensor.branch[0] %>/<%= sensor.name %>">Link</a></td>
+                          <td><%= sensor.contact %></td>
+                          <td><a href="/cms/edit/<%= sensor.sector %>/<%= sensor.branch[0] %>/<%= sensor.name %>">Aanpassen</a></td>
+                          <td><a href="/cms/remove/<%= sensor._id %>">Verwijderen</a></td>
+                      </tr>
+                  <% }) %>
+            </table>
+          <% } %>
+
     </main>
 
   </body>
