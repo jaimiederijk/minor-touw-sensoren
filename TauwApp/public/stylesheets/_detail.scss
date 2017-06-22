@@ -2,63 +2,75 @@
 @import 'common/_colors';
 
 .detail {
-  width: 100%;
-  background-color: $color_lightbackground;
-  color: $color_black;
 
   header {
-    padding-left: 1rem;
-
+    // padding-left: 1rem;
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      width: 40%;
+      max-width: 15rem;
+      padding-left: 1rem;
+    }
+    h2 {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 3em;
+      padding-left: 2rem;
+    }
   }
 
   article {
-    width: 100%;
+    display: block;
+    width: 90%;
     max-width: 30em;
-    padding: 1rem;
+    padding: 0 1rem;
+    vertical-align: top;
+    @include breakpoint(tablet) {
+        display: inline-block;
+        width: 35%;
+        padding: 2.5rem 1rem;
+    }
   }
 
   table {
-    margin-bottom: 1rem;
-    border-spacing: 0.5rem;
-  }
+    margin-bottom: 2rem;
+    width: 100%;
+    border-spacing: 0 1rem;
 
+  }
+  tr:nth-of-type(odd) {
+    background-color: $color_shadow;
+  }
   th {
     height: 2em;
     width: 10em;
     text-align: left;
+    width: 50%;
+    padding-left: 1rem;
   }
 
   td {
-    background-color: $color_shadow;
-    text-align: center;
+    text-align: left;
+    width: 50%;
     padding: 0 1rem;
   }
 
   #selection_info  {
-    // background-color: $color_white;
-
-    img {
-      display: inline-block;
-      vertical-align: top;
-      width: 40%;
-      max-width: 15rem;
-      padding-left: 1rem;
+    display: inline-block;
+    vertical-align: top;
+    width: 90%;
+    margin-right: 4rem;
+    @include breakpoint(laptop) {
+        width: 35%;
+    }
+    > div:first-of-type {
+      padding-top:3rem;
     }
     > div {
 
       padding-left: 1rem;
       padding-top: 1rem;
-    }
-  }
-
-  #selection_info_what {
-    display: inline-block;
-    vertical-align: top;
-    width: 40%;
-    max-width: 15rem;
-
-    th {
-      width: 5em;
     }
   }
 }

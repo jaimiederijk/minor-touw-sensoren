@@ -27,27 +27,40 @@ h1 {
   font-style: italic !important;
 }
 main {
-  float: right;
-  width: 70%;
-  height: 100vh;
-  padding-top: 2rem;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  overflow-y: auto;
-  @include breakpoint(mobileonly) {
     float: none;
     width: 100%;
     height: auto;
-    margin-top: 3.5rem;
-  }
+    padding-top: 2.5rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
   @include breakpoint(tablet) {
-    width: 65%;
-  }
-  @include breakpoint(desktop) {
-    width: 70%;
-
+      float: right;
+      width: 70%;
+      height: 100vh;
+    
+//   float: right;
+//   width: 70%;
+//   height: 100vh;
+//   padding-top: 2rem;
+//   box-sizing: border-box;
+//   overflow-x: hidden;
+//   overflow-y: auto;
+//   @include breakpoint(mobileonly) {
+//     float: none;
+//     width: 100%;
+//     height: auto;
+//     margin-top: 3.5rem;
+//   }
+//   @include breakpoint(tablet) {
+//     width: 65%;
+//   }
+//   @include breakpoint(desktop) {
+//     width: 70%;
   }
 }
+
+
 main > section {
   width: 90%;
   header {
