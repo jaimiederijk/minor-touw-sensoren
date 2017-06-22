@@ -13,7 +13,7 @@ var url = 'mongodb://localhost:27017/tauw';
 
 var index = require('./routes/index').router;
 var detail = require('./routes/detail').router;
-var form = require('./routes/form').router;
+var cms = require('./routes/cms').router;
 
 var appJS = require('./routes/form.js');
 var filters = appJS.filters;
@@ -57,7 +57,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/form', form);
+app.use('/cms', cms);
 app.use('/details', detail);
 
 // catch 404 and forward to error handler
