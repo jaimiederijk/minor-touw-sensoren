@@ -23,12 +23,19 @@ ul.branch {
       width: 100%;
       min-height: 0;
     }
-    @include breakpoint(phablet) {
+    @include breakpoint(tablet) {
       width: 45%;
+    }
+    @include breakpoint(phablet) {
+      float: none;
+      width: 55%;
     }
     &:nth-child(even) {
       float: right;
       @include breakpoint(mobileonly) {
+        float: none;
+      }
+      @include breakpoint(phablet) {
         float: none;
       }
     }
@@ -87,6 +94,12 @@ ul.branch {
     float: right;
     width: 75%;
     box-sizing: border-box;
+    @include breakpoint(tablet) {
+      width: 70%;
+    }
+    @include breakpoint(desktop) {
+      width: 75%;
+    }
   }
 }
 
