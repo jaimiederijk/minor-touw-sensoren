@@ -11,15 +11,22 @@
       // declare html elements
       var init = function () {
         interaction.createEventListeners();
-        if (htmlElements.fullMap.clientWidth < 680) {
+        var mapWidth = htmlElements.fullMap.clientWidth;
+        if (mapWidth < 680) {
             interaction.createArrowNav();
-        }
 
+        } else {
+          //1038 450   715 310px  verschil 328 140 = 0.42682927
+          for (var i = 0; i < htmlElements.allSvg.length; i++) {
+            htmlElements.allSvg[i].style.height = mapWidth * 0.43 + "px";
+          }
+        }
       };
 
       var htmlElements = {
         fullMap: document.querySelector('.full-map'),
         allSections: document.querySelectorAll('.full-map > a'),
+        allSvg: document.querySelectorAll('.full-map > a img')
         // satelliteSensorRural : document.querySelector('#rural .satellite'),
         // droneSensorRural : document.querySelector('#rural .drone'),
         // satelliteSensorIndustrial : document.querySelector('#industrial .satellite'),
