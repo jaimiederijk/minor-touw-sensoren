@@ -12,7 +12,6 @@ body{
     line-height: 1.7;
     background-color: $color_lightbackground;
 }
-
 img{
     border: none;
 }
@@ -21,7 +20,8 @@ h1 {
     font-family: 'open_sansbold', Helvetica, Arial, sans-serif;
 }
 .strong {
-    font-family: 'open_sanssemibold', Helvetica, Arial, sans-serif !important;
+    font-family: 'open_sansbold', Helvetica, Arial, sans-serif !important;
+    font-style: normal;
 }
 .italic {
   font-style: italic !important;
@@ -95,7 +95,7 @@ p{
     text-decoration: none;
 }
 .round:hover, .round:focus, .round:active{
-    border:none;
+    border: none;
     color: black;
     background: lightblue;
 }
@@ -105,10 +105,10 @@ p{
     width: 80%;
     margin: 0 auto;
 }
-
-form {
-    margin: 1em 0 0 0;
-}
+//
+// form {
+//     margin: 1em 0 0 0;
+// }
 .formBlock{
     width: 100%;
     display: flex;

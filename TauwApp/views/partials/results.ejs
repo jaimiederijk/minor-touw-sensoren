@@ -9,12 +9,14 @@
           <ul class="branch clearfix">
           <% allSensors.forEach(function(sensorID) { %>
                 <li class="clearfix">
-                    <div>
+                    <div class="image-wrap">
                         <img src="/images/XRF.jpg" alt="<%= sensorID.name %>" />
                     </div>
                   <section>
-                        <h4><a href="/details/<%= currentSector %>/<%= currentBranch %>/<%= sensorID.name %>" title="<%= sensorID.name %>"><%= sensorID.name %>, </a></h4>
-                        <h4 class="sector"><%= sensorID.sector%></h4>
+                        <header>
+                          <h4><a href="/details/<%= currentSector %>/<%= currentBranch %>/<%= sensorID.name %>" title="<%= sensorID.name %>"><%= sensorID.name %></a></h4>
+                          <% if (page === "search") { %> <h5 class="sector"><%= sensorID.sector%></h5> <% } %>
+                        </header>
                     <p><%= sensorID.summary_small %></p>
                     <a href="/details/<%= currentSector %>/<%= currentBranch  %>/<%= sensorID.name %>" title="meer..." class="more-url">meer...</a>
                   </section>
