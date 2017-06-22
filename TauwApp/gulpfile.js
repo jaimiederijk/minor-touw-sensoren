@@ -28,7 +28,7 @@ gulp.task('import-data', runCommand('mongoimport --db tauw --collection sensors 
 gulp.task('import-data2', runCommand('mongoimport --db tauw --collection settings --drop --file ./settingsseed.json'));
 gulp.task('drop-collection', runCommand('mongo tauw --eval "db.sensors.drop()"'));
 
-gulp.task('setup-db',['create-data-folder','start-mongo','create-db','import-data']);
+gulp.task('setup-db',['create-data-folder','start-mongo','create-db','import-data', 'import-data2']);
 
 gulp.task('sass', function() {
     return gulp.src('public/stylesheets/*.scss')

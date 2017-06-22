@@ -78,8 +78,16 @@ var find = {
        db.close();
      });
    })
- }
-
+ },
+//  findAndRemoveSensors : function (query, callback) {
+//   MongoClient.connect(url, function(err, db) {
+//     assert.equal(null, err);
+//     console.log("Connected successfully to server");
+//     db.collection("sensors").remove( { _id:{ query}  }, true )
+//     db.close();
+//   });
+// },
 }
+
 
 module.exports = {find: find};
