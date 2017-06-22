@@ -1,46 +1,13 @@
-<header>
-    <% if (page === "index") { %>
-        <!--  Index.html -->
-        <a href="" title="Tauw">
-            <img src="images/tauw_logo_white.svg" alt="Tauw logo">
-        </a>
-        <form>
-            <input type="search" name="search" class="search" placeholder="Search">
-        </form>
-    <% }
-
-    else if (page === "sector") { %>
-        <!--  sector.html -->
-        <a href="../../" title="Tauw">
-            <img src="../../images/tauw_logo_white.svg" alt="Tauw logo">
-        </a>
-        <form>
-            <input type="search" name="search" class="search" placeholder="Search">
-        </form>
-    <% }
-
-    else if (page === "branch") { %>
-        <!--  branch.html -->
-        <a href="../../../" title="Tauw">
-            <img src="../../../images/tauw_logo_white.svg" alt="Tauw logo">
-        </a>
-        <form>
-            <input type="search" name="search" class="search" placeholder="Search">
-        </form>
-    <% }
-
-    else if (page === "detail") { %>
-        <!--  Detail.html -->
-        <a href="../../../" title="Tauw">
-            <img src="../../../images/tauw_logo_white.svg" alt="Tauw logo">
-        </a>
-        <!-- <a href="./" title="terug">Terug</a> -->
-    <% }
-
-    else { %>
-        <!--  Form.html -->
-        <a href="../" title="Tauw">
-            <img src="images/tauw_logo_white.svg" alt="Tauw logo">
-        </a>
-    <% } %>
+<header class="mobile-header clearfix">
+  <a href="/" title="Tauw" class="logo">
+      <img src="/images/tauw_logo_white.svg" alt="Tauw logo">
+  </a>
+  <span class="menu-icon">
+    <a href="#" title="menu" id="open-menu" title="menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </a>
+    <a href="#" title="sluiten" id="close-menu"><img src="/images/close-menu.svg" alt="sluiten"</a>
+  </span>
 </header>

@@ -9,13 +9,18 @@ main.category {
         font-family: 'open_sansbold', Helvetica, Arial, sans-serif;
       }
     }
+    .category-img {
+      width: 70%;
+      height: 15em;
+      margin: 0 auto;
+      text-align: center;
+    }
     img {
-        width: 60%;
-        margin-left: 20%;
-        @include breakpoint(tablet) {
-          width: 40%;
-          margin-left: 30%;
-        }
+        width: auto;
+        height: 100%;
+        // @include breakpoint(tablet) {
+        //   width: 40%;
+        // }
     }
     ul.branches{
         padding: 0;
