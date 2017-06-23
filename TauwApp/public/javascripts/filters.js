@@ -34,10 +34,15 @@ var events = {
       var currentHref = window.location.href;
       var currenActionArr = currentHref.split("?");
       var currenAction = currenActionArr[1];
-
-      htmlElements.form.action = currenAction;
+      var newAction = e.target.name + "=" + e.target.value;
+      debugger
+      // htmlElements.form.action = currenAction + "&" + newAction ;
       //
-      document.filter.submit();
+      if (currenAction !== undefined) {
+          window.location.href = currentHref + "&" + newAction;
+      } else {
+        document.filter.submit();
+      }
     }
 }
 
