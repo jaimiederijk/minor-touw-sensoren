@@ -46,6 +46,23 @@ var searchText = function(collection, query, db, callback) {
   })
 }
 
+var removeDocument = function(collection, query, db, callback) {
+  // Get the documents collection
+  var collection = db.collection(collection);
+  console.log(query)
+
+  var itemID = query._id;
+
+  // Remove a single document
+  // http://mongodb.github.io/node-mongodb-native/2.2/tutorials/crud/#removing-documents
+
+    collection.deleteOne({id:itemID}, function(err, docs) {
+      assert.equal(null, err);
+      console.log(docs.deletedCount)
+     callback(docs);
+      });
+};
+
 var find = {
   findSensors : function (query, callback) {
    MongoClient.connect(url, function(err, db) {
@@ -79,15 +96,18 @@ var find = {
      });
    })
  },
-//  findAndRemoveSensors : function (query, callback) {
-//   MongoClient.connect(url, function(err, db) {
-//     assert.equal(null, err);
-//     console.log("Connected successfully to server");
-//     db.collection("sensors").remove( { _id:{ query}  }, true )
-//     db.close();
-//   });
-// },
-}
+ removeItem : function (query, callback) {
+   MongoClient.connect(url, function(err, db) {
+     assert.equal(null, err);
+     console.log("Connected successfully to server");
 
+     removeDocument("sensors", query, db, function(docs) {
+         callback(docs);
+         console.log("Item successfully removed")
+       db.close();
+     });
+ })
+ },
+}
 
 module.exports = {find: find};

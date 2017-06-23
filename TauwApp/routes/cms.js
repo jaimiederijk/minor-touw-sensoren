@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
             res.render('cms', {
                 title: "cms",
                 page: "cms",
-                logged_in: login_status,
+                logged_in: true,
                 allSensors: docs
             });
         });
@@ -39,14 +39,16 @@ router.post('/', function(req, res, next) {
 
 router.get('/remove/:sectorID', function(req, res, next) {
     var query = {
-        id: req.params.sectorID
+        _id: req.params.sectorID
     }
     login.checkLogin(req, res);
-    connector.find.findAndRemoveSensors( query, function(docs){
-
-
-        console.log(docs)
-        res.redirect("/cms")
+    connector.find.removeItem(query, function(docs){
+        res.render('removing', {
+            title: query._id,
+            page: "cms",
+            logged_in: login_status,
+            // allSensors: docs
+        });
     });
 });
 
