@@ -26,6 +26,17 @@ var findDocumentsWithField = function(collection, query, field, db, callback) {
   });
 }
 
+var createDocument = function(collection, json, db) {
+  // Get the documents collection
+  var collection = db.collection(collection);
+  // Find some documents
+  collection.insertOne(json, function(err, r) {
+    assert.equal(err, null);
+    assert.equal(1, r.insertedCount)
+
+  });
+}
+
 var searchText = function(collection, query, db, callback) {
   var collection = db.collection(collection);
 
@@ -79,6 +90,13 @@ var find = {
      });
    })
  },
+ createNewSensor : function (json) {
+   MongoClient.connect(url, function(err, db){
+     assert.equal(null,err);
+
+     createDocument("sensors", json, db);
+   })
+ }
 //  findAndRemoveSensors : function (query, callback) {
 //   MongoClient.connect(url, function(err, db) {
 //     assert.equal(null, err);
