@@ -9,177 +9,104 @@
      <% include partials/aside %>
      <main>
 
+         <style>
+         fieldset{
+             column-count: 3;
+         }
+         form label{
+             margin: 0;
+         }
+         form{
+             display: flex;
+             flex-direction: column;
+         }
+        #contact{order:1;}
+        #sensor{order:2;}
+        #reference{order:1;}
+        input[type="submit"]{order:4;}
+
+        fieldset fieldset{
+            padding: 0.5rem;
+        }
+        fieldset fieldset label{
+            display: inline-block;
+            width: 45%;
+        }
+
+         </style>
+
          <section>
-           <header>
-                 <h1 class="current"><%= title %> </h1>
-                 <nav class="stepCounter">
-                    <a href="#step1">Contact informatie</a>
-                    <a href="#step2">Categoriën</a>
-                    <a href="#step3">Details</a>
-                    <a href="#step4">Voorbeeld project</a>
-                </nav>
-           </header>
+           <form class="userInput" action="./add" method="post" >
+               <fieldset id="sensor">
 
-           <form class="userInput" action="./add" method="post">
-
-               <fieldset id="1">
-                   <legend>Contact informatie</legend>
-                    <label for="contactpersoon">Voor- en achternaam</label>
-                    <input id="contactpersoon" type="text" name="contactpersoon"> <span>*required</span><br/>
-
-                    <label for="email">Email adres</label>
-                    <input id="email" type="email" name="email"> <span>*required</span><br/>
-
-                    <label for="mobile">Telefoon nummer</label>
-                    <input id="mobile" type="tel" name="mobile"> <span>*required</span><br/>
-
-                    <label for="profilePhoto">Profielfoto</label>
-                    <input id="profilePhoto" type="url" name="profielfoto">
-                    <img id="output"/>
-               </fieldset>
-
-               <fieldset id="2">
-
-                   <legend>Categoriën</legend>
+                   <legend>Sensor information</legend>
                    <label for="name">Naam</label>
                    <input id="name" type="text" name="name"><span>*required</span><br/>
 
-                   <label for="type">Type </label>
-                   <input id="type" type="text" name="type"> <span>*required</span><br/>
-                    <br/>
-                    <p>Selecteer de overeenkomende categoriën:</p>
-                    <% AllSettings.sector.forEach(function(sectorID) { %>
-                        <label for="<%= sectorID %>">
-                               <input type="checkbox" name="sector" id="<%= sectorID %>" value="<%= sectorID %>"> <%= sectorID %> <br/>
-                           </label>
-                    <% }) %>
-                    <label for="nieuw-sector" class="nieuw">
-                        <input type="checkbox" name="sector" id="nieuw-sector" value="nieuw">Nieuw
-                        <input type="text" name="sector" id="nieuw-sector">
-                    </label><br/><br/>
+                   <label for="image">Profielfoto</label>
+                   <input id="image" type="url" name="image">
+                   <img id="output"/>
 
-                    <% AllSettings.branch.forEach(function(branchID) { %>
-                        <label for="<%= branchID %>">
-                               <input type="checkbox" name="branch" id="<%= branchID %>" value="<%= branchID %>"> <%= branchID %><br/>
-                           </label>
-                    <% }) %>
-                    <label for="nieuw-branch" class="nieuw">
-                        <input type="checkbox" name="branch" id="nieuw-branch" value="nieuw">Nieuw
-                        <input type="text" name="branch" id="nieuw-branch">
-                    </label><br/><br/>
 
-                    <% AllSettings.tags.forEach(function(tagsID) { %>
-                        <label for="<%= tagsID %>">
-                               <input type="checkbox" name="tags" id="<%= tagsID %>" value="<%= tagsID %>"> <%= tagsID %><br/>
-                           </label>
-                    <% }) %>
-                    <label for="nieuw-tags" class="nieuw">
-                        <input type="checkbox" name="tags" id="nieuw-tags" value="nieuw">Nieuw
-                        <input type="text" name="tags" id="nieuw-tags">
-                    </label><br/><br/>
+                        <% for(var i=1; i<Object.keys(AllSettings).length; i++) {%>
+                        <fieldset>
+                            <legend><%= Object.keys(AllSettings)[i] %></legend>
+                            <p>Please select the corresponding <%= Object.keys(AllSettings)[i] %>.</p>
+                            <% AllSettings[Object.keys(AllSettings)[i]].forEach(function(value) { %>
+                                <label>
+                                    <input type="checkbox" name="<%= Object.keys(AllSettings)[i] %>" value="<%= value %>"> <%= value %> <br/>
+                                </label>
+                            <% }) %>
 
-                    <% AllSettings.level.forEach(function(levelID) { %>
-                        <label for="<%= levelID %>">
-                               <input type="checkbox" name="level" id="<%= levelID %>" value="<%= levelID %>"> <%= levelID %><br/>
-                           </label>
-                    <% }) %>
-                    <label for="nieuw-level" class="nieuw">
-                        <input type="checkbox" name="level" id="nieuw-level" value="nieuw">Nieuw
-                        <input type="text" name="level" id="nieuw-level">
-                    </label><br/><br/>
+                            <label for="nieuw-<%= Object.keys(AllSettings)[i] %>" class="nieuw">
+                                <input type="checkbox" name="<%= Object.keys(AllSettings)[i] %>" id="nieuw-<%= Object.keys(AllSettings)[i] %>" value="nieuw">Nieuw
+                                <input type="text" name="<%= Object.keys(AllSettings)[i] %>" id="nieuw-<%= Object.keys(AllSettings)[i] %>">
+                            </label>
+                        </fieldset>
+                        <% } %>
+
+                        <label for="summary_smal">Short summary</label><br/>
+                        <textarea id="summary_smal" name="summary_smal" rows="4" cols="50"></textarea><br/>
+
+                        <label for="summary_big">Long summary</label><br/>
+                        <textarea id="summary_big" name="summary_big" rows="4" cols="50"></textarea><br/>
 
                </fieldset>
 
-               <fieldset id="3">
+               <fieldset id="contact">
+                   <legend>Contact information</legend>
+                    <label for="contactName">Voor- en achternaam</label>
+                    <input id="contactName" type="text" name="contactName"> <span>*required</span><br/>
 
-                   <% AllSettings.scale.forEach(function(scaleID) { %>
-                       <label for="<%= scaleID %>">
-                              <input type="checkbox" name="scale" id="<%= scaleID %>" value="<%= scaleID %>"> <%= scaleID %>
-                          </label>
-                   <% }) %>
-                   <br/>
-                   <label for="nieuw-scale" class="nieuw">
-                       <input type="checkbox" name="scale" id="nieuw-scale" value="nieuw">Nieuw
-                       <input type="text" name="scale" id="nieuw-scale">
-                   </label>
+                    <label for="contactPhone">Telefoon nummer</label>
+                    <input id="contactPhone" type="tel" name="contactPhone"> <span>*required</span><br/>
 
-                   <% AllSettings.resolution.forEach(function(resolutionID) { %>
-                       <label for="<%= resolutionID %>">
-                              <input type="checkbox" name="resolution" id="<%= resolutionID %>" value="<%= resolutionID %>"> <%= resolutionID %>
-                          </label>
-                   <% }) %>
-                   <br/>
-                   <label for="nieuw-resolution" class="nieuw">
-                       <input type="checkbox" name="resolution" id="nieuw-resolution" value="nieuw">Nieuw
-                       <input type="text" name="resolution" id="nieuw-resolution">
-                   </label>
+                    <label for="contactMail">Email adres</label>
+                    <input id="contactMail" type="contactMail" name="contactMail"> <span>*required</span><br/>
 
-                   <% AllSettings.accuracy.forEach(function(accuracyID) { %>
-                       <label for="<%= accuracyID %>">
-                              <input type="checkbox" name="scale" id="<%= accuracyID %>" value="<%= accuracyID %>"> <%= accuracyID %>
-                          </label>
-                   <% }) %>
-                   <br/>
-                   <label for="nieuw-accuracy" class="nieuw">
-                       <input type="checkbox" name="accuracy" id="nieuw-accuracy" value="nieuw">Nieuw
-                       <input type="text" name="accuracy" id="nieuw-accuracy">
-                   </label>
-
-                   <% AllSettings.interval.forEach(function(intervalID) { %>
-                       <label for="<%= intervalID %>">
-                              <input type="checkbox" name="interval" id="<%= intervalID %>" value="<%= intervalID %>"> <%= intervalID %>
-                          </label>
-                   <% }) %>
-                   <br/>
-                   <label for="nieuw-interval" class="nieuw">
-                       <input type="checkbox" name="interval" id="nieuw-interval" value="nieuw">Nieuw
-                       <input type="text" name="interval" id="nieuw-interval">
-                   </label>
-
-                   <% AllSettings.duration.forEach(function(durationID) { %>
-                       <label for="<%= durationID %>">
-                              <input type="checkbox" name="duration" id="<%= durationID %>" value="<%= durationID %>"> <%= durationID %>
-                          </label>
-                   <% }) %>
-                   <br/>
-                   <label for="nieuw-duration" class="nieuw">
-                       <input type="checkbox" name="duration" id="nieuw-duration" value="nieuw">Nieuw
-                       <input type="text" name="duration" id="nieuw-duration">
-                   </label>
-
-                   <% AllSettings.innovation.forEach(function(innovationID) { %>
-                       <label for="<%= innovationID %>">
-                              <input type="checkbox" name="innovation" id="<%= innovationID %>" value="<%= innovationID %>"> <%= innovationID %>
-                          </label>
-                   <% }) %>
-                   <br/>
-                   <label for="nieuw-innovation" class="nieuw">
-                       <input type="checkbox" name="innovation" id="nieuw-innovation" value="nieuw">Nieuw
-                       <input type="text" name="innovation" id="nieuw-innovation">
-                   </label>
-
-                   <% AllSettings.costs.forEach(function(costsID) { %>
-                       <label for="<%= costsID %>">
-                              <input type="checkbox" name="scale" id="<%= costsID %>" value="<%= costsID %>"> <%= costsID %>
-                          </label>
-                   <% }) %>
-                   <br/>
-                   <label for="nieuw-costs" class="nieuw">
-                       <input type="checkbox" name="costs" id="nieuw-costs" value="nieuw">Nieuw
-                       <input type="text" name="costs" id="nieuw-costs">
-                   </label>
-
+                    <label for="contactPhoto">Profielfoto</label>
+                    <input id="contactPhoto" type="url" name="contactPhoto">
+                    <img id="output"/>
                </fieldset>
 
-               <fieldset id="4">
+               <fieldset id="reference">
+                   <legend>Reference project information</legend>
+                   <label for="referenceTitle">Reference title</label>
+                   <input id="referenceTitle" type="text" name="referenceTitle"> <span>*required</span><br/>
+
+                   <label for="referenceSummary">reference Summary</label><br/>
+                   <textarea id="referenceSummary" name="referenceSummary" rows="4" cols="50"></textarea><br/>
+
+                    <label for="referenceLink">Reference Link</label>
+                    <input id="referenceLink" type="url" name="referenceLink"><br/>
+
+                    <label for="referenceImage">Reference image</label>
+                    <input id="referenceImage" type="url" name="referenceImage">
+                    <img id="output"/>
                </fieldset>
 
                <input type="submit" value="Submit">
            </form>
-
-
-
-
        </section>
 
     </main>

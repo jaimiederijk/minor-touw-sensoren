@@ -55,34 +55,15 @@ router.get('/add', function(req, res, next) {
           res.render('form', {
               title: "add a sensor",
               page: "form",
-              AllSettings: {
-                  sector: docs[0].sector,
-                  branch: docs[0].branch,
-                  tags: docs[0].tags,
-                  level: docs[0].level,
-                  scale: docs[0].scale,
-                  resolution: docs[0].resolution,
-                  accuracy: docs[0].accuracy,
-                  interval: docs[0].interval,
-                  duration: docs[0].duration,
-                  innovation: docs[0].innovation,
-                  costs: docs[0].costs,
-
-                //   contact: docs[0].contact,
-                //   email: docs[0].email,
-                //   mobile: docs[0].mobile,
-                //   profilePhoto: docs[0].profilePhoto,
-                  //
-                //   referenceTitle: docs[0].referenceTitle,
-                //   refSummary: docs[0].refSummary,
-                //   refLink: docs[0].refLink,
-              }
-
-        });
+              AllSettings: docs[0],
+          });
     });
 });
 
 router.post('/add', function(req, res, next) {
+    console.log(req.body)
+    var jsonObject = JSON.stringify(req.body);
+    console.log(jsonObject)
   res.redirect("/cms/add")
 });
 
