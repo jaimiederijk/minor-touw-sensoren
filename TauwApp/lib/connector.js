@@ -9,8 +9,6 @@ var findDocuments = function(collection, query, db, callback) {
   // Find some documents
   collection.find( query ).toArray(function(err, docs) {
     assert.equal(err, null);
-    // console.log("Found the following records example");
-    // console.log(docs)
     callback(docs);
   });
 }
@@ -30,6 +28,7 @@ var searchText = function(collection, query, db, callback) {
   var collection = db.collection(collection);
 
   collection.ensureIndex({
+      _id: "text",
       name:"text",
       sector:"text",
       branch:"text",
@@ -51,12 +50,15 @@ var removeDocument = function(collection, query, db, callback) {
   var collection = db.collection(collection);
   console.log(query)
 
-  var itemID = query._id;
-
   // Remove a single document
   // http://mongodb.github.io/node-mongodb-native/2.2/tutorials/crud/#removing-documents
 
-    collection.deleteOne({id:itemID}, function(err, docs) {
+  collection.find(query ).toArray(function(err, docs) {
+    assert.equal(err, null);
+    console.log(docs)
+  });
+
+    collection.deleteOne(query, function(err, docs) {
       assert.equal(null, err);
       console.log(docs.deletedCount)
      callback(docs);
@@ -96,6 +98,18 @@ var find = {
      });
    })
  },
+//  removeItem : function (query, callback) {
+//   MongoClient.connect(url, function(err, db) {
+//     assert.equal(null, err);
+//     console.log("Connected successfully to server");
+//
+//     findDocuments("sensors", query ,db, function(docs) {
+//         console.log(docs)
+//       callback(docs);
+//       db.close();
+//     });
+//   });
+// },
  removeItem : function (query, callback) {
    MongoClient.connect(url, function(err, db) {
      assert.equal(null, err);

@@ -37,9 +37,10 @@ router.post('/', function(req, res, next) {
     });
 });
 
-router.get('/remove/:sectorID', function(req, res, next) {
+router.get('/remove/:sectorName/:sensorName', function(req, res, next) {
     var query = {
-        _id: req.params.sectorID
+        sector: req.params.sectorName,
+        name: req.params.sensorName
     }
     login.checkLogin(req, res);
     connector.find.removeItem(query, function(docs){
