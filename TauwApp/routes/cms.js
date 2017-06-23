@@ -44,12 +44,13 @@ router.get('/remove/:sectorName/:sensorName', function(req, res, next) {
     }
     login.checkLogin(req, res);
     connector.find.removeItem(query, function(docs){
-        res.render('removing', {
-            title: query._id,
-            page: "cms",
-            logged_in: login_status,
-            // allSensors: docs
-        });
+        // res.render('removing', {
+        //     title: query._id,
+        //     page: "cms",
+        //     logged_in: login_status,
+        //     // allSensors: docs
+        // });
+        res.redirect("/cms")
     });
 });
 
