@@ -2,7 +2,7 @@
 @import 'common/_colors';
 
 .map {
-  width: 100%;
+//  width: 100%;
 
   .full-map {
     width: 100%;
@@ -89,8 +89,8 @@
 }
 @include breakpoint(mobile) {
   .map {
-    width: 74%;
-    float: left;
+    // width: 74%;
+    // float: left;
 
     .full-map a img {
       height: 41vw;
@@ -106,7 +106,7 @@
       justify-content: center;
 
       a img {
-        height: 20rem;
+        height: 16rem;
       }
     }
   }
@@ -116,7 +116,7 @@
   .map {
 
     .full-map a img {
-      height: 22rem;
+      height: 20rem;
     }
   }
 
@@ -125,7 +125,7 @@
   .map {
 
     .full-map a img {
-      height: 26rem;
+      height: 24rem;
     }
   }
 

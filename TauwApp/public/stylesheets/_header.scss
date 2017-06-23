@@ -9,10 +9,10 @@ header.mobile-header{
   height: 3.5rem;
   line-height: 3.5rem;
   background-color: $color_background;
-  display: none;
   z-index: 1;
-  @include breakpoint(mobileonly) {
-    display: block;
+  display: block;
+  @include breakpoint(tablet) {
+    display: none;
   }
   a.logo {
     float: left;
