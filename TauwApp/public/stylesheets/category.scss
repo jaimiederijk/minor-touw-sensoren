@@ -10,10 +10,33 @@ main.category {
       }
     }
     .category-img {
-      width: 70%;
+      position: relative;
+      width: 60%;
       height: 15em;
       margin: 0 auto;
       text-align: center;
+      .drone {
+        position: absolute;
+        top: 2rem;
+        left: 4rem;
+        background-image: url(/images/drone.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 3em;
+        height: 3em;
+        display: block;
+      }
+      .satellite {
+        position: absolute;
+        top: 0;
+        right: 4rem;
+        background-image: url(/images/satellite.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 3em;
+        height: 3em;
+        display: block;
+      }
     }
     img {
         width: auto;
