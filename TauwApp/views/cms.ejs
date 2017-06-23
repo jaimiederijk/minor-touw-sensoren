@@ -67,7 +67,7 @@
                           <td><a href="/details/<%= sensor.sector %>/<%= sensor.branch[0] %>/<%= sensor.name %>">Link</a></td>
                           <td><%= sensor.contact %></td>
                           <td><a href="/cms/edit/<%= sensor.sector %>/<%= sensor.branch[0] %>/<%= sensor.name %>">Aanpassen</a></td>
-                          <td><a href="/cms/remove/<%= sensor.sector %>/<%= sensor.name %>">Verwijderen</a></td>
+                          <td><a href="/cms/remove/<%= sensor._id %>">Verwijderen</a></td>
                       </tr>
                   <% }) %>
             </table>

@@ -37,19 +37,12 @@ router.post('/', function(req, res, next) {
     });
 });
 
-router.get('/remove/:sectorName/:sensorName', function(req, res, next) {
+router.get('/remove/:sensorID', function(req, res, next) {
     var query = {
-        sector: req.params.sectorName,
-        name: req.params.sensorName
+        ObjectId: req.params.sensorID
     }
     login.checkLogin(req, res);
     connector.find.removeItem(query, function(docs){
-        // res.render('removing', {
-        //     title: query._id,
-        //     page: "cms",
-        //     logged_in: login_status,
-        //     // allSensors: docs
-        // });
         res.redirect("/cms")
     });
 });
@@ -58,7 +51,6 @@ router.get('/add', function(req, res, next) {
   var query = {};
   var field = {};
       connector.find.findSettings (query, field, function(docs) {
-        //   console.log(docs[0]);
           console.log(docs[0].sector)
           res.render('form', {
               title: "add a sensor",
