@@ -14,6 +14,17 @@ var findDocuments = function(collection, query, db, callback) {
   });
 }
 
+var findDocumentsWithId = function (collection, query, db, callback) {
+    // Get the documents collection
+    var collection = db.collection(collection);
+
+    collection.find({_id: ObjectId(query.id)} ).toArray(function(err, docs) {
+    assert.equal(err, null);
+    console.log(docs)
+    callback(docs);
+ });
+}
+
 var findDocumentsWithField = function(collection, query, field, db, callback) {
   // Get the documents collection
   var collection = db.collection(collection);
@@ -22,17 +33,6 @@ var findDocumentsWithField = function(collection, query, field, db, callback) {
     assert.equal(err, null);
 
     callback(docs);
-  });
-}
-
-var createDocument = function(collection, json, db) {
-  // Get the documents collection
-  var collection = db.collection(collection);
-  // Find some documents
-  collection.insertOne(json, function(err, r) {
-    assert.equal(err, null);
-    assert.equal(1, r.insertedCount)
-
   });
 }
 
@@ -57,25 +57,36 @@ var searchText = function(collection, query, db, callback) {
   })
 }
 
+var createDocument = function(collection, json, db) {
+  // Get the documents collection
+  var collection = db.collection(collection);
+  // Find some documents
+  collection.insertOne(json, function(err, r) {
+    assert.equal(err, null);
+    assert.equal(1, r.insertedCount)
+  });
+}
+
+var updateDocument = function(collection, query, json, db, callback){
+    var collection = db.collection(collection);
+    collection.updateOne({_id: ObjectId(query.id)}, {$set: json}, function(err, r) {
+          assert.equal(null, err);
+          assert.equal(1, r.matchedCount);
+          assert.equal(1, r.modifiedCount);
+      });
+};
+
 var removeDocument = function(collection, query, db, callback) {
   // Get the documents collection
   var collection = db.collection(collection);
-  console.log({_id: ObjectId(query.id)})
-
   // Remove a single document
-  // http://mongodb.github.io/node-mongodb-native/2.2/tutorials/crud/#removing-documents
-
-  collection.find({_id: ObjectId(query.id)} ).toArray(function(err, docs) {
-    assert.equal(err, null);
-    console.log(docs)
-  });
-
     collection.deleteOne({_id: ObjectId(query.id)}, function(err, docs) {
       assert.equal(null, err);
-      console.log(docs.deletedCount)
+      console.log("Deleted "+docs.deletedCount+" document.")
      callback(docs);
       });
 };
+
 
 var find = {
   findSensors : function (query, callback) {
@@ -89,12 +100,23 @@ var find = {
      });
    });
  },
+ findSensorId : function (query, callback) {
+  MongoClient.connect(url, function(err, db) {
+    assert.equal(null, err);
+    console.log("Connected successfully to server");
+
+    findDocumentsWithId("sensors", query ,db, function(docs) {
+      callback(docs);
+      db.close();
+    });
+  });
+ },
  findSettings : function (query,field, callback) {
    MongoClient.connect(url, function(err, db) {
      assert.equal(null, err);
      console.log("Connected successfully to server");
 
-     findDocumentsWithField("settings", query, field,db, function(docs) {
+     findDocumentsWithField("settings", query, field, db, function(docs) {
        callback(docs);
        db.close();
      });
@@ -117,6 +139,17 @@ var find = {
      createDocument("sensors", json, db);
    })
  },
+ editSensor: function (query, json, callback) {
+     MongoClient.connect(url, function(err, db){
+         console.log(query)
+       assert.equal(null,err);
+       updateDocument("sensors", query, json, db, function(docs) {
+           callback(docs);
+           console.log("Item successfully edited")
+         db.close();
+        })
+    })
+ },
  removeItem : function (query, callback) {
    MongoClient.connect(url, function(err, db) {
      assert.equal(null, err);
@@ -129,6 +162,7 @@ var find = {
      });
  })
  },
+
 }
 
 module.exports = {find: find};

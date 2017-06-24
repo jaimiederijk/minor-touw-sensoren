@@ -64,23 +64,34 @@ router.get('/edit/:sensorID', function(req, res, next) {
     var query = {
         id: req.params.sensorID,
     }
-console.log(login_status)
-    if (login_status === true){
-        connector.find.findSensors( query, function(docs){
-            console.log(docs)
-          res.render('edit', {
-              title: query.sector,
-              page: "detail",
-              currentSector: query.sector,
-              currentBranch: query.branch,
-              currentSensor: query.name,
-              sensor: docs[0]
-          });
+    var query2 = {};
+    var field = {};
+    connector.find.findSensorId( query, function(docs){
+        console.log(docs)
+
+        connector.find.findSettings (query2, field, function(docs) {
+            console.log(docs[0].sector)
+            res.render('form', {
+                title: "add a sensor",
+                page: "form",
+                currentSector: docs[0].sector,
+                currentBranch: docs[0].branch,
+                currentSensor: docs[0].name,
+                AllSettings: docs[0],
+            });
+      });
+    });
+});
+
+router.post('/edit/:sensorID', function(req, res, next) {
+    var query = { id: req.params.sensorID};
+    console.log(query.id)
+    var jsonObject = req.body;
+
+    connector.find.editSensor(query, jsonObject, function(req, res, next) {
+        console.log(query)
         });
-    }
-  else{
-      res.redirect('/cms');
-  }
+    res.redirect('/cms');
 });
 
 router.get('/remove/:sensorID', function(req, res, next) {
