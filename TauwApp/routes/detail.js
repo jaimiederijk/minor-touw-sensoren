@@ -37,8 +37,6 @@ router.get('/:sectorName/:branchName', function(req, res, next) {
   // loop door alle filters
   var query = queryCreator.queryCreator.orFilterQuery(currentQuery, req.query, filters);
 
-
-console.log(query);
   if (req.query.search !== undefined){
       searchMachine.search.renderSearchResults(req, res, req.query.search);
   }
@@ -48,6 +46,34 @@ console.log(query);
         res.render('branch', {
             title: query.sector,
             page: "branch",
+            activeFilters: activeFilters,
+            currentSector: query.sector,
+            currentBranch: query.branch,
+            allSensors: docs
+        });
+      });
+  }
+});
+
+router.get('/db/:sectorName/:branchName', function(req, res, next) {
+  var currentQuery = {
+      sector: req.params.sectorName,
+      branch: req.params.branchName
+  }
+  var activeFilters = {};
+  var filters = ["scale", "accuracy","resolution","interval","innovation"];
+  // loop door alle filters
+  var query = queryCreator.queryCreator.orFilterQuery(currentQuery, req.query, filters);
+
+  if (req.query.search !== undefined){
+      searchMachine.search.renderSearchResults(req, res, req.query.search);
+  }
+  else {
+      connector.find.findSensors( query, function(docs){
+          console.log(docs)
+        res.render('partials/results', {
+            title: query.sector,
+            page: "results",
             activeFilters: activeFilters,
             currentSector: query.sector,
             currentBranch: query.branch,

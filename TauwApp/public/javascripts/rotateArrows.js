@@ -1,12 +1,16 @@
 (function(){
     var arrows = {
         init: function() {
-            document.querySelector('aside').onclick = function(e) {
-                if (e.target.tagName.toUpperCase() == 'INPUT'){
-                    var current = e.target.parentElement;
-                    arrows.checkInputStatus(e.target.parentElement, current);
-                }
+            var dropdowns = document.querySelectorAll('aside .filter-dropdown');
+            for (var i = 0; i < dropdowns.length; i++) {
+              dropdowns[i].onclick = function(e) {
+                var current = e.target.parentElement;
+                arrows.checkInputStatus(e.target.parentElement, current);
+
+              }
             }
+
+
         },
         checkInputStatus: function(item, current) {
             if (current.querySelector("input").checked == false){
