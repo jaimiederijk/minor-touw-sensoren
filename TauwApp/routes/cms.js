@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
             res.render('cms', {
                 title: "cms",
                 page: "cms",
-                logged_in: login_status,
+                logged_in: true,
                 allSensors: docs
             });
         });
@@ -37,15 +37,12 @@ router.post('/', function(req, res, next) {
     });
 });
 
-router.get('/remove/:sectorID', function(req, res, next) {
+router.get('/remove/:sensorID', function(req, res, next) {
     var query = {
-        id: req.params.sectorID
+        ObjectId: req.params.sensorID
     }
     login.checkLogin(req, res);
-    connector.find.findAndRemoveSensors( query, function(docs){
-
-
-        console.log(docs)
+    connector.find.removeItem(query, function(docs){
         res.redirect("/cms")
     });
 });
@@ -54,7 +51,6 @@ router.get('/add', function(req, res, next) {
   var query = {};
   var field = {};
       connector.find.findSettings (query, field, function(docs) {
-        //   console.log(docs[0]);
           console.log(docs[0].sector)
           res.render('form', {
               title: "add a sensor",
