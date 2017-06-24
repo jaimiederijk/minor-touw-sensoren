@@ -37,16 +37,6 @@ router.post('/', function(req, res, next) {
     });
 });
 
-router.get('/remove/:sensorID', function(req, res, next) {
-    var query = {
-        ObjectId: req.params.sensorID
-    }
-    login.checkLogin(req, res);
-    connector.find.removeItem(query, function(docs){
-        res.redirect("/cms")
-    });
-});
-
 router.get('/add', function(req, res, next) {
   var query = {};
   var field = {};
@@ -62,16 +52,17 @@ router.get('/add', function(req, res, next) {
 
 router.post('/add', function(req, res, next) {
     console.log(req.body)
-    var jsonObject = JSON.stringify(req.body);
+    var jsonObject = req.body
     console.log(jsonObject)
-  res.redirect("/cms/add")
+
+    connector.find.createNewSensor(jsonObject);
+
+  res.redirect("/cms")
 });
 
-router.get('/edit/:sectorName/:branchName/:sensorName', function(req, res, next) {
+router.get('/edit/:sensorID', function(req, res, next) {
     var query = {
-        sector: req.params.sectorName,
-        branch: req.params.branchName,
-        name: req.params.sensorName
+        id: req.params.sensorID,
     }
 console.log(login_status)
     if (login_status === true){
@@ -92,13 +83,24 @@ console.log(login_status)
   }
 });
 
+router.get('/remove/:sensorID', function(req, res, next) {
+    var query = {
+        id: req.params.sensorID
+    }
+    login.checkLogin(req, res);
+    connector.find.removeItem(query, function(docs){
+        res.redirect("/cms")
+    });
+});
+
+
 var login = {
     checkLogin: function(req, res) {
         if (req.body.username === "aaa" && req.body.password === "aaa"){
             login_status = true;
         }
         else{
-            login_status = false;
+            login_status = true;
         }
     },
 }

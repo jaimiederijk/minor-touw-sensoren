@@ -56,7 +56,6 @@
                     <th>Contact</th>
                     <th>Aanpassen</th>
                     <th>Verijderen</th>
-
                   </tr>
 
                   <% allSensors.forEach(function(sensor) { %>
@@ -64,9 +63,9 @@
                           <td><%= sensor._id %></td>
                           <td><%= sensor.name %></td>
                           <td><%= sensor.sector %></td>
-                          <td><a href="/details/<%= sensor.sector %>/<%= sensor.branch[0] %>/<%= sensor.name %>">Link</a></td>
+                          <td><a href="/details/<%= sensor.sector[0]%>/<%= sensor.branch[0] %>/<%= sensor.name %>">Link</a></td>
                           <td><%= sensor.contact %></td>
-                          <td><a href="/cms/edit/<%= sensor.sector %>/<%= sensor.branch[0] %>/<%= sensor.name %>">Aanpassen</a></td>
+                          <td><a href="/cms/edit/<%= sensor._id %>">Aanpassen</a></td>
                           <td><a href="/cms/remove/<%= sensor._id %>">Verwijderen</a></td>
                       </tr>
                   <% }) %>

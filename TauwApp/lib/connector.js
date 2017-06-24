@@ -1,4 +1,5 @@
 var MongoClient = require('mongodb').MongoClient
+var ObjectId = require('mongodb').ObjectID;
 var assert = require('assert');
 
 var url = 'mongodb://localhost:27017/tauw';
@@ -59,17 +60,17 @@ var searchText = function(collection, query, db, callback) {
 var removeDocument = function(collection, query, db, callback) {
   // Get the documents collection
   var collection = db.collection(collection);
-  console.log(query)
+  console.log({_id: ObjectId(query.id)})
 
   // Remove a single document
   // http://mongodb.github.io/node-mongodb-native/2.2/tutorials/crud/#removing-documents
 
-  collection.find(query ).toArray(function(err, docs) {
+  collection.find({_id: ObjectId(query.id)} ).toArray(function(err, docs) {
     assert.equal(err, null);
     console.log(docs)
   });
 
-    collection.deleteOne(query, function(err, docs) {
+    collection.deleteOne({_id: ObjectId(query.id)}, function(err, docs) {
       assert.equal(null, err);
       console.log(docs.deletedCount)
      callback(docs);
