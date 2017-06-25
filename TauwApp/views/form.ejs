@@ -6,13 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
+      <style>
+      form{
+    display: flex;
+    flex-direction: column;
+}
+    #contact{order:1;}
+    #sensor{order:2;}
+    #reference{order:3;}
+    input[type="submit"]{order:4;}
+
+
+</style>
+
      <% include partials/aside %>
      <main>
 
         <section>
-
-
-
         <form class="userInput" method="post" >
             <fieldset id="sensor">
 

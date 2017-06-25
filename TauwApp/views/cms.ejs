@@ -52,6 +52,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Sector</th>
+                    <th>Branch</th>
                     <th>Link</th>
                     <th>Contact</th>
                     <th>Aanpassen</th>
@@ -63,8 +64,13 @@
                           <td><%= sensor._id %></td>
                           <td><%= sensor.name %></td>
                           <td><%= sensor.sector %></td>
-                          <td><a href="/details/<%= sensor.sector[0]%>/<%= sensor.branch[0] %>/<%= sensor.name %>">Link</a></td>
-                          <td><%= sensor.contact %></td>
+                          <td><%= sensor.branch %></td>
+                              <% if(sensor.name !== "" && sensor.sector !== "" && sensor.branch !== ""){ %>
+                                   <td><a href="/details/<%= sensor.sector[0]%>/<%= sensor.branch[0] %>/<%= sensor.name %>">Link</a></td>
+                              <% } else{ %>
+                                  <td>Link</td>
+                              <% } %>
+                          <td><%= sensor.contactName %></td>
                           <td><a href="/cms/edit/<%= sensor._id %>">Aanpassen</a></td>
                           <td><a href="/cms/remove/<%= sensor._id %>">Verwijderen</a></td>
                       </tr>

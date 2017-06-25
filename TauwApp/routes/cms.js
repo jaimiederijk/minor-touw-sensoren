@@ -44,7 +44,7 @@ router.get('/add', function(req, res, next) {
           console.log(docs[0].sector)
           res.render('form', {
               title: "add a sensor",
-              page: "form",
+              page: "cms",
               AllSettings: docs[0],
           });
     });
@@ -72,7 +72,7 @@ router.get('/edit/:sensorID', function(req, res, next) {
             // console.log(docs[0].sector)
             res.render('edit', {
                 title: "add a sensor",
-                page: "form",
+                page: "cms",
                 currentSector: docs[0].sector,
                 currentBranch: docs[0].branch,
                 currentSensor: docs[0].name,
