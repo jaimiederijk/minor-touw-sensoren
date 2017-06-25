@@ -1,89 +1,108 @@
 <main class="detail">
 
- <header>
-   <img src="/images/xrf.jpg" alt="sensor image">
-   <h2><%= sensor.name %></h2>
- </header>
+  <section>
 
- <section id="selection_info">
+    <header class="clearfix">
+      <div class="img-wrap">
+        <img src="/images/xrf.jpg" alt="<%= sensor.name %>">
+      </div>
+      <h2><%= sensor.name %></h2>
+    </header>
 
-   <div id="selection_info_what">
-     <table>
-       <tr>
-         <th>Wat</th>
-         <% sensor.tags.forEach(function(tagElement) { %>
-             <td><%= tagElement %></td>
-         <% }) %>
-       </tr>
-       <tr>
-         <th>Niveau</th>
-         <% sensor.level.forEach(function(levelElement) { %>
-             <td><%= levelElement %></td>
-         <% }) %>
-       </tr>
-       <tr>
-         <th>Waarin</th>
-         <% sensor.branch.forEach(function(branchElement) { %>
-             <td><%= branchElement %></td>
-         <% }) %>
-       </tr>
-     </table>
-   </div>
-   <div id="selection_info_criteria">
-     <table>
-     <% if(sensor.resolution !== "n.v.t." && sensor.resolution !== "undefined" && sensor.resolution !== "" ) { %>
-        <tr>
-          <th>Resolutie</th>
-          <td><%= sensor.resolution %></td>
-        </tr>
-     <% } %>
-     <% if(sensor.accuracy !== "n.v.t." && sensor.accuracy !== "undefined" && sensor.accuracy !== "" ) { %>
-        <tr>
-          <th>Acuraatheid</th>
-          <td><%= sensor.accuracy %></td>
-        </tr>
-     <% } %>
-     <% if(sensor.interval !== "n.v.t." && sensor.interval !== "undefined" && sensor.interval !== "" ) { %>
-        <tr>
-          <th>interval</th>
-          <td><%= sensor.interval %></td>
-        </tr>
-     <% } %>
-     <% if(sensor.duration !== "n.v.t." && sensor.duration !== "undefined" && sensor.duration !== "" ) { %>
-        <tr>
-          <th>tijdsduur</th>
-          <td><%= sensor.duration %></td>
-        </tr>
-     <% } %>
-     <% if(sensor.innovation !== "n.v.t." && sensor.innovation !== "undefined" && sensor.innovation !== "" ) { %>
-        <tr>
-          <th>innovatie</th>
-          <td><%= sensor.innovation %></td>
-        </tr>
-     <% } %>
-     <% if(sensor.costs !== "n.v.t." && sensor.costs !== "undefined" && sensor.costs !== "" ) { %>
-        <tr>
-          <th>kosten</th>
-          <td><%= sensor.costs %></td>
-        </tr>
-     <% } %>
-    </table>
-   </div>
- </section>
- <article class="sensor_discription">
-   <h2>Beschrijving</h2>
-   <p><%= sensor.summary_big %></p>
-   <% if(sensor.referenceSummary !== "n.v.t." && sensor.referenceSummary !== "undefined" && sensor.referenceSummary !== "" ) { %>
-     <h2>Voorbeeld project</h2>
-     <p><%= sensor.referenceSummary %></p>
-   <% } %>
-   <% if(sensor.referenceLink !== "n.v.t." && sensor.referenceLink !== "undefined" && sensor.referenceLink !== "" ) { %>
-     <a href="<%= sensor.referenceLink %>"><%= sensor.referenceLink %></a>
-   <% } %>
-   <% if(sensor.contact !== "n.v.t." && sensor.contact !== "undefined" && sensor.contact !== "" ) { %>
-     <h2>Contactpersoon</h2>
-     <p><%= sensor.contact %></p>
-   <% } %>
+    <section id="selection_info">
 
- </article>
+      <div id="selection_info_what">
+        <table>
+          <tr>
+            <th>Wat</th>
+            <td>
+              <ul>
+                <% sensor.tags.forEach(function(tagElement) { %>
+                <li><%= tagElement %></li>
+                <% }) %>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th>Niveau</th>
+            <td>
+              <ul>
+                <% sensor.level.forEach(function(levelElement) { %>
+                <li><%= levelElement %></li>
+                <% }) %>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th>Waarin</th>
+            <td>
+              <ul>
+                <% sensor.branch.forEach(function(branchElement) { %>
+                <li><%= branchElement %></li>
+                <% }) %>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="selection_info_criteria">
+        <table>
+        <% if(sensor.resolution !== "n.v.t." && sensor.resolution !== "undefined" && sensor.resolution !== "" ) { %>
+           <tr>
+             <th>Resolutie</th>
+             <td><%= sensor.resolution %></td>
+           </tr>
+        <% } %>
+        <% if(sensor.accuracy !== "n.v.t." && sensor.accuracy !== "undefined" && sensor.accuracy !== "" ) { %>
+           <tr>
+             <th>Acuraatheid</th>
+             <td><%= sensor.accuracy %></td>
+           </tr>
+        <% } %>
+        <% if(sensor.interval !== "n.v.t." && sensor.interval !== "undefined" && sensor.interval !== "" ) { %>
+           <tr>
+             <th>interval</th>
+             <td><%= sensor.interval %></td>
+           </tr>
+        <% } %>
+        <% if(sensor.duration !== "n.v.t." && sensor.duration !== "undefined" && sensor.duration !== "" ) { %>
+           <tr>
+             <th>tijdsduur</th>
+             <td><%= sensor.duration %></td>
+           </tr>
+        <% } %>
+        <% if(sensor.innovation !== "n.v.t." && sensor.innovation !== "undefined" && sensor.innovation !== "" ) { %>
+           <tr>
+             <th>innovatie</th>
+             <td><%= sensor.innovation %></td>
+           </tr>
+        <% } %>
+        <% if(sensor.costs !== "n.v.t." && sensor.costs !== "undefined" && sensor.costs !== "" ) { %>
+           <tr>
+             <th>kosten</th>
+             <td><%= sensor.costs %></td>
+           </tr>
+        <% } %>
+       </table>
+      </div>
+    </section>
+    <article class="sensor_discription">
+      <h2>Beschrijving</h2>
+      <p><%= sensor.summary_big %></p>
+      <% if(sensor.referenceSummary !== "n.v.t." && sensor.referenceSummary !== "undefined" && sensor.referenceSummary !== "" ) { %>
+        <h2>Voorbeeld project</h2>
+        <p><%= sensor.referenceSummary %></p>
+      <% } %>
+      <% if(sensor.referenceLink !== "n.v.t." && sensor.referenceLink !== "undefined" && sensor.referenceLink !== "" ) { %>
+        <a href="<%= sensor.referenceLink %>" title="Naar voorbeeld project" class="referencelink">Naar voorbeeld project</a>
+      <% } %>
+      <% if(sensor.contact !== "n.v.t." && sensor.contact !== "undefined" && sensor.contact !== "" ) { %>
+        <h2>Contactpersoon</h2>
+        <p><%= sensor.contact %></p>
+      <% } %>
+
+    </article>
+
+  </section>
+
 </main>
