@@ -40,7 +40,7 @@ var searchText = function(collection, query, db, callback) {
   var collection = db.collection(collection);
 
   collection.ensureIndex({
-      _id: "text",
+    //   _id: ObjectId("text"),
       name:"text",
       sector:"text",
       branch:"text",
@@ -72,7 +72,7 @@ var updateDocument = function(collection, query, json, db, callback){
     collection.updateOne({_id: ObjectId(query.id)}, {$set: json}, function(err, r) {
           assert.equal(null, err);
           assert.equal(1, r.matchedCount);
-          assert.equal(1, r.modifiedCount);
+        //   assert.equal(1, r.modifiedCount);
       });
 };
 

@@ -67,17 +67,17 @@ router.get('/edit/:sensorID', function(req, res, next) {
     var query2 = {};
     var field = {};
     connector.find.findSensorId( query, function(docs){
-        console.log(docs)
-
+        var allSensors = docs[0];
         connector.find.findSettings (query2, field, function(docs) {
-            console.log(docs[0].sector)
-            res.render('form', {
+            // console.log(docs[0].sector)
+            res.render('edit', {
                 title: "add a sensor",
                 page: "form",
                 currentSector: docs[0].sector,
                 currentBranch: docs[0].branch,
                 currentSensor: docs[0].name,
                 AllSettings: docs[0],
+                allSensors: allSensors
             });
       });
     });

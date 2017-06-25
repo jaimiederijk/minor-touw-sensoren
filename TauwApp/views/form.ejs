@@ -9,107 +9,86 @@
      <% include partials/aside %>
      <main>
 
-         <style>
-         fieldset{
-             column-count: 3;
-         }
-         form label{
-             margin: 0;
-         }
-         form{
-             display: flex;
-             flex-direction: column;
-         }
-        #contact{order:1;}
-        #sensor{order:2;}
-        #reference{order:1;}
-        input[type="submit"]{order:4;}
-
-        fieldset fieldset{
-            padding: 0.5rem;
-        }
-        fieldset fieldset label{
-            display: inline-block;
-            width: 45%;
-        }
-
-         </style>
-
-         <section>
-           <form class="userInput" method="post" >
-               <fieldset id="sensor">
-
-                   <legend>Sensor information</legend>
-                   <label for="name">Naam</label>
-                   <input id="name" type="text" name="name"><span>*required</span><br/>
-
-                   <label for="image">Profielfoto</label>
-                   <input id="image" type="url" name="image">
-                   <img id="output"/>
+        <section>
 
 
-                        <% for(var i=1; i<Object.keys(AllSettings).length; i++) {%>
+
+        <form class="userInput" method="post" >
+            <fieldset id="sensor">
+
+                <legend>Sensor information</legend>
+                <label for="name">Naam</label>
+                <input id="name" type="text" name="name" required><span></span><br/>
+
+                <label for="image">Profielfoto</label>
+                <input id="image" type="url" name="image">
+                <img id="output"/>
+
+                <% Object.keys(AllSettings).forEach(function(key) { %>
+                    <% if(key !== "_id"){ %>
                         <fieldset>
-                            <legend><%= Object.keys(AllSettings)[i] %></legend>
-                            <p>Please select the corresponding <%= Object.keys(AllSettings)[i] %>.</p>
-                            <% AllSettings[Object.keys(AllSettings)[i]].forEach(function(value) { %>
-                                <label>
-                                    <input type="checkbox" name="<%= Object.keys(AllSettings)[i] %>" value="<%= value %>"> <%= value %> <br/>
-                                </label>
-                            <% }) %>
-
-                            <label for="nieuw-<%= Object.keys(AllSettings)[i] %>" class="nieuw">
-                                <input type="checkbox" name="<%= Object.keys(AllSettings)[i] %>" id="nieuw-<%= Object.keys(AllSettings)[i] %>" value="nieuw">Nieuw
-                                <input type="text" name="<%= Object.keys(AllSettings)[i] %>" id="nieuw-<%= Object.keys(AllSettings)[i] %>">
-                            </label>
+                            <legend><%= key %></legend>
+                            <p>Please select the corresponding <%= key %>.</p>
+                                <% AllSettings[key].forEach(function(value) { %>
+                                    <label>
+                                           <input type="checkbox" name="<%= key %>" value="<%= value %>"> <%= value %> <br/>
+                                    </label>
+                                <% }) %>
+                                    <label for="nieuw-<%= key%>" class="nieuw">
+                                        <input type="checkbox" name="<%= key %>" id="nieuw-<%= key %>" value="nieuw">Nieuw
+                                        <input type="text" name="<%= key %>" id="nieuw-<%= key %>">
+                                    </label>
                         </fieldset>
-                        <% } %>
+                    <% } %>
+                <% }) %>
 
-                        <label for="summary_smal">Short summary</label><br/>
-                        <textarea id="summary_smal" name="summary_smal" rows="4" cols="50"></textarea><br/>
+                     <label for="summary_smal">Short summary</label><br/>
+                     <textarea id="summary_smal" name="summary_smal" rows="4" cols="50"></textarea><br/>
 
-                        <label for="summary_big">Long summary</label><br/>
-                        <textarea id="summary_big" name="summary_big" rows="4" cols="50"></textarea><br/>
+                     <label for="summary_big">Long summary</label><br/>
+                     <textarea id="summary_big" name="summary_big" rows="4" cols="50"></textarea><br/>
 
-               </fieldset>
+            </fieldset>
 
-               <fieldset id="contact">
-                   <legend>Contact information</legend>
-                    <label for="contactName">Voor- en achternaam</label>
-                    <input id="contactName" type="text" name="contactName"> <span>*required</span><br/>
+            <fieldset id="contact">
+                <legend>Contact information</legend>
+                 <label for="contactName">Voor- en achternaam</label>
+                 <input id="contactName" type="text" name="contactName" required> <span>*required</span><br/>
 
-                    <label for="contactPhone">Telefoon nummer</label>
-                    <input id="contactPhone" type="tel" name="contactPhone"> <span>*required</span><br/>
+                 <label for="contactPhone">Telefoon nummer</label>
+                 <input id="contactPhone" type="tel" name="contactPhone"> <span>*required</span><br/>
 
-                    <label for="contactMail">Email adres</label>
-                    <input id="contactMail" type="contactMail" name="contactMail"> <span>*required</span><br/>
+                 <label for="contactMail">Email adres</label>
+                 <input id="contactMail" type="contactMail" name="contactMail" required> <span>*required</span><br/>
 
-                    <label for="contactPhoto">Profielfoto</label>
-                    <input id="contactPhoto" type="url" name="contactPhoto">
-                    <img id="output"/>
-               </fieldset>
+                 <label for="contactPhoto">Profielfoto</label>
+                 <input id="contactPhoto" type="url" name="contactPhoto">
+                 <img id="output"/>
+            </fieldset>
 
-               <fieldset id="reference">
-                   <legend>Reference project information</legend>
-                   <label for="referenceTitle">Reference title</label>
-                   <input id="referenceTitle" type="text" name="referenceTitle"> <span>*required</span><br/>
+            <fieldset id="reference">
+                <legend>Reference project information</legend>
+                <label for="referenceTitle">Reference title</label>
+                <input id="referenceTitle" type="text" name="referenceTitle"> <span>*required</span><br/>
 
-                   <label for="referenceSummary">reference Summary</label><br/>
-                   <textarea id="referenceSummary" name="referenceSummary" rows="4" cols="50"></textarea><br/>
+                <label for="referenceSummary">reference Summary</label><br/>
+                <textarea id="referenceSummary" name="referenceSummary" rows="4" cols="50"></textarea><br/>
 
-                    <label for="referenceLink">Reference Link</label>
-                    <input id="referenceLink" type="url" name="referenceLink"><br/>
+                 <label for="referenceLink">Reference Link</label>
+                 <input id="referenceLink" type="url" name="referenceLink"><br/>
 
-                    <label for="referenceImage">Reference image</label>
-                    <input id="referenceImage" type="url" name="referenceImage">
-                    <img id="output"/>
-               </fieldset>
+                 <label for="referenceImage">Reference image</label>
+                 <input id="referenceImage" type="url" name="referenceImage">
+                 <img id="output"/>
+            </fieldset>
 
-               <input type="submit" value="Submit">
-           </form>
+            <input type="submit" value="Submit">
+        </form>
+
        </section>
 
     </main>
     <script src="/javascripts/imagePreview.js"></script>
+    <script src="/javascripts/requiredInputs.js"></script>
   </body>
 </html>
