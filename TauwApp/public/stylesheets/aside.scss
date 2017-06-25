@@ -205,7 +205,7 @@ aside {
 
         // Filters
         #filter {
-          margin-bottom: 2rem;
+          margin-bottom: 3rem;
           fieldset {
               position: relative;
               border: none;
@@ -251,6 +251,7 @@ aside {
                   -moz-appearance:    none;
                   appearance:         none;
                   cursor: pointer;
+                  border: 0;
               }
               input[type="checkbox"]+ ul {
                   display: none;
@@ -274,9 +275,12 @@ aside {
                   appearance: none;
                   outline: 0;
                   margin-right: 1.5rem;
+                  border: 0;
+                  background: none;
                 }
                 input[type=checkbox]:after {
                   content: "";
+                  -webkit-appearance: none;
                   position: absolute;
                   top: .4rem;
                   width: .8rem;
@@ -284,6 +288,7 @@ aside {
                   border: 1px solid $color_white;
                   color: #333;
                   display:block;
+                  background-color: none;
                 }
                 input[type=checkbox]:checked:after {
                   content: "";
