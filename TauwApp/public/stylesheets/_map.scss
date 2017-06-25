@@ -2,42 +2,73 @@
 @import 'common/_colors';
 
 .map {
-  width: 100%;
-
+//  width: 100%;
+float:left;
+display: flex;
+justify-content: center;
+align-items: center;
+@include breakpoint(tablet) {
+  width: 70%;
+  margin-left: 4%;
+}
   .full-map {
     width: 100%;
     position: relative;
     background-color: $color_lightbackground;
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 8rem;
     overflow-x: auto;
     white-space: nowrap;
     a {
       display: inline-block;
       position: relative;
       transition: 1s;
-      left:0;
+      left: 0;
+      color: $color_pink;
+      font-family: 'open_sansbold', Helvetica, Arial, sans-serif;
+      &:visited {
+        color: $color_pink;
+      }
       img {
         height: 100vw;
         width: auto;
       }
       span {
+        position: absolute;
         display: block;
         text-align: center;
+        padding: .8rem 1rem;
+        box-sizing: border-box;
+      }
+      &:hover span {
+        // border: 2px inset $color_pink;
+        // box-shadow: inset 4px 4px 0px $color_pink;
+        box-shadow: inset 0 0 0 2px $color_pink;
+
+      }
+      .industrial-text {
+        top: 8rem;
+        left: 5rem;
+      }
+      .urban-text {
+        top: 10rem;
+        left: -3rem;
+      }
+      .rural-text {
+        top: 8rem;
+        right: 6rem;
       }
     }
-    .selectedSector {
 
-    }
     button {
       position: absolute;
       top: 40%;
-      right: 0%;
-      background-image: url(/images/arrow.svg);
+      right: 2%;
+      background-image: url(/images/arrow-map.svg);
       background-color: transparent;
       border-style: none;
-      height: 3rem;
-      width: 3rem;
+      height: 2rem;
+      width: 2rem;
       background-repeat: no-repeat;
       background-size: contain;
 
@@ -53,7 +84,7 @@
       -ms-transform: rotate(90deg);
       -o-transform: rotate(90deg);
       transform: rotate(90deg);
-      left: 0%;
+      left: 2%;
       right: auto;
 
     }
@@ -89,8 +120,8 @@
 }
 @include breakpoint(mobile) {
   .map {
-    width: 74%;
-    float: left;
+    // width: 74%;
+    // float: left;
 
     .full-map a img {
       height: 41vw;
@@ -106,7 +137,7 @@
       justify-content: center;
 
       a img {
-        height: 20rem;
+        height: 16rem;
       }
     }
   }
@@ -116,7 +147,7 @@
   .map {
 
     .full-map a img {
-      height: 22rem;
+      height: 20rem;
     }
   }
 
@@ -125,7 +156,7 @@
   .map {
 
     .full-map a img {
-      height: 26rem;
+      height: 24rem;
     }
   }
 

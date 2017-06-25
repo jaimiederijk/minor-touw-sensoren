@@ -9,13 +9,41 @@ main.category {
         font-family: 'open_sansbold', Helvetica, Arial, sans-serif;
       }
     }
+    .category-img {
+      position: relative;
+      width: 60%;
+      height: 15em;
+      margin: 0 auto;
+      text-align: center;
+      .drone {
+        position: absolute;
+        top: 2rem;
+        left: 4rem;
+        background-image: url(/images/drone.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 3em;
+        height: 3em;
+        display: block;
+      }
+      .satellite {
+        position: absolute;
+        top: 0;
+        right: 4rem;
+        background-image: url(/images/satellite.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 3em;
+        height: 3em;
+        display: block;
+      }
+    }
     img {
-        width: 60%;
-        margin-left: 20%;
-        @include breakpoint(tablet) {
-          width: 40%;
-          margin-left: 30%;
-        }
+        width: auto;
+        height: 100%;
+        // @include breakpoint(tablet) {
+        //   width: 40%;
+        // }
     }
     ul.branches{
         padding: 0;

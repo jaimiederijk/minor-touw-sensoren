@@ -27,22 +27,40 @@ h1 {
   font-style: italic !important;
 }
 main {
-  float: right;
-  width: 70%;
-  height: 100vh;
-  padding-top: 2.5rem;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  overflow-y: auto;
-  @include breakpoint(mobileonly) {
     float: none;
     width: 100%;
     height: auto;
-  }
-  @include breakpoint(phablet) {
-    width: 100%;
+    padding-top: 2.5rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+  @include breakpoint(tablet) {
+      float: right;
+      width: 70%;
+      height: 100vh;
+    
+//   float: right;
+//   width: 70%;
+//   height: 100vh;
+//   padding-top: 2rem;
+//   box-sizing: border-box;
+//   overflow-x: hidden;
+//   overflow-y: auto;
+//   @include breakpoint(mobileonly) {
+//     float: none;
+//     width: 100%;
+//     height: auto;
+//     margin-top: 3.5rem;
+//   }
+//   @include breakpoint(tablet) {
+//     width: 65%;
+//   }
+//   @include breakpoint(desktop) {
+//     width: 70%;
   }
 }
+
+
 main > section {
   width: 90%;
   header {
@@ -51,6 +69,9 @@ main > section {
       span#count {
          font-style: normal;
       }
+  }
+  @include breakpoint(mobileonly) {
+    margin: 0 auto;
   }
 }
 
@@ -171,7 +192,7 @@ img#output{
 
 input[name=search]:focus,
 input[name=search]:hover  {
-    width: 100%;
+    // width: 100%;
     box-sizing: border-box;
 }
 // aside p{

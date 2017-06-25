@@ -1,11 +1,12 @@
-<section class="detail">
+<main class="detail">
 
  <header>
+   <img src="/images/xrf.jpg" alt="sensor image">
    <h2><%= sensor.name %></h2>
  </header>
 
  <section id="selection_info">
-   <img src="/images/xrf.jpg" alt="sensor image">
+
    <div id="selection_info_what">
      <table>
        <tr>
@@ -72,5 +73,17 @@
  <article class="sensor_discription">
    <h2>Beschrijving</h2>
    <p><%= sensor.summary_big %></p>
+   <% if(sensor.referenceSummary !== "n.v.t." && sensor.referenceSummary !== "undefined" && sensor.referenceSummary !== "" ) { %>
+     <h2>Voorbeeld project</h2>
+     <p><%= sensor.referenceSummary %></p>
+   <% } %>
+   <% if(sensor.referenceLink !== "n.v.t." && sensor.referenceLink !== "undefined" && sensor.referenceLink !== "" ) { %>
+     <a href="<%= sensor.referenceLink %>"><%= sensor.referenceLink %></a>
+   <% } %>
+   <% if(sensor.contact !== "n.v.t." && sensor.contact !== "undefined" && sensor.contact !== "" ) { %>
+     <h2>Contactpersoon</h2>
+     <p><%= sensor.contact %></p>
+   <% } %>
+
  </article>
-</section>
+</main>
