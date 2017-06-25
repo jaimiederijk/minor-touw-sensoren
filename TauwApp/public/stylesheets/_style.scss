@@ -11,6 +11,7 @@ body{
     width: 100%;
     line-height: 1.7;
     background-color: $color_lightbackground;
+    color: $color_black;
 }
 img{
     border: none;
@@ -30,7 +31,8 @@ main {
     float: none;
     width: 100%;
     height: auto;
-    padding-top: 2.5rem;
+    // padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
     box-sizing: border-box;
     overflow-x: hidden;
     overflow-y: auto;
@@ -38,40 +40,27 @@ main {
       float: right;
       width: 70%;
       height: 100vh;
-    
-//   float: right;
-//   width: 70%;
-//   height: 100vh;
-//   padding-top: 2rem;
-//   box-sizing: border-box;
-//   overflow-x: hidden;
-//   overflow-y: auto;
-//   @include breakpoint(mobileonly) {
-//     float: none;
-//     width: 100%;
-//     height: auto;
-//     margin-top: 3.5rem;
-//   }
-//   @include breakpoint(tablet) {
-//     width: 65%;
-//   }
-//   @include breakpoint(desktop) {
-//     width: 70%;
   }
 }
 
-
 main > section {
   width: 90%;
+  margin: 2.5rem auto 0;
+  @include breakpoint(desktop) {
+    margin: 2.5rem 0 0;
+  }
+  @include breakpoint(phablet) {
+    margin-top: 4.5em;
+  }
+  @include breakpoint(mobileonly) {
+    margin-top: 4.5em;
+  }
   header {
       position: relative;
       display: block;
       span#count {
          font-style: normal;
       }
-  }
-  @include breakpoint(mobileonly) {
-    margin: 0 auto;
   }
 }
 
