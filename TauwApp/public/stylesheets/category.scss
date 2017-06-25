@@ -8,13 +8,20 @@ main.category {
       span {
         font-family: 'open_sansbold', Helvetica, Arial, sans-serif;
       }
+      @include breakpoint(mobileonly) {
+        font-size: 1.3em;
+      }
     }
     .category-img {
       position: relative;
       width: 60%;
-      height: 15em;
+      height: 15rem;
       margin: 0 auto;
       text-align: center;
+      @include breakpoint(mobileonly) {
+        width: 85%;
+        height: 9rem;
+      }
       .drone {
         position: absolute;
         top: 2rem;
@@ -25,6 +32,9 @@ main.category {
         width: 3em;
         height: 3em;
         display: block;
+        @include breakpoint(mobileonly) {
+          left: 1rem;
+        }
       }
       .satellite {
         position: absolute;
@@ -36,6 +46,9 @@ main.category {
         width: 3em;
         height: 3em;
         display: block;
+        @include breakpoint(mobileonly) {
+          right: 1rem;
+        }
       }
     }
     img {
@@ -57,7 +70,7 @@ main.category {
         li{
             display: inline-block;
             width: min-content;
-            margin: 1rem 0.5rem;
+            margin: .5rem 0.5rem;
 
             a,
             a:visited   {
@@ -65,6 +78,10 @@ main.category {
                 text-decoration: none;
                 padding: 0.7rem 1.5rem;
                 background-color: $color_pink;
+                display: inline-block;
+                @include breakpoint(mobileonly) {
+                  padding: 1rem 2rem;
+                }
             }
             a:hover {
                 background-color: #414141;
