@@ -44,17 +44,29 @@ var utils = {
     //  costs:[0,1,3]
     // }
 
+    var pushIntoFilter = function (r, value) {
+      // check if already exist or is empty
+      if (filter[filterSub[r]].indexOf(value) ==-1 && value !== "") {
+        filter[filterSub[r]].push(value);
+      }
+    }
+
     filterSub.forEach(function(subject) {
       filter[subject] = [];
     });
+
     for (var i = 0; i < sensors.length; i++) {
       for (var r = 0; r < filterSub.length; r++) {
-        if (filter[filterSub[r]].indexOf(sensors[i][filterSub[r]])==-1 && sensors[i][filterSub[r]]!=="") {
-          filter[filterSub[r]].push(sensors[i][filterSub[r]]);
+
+        if (Array.isArray(sensors[i][filterSub[r]])) {
+          sensors[i][filterSub[r]].forEach(function(val) {
+            pushIntoFilter(r, val);
+          })
+        } else {
+          pushIntoFilter(r, sensors[i][filterSub[r]])
         }
 
       }
-
     }
     filterSub.forEach(function(subject) {
       filter[subject].sort();
@@ -63,7 +75,6 @@ var utils = {
     return filter;
   }
 }
-
 
 
 module.exports = {utils: utils};
