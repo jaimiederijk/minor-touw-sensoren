@@ -11,6 +11,17 @@ align-items: center;
   width: 70%;
   margin-left: 4%;
 }
+
+  p.instruction {
+    display: none;
+    @include breakpoint(mobileonly) {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+
   .full-map {
     width: 100%;
     position: relative;
@@ -41,10 +52,7 @@ align-items: center;
         box-sizing: border-box;
       }
       &:hover span {
-        // border: 2px inset $color_pink;
-        // box-shadow: inset 4px 4px 0px $color_pink;
         box-shadow: inset 0 0 0 2px $color_pink;
-
       }
       .industrial-text {
         top: 8rem;
@@ -59,7 +67,6 @@ align-items: center;
         right: 6rem;
       }
     }
-
     button {
       position: absolute;
       top: 40%;
