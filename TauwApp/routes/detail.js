@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var searchMachine  = require('../lib/search');
 var connector  = require('../lib/connector');
-var queryCreator = require('../lib/querycreator');
+var filterUtils = require('../lib/filterUtils');
 
 var sensorName =""
 
@@ -32,27 +32,32 @@ router.get('/:sectorName/:branchName', function(req, res, next) {
       sector: req.params.sectorName,
       branch: req.params.branchName
   }
-  var activeFilters = {};
-  var filters = ["scale", "accuracy","resolution","interval","innovation"];
-  // loop door alle filters
-  var query = queryCreator.queryCreator.orFilterQuery(currentQuery, req.query, filters);
+  connector.find.findSettings({}, {"filters":1}, function(settings) {
+    var filters = settings[0].filters;
+    // loop door alle filters
+    var query = filterUtils.utils.orFilterQuery(currentQuery, req.query, filters);
 
-  if (req.query.search !== undefined){
-      searchMachine.search.renderSearchResults(req, res, req.query.search);
-  }
-  else {
-      connector.find.findSensors( query, function(docs){
-          console.log(docs)
-        res.render('branch', {
-            title: query.sector,
-            page: "branch",
-            activeFilters: activeFilters,
-            currentSector: query.sector,
-            currentBranch: query.branch,
-            allSensors: docs
+    if (req.query.search !== undefined){
+        searchMachine.search.renderSearchResults(req, res, req.query.search);
+    }
+    else {
+        connector.find.findSensors( query, function(docs){
+
+          filterObj = filterUtils.utils.filterBuilder(docs, filters);
+          console.log(filterObj);
+          res.render('branch', {
+              title: query.sector,
+              page: "branch",
+              currentSector: query.sector,
+              currentBranch: query.branch,
+              activeFilters: filterObj,
+              filters: filters,
+              allSensors: docs
+          });
         });
-      });
-  }
+    }
+  })
+
 });
 
 router.get('/db/:sectorName/:branchName', function(req, res, next) {
@@ -60,27 +65,21 @@ router.get('/db/:sectorName/:branchName', function(req, res, next) {
       sector: req.params.sectorName,
       branch: req.params.branchName
   }
-  var activeFilters = {};
-  var filters = ["scale", "accuracy","resolution","interval","innovation"];
-  // loop door alle filters
-  var query = queryCreator.queryCreator.orFilterQuery(currentQuery, req.query, filters);
+  connector.find.findSettings({}, {"filters":1}, function(settings) {
+    var filters = settings[0].filters;
+    // loop door alle filters
+    var query = filterUtils.utils.orFilterQuery(currentQuery, req.query, filters);
 
-  if (req.query.search !== undefined){
-      searchMachine.search.renderSearchResults(req, res, req.query.search);
-  }
-  else {
-      connector.find.findSensors( query, function(docs){
-          console.log(docs)
-        res.render('partials/results', {
-            title: query.sector,
-            page: "results",
-            activeFilters: activeFilters,
-            currentSector: query.sector,
-            currentBranch: query.branch,
-            allSensors: docs
-        });
+    connector.find.findSensors( query, function(docs){
+
+      res.render('partials/results', {
+          page: "results",
+          currentSector: query.sector,
+          currentBranch: query.branch,
+          allSensors: docs
       });
-  }
+    });
+  });
 });
 
 router.get('/:sectorName/:branchName/:sensorName', function(req, res, next) {

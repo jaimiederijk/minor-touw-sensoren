@@ -58,6 +58,7 @@
       actions.getNewResults(url)
     },
     getNewResults : function (url) {
+      console.log(url);
       promise.get(url).then(function(error, doc, xhr) {
           if (error) {
               alert('Error ' + xhr.status);

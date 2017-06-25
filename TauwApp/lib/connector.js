@@ -59,19 +59,19 @@ var searchText = function(collection, query, db, callback) {
 var removeDocument = function(collection, query, db, callback) {
   // Get the documents collection
   var collection = db.collection(collection);
-  console.log(query)
+  //console.log(query)
 
   // Remove a single document
   // http://mongodb.github.io/node-mongodb-native/2.2/tutorials/crud/#removing-documents
 
   collection.find(query ).toArray(function(err, docs) {
     assert.equal(err, null);
-    console.log(docs)
+    //console.log(docs)
   });
 
     collection.deleteOne(query, function(err, docs) {
       assert.equal(null, err);
-      console.log(docs.deletedCount)
+      //console.log(docs.deletedCount)
      callback(docs);
       });
 };

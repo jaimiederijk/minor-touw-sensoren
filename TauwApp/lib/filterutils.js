@@ -1,4 +1,4 @@
-var queryCreator = {
+var utils = {
   orFilterQuery : function (currentquery, requestquery, possiblefilters) {
     var query = currentquery;
     var requestquery = requestquery;
@@ -33,9 +33,37 @@ var queryCreator = {
       }
     }
     return query
+  },
+  filterBuilder : function (sensors, filtersubjects) {
+    var sensors = sensors;
+    var filterSub = filtersubjects;// ["accuracy","costs"]
+    var filter = {};
+    // what we want
+    // {
+    //   accuracy:[0,1,2,3,4],
+    //  costs:[0,1,3]
+    // }
+
+    filterSub.forEach(function(subject) {
+      filter[subject] = [];
+    });
+    for (var i = 0; i < sensors.length; i++) {
+      for (var r = 0; r < filterSub.length; r++) {
+        if (filter[filterSub[r]].indexOf(sensors[i][filterSub[r]])==-1 && sensors[i][filterSub[r]]!=="") {
+          filter[filterSub[r]].push(sensors[i][filterSub[r]]);
+        }
+
+      }
+
+    }
+    filterSub.forEach(function(subject) {
+      filter[subject].sort();
+    });
+
+    return filter;
   }
 }
 
 
 
-module.exports = {queryCreator: queryCreator};
+module.exports = {utils: utils};

@@ -4,71 +4,22 @@
 
       <h3>Filter</h3>
 
-      <fieldset>
-        <label for="scale">Schaal
-            <span class="arrow down"></span>
-        </label>
-        <input type="checkbox" id="scale" name="scalefilter" value="schaal" class="filter-dropdown" />
-        <ul>
-          <li><label><input type="checkbox" name="scale" value="handmatig" />Handmatig</label></li>
-          <li><label><input type="checkbox" name="scale" value="lokaal" />Lokaal</label></li>
-          <li><label><input type="checkbox" name="scale" value="regionaal" />Regionaal</label></li>
-          <li><label><input type="checkbox" name="scale" value="provinciaal" />Provinciaal</label></li>
-          <li><label><input type="checkbox" name="scale" value="landelijk" />Landelijk</label></li>
-          <li><label><input type="checkbox" name="scale" value="internationaal" />Internationaal</label></li>
+      <% filters.forEach(function(filter) { %>
 
-        </ul>
-      </fieldset>
-      <fieldset>
-        <label for="resolution">Resolutie
-            <span class="arrow down"></span>
-        </label>
-        <input type="checkbox" id="resolution" name="resolutionfilter" value="resolutie" class="filter-dropdown" />
-        <ul>
-          <li><label><input type="checkbox" name="resolution" value="0" />0</label></li>
-          <li><label><input type="checkbox" name="resolution" value="1" />1</label></li>
-          <li><label><input type="checkbox" name="resolution" value="2" />2</label></li>
-          <li><label><input type="checkbox" name="resolution" value="3" />3</label></li>
-          <li><label><input type="checkbox" name="resolution" value="4" />4</label></li>
-          <li><label><input type="checkbox" name="resolution" value="5" />5</label></li>
-        </ul>
-      </fieldset>
-      <fieldset>
-        <label for="accuracy">Nauwkeurigheid
-            <span class="arrow down"></span>
-        </label>
-        <input type="checkbox" id="accuracy" name="accuracyfilter" value="nauwkeurigheid" class="filter-dropdown" />
-        <ul>
-          <li><label><input type="checkbox" name="accuracy" value="0" />Niet nauwkeurig</label></li>
-          <li><label><input type="checkbox" name="accuracy" value="1" />Matig nauwkeurig</label></li>
-          <li><label><input type="checkbox" name="accuracy" value="2" />Redelijk nauwkeurig</label></li>
-          <li><label><input type="checkbox" name="accuracy" value="3" />Zeer nauwkeurig</label></li>
-        </ul>
-      </fieldset>
-      <fieldset>
-        <label for="interval">Tijdreeks
-            <span class="arrow down"></span>
-            </label>
-            <input type="checkbox" id="interval" name="intervalfilter" value="tijdreeks" class="filter-dropdown" />
-        <ul>
-          <li><label><input type="checkbox" name="interval" value="0" />Jaren</label></li>
-          <li><label><input type="checkbox" name="interval" value="1" />Weken</label></li>
-          <li><label><input type="checkbox" name="interval" value="2" />Uren</label></li>
-          <li><label><input type="checkbox" name="interval" value="3" />Minuten</label></li>
-        </ul>
-      </fieldset>
-      <fieldset>
-        <label for="innovation">Innovatie
-            <span class="arrow down"></span>
-        </label>
-            <input type="checkbox" id="innovation" name="innovationfilter" value="innovatie" class="filter-dropdown" />
-        <ul>
-          <li><label><input type="checkbox" name="innovation" value="0" />Weinig bewijs</label></li>
-          <li><label><input type="checkbox" name="innovation" value="1" />Wetenschappelijk bewezig</label></li>
-          <li><label><input type="checkbox" name="innovation" value="2" />In projecten toegepast</label></li>
-          <li><label><input type="checkbox" name="innovation" value="3" />Bewezen techniek</label></li>
-        </ul>
-      </fieldset>
+        <fieldset>
+          <label for="<%= filter %>"><%= filter %>
+              <span class="arrow down"></span>
+          </label>
+          <input type="checkbox" id="<%= filter %>" name="<%= filter %>filter" value="schaal" class="filter-dropdown" />
+          <ul>
+            <% activeFilters[filter].forEach(function(val) { %>
+              <li><label><input type="checkbox" name="<%= filter %>" value="<%= val %>" /><%= val %></label></li>
+
+            <% }) %>
+          </ul>
+        </fieldset>
+
+      <% }) %>
       <input type="submit" value="Toepassen" />
 
     </form>
