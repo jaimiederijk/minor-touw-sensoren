@@ -2,7 +2,7 @@
     {
       "name": "XRF",
       "image": "",
-      "sector": "Landelijk",
+      "sector": ["Landelijk"],
       "branch": ["Bodem"],
       "tags": ["Chemisch"],
       "level": ["Metalen"],
@@ -27,7 +27,7 @@
    {
       "name": "XRF",
       "image": "",
-      "sector": "Stedelijk",
+      "sector": ["Stedelijk"],
       "branch": ["Bodem"],
       "tags": ["Chemisch"],
       "level": ["Metalen"],
@@ -52,7 +52,7 @@
    {
       "name": "XRF",
       "image": "",
-      "sector": "Industrie",
+      "sector": ["Industrie"],
       "branch": ["Bodem"],
       "tags": ["Chemisch"],
       "level": ["Metalen"],
@@ -77,7 +77,7 @@
    {
       "name": "NIR-handheld (Scio)",
       "image": "",
-      "sector": "Landelijk",
+      "sector": ["Landelijk"],
       "branch": [ "Afval","Grondstoffen","Infrastructuur"],
       "tags": ["Chemisch"],
       "level": ["Onderscheidt in chemische verbindingen"],
@@ -102,7 +102,7 @@
    {
       "name": "NIR-handheld (Scio)",
       "image": "",
-      "sector": "Stedelijk",
+      "sector": ["Stedelijk"],
       "branch": [ "Afval","Grondstoffen","Infrastructuur"],
       "tags": ["Chemisch"],
       "level": ["Onderscheidt in chemische verbindingen"],
@@ -127,7 +127,7 @@
    {
       "name": "NIR-handheld (Scio)",
       "image": "",
-      "sector": "Industrie",
+      "sector": ["Industrie"],
       "branch": [ "Afval","Grondstoffen"],
       "tags": ["Chemisch"],
       "level": ["Onderscheidt in chemische verbindingen"],
@@ -152,7 +152,7 @@
    {
       "name": "Drone - RGB 3D model",
       "image": "",
-      "sector": "Landelijk",
+      "sector": ["Landelijk"],
       "branch": ["Inspectie","Ecologie","Water"],
       "tags": ["3D model"],
       "level": ["Maaiveld"],
@@ -177,7 +177,7 @@
    {
       "name": "Drone - RGB 3D model",
       "image": "",
-      "sector": "Stedelijk",
+      "sector": ["Stedelijk"],
       "branch": ["Inspectie","Ecologie","Bodem"],
       "tags": ["3D model","Volume bepaling"],
       "level": ["Maaiveld"],
@@ -202,7 +202,7 @@
    {
       "name": "Drone - RGB 3D model",
       "image": "",
-      "sector": "Industrie",
+      "sector": ["Industrie"],
       "branch": ["Inspectie","Ecologie","Bodem"],
       "tags": ["3D model","Volume bepaling"],
       "level": ["Maaiveld"],
@@ -227,7 +227,7 @@
    {
       "name": "Mobiele GC",
       "image": "",
-      "sector": "Landelijk",
+      "sector": ["Landelijk"],
       "branch": ["Bodem"],
       "tags": ["Chemisch"],
       "level": ["Bodemlucht"],
@@ -252,7 +252,7 @@
    {
       "name": "Mobiele GC",
       "image": "",
-      "sector": "Stedelijk",
+      "sector": ["Stedelijk"],
       "branch": ["Bodem"],
       "tags": ["Chemisch"],
       "level": ["Bodemlucht"],
@@ -277,7 +277,7 @@
    {
       "name": "Mobiele GC",
       "image": "",
-      "sector": "Industrie",
+      "sector": ["Industrie"],
       "branch": ["Bodem"],
       "tags": ["Chemisch"],
       "level": ["Bodemlucht"],
@@ -303,7 +303,7 @@
    {
       "name": "Satelliet",
       "image": "",
-      "sector": "Landelijk",
+      "sector": ["Landelijk"],
       "branch": ["Inspectie","Ecologie","Water"],
       "tags": ["3D model"],
       "level": ["Maaiveld"],
@@ -328,7 +328,7 @@
    {
       "name": "Satelliet",
       "image": "",
-      "sector": "Stedelijk",
+      "sector": ["Stedelijk"],
       "branch": ["Inspectie","Ecologie","Bodem"],
       "tags": ["3D model","Volume bepaling"],
       "level": ["Maaiveld"],
@@ -353,7 +353,7 @@
    {
       "name": "Satelliet",
       "image": "",
-      "sector": "Industrie",
+      "sector": ["Industrie"],
       "branch": ["Inspectie","Ecologie","Bodem"],
       "tags": ["3D model","Volume bepaling"],
       "level": ["Maaiveld"],
@@ -378,7 +378,7 @@
    {
       "name": "Medusa",
       "image": "",
-      "sector": "Landelijk",
+      "sector": ["Landelijk"],
       "branch": ["Bodem","Waterbodem","Infrastructuur"],
       "tags": ["Fysisch","Chemisch"],
       "level": ["Textuur","Lutum", "Organisch stof", "metalen", "PAK", "PCB"],
@@ -403,7 +403,7 @@
    {
       "name": "Medusa",
       "image": "",
-      "sector": "Stedelijk",
+      "sector": ["Stedelijk"],
       "branch": ["Bodem","Waterbodem","Infrastructuur"],
       "tags": ["Fysisch","Chemisch"],
       "level": ["Textuur","Lutum", "Organisch stof", "metalen", "PAK", "PCB"],
@@ -428,7 +428,7 @@
    {
       "name": "Medusa",
       "image": "",
-      "sector": "Industrie",
+      "sector": ["Industrie"],
       "branch": ["Bodem","Waterbodem","Infrastructuur"],
       "tags": ["Fysisch","Chemisch"],
       "level": ["Textuur","Lutum", "Organisch stof", "metalen", "PAK", "PCB"],
@@ -453,7 +453,7 @@
    {
       "name": "Grondradar",
       "image": "",
-      "sector": "Landelijk",
+      "sector": ["Landelijk"],
       "branch": ["Bodem"],
       "tags": ["Fysisch"],
       "level": ["Opbouw","Bodemvreemde materialen"],
@@ -503,7 +503,7 @@
    {
       "name": "Grondradar",
       "image": "",
-      "sector": "Industrie",
+      "sector": ["Industrie"],
       "branch": ["Bodem"],
       "tags": ["Fysisch"],
       "level": ["Opbouw","Bodemvreemde materialen"],

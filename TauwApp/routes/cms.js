@@ -71,7 +71,11 @@ router.get('/edit/:sensorID', function(req, res, next) {
 
     connector.find.findSensorId( query, function(docs){
         var allSensors = docs[0];
+
         connector.find.findSettings (query2, field, function(docs) {
+            console.log("---------------------------")
+            console.log(allSensors)
+            console.log("---------------------------")
             res.render('edit', {
                 title: "add a sensor",
                 page: "cms",

@@ -49,6 +49,7 @@
 
               <table>
                   <tr>
+                     <th>id</th>
                     <th>Name</th>
                     <th>Sector</th>
                     <th>Branch</th>
@@ -60,6 +61,7 @@
 
                   <% allSensors.forEach(function(sensor) { %>
                       <tr>
+                          <td><%= sensor._id %></td>
                           <td><%= sensor.name %></td>
                           <td><%= sensor.sector %></td>
                           <td><%= sensor.branch %></td>
