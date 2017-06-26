@@ -3,6 +3,8 @@ var router = express.Router();
 var searchMachine  = require('../lib/search');
 var connector  = require('../lib/connector');
 var login_status = false;
+var settingCollection = [];
+
 
 router.get('/', function(req, res, next) {
     var query = {}
@@ -41,7 +43,8 @@ router.get('/add', function(req, res, next) {
   var query = {};
   var field = {};
       connector.find.findSettings (query, field, function(docs) {
-          console.log(docs[0].sector)
+
+        //   console.log(docs[0].sector)
           res.render('form', {
               title: "add a sensor",
               page: "cms",
@@ -53,7 +56,7 @@ router.get('/add', function(req, res, next) {
 router.post('/add', function(req, res, next) {
     var jsonObject = req.body
 
-    cleanPost.checkForNewItems(jsonObject);
+    cleanPost.removeEmptyStrings(jsonObject);
     connector.find.createNewSensor(jsonObject);
 
     res.redirect("/cms")
@@ -65,6 +68,7 @@ router.get('/edit/:sensorID', function(req, res, next) {
     }
     var query2 = {};
     var field = {};
+
     connector.find.findSensorId( query, function(docs){
         var allSensors = docs[0];
         connector.find.findSettings (query2, field, function(docs) {
@@ -85,7 +89,7 @@ router.post('/edit/:sensorID', function(req, res, next) {
     var query = { id: req.params.sensorID};
     var jsonObject = req.body;
 
-    cleanPost.checkForNewItems(jsonObject);
+    cleanPost.removeEmptyStrings(jsonObject);
     connector.find.editSensor(query, jsonObject);
 
     res.redirect('/cms');
@@ -114,43 +118,60 @@ var login = {
 }
 
 var cleanPost = {
-    checkForNewItems: function(data){
-        Object.keys(data).forEach(function(key) {
-            if (data[key].indexOf("nieuw") > 0){
-                var i = data[key].indexOf("nieuw");
-                data[key].splice(i, 1)
-                cleanPost.removeEmptyStrings(data);
-            }
-        });
-    },
     removeEmptyStrings: function(data){
         Object.keys(data).forEach(function(key) {
             if (data[key].length > 1){
                 if (data[key].indexOf("") > 0){
                     var i = data[key].indexOf("");
                     data[key].splice(i, 1)
-                    cleanPost.removeEmptyStrings(data);
                 }
             }
         });
+        cleanPost.checkForNewItems(data);
+    },
+    checkForNewItems: function(data){
+        var keys = []
+        Object.keys(data).forEach(function(key) {
+            if (data[key].indexOf("nieuw") > 0){
+                var i = data[key].indexOf("nieuw");
+                data[key].splice(i, 1)
+                keys.push(key)
+            }
+        });
+        console.log("Done with generating keys")
+        settingsHandeler.init(keys, data)
     },
 }
 
+var settingsHandeler = {
+    init: function(keys, data){
+        var query= {};
+        var field = {};
 
-// var newItems = {
-//     checkForNewItems: function(data){
-//         Object.keys(data).forEach(function(key) {
-//             if (data[key].indexOf("nieuw") > 0){
-//                 var i = data[key].indexOf("nieuw") + 1;
-//                 console.log(key)
-//                 newItems.updateTheSettings(key, data[key][i]);
-//             }
-//         })
-//     },
-//     updateTheSettings: function(key, value){
-//         connector.find.editSettings(key,value);
-//     },
-// }
+        connector.find.findSettings (query, field, function(docs) {
+            settingsHandeler.checkForDouble(docs[0], keys, data)
+        });
+    },
+    checkForDouble: function(settings,keys, data){
+        var updatedSettings = settings;
+        for (i = 0; i < keys.length; i++) {
+            var currentKey = keys[i];
+            var currentSector = data[currentKey];
+            var lastItem = currentSector.length -1;
+            updatedSettings[currentKey].push(currentSector[lastItem]);
+        }
+        settingsHandeler.addNewSetting(updatedSettings);
+    },
+    addNewSetting: function (settings) {
+        console.log("Time to update")
+        console.log("Time to update")
+        console.log("Time to update")
+        console.log("Time to update")
+        console.log("Time to update")
+        console.log("Time to update")
 
+        connector.find.editSettings(settings);
+    },
+}
 
 module.exports = {router: router};

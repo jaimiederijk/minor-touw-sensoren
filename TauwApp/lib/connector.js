@@ -77,15 +77,28 @@ var updateDocument = function(collection, query, json, db, callback){
       });
 };
 
-// var updateSetting = function(collection, key, value, db, callback){
-//     var collection = db.collection(collection);
-//
-//     collection.updateOne({key: value}, function(err, r) {
-//           assert.equal(null, err);
-//           assert.equal(1, r.matchedCount);
-//         //   assert.equal(1, r.modifiedCount);
-//       });
-// };
+var updateSetting = function(collection, json, db, callback){
+    var collection = db.collection(collection);
+console.log("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV")
+    console.log(collection);
+    console.log(json)
+
+    // collection.deleteOne({}, function(err) {
+    //   assert.equal(null, err);
+    //   });
+    //   collection.insertOne(json, function(err, r) {
+    //     assert.equal(err, null);
+    //     assert.equal(1, r.insertedCount)
+    //   });
+    collection.updateOne({}, json, function(err, r) {
+          assert.equal(null, err);
+          console.log("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV")
+          console.log(r)
+          console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
+          assert.equal(1, r.matchedCount);
+        //   assert.equal(1, r.modifiedCount);
+      });
+}; 
 
 var removeDocument = function(collection, query, db, callback) {
   // Get the documents collection
@@ -161,16 +174,18 @@ var find = {
         })
     })
  },
- // editSettings: function (key,value, callback) {
- //     MongoClient.connect(url, function(err, db){
- //       assert.equal(null,err);
- //       updateSetting("settings", key, value, db, function(docs) {
- //           callback(docs);
- //           console.log("Item successfully edited")
- //         db.close();
- //        })
- //    })
- // },
+ editSettings: function (json) {
+     console.log("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV")
+     console.log(json)
+     MongoClient.connect(url, function(err, db){
+       assert.equal(null,err);
+
+       updateSetting("settings", json, db, function() {
+           console.log("Item successfully edited")
+         db.close();
+        })
+    })
+ },
  removeItem : function (query, callback) {
    MongoClient.connect(url, function(err, db) {
      assert.equal(null, err);
