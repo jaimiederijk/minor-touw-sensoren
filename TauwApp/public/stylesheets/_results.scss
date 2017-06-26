@@ -102,3 +102,50 @@ ul.branch {
     }
   }
 }
+/* animaties */
+
+.expandUp2 li {
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}) {
+      animation-name:expandUp2;
+      -webkit-animation-name:expandUp2;
+      animation-duration:10s;
+      -webkit-animation-duration:1.5s;
+      -webkit-animation-delay: -1s + (0.1s * $i);
+      animation-delay: -1s + (0.1s * $i);
+      animation-timing-function:ease;
+      -webkit-animation-timing-function:ease;
+      visibility:visible!important
+    }
+  }
+}
+@keyframes expandUp2 {
+	0% {
+		transform: translateY(100%) scale(0.6) scaleY(0.5);
+	}
+  30% {
+		transform: translateY(100%) scale(0.6) scaleY(0.5);
+	}
+	60%{
+		transform: translateY(-7%) scaleY(1.12);
+	}
+	75%{
+		transform: translateY(3%);
+	}
+	100% {
+		transform: translateY(0%) scale(1) scaleY(1);
+	}
+}@-webkit-keyframes expandUp2 {
+	0% {
+		-webkit-transform: translateY(100%) scale(0.6) scaleY(0.5);
+	}
+	60%{
+		-webkit-transform: translateY(-7%) scaleY(1.12);
+	}
+	75%{
+		-webkit-transform: translateY(3%);
+	}
+	100% {
+		-webkit-transform: translateY(0%) scale(1) scaleY(1);
+	}
+}

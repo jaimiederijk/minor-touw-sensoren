@@ -55,7 +55,8 @@
         url = noFilterUrl[0];
       }
 
-      actions.getNewResults(url)
+      actions.getNewResults(url);
+
     },
     getNewResults : function (url) {
       console.log(url);
@@ -68,7 +69,7 @@
           var newResults = document.createRange().createContextualFragment(doc);
 
           document.querySelector('body').replaceChild(newResults, document.querySelector('main'));
-
+          animate.results();
       });
     },
     checkCheckboxes : function () {
