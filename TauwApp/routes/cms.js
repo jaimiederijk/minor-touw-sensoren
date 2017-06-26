@@ -51,13 +51,12 @@ router.get('/add', function(req, res, next) {
 });
 
 router.post('/add', function(req, res, next) {
-    console.log(req.body)
     var jsonObject = req.body
-    console.log(jsonObject)
 
+    cleanPost.checkForNewItems(jsonObject);
     connector.find.createNewSensor(jsonObject);
 
-  res.redirect("/cms")
+    res.redirect("/cms")
 });
 
 router.get('/edit/:sensorID', function(req, res, next) {
@@ -69,7 +68,6 @@ router.get('/edit/:sensorID', function(req, res, next) {
     connector.find.findSensorId( query, function(docs){
         var allSensors = docs[0];
         connector.find.findSettings (query2, field, function(docs) {
-            // console.log(docs[0].sector)
             res.render('edit', {
                 title: "add a sensor",
                 page: "cms",
@@ -85,12 +83,11 @@ router.get('/edit/:sensorID', function(req, res, next) {
 
 router.post('/edit/:sensorID', function(req, res, next) {
     var query = { id: req.params.sensorID};
-    console.log(query.id)
     var jsonObject = req.body;
 
-    connector.find.editSensor(query, jsonObject, function(req, res, next) {
-        console.log(query)
-        });
+    cleanPost.checkForNewItems(jsonObject);
+    connector.find.editSensor(query, jsonObject);
+
     res.redirect('/cms');
 });
 
@@ -115,5 +112,45 @@ var login = {
         }
     },
 }
+
+var cleanPost = {
+    checkForNewItems: function(data){
+        Object.keys(data).forEach(function(key) {
+            if (data[key].indexOf("nieuw") > 0){
+                var i = data[key].indexOf("nieuw");
+                data[key].splice(i, 1)
+                cleanPost.removeEmptyStrings(data);
+            }
+        });
+    },
+    removeEmptyStrings: function(data){
+        Object.keys(data).forEach(function(key) {
+            if (data[key].length > 1){
+                if (data[key].indexOf("") > 0){
+                    var i = data[key].indexOf("");
+                    data[key].splice(i, 1)
+                    cleanPost.removeEmptyStrings(data);
+                }
+            }
+        });
+    },
+}
+
+
+// var newItems = {
+//     checkForNewItems: function(data){
+//         Object.keys(data).forEach(function(key) {
+//             if (data[key].indexOf("nieuw") > 0){
+//                 var i = data[key].indexOf("nieuw") + 1;
+//                 console.log(key)
+//                 newItems.updateTheSettings(key, data[key][i]);
+//             }
+//         })
+//     },
+//     updateTheSettings: function(key, value){
+//         connector.find.editSettings(key,value);
+//     },
+// }
+
 
 module.exports = {router: router};

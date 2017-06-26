@@ -31,6 +31,7 @@ var findDocumentsWithField = function(collection, query, field, db, callback) {
   // Find some documents
   collection.find( query,field ).toArray(function(err, docs) {
     assert.equal(err, null);
+    console.log(docs)
 
     callback(docs);
   });
@@ -76,6 +77,16 @@ var updateDocument = function(collection, query, json, db, callback){
       });
 };
 
+// var updateSetting = function(collection, key, value, db, callback){
+//     var collection = db.collection(collection);
+//
+//     collection.updateOne({key: value}, function(err, r) {
+//           assert.equal(null, err);
+//           assert.equal(1, r.matchedCount);
+//         //   assert.equal(1, r.modifiedCount);
+//       });
+// };
+
 var removeDocument = function(collection, query, db, callback) {
   // Get the documents collection
   var collection = db.collection(collection);
@@ -117,6 +128,7 @@ var find = {
      console.log("Connected successfully to server");
 
      findDocumentsWithField("settings", query, field, db, function(docs) {
+         console.log(docs)
        callback(docs);
        db.close();
      });
@@ -141,7 +153,6 @@ var find = {
  },
  editSensor: function (query, json, callback) {
      MongoClient.connect(url, function(err, db){
-         console.log(query)
        assert.equal(null,err);
        updateDocument("sensors", query, json, db, function(docs) {
            callback(docs);
@@ -150,6 +161,16 @@ var find = {
         })
     })
  },
+ // editSettings: function (key,value, callback) {
+ //     MongoClient.connect(url, function(err, db){
+ //       assert.equal(null,err);
+ //       updateSetting("settings", key, value, db, function(docs) {
+ //           callback(docs);
+ //           console.log("Item successfully edited")
+ //         db.close();
+ //        })
+ //    })
+ // },
  removeItem : function (query, callback) {
    MongoClient.connect(url, function(err, db) {
      assert.equal(null, err);
