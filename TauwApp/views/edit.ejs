@@ -53,10 +53,14 @@
                         <legend><%= key %></legend>
                         <p>Please select the corresponding <%= key %>.</p>
                             <% AllSettings[key].forEach(function(value) { %>
+
                                 <label>
-                                    <% if(allSensors[key].indexOf(value) >= 0){ %>
+
+                                    <% if(allSensors[key]== value){ %>
                                        <input type="checkbox" name="<%= key %>" value="<%= value %>" checked> <%= value %> <br/>
-                                     <% } else{ %>
+                                    <% } else if (typeof(allSensors[key]) == "object" && allSensors[key].indexOf(value) >= 0){ %>
+                                        <input type="checkbox" name="<%= key %>" value="<%= value %>" checked> <%= value %> <br/>
+                                    <% } else{ %>
                                        <input type="checkbox" name="<%= key %>" value="<%= value %>"> <%= value %> <br/>
                                     <% } %>
                                 </label>

@@ -142,7 +142,6 @@ var cleanPost = {
                 keys.push(key)
             }
         });
-        console.log("Done with generating keys")
         settingsHandeler.init(keys, data)
     },
 }
@@ -167,13 +166,6 @@ var settingsHandeler = {
         settingsHandeler.addNewSetting(updatedSettings);
     },
     addNewSetting: function (settings) {
-        console.log("Time to update")
-        console.log("Time to update")
-        console.log("Time to update")
-        console.log("Time to update")
-        console.log("Time to update")
-        console.log("Time to update")
-
         connector.find.editSettings(settings);
     },
 }

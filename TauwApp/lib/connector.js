@@ -20,7 +20,6 @@ var findDocumentsWithId = function (collection, query, db, callback) {
 
     collection.find({_id: ObjectId(query.id)} ).toArray(function(err, docs) {
     assert.equal(err, null);
-    console.log(docs)
     callback(docs);
  });
 }
@@ -31,8 +30,6 @@ var findDocumentsWithField = function(collection, query, field, db, callback) {
   // Find some documents
   collection.find( query,field ).toArray(function(err, docs) {
     assert.equal(err, null);
-    console.log(docs)
-
     callback(docs);
   });
 }
@@ -73,32 +70,16 @@ var updateDocument = function(collection, query, json, db, callback){
     collection.updateOne({_id: ObjectId(query.id)}, {$set: json}, function(err, r) {
           assert.equal(null, err);
           assert.equal(1, r.matchedCount);
-        //   assert.equal(1, r.modifiedCount);
       });
 };
 
 var updateSetting = function(collection, json, db, callback){
     var collection = db.collection(collection);
-console.log("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV")
-    console.log(collection);
-    console.log(json)
-
-    // collection.deleteOne({}, function(err) {
-    //   assert.equal(null, err);
-    //   });
-    //   collection.insertOne(json, function(err, r) {
-    //     assert.equal(err, null);
-    //     assert.equal(1, r.insertedCount)
-    //   });
     collection.updateOne({}, json, function(err, r) {
           assert.equal(null, err);
-          console.log("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV")
-          console.log(r)
-          console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
           assert.equal(1, r.matchedCount);
-        //   assert.equal(1, r.modifiedCount);
       });
-}; 
+};
 
 var removeDocument = function(collection, query, db, callback) {
   // Get the documents collection
@@ -106,7 +87,6 @@ var removeDocument = function(collection, query, db, callback) {
   // Remove a single document
     collection.deleteOne({_id: ObjectId(query.id)}, function(err, docs) {
       assert.equal(null, err);
-      console.log("Deleted "+docs.deletedCount+" document.")
      callback(docs);
       });
 };
@@ -169,14 +149,11 @@ var find = {
        assert.equal(null,err);
        updateDocument("sensors", query, json, db, function(docs) {
            callback(docs);
-           console.log("Item successfully edited")
          db.close();
         })
     })
  },
  editSettings: function (json) {
-     console.log("VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV")
-     console.log(json)
      MongoClient.connect(url, function(err, db){
        assert.equal(null,err);
 
