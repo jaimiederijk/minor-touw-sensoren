@@ -60,7 +60,7 @@ router.get('/:sectorName/:branchName', function(req, res, next) {
 
 });
 
-router.get('/db/:sectorName/:branchName', function(req, res, next) {
+router.get('/db/:r/:sectorName/:branchName', function(req, res, next) {
   var currentQuery = {
       sector: req.params.sectorName,
       branch: req.params.branchName

@@ -13,9 +13,13 @@
 
         },
         checkInputStatus: function(item, current) {
+            var tlAnimateFilter = new TimelineMax({repeat:0, paused:true});
+
+            tlAnimateFilter.from(filters,0.3,{y:-100,opacity:0.1,zIndex:-1, ease:Power2.easeOut});
+
             if (current.querySelector("input").checked == false){
                 var arrow = item.querySelector("span.arrow");
-                animate.hideFilter(arrow);
+                tlAnimateFilter.play();
                 arrow.classList.add("down");
                 arrow.classList.remove("up");
 
@@ -24,9 +28,19 @@
                 var arrow = item.querySelector("span.arrow");
                 arrow.classList.add("up");
                 arrow.classList.remove("down");
-                animate.filters(arrow);
+                tlAnimateFilter.reverse();
             }
         },
     };
     arrows.init();
 })();
+// var filters = target.parentElement.nextElementSibling.nextElementSibling;
+// var tlAnimateFilter = new TimelineMax({repeat:0, paused:true});
+//
+// tlAnimateFilter.set(filters,{zIndex:-1});
+// tlAnimateFilter.from(filters,0.3,{y:-100,opacity:0.1,zIndex:-1, ease:Power2.easeOut});
+// if (play) {
+//   tlAnimateFilter.play();
+// } else {
+//   tlAnimateFilter.reverse();
+// }

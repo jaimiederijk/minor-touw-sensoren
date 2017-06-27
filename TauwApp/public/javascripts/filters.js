@@ -54,7 +54,7 @@
         var noFilterUrl = dbCurrentHref.split("?");
         url = noFilterUrl[0];
       }
-
+      actions.getNewFilters(url);
       actions.getNewResults(url);
 
     },
@@ -62,7 +62,7 @@
       console.log(url);
       promise.get(url).then(function(error, doc, xhr) {
           if (error) {
-              alert('Error ' + xhr.status);
+              alert('Sorry. Filtering went wrong: ' + xhr.status);
               return;
           }
 
@@ -71,6 +71,20 @@
           document.querySelector('body').replaceChild(newResults, document.querySelector('main'));
           animate.results();
       });
+    },
+    getNewFilters : function (url) {
+      console.log(url);
+      promise.get(url.then(function(error, doc, xhr) {
+        if (error) {
+          alert('Sorry. Filtering went wrong: ' + xhr.status)
+          return
+        }
+
+        var newFilters = document.createRange().createContextualFragment(doc);
+
+        document.querySelector('#aside .content').replaceChild(newFilters, document.querySelector('#filter'));
+
+      }))
     },
     checkCheckboxes : function () {
       var filterArray = [];
