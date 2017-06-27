@@ -17,13 +17,13 @@ var animate = {
   },
   filters: function (target,play) {
 
-    
+
   },
   hideFilter : function (target) {
-    var filters = target.parentElement.nextElementSibling.nextElementSibling;
-    var tlAnimateFilter = new TimelineMax({repeat:0});
-    tlAnimateFilter.set(filters,{zIndex:-1})
-    tlAnimateFilter.to(filters,0.1,{opacity:0.1,zIndex:-1,height:0, ease:Power2.easeOut})
+    // var filters = target.parentElement.nextElementSibling.nextElementSibling;
+    // var tlAnimateFilter = new TimelineMax({repeat:0});
+    // tlAnimateFilter.set(filters,{zIndex:-1})
+    // tlAnimateFilter.to(filters,0.1,{opacity:0.1,zIndex:-1,height:0, ease:Power2.easeOut})
   }
 
 }

@@ -43,14 +43,16 @@ router.get('/:sectorName/:branchName', function(req, res, next) {
     else {
         connector.find.findSensors( query, function(docs){
 
-          filterObj = filterUtils.utils.filterBuilder(docs, filters);
-          console.log(filterObj);
+          var filterObj = filterUtils.utils.filterBuilder(docs, filters);
+          var reqQuery = Object.keys(req.query).length === 0 ? "false" : req.query;
+
           res.render('branch', {
               title: query.sector,
               page: "branch",
               currentSector: query.sector,
               currentBranch: query.branch,
               activeFilters: filterObj,
+              checkedFilters: reqQuery,
               filters: filters,
               allSensors: docs
           });
@@ -60,7 +62,7 @@ router.get('/:sectorName/:branchName', function(req, res, next) {
 
 });
 
-router.get('/db/:r/:sectorName/:branchName', function(req, res, next) {
+router.get('/db/:x/:sectorName/:branchName', function(req, res, next) {
   var currentQuery = {
       sector: req.params.sectorName,
       branch: req.params.branchName
@@ -71,13 +73,23 @@ router.get('/db/:r/:sectorName/:branchName', function(req, res, next) {
     var query = filterUtils.utils.orFilterQuery(currentQuery, req.query, filters);
 
     connector.find.findSensors( query, function(docs){
+      if (req.params.x == "f") {
+        var filterObj = filterUtils.utils.filterBuilder(docs, filters);
 
-      res.render('partials/results', {
-          page: "results",
-          currentSector: query.sector,
-          currentBranch: query.branch,
-          allSensors: docs
-      });
+        res.render('partials/filters', {
+            page: "filters",
+            activeFilters: filterObj,
+            checkedFilters: req.query,
+            filters: filters
+        });
+      } else {
+        res.render('partials/results', {
+            page: "results",
+            currentSector: query.sector,
+            currentBranch: query.branch,
+            allSensors: docs
+        });
+      }
     });
   });
 });
@@ -94,7 +106,7 @@ router.get('/:sectorName/:branchName/:sensorName', function(req, res, next) {
   }
   else{
       connector.find.findSensors( query, function(docs){
-          console.log(docs)
+
         res.render('detail', {
             title: query.sector,
             page: "detail",

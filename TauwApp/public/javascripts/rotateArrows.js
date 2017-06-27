@@ -13,13 +13,12 @@
 
         },
         checkInputStatus: function(item, current) {
-            var tlAnimateFilter = new TimelineMax({repeat:0, paused:true});
-
-            tlAnimateFilter.from(filters,0.3,{y:-100,opacity:0.1,zIndex:-1, ease:Power2.easeOut});
+            // var tlAnimateFilter = new TimelineMax({repeat:0, paused:true});
+            //tlAnimateFilter.from(item.lastElementChild,0.3,{y:-100,opacity:0.1,zIndex:-1, ease:Power2.easeOut});
 
             if (current.querySelector("input").checked == false){
                 var arrow = item.querySelector("span.arrow");
-                tlAnimateFilter.play();
+                //tlAnimateFilter.play();
                 arrow.classList.add("down");
                 arrow.classList.remove("up");
 
@@ -28,7 +27,7 @@
                 var arrow = item.querySelector("span.arrow");
                 arrow.classList.add("up");
                 arrow.classList.remove("down");
-                tlAnimateFilter.reverse();
+              //  tlAnimateFilter.reverse();
             }
         },
     };

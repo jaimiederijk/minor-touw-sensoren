@@ -2,7 +2,8 @@
   var htmlElements = {
     form : document.querySelector('#filter form'),
     filters : document.querySelectorAll('#filter ul input'),
-    results : document.querySelector('main')
+    results : document.querySelector('main'),
+    formSubmit : document.querySelector('#filter form > input')
   }
 
   var events = {
@@ -10,6 +11,10 @@
           for (var i = 0; i < htmlElements.filters.length; i++) {
             htmlElements.filters[i].addEventListener('click', function(e){events.handleCheckboxClick(e);})
           }
+          if(typeof document.createRange().createContextualFragment === "function") {
+            htmlElements.formSubmit.classList.add('hide');
+          }
+
       },
       handleCheckboxClick(e) {
         var currentHref = window.location.href;
@@ -36,26 +41,30 @@
 
   var actions = {
     getResultsClientside : function (currentHref) {
-      var url = "";
-      var hrefArray = currentHref.split("details/")
-      var dbCurrentHref = hrefArray[0] + "details/db/" + hrefArray[1];
+      var resultsUrl = "";
+      var filtersUrl = "";
+      var hrefArray = currentHref.split("details/");
+      var dbCurrentHref = hrefArray[0] + "details/db/r/" + hrefArray[1];
+      var dbCurrentFilterHref = hrefArray[0] + "details/db/f/" + hrefArray[1];
       var checkedArray = actions.checkCheckboxes();
 
+      // one filter checked
       if (checkedArray.length === 1) {
-
-        url = dbCurrentHref + "?" + checkedArray[0].name + "=" + checkedArray[0].value;
+        filtersUrl = dbCurrentFilterHref + "?" + checkedArray[0].name + "=" + checkedArray[0].value;
+        resultsUrl = dbCurrentHref + "?" + checkedArray[0].name + "=" + checkedArray[0].value;
 
       } else if (checkedArray.length > 1) {
-
-        url = dbCurrentHref + actions.createCheckboxUrl(checkedArray);
+        filtersUrl = dbCurrentFilterHref + actions.createCheckboxUrl(checkedArray);
+        resultsUrl = dbCurrentHref + actions.createCheckboxUrl(checkedArray);
 
       } else {
-
-        var noFilterUrl = dbCurrentHref.split("?");
-        url = noFilterUrl[0];
+        var noFilterFUrl = dbCurrentFilterHref.split("?");
+        var noFilterRUrl = dbCurrentHref.split("?");
+        filtersUrl = noFilterFUrl[0];
+        resultsUrl = noFilterRUrl[0];
       }
-      actions.getNewFilters(url);
-      actions.getNewResults(url);
+      actions.getNewFilters(filtersUrl);
+      actions.getNewResults(resultsUrl);
 
     },
     getNewResults : function (url) {
@@ -74,7 +83,7 @@
     },
     getNewFilters : function (url) {
       console.log(url);
-      promise.get(url.then(function(error, doc, xhr) {
+      promise.get(url).then(function(error, doc, xhr) {
         if (error) {
           alert('Sorry. Filtering went wrong: ' + xhr.status)
           return
@@ -82,9 +91,9 @@
 
         var newFilters = document.createRange().createContextualFragment(doc);
 
-        document.querySelector('#aside .content').replaceChild(newFilters, document.querySelector('#filter'));
+        document.querySelector('aside .content').replaceChild(newFilters, document.querySelector('#filter'));
 
-      }))
+      });
     },
     checkCheckboxes : function () {
       var filterArray = [];

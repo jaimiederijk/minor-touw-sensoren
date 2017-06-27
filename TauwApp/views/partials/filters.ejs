@@ -13,8 +13,11 @@
           <input type="checkbox" id="<%= filter %>" name="<%= filter %>filter" value="schaal" class="filter-dropdown" />
           <ul>
             <% activeFilters[filter].forEach(function(val) { %>
-              <li><label><input type="checkbox" name="<%= filter %>" value="<%= val %>" /><%= val %></label></li>
-
+              <% if (checkedFilters !== "false" && checkedFilters[filter] == val ) { %>
+                <li><label><input type="checkbox" name="<%= filter %>" checked value="<%= val %>" /><%= val %></label></li>
+              <% } else{ %>
+                <li><label><input type="checkbox" name="<%= filter %>" value="<%= val %>" /><%= val %></label></li>
+              <% } %>
             <% }) %>
           </ul>
         </fieldset>
