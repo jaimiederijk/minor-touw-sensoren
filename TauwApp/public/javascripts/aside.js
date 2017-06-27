@@ -18,6 +18,7 @@
           htmlElements.closeMenu.style.display = "block";
           htmlElements.openMenu.style.display = "none";
           htmlElements.menu.style.display = "block";
+          animate.filters(e);
       },
       close: function (e) {
           e.preventDefault();

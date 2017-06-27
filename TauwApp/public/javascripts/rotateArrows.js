@@ -15,13 +15,16 @@
         checkInputStatus: function(item, current) {
             if (current.querySelector("input").checked == false){
                 var arrow = item.querySelector("span.arrow");
+                animate.hideFilter(arrow);
                 arrow.classList.add("down");
                 arrow.classList.remove("up");
+
             }
             else {
                 var arrow = item.querySelector("span.arrow");
                 arrow.classList.add("up");
                 arrow.classList.remove("down");
+                animate.filters(arrow);
             }
         },
     };
