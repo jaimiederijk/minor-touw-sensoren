@@ -196,6 +196,16 @@ $ gulp setup-db
 - conect with db:
 [node mongo quickstart](http://mongodb.github.io/node-mongodb-native/2.2/quick-start/quick-start/)
 
+
+##### for live version
+- connect via shell
+```
+$ mongo "mongodb://tauw-shard-00-00-rkjng.mongodb.net:27017,tauw-shard-00-01-rkjng.mongodb.net:27017,tauw-shard-00-02-rkjng.mongodb.net:27017/test?replicaSet=tauw-shard-0" --authenticationDatabase admin --ssl --username jaimie2 --password <PASSWORD>
+```
+- import via shell
+```
+$ mongoimport --host "tauw-shard-00-00-rkjng.mongodb.net:27017,tauw-shard-00-01-rkjng.mongodb.net:27017,tauw-shard-00-02-rkjng.mongodb.net:27017" --authenticationDatabase admin --ssl --username jaimie2 --password askjaimie --db tauw --collection sensors --drop --file "./sensorseed.json"
+```
 #### veranderingen aan de json
 ```
 $ gulp import-data
