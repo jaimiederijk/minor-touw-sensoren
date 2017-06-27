@@ -5,23 +5,23 @@
       <h3>Filter</h3>
 
       <% filters.forEach(function(filter) { %>
-
-        <fieldset>
-          <label for="<%= filter %>"><%= filter %>
-              <span class="arrow down"></span>
-          </label>
-          <input type="checkbox" id="<%= filter %>" name="<%= filter %>filter" value="schaal" class="filter-dropdown" />
-          <ul>
-            <% activeFilters[filter].forEach(function(val) { %>
-              <% if (checkedFilters !== "false" && checkedFilters[filter] == val ) { %>
-                <li><label><input type="checkbox" name="<%= filter %>" checked value="<%= val %>" /><%= val %></label></li>
-              <% } else{ %>
-                <li><label><input type="checkbox" name="<%= filter %>" value="<%= val %>" /><%= val %></label></li>
-              <% } %>
-            <% }) %>
-          </ul>
-        </fieldset>
-
+        <% if (activeFilters[filter].length > 0) { %>
+          <fieldset>
+            <label for="<%= filter %>"><%= filter %>
+                <span class="arrow down"></span>
+            </label>
+            <input type="checkbox" id="<%= filter %>" name="<%= filter %>filter" value="schaal" class="filter-dropdown" />
+            <ul>
+              <% activeFilters[filter].forEach(function(val) { %>
+                <% if (checkedFilters !== "false" && checkedFilters[filter] == val ) { %>
+                  <li><label><input type="checkbox" name="<%= filter %>" checked value="<%= val %>" /><%= val %></label></li>
+                <% } else{ %>
+                  <li><label><input type="checkbox" name="<%= filter %>" value="<%= val %>" /><%= val %></label></li>
+                <% } %>
+              <% }) %>
+            </ul>
+          </fieldset>
+        <% } %>
       <% }) %>
       <input type="submit" value="Toepassen" />
 
