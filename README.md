@@ -32,10 +32,10 @@ They have offices in the Netherlands, Belgium, Germany, France, Spain and Italy 
  <strong>Current problem: </strong> There is no database or public accessible document, where they could place the information. So sharing data is currently very inefficient.
 
 ## User stories (will become English soon)
-- De tool bevat selectiecriteria. Het belangrijkste criterium is een plaatje, waarop je het werkveld kan selecteren waarvoor je een vraag hebt (bijvoorbeeld, industrie  luchtmetingen; of bijvoorbeeld stedelijk gebied  > Water  > Riolering). Overige criteria zijn een range in prijs en andere randvoorwaarden.
-
-- Op basis van je selectiecriteria wordt een voorstel geselecteerd van een meettechniek of sensor. Er wordt een korte beschrijving van de meettechniek of de sensor getoond, daarbij wordt een contactpersoon binnen Tauw getoond en, als deze beschikbaar, een voorbeeldproject waar de techniek is toegepast.
-- De database moet van buitenaf ingevuld kunnen worden, in eerste instantie alleen door medewerkers van Tauw, later mogelijk door externe partijen.
+- The selectiontool can use specific criteria, to select the sectors and categories, you want. (Example: Stedelijk gebied  > Water  > Riolering)
+- The selectiontool uses filters, to only show the results, that best matching the filters.
+- The results show, what kind of sensor you selected, hase a small summary, a project, where the sensor was used and a person, that you can contact when you have a question.
+- The database, should be accessible by the employees of Tauw and also external companies (in the future).
 
 ## Concept
 Our idea, is a responsive website, where the users can easally find the best possible sensors for theire projects, by only knowing where they want to use it.
@@ -72,23 +72,29 @@ Binnen dit project is per persoon een ontwikkelplan opgesteld dat gedurende dit 
 
 ### Colin Dörr
 <details>
-<h4>Korte intro</h4>
-<p>In 2014 ben ik begonnen met de opleiding Communication en Multimedia Design (CMD). In eerste instantie wilde ik geen Front-end Developer worden, maar sinds dien, ben ik mijzelf steeds meer gaan verdiepen in de Front-end. Met als uiteindelijke doel, om een zo goed mogelijke Front-end Developer te worden, die niet alleen de basis kent, maar die daarnaast ook nog diverse tools tot zijn beschikking heeft, waarmee hij tot het best mogelijke eind product kan komen. Waardoor mijn producten niet alleen op dat moment, maar ook in de toekomst eenvoudig gebruikt en/of aangepast kan worden. </p>
-<p>In de meesterproef is het de bedoeling om tenminste vier vakken uit de minor toe te passen in het project. Op de volgende vakken leg ik de focus gedurende de meesterproef:</p>
-<ul>
-<li> Web App from Scratch</li>
-<li> CSS to the Rescue</li>
-<li> Performance Matters</li>
-<li> Browser Technologies</li>
-</ul>
 
-<h5>Web App from Scratch</h5> <p>Bij dit onderdeel is het van belang dat de JavaScript wordt toegepast volgens de standaarden van het vak Web App from Scratch. Dit houdt in, dat ik gebruik ga maken van een IFFE en object literal programming, om structuur orde te creëren in de codes. </p>
 
-<h5>CSS to the Rescue</h5> <p>Voor dit onderdeel gebruik ik responsive css oplossingen, voor het bouwen van complexe interface onderdelen.</p>
+#### Korte intro
+In 2014 ben ik begonnen met de opleiding Communication en Multimedia Design (CMD). In eerste instantie wilde ik geen Front-end Developer worden, maar sinds dien, ben ik mijzelf steeds meer gaan verdiepen in de Front-end. Met als uiteindelijke doel, om een zo goed mogelijke Front-end Developer te worden, die niet alleen de basis kent, maar die daarnaast ook nog diverse tools tot zijn beschikking heeft, waarmee hij tot het best mogelijke eind product kan komen. Waardoor mijn producten niet alleen op dat moment, maar ook in de toekomst eenvoudig gebruikt en/of aangepast kan worden.
 
-<h5>Performance Matters</h5> <p>Voor Performance Matters, zal ik de website offline accessible, door een  service worker te implementeren. Daarnaast zal ik proberen zo veel mogelijk server-side te regelen en zal ik verschillende stappen ondernemen, om onder andere de laatsnelheid en de grote van de website zo klein en snel mogelijk te maken.</p>
+In de meesterproef is het de bedoeling om tenminste vier vakken uit de minor toe te passen in het project. Op de volgende vakken leg ik de focus gedurende de meesterproef:
+- Web App from Scratch
+- CSS to the Rescue
+- Performance Matters
+- Browser Technologies
 
-<h5>Browser Technologies</h5> <p> Bij dit onderdeel ga ik beginnen met een goed werkend html en css. De Javascript zal daarna als enhancemet worden toegevoegd. Daarnaast zal er rekening gehouden worden met de verschillende web browser en waar nodig zullen fallback wordt geschreven. </p>
+##### Web App from Scratch
+Bij dit onderdeel is het van belang dat de JavaScript wordt toegepast volgens de standaarden van het vak Web App from Scratch. Dit houdt in, dat ik gebruik ga maken van een IFFE en object literal programming, om structuur orde te creëren in de codes.
+
+#####CSS to the Rescue
+Voor dit onderdeel gebruik ik responsive css oplossingen, voor het bouwen van complexe interface onderdelen.
+
+##### Performance Matters
+Voor Performance Matters, zal ik de website offline accessible, door een  service worker te implementeren. Daarnaast zal ik proberen zo veel mogelijk server-side te regelen en zal ik verschillende stappen ondernemen, om onder andere de laatsnelheid en de grote van de website zo klein en snel mogelijk te maken.</p>
+
+##### Browser Technologies
+Bij dit onderdeel ga ik beginnen met een goed werkend html en css. De Javascript zal daarna als enhancemet worden toegevoegd. Daarnaast zal er rekening gehouden worden met de verschillende web browser en waar nodig zullen fallback wordt geschreven.
+
 </details>
 
 

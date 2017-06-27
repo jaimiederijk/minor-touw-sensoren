@@ -8,7 +8,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 @include breakpoint(tablet) {
-  width: 70%;
+  width: 60%;
   margin-left: 4%;
 }
 

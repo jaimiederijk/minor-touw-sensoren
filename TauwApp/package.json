@@ -13,7 +13,6 @@
     "debug": "~2.6.3",
     "ejs": "~2.5.6",
     "express": "~4.15.2",
-    "mkdirs": "0.0.2",
     "mongodb": "^2.2.28",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2"
@@ -22,6 +21,7 @@
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-sass": "^3.1.0",
+    "mkdirs": "0.0.2",
     "ngrok": "^2.2.9",
     "node-sass": "^4.5.3"
   }
