@@ -5,21 +5,115 @@
     <link rel='stylesheet' href='/build/css/main.css' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
+
+  <style>
+  fieldset{
+      column-count: 3;
+  }
+  form label{
+      margin: 0;
+  }
+  form{
+      display: flex;
+      flex-direction: column;
+  }
+  #contact{order:1;}
+  #sensor{order:2;}
+  #reference{order:1;}
+  input[type="submit"]{order:4;}
+
+  fieldset fieldset{
+     padding: 0.5rem;
+  }
+  fieldset fieldset label{
+     display: inline-block;
+     width: 45%;
+  }
+
+  </style>
+
   <body>
      <% include partials/aside %>
      <main>
-         <h1>Edit this page</h1>
-         <ul>
-             <li>Naam: <span contenteditable="true"><%= sensor.name %></span></li>
-        </ul>
+         <section>
+    <h1>Edit the <%=allSensors.name%> sensor</h1>
+    <form class="userInput" method="post" >
+        <fieldset id="sensor">
+            <legend>Sensor information</legend>
+            <label for="name">Naam</label>
+            <input id="name" type="text" name="name" value="<%=allSensors.name%>"><span>*required</span><br/>
 
-         <% include partials/detail %>
+            <label for="image">Profielfoto</label>
+            <input id="image" type="url" name="image" value="<%=allSensors.image%>">
+            <img id="output"/>
 
+            <% Object.keys(AllSettings).forEach(function(key) { %>
+                <% if(key !== "_id"){ %>
+                    <fieldset>
+                        <legend><%= key %></legend>
+                        <p>Please select the corresponding <%= key %>.</p>
+                            <% AllSettings[key].forEach(function(value) { %>
 
-     </main>
+                                <label>
 
+                                    <% if(allSensors[key]== value){ %>
+                                       <input type="checkbox" name="<%= key %>" value="<%= value %>" checked> <%= value %> <br/>
+                                    <% } else if (typeof(allSensors[key]) == "object" && allSensors[key].indexOf(value) >= 0){ %>
+                                        <input type="checkbox" name="<%= key %>" value="<%= value %>" checked> <%= value %> <br/>
+                                    <% } else{ %>
+                                       <input type="checkbox" name="<%= key %>" value="<%= value %>"> <%= value %> <br/>
+                                    <% } %>
+                                </label>
+                            <% }) %>
+                                <label for="nieuw-<%= key%>" class="nieuw">
+                                    <input type="checkbox" name="<%= key %>" id="nieuw-<%= key %>" value="nieuw">Nieuw
+                                    <input type="text" name="<%= key %>" id="nieuw-<%= key %>">
+                                </label>
+                    </fieldset>
+                <% } %>
+            <% }) %>
 
+            <label for="summary_smal">Short summary</label><br/>
+            <textarea id="summary_smal" name="summary_smal" rows="4" cols="50"><%=allSensors.summary_smal%></textarea><br/>
 
-     <main>
-    </main>
+            <label for="summary_big">Long summary</label><br/>
+            <textarea id="summary_big" name="summary_big" rows="4" cols="50" ><%=allSensors.summary_big%></textarea><br/>
+        </fieldset>
+
+        <fieldset id="contact">
+            <legend>Contact information</legend>
+             <label for="contactName">Voor- en achternaam</label>
+             <input id="contactName" type="text" name="contactName" value="<%=allSensors.contactName%>"> <span>*required</span><br/>
+
+             <label for="contactPhone">Telefoon nummer</label>
+             <input id="contactPhone" type="tel" name="contactPhone" value="<%=allSensors.contactPhone%>"> <span>*required</span><br/>
+
+             <label for="contactMail">Email adres</label>
+             <input id="contactMail" type="contactMail" name="contactMail" value="<%=allSensors.contactMail%>"> <span>*required</span><br/>
+
+             <label for="contactPhoto">Profielfoto</label>
+             <input id="contactPhoto" type="url" name="contactPhoto" value="<%=allSensors.contactPhoto%>">
+             <img id="output"/>
+        </fieldset>
+
+        <fieldset id="reference">
+            <legend>Reference project information</legend>
+            <label for="referenceTitle">Reference title</label>
+            <input id="referenceTitle" type="text" name="referenceTitle" value="<%=allSensors.referenceTitle%>"> <span>*required</span><br/>
+
+            <label for="referenceSummary">reference Summary</label><br/>
+            <textarea id="referenceSummary" name="referenceSummary" rows="4" cols="50"><%=allSensors.referenceSummary%></textarea><br/>
+
+             <label for="referenceLink">Reference Link</label>
+             <input id="referenceLink" type="url" name="referenceLink" value="<%=allSensors.referenceLink%>"><br/>
+
+             <label for="referenceImage">Reference image</label>
+             <input id="referenceImage" type="url" name="referenceImage" value="<%=allSensors.referenceImage%>">
+             <img id="output"/>
+        </fieldset>
+
+        <input type="submit" value="Submit">
+    </form>
+</section>
+ </main>
 </body>
