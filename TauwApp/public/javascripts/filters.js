@@ -44,8 +44,8 @@
       var resultsUrl = "";
       var filtersUrl = "";
       var hrefArray = currentHref.split("details/");
-      var dbCurrentHref = hrefArray[0] + "details/db/r/" + hrefArray[1];
-      var dbCurrentFilterHref = hrefArray[0] + "details/db/f/" + hrefArray[1];
+      var dbCurrentHref = hrefArray[0] + "details/db/r/" + hrefArray[1].replace(/[?=]/g, "");
+      var dbCurrentFilterHref = hrefArray[0] + "details/db/f/" + hrefArray[1].replace(/[?=]/g, "");
       var checkedArray = actions.checkCheckboxes();
 
       // one filter checked
@@ -63,6 +63,7 @@
         filtersUrl = noFilterFUrl[0];
         resultsUrl = noFilterRUrl[0];
       }
+
       actions.getNewFilters(filtersUrl);
       actions.getNewResults(resultsUrl);
 

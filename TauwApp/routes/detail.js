@@ -75,11 +75,12 @@ router.get('/db/:x/:sectorName/:branchName', function(req, res, next) {
     connector.find.findSensors( query, function(docs){
       if (req.params.x == "f") {
         var filterObj = filterUtils.utils.filterBuilder(docs, filters);
-
+        var reqQuery = Object.keys(req.query).length === 0 ? "false" : req.query;
+        
         res.render('partials/filters', {
             page: "filters",
             activeFilters: filterObj,
-            checkedFilters: req.query,
+            checkedFilters: reqQuery,
             filters: filters
         });
       } else {
