@@ -4,7 +4,11 @@
 
     <header class="clearfix">
       <div class="img-wrap">
-        <img src="/images/xrf.jpg" alt="<%= sensor.name %>">
+         <% if(sensor.image.length > 1){ %>
+           <img src="<%= sensor.image %>" alt="Image of the <%= sensor.name %>">
+         <% } else{ %>
+           <img src="/images/xrf.jpg" alt="<%= sensor.name %>">
+        <% } %>
       </div>
       <h2><%= sensor.name %></h2>
     </header>
@@ -94,11 +98,34 @@
         <p><%= sensor.referenceSummary %></p>
       <% } %>
       <% if(sensor.referenceLink !== "n.v.t." && sensor.referenceLink !== "undefined" && sensor.referenceLink !== "" ) { %>
-        <a href="<%= sensor.referenceLink %>" title="Naar voorbeeld project" class="referencelink">Naar voorbeeld project</a>
+        <a href="<%= sensor.referenceLink %>" title="Naar voorbeeld project" class="referencelink"  target="_blank">Naar voorbeeld project</a>
       <% } %>
       <% if(sensor.contact !== "n.v.t." && sensor.contact !== "undefined" && sensor.contact !== "" ) { %>
-        <h2>Contactpersoon</h2>
-        <p><%= sensor.contact %></p>
+        <section class="contactInformation">
+            <h2>Contactpersoon</h2>
+            <div class="img-wrap">
+               <% if(sensor.contactPhoto.length > 1){ %>
+                 <img src="<%= sensor.contactPhoto %>" alt="Image of <%= sensor.contactName %>">
+              <% } %>
+            </div>
+            <div class="contactInfo">
+                <% if(sensor.contactName.length > 1){ %>
+                    <h3><%= sensor.contactName %></h3>
+                <% } %>
+                <% if(sensor.contactMail.length > 1){ %>
+                    <div>
+                        <p>Email</p>
+                        <p><a href="mailto:<%= sensor.contactMail %>" alt="mail to <%= sensor.contactName %>"><%= sensor.contactMail %></a></p>
+                    </div>
+                <% } %>
+                <% if(sensor.contactPhone.length > 1){ %>
+                    <div>
+                        <p>Telefoon</p>
+                        <p><a href="tel:<%= sensor.contactPhone %>" alt="Phone number of <%= sensor.contactName %>"><%= sensor.contactPhone %></a></p>
+                    </div>
+                <% } %>
+            </div>
+        </section>
       <% } %>
 
     </article>

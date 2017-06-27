@@ -13,7 +13,7 @@ router.get('/:sectorName', function(req, res, next) {
   if (req.query.search !== undefined){
       searchMachine.search.renderSearchResults(req, res, req.query.search);
   }
-  else {
+  else { 
 
       connector.find.findSettings (query, field, function(docs) {
         res.render('sector', {
