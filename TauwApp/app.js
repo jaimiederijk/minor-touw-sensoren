@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var compression = require('compression')
 
 var MongoClient = require('mongodb').MongoClient
   , assert = require('assert');
@@ -21,6 +22,9 @@ var filters = appJS.filters;
 var app = express();
 app.locals.test = 1000;
 app.locals.parsedJSON = require('./TauwSensoren.json');
+
+// compress all requests
+app.use(compression())
 
 // example voor data ophalen
 // var findDocuments = function(db, callback) {
