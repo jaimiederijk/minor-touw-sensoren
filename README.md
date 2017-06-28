@@ -232,7 +232,6 @@ De vier vakken die ik wil toepassen:
 - CSS to the Rescue
 - Performance Matters
 - Browser Technologies
-- real time web
 
 **Web App from Scratch**
 Interactie bouwen volgens de standaarden van het vak *Web App from Scratch* met behulp van javascript.
@@ -246,8 +245,13 @@ Tijdens het coderen bewust zijn van performance. En andere trucjes toepassen om 
 **Browser Technologies**
 Wij bouwen de app volgens progressive enhancement principe op.
 
-**Realtime web ?**
-Realtime resultaten van filter en zoek acties
+</details>
+
+#### My work
+<details>
+
+[my work](https://github.com/ColinDorr/minor-tauw-sensoren/wiki/jaimie)
+
 
 </details>
 
