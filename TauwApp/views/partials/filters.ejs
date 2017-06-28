@@ -10,20 +10,35 @@
             <label for="<%= filter %>"><%= filter %>
                 <span class="arrow down"></span>
             </label>
-            <input type="checkbox" id="<%= filter %>" name="<%= filter %>filter" value="schaal" class="filter-dropdown" />
-            <ul>
-              <% activeFilters[filter].forEach(function(val) { %>
-                <% if (checkedFilters !== "false" && checkedFilters[filter] == val ) { %>
-                  <li><label><input type="checkbox" name="<%= filter %>" checked value="<%= val %>" /><%= val %></label></li>
-                <% } else{ %>
-                  <li><label><input type="checkbox" name="<%= filter %>" value="<%= val %>" /><%= val %></label></li>
-                <% } %>
-              <% }) %>
-            </ul>
+            <% for (var i = 0; i < activeFilters[filter].length; i++) { if (checkedFilters !== "false" && checkedFilters[filter] == activeFilters[filter][i] ) { %>
+              <input type="checkbox" id="<%= filter %>" name="<%= filter %>filter" checked value="schaal" class="filter-dropdown" />
+              <ul>
+                <% activeFilters[filter].forEach(function(val) { %>
+                  <% if (checkedFilters !== "false" && checkedFilters[filter] == val ) { %>
+                    <li><label><input type="checkbox" name="<%= filter %>" checked value="<%= val %>" /><%= val %></label></li>
+                  <% } else{ %>
+                    <li><label><input type="checkbox" name="<%= filter %>" value="<%= val %>" /><%= val %></label></li>
+                  <% } %>
+                <% }) %>
+              </ul>
+            <% return } else if (i == activeFilters[filter].length-1) { %>
+              <input type="checkbox" id="<%= filter %>" name="<%= filter %>filter" value="schaal" class="filter-dropdown" />
+              <ul>
+                <% activeFilters[filter].forEach(function(val) { %>
+                  <% if (checkedFilters !== "false" && checkedFilters[filter] == val ) { %>
+                    <li><label><input type="checkbox" name="<%= filter %>" checked value="<%= val %>" /><%= val %></label></li>
+                  <% } else{ %>
+                    <li><label><input type="checkbox" name="<%= filter %>" value="<%= val %>" /><%= val %></label></li>
+                  <% } %>
+                <% }) %>
+              </ul>
+            <% } } %>
+
           </fieldset>
         <% } %>
       <% }) %>
-      <input type="submit" value="Toepassen" />
+
+      <input id="filtersubmit" type="submit" value="Toepassen" />
 
     </form>
 

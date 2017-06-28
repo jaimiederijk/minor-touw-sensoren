@@ -3,7 +3,7 @@
     form : document.querySelector('#filter form'),
     filters : document.querySelectorAll('#filter ul input'),
     results : document.querySelector('main'),
-    formSubmit : document.querySelector('#filter form > input')
+    formSubmit : document.querySelector('#filtersubmit')
   }
 
   var events = {
