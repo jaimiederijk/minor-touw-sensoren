@@ -10,5 +10,6 @@
       "interval" : ["Jaren","Weken", "Uren", "Direct"],
       "duration" : ["Jaren","Weken", "Uren", "Minuten"],
       "innovation" : ["Nog weinig bewijs", "Alleen wetenschappelijk bewezig", "Reeds in enkele projecten toegepast", "Bewezen techniek"],
-      "costs" : ["Gratis tot goedkoop", "?", "Zeer duur"]
+      "costs" : ["Gratis tot goedkoop", "?", "Zeer duur"],
+      "filters" : ["scale", "resolution", "accuracy", "interval", "duration", "innovation"]
    }
