@@ -1,5 +1,3 @@
-# Master is up to date. Please review the content in the master.
-
 # Minor Webdevelopment | Tauw-sensoren
 Repository for the "Tauw Sensor Selectiontool"
 <!-- `
@@ -67,15 +65,14 @@ Currently we are also working on a databse, connected to a online form, where in
 - Use camelcase, when naming items.
 - Everything gets it's own SCSS stylesheet (will be merged later).
 
-## Personal development plan (will become English soon)
-Binnen dit project is per persoon een ontwikkelplan opgesteld dat gedurende dit project zal worden doorlopen.
+## Personal development plan
+Each of us has his own project plan, with thing they like to focus on, during this project.
 
 ### Colin Dörr
 <details>
 
-
 #### Korte intro
-In 2014 I started with my study (Communication en Multimedia Design (CMD)). In the beginning, I avoided the coding, because I wanted to design for the web, but bit by bit, I have become a real Front-end Developer. I started learning more and more and wanted to improve my knoledge about coding, so I chose to take the minor web Developmet, because I would learn a lot.
+In 2014 I started with my study (Communication en Multimedia Design (CMD)). In the beginning, I avoided the coding, because I wanted to design for the web, but bit by bit, I have become a real Front-end Developer. I started learning more and more and wanted to improve my knoledge about coding, so I chose to take the minor web Developmet, because I would learn a lot. I also wanted to know more about server-side coding and a bit more about working with databases.
 
 In the "meesterproef", I need to show, that I have to prove, what I have learned the past months. I have chosen the following classes, to focus on:
 - Web App from Scratch
@@ -96,6 +93,7 @@ The make the website preforme better, I will try to make the website mostly serv
 During Browser Technologies I learned the importance of a good HTML and CSS structure. Thats why, I will begin with a clean HTML and CSS structure and will only use the Clien-side Javascript, as enhancements. So even when the user has Javascript turned off, the site will still be accessible and usable.
 
 </details>
+
 #### My work
 <details>
 
