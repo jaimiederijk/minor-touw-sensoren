@@ -87,6 +87,7 @@ var removeDocument = function(collection, query, db, callback) {
   // Remove a single document
     collection.deleteOne({_id: ObjectId(query.id)}, function(err, docs) {
       assert.equal(null, err);
+      //console.log(docs.deletedCount)
      callback(docs);
       });
 };

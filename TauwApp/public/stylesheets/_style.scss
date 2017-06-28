@@ -159,7 +159,7 @@ img#output{
     max-width: 5em;
     max-height: 7em;
 }
-.hideForm{
+.hideForm, .hide{
     display: none;
 }
 
@@ -240,7 +240,7 @@ aside section input[type=checkbox].dropdown:checked  + ul{
 
 aside section ul li{
     list-style: none;
-    margin: 0;
+    margin: 0.2rem;
 }
 aside section ul li h4{
     color: white;
