@@ -39,7 +39,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('scripts', function() {
-    gulp.src('public/javascripts/*.js')
+    gulp.src('public/javascripts/main.js')
         .pipe(browserify({
           insertGlobals : true,
           debug : !gulp.env.production
