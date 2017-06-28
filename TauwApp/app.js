@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var compression = require('compression')
 
 var MongoClient = require('mongodb').MongoClient
   , assert = require('assert');
@@ -19,6 +20,9 @@ var appJS = require('./routes/form.js');
 var filters = appJS.filters;
 
 var app = express();
+
+// compress all requests
+app.use(compression())
 
 // example voor data ophalen
 // var findDocuments = function(db, callback) {

@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var exec = require('child_process').exec;
 var mkdirs = require('mkdirs');
+var browserify = require('gulp-browserify');
+var rename = require('gulp-rename');
 
 var sass = require('gulp-sass');
 var nodemon = require('gulp-nodemon')
@@ -36,8 +38,19 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('public/build/css'));
 });
 
+gulp.task('scripts', function() {
+    gulp.src('public/javascripts/*.js')
+        .pipe(browserify({
+          insertGlobals : true,
+          debug : !gulp.env.production
+        }))
+        .pipe(rename('build.js'))
+        .pipe(gulp.dest('public/build/js/'))
+});
+
 gulp.task('watch', function() {
     gulp.watch('public/stylesheets/*.scss', ['sass']);
+    gulp.watch('public/javascripts/*.js', ['scripts']);
 });
 
 gulp.task('start', function () {
