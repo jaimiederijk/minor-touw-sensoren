@@ -153,26 +153,54 @@ During Browser Technologies I learned the importance of a good HTML and CSS stru
 <details>
 
 #### Korte intro
-Ik ben in 2014 tot de opleiding *Communication and Multimedia Design* (CMD) toegetreden als Visual Interface Designer. In de loop van de tijd ben ik me gaan richten op de techniek, met als doel om diversiteit te creëren in mijn werkzaamheden als CMD-er. De minor *Webdevelopment* was voor mij de uitgelezen mogelijkheid om verder tot verdieping over te gaan in code-land.
 
-In de meesterproef is het de bedoeling om tenminste vier vakken uit de minor toe te passen in het project. Op de volgende vakken leg ik de focus gedurende de meesterproef:
+##### My part in this project
 
-- Web App from Scratch
-- CSS to the Rescue
-- Performance Matters
-- Browser Technologies
+Naturally, I am a Visual Interface Designer. I made a decision to participate to the Minor Webdevelopment with the aim to expand my competences from just a Visual Interface Designer to a versatile Creative Developer with two visions: design and development. It was a very difficult time at the beginning of this Minor, but I am really proud and happy that I made the choice to participate to the Minor.
 
-##### Web App from Scratch
-Bij dit onderdeel is het van belang dat **JavaScript** wordt toegepast volgens de standaarden van het vak *Web App from Scratch*. Het plan is om deze toe te passen op de *map* die wordt aangelegd in de interface.
+In this project, I have collaborated with Colin Dörr and Jaimie de Rijk. It was a fantastic collaboration in which different qualities that a complete product need, came together. Everyone has some competences that adds something extra to the product.
 
-##### CSS to the Rescue
-Het toepassen van CSS zal plaatsvinden bij het omzetten van het Visueel Design naar een werkend prototype.
+The aim of this master test was to apply at least four subjects from the Minor to the product. In the following list you will find how I have done this:
 
-##### Performance Matters
-Het onderdeel *Performance Matters* zal worden voldaan door een service worker toe te voegen. Hiermee is het mogelijk om de website ook in offline-modus te blijven bezoekers als een gebruiker al eerder op de website is geweest.
+###### CSS to the Rescue
+Everyone in our crew did some CSS. As a Visual Interface Designer, I decided to finish off all the design issues at the end, because I think that I have more eye for design details than my teammates. Ofcourse, they have other incredible qualities.
 
-##### Browser Technologies
-Dit onderdeel wordt toegepast door al bij het coderen ervoor te zorgen dat de code die geschreven wordt op meerdere web browsers wordt ondersteund en al dan niet een fallback wordt gemaakt.
+###### Web App From Scratch
+Branch: https://github.com/ColinDorr/minor-tauw-sensoren/tree/Backup
+At the beginning of this project, I applied some JavaScript to the map that display on the startscreen. In the first iteration, we used pop-ups for showing information after the user has clicked on a sector. For this purpose I use JavaScript to make it possible to toggle in hide and display-mode of specific sector.
+
+###### Performance Matters
+Branch: https://github.com/ColinDorr/minor-tauw-sensoren/tree/performance
+
+I applied some stuffs which improve the performance of the app, like:
+
+- Compression
+- Browserify
+
+Compression will applied on every request.
+
+Browserify makes a bundle of all JavaScript-files to one file. This method will reduce the amount requests.
+The browserify that I have applied was a bit different than during the subjects. This time I used the gulp-version to applied browserify on the project. The benefit of Gulp in this way is that can run every package by one command: gulp.
+
+https://github.com/ColinDorr/minor-tauw-sensoren/commit/069cad834a3b75210d87c223a6f356d8ffd451db
+https://github.com/ColinDorr/minor-tauw-sensoren/commit/16c8f8f230f20f3b483fdb7beea7f803a48a0a34
+https://github.com/ColinDorr/minor-tauw-sensoren/commit/a1ca74199eed091907a12f10f45609e1ffd04afe
+
+
+###### Browser Technologies
+Branch: https://github.com/ColinDorr/minor-tauw-sensoren/commits/partial/filter/nooroel-imamdi
+
+At the first time, I made the filter-section with html5 detail-tag, which is not full supported in IE 11 (browser of the user). I resolved this problem by using input-fields and ul-elements which become active when a specific input-field is checked. This works on every browser, even on IE 5.
+
+There are also solutions with JavaScript-tricks. However, this methode is html & css only and works in every webbrowser. This solution was taken with the philosophy of progressive enhancement in the mind.
+
+https://github.com/ColinDorr/minor-tauw-sensoren/commit/5dd83e1549707c031f2c3901d6b6c6d6c18cafd9
+
+###### Most proud on
+I am most proud on the way we have develop the interface during this weeks. We started with the idea of the client and after that we gave it an totally own twist as experts, which totally was accepted by the client. Everyone who is concerned in this project is satisfied.
+
+In this group I was the least technical. Nevertheless, It was very instructive to work with people who were technically set up. You learn about their way of working and how to address certain problems. On the other hand, you notice that, as a designer, you may sometimes be bothering what you really mean. That's the advantage to me that I can also go with html, css and javascript and you can customize it all.
+
 
 ###### Documentation
 
