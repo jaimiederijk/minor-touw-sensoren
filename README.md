@@ -1,5 +1,3 @@
-# Master is up to date. Please review the content in the master.
-
 # Minor Webdevelopment | Tauw-sensoren
 Repository for the "Tauw Sensor Selectiontool"
 <!-- `
@@ -67,33 +65,86 @@ Currently we are also working on a databse, connected to a online form, where in
 - Use camelcase, when naming items.
 - Everything gets it's own SCSS stylesheet (will be merged later).
 
-## Personal development plan (will become English soon)
-Binnen dit project is per persoon een ontwikkelplan opgesteld dat gedurende dit project zal worden doorlopen.
+## Personal development plan
+Each of us has his own project plan, with thing they like to focus on, during this project.
 
 ### Colin Dörr
 <details>
 
-
 #### Korte intro
-In 2014 ben ik begonnen met de opleiding Communication en Multimedia Design (CMD). In eerste instantie wilde ik geen Front-end Developer worden, maar sinds dien, ben ik mijzelf steeds meer gaan verdiepen in de Front-end. Met als uiteindelijke doel, om een zo goed mogelijke Front-end Developer te worden, die niet alleen de basis kent, maar die daarnaast ook nog diverse tools tot zijn beschikking heeft, waarmee hij tot het best mogelijke eind product kan komen. Waardoor mijn producten niet alleen op dat moment, maar ook in de toekomst eenvoudig gebruikt en/of aangepast kan worden.
+In 2014 I started with my study (Communication en Multimedia Design (CMD)). In the beginning, I avoided the coding, because I wanted to design for the web, but bit by bit, I have become a real Front-end Developer. I started learning more and more and wanted to improve my knoledge about coding, so I chose to take the minor web Developmet, because I would learn a lot. I also wanted to know more about server-side coding and a bit more about working with databases.
 
-In de meesterproef is het de bedoeling om tenminste vier vakken uit de minor toe te passen in het project. Op de volgende vakken leg ik de focus gedurende de meesterproef:
+In the "meesterproef", I need to show, that I have to prove, what I have learned the past months. I have chosen the following classes, to focus on:
 - Web App from Scratch
 - CSS to the Rescue
 - Performance Matters
 - Browser Technologies
 
 ##### Web App from Scratch
-Bij dit onderdeel is het van belang dat de JavaScript wordt toegepast volgens de standaarden van het vak Web App from Scratch. Dit houdt in, dat ik gebruik ga maken van een IFFE en object literal programming, om structuur orde te creëren in de codes.
+During Web App from Scratch, I have learned a new and better structured type of coding. I'm going to use the object literal type of coding, to make the code easy to understand and cleaner. I will also use IFFE's to make the variable a bit more secure.
 
-#####CSS to the Rescue
-Voor dit onderdeel gebruik ik responsive css oplossingen, voor het bouwen van complexe interface onderdelen.
+##### CSS to the Rescue
+During CSS to the Rescue, I have learned, that you can do a lot with CSS and don't need Javascript for everything. Thats why I'm going to use CSS, instaid of Javacript, to make the  complex interfaces.
 
 ##### Performance Matters
-Voor Performance Matters, zal ik de website offline accessible, door een  service worker te implementeren. Daarnaast zal ik proberen zo veel mogelijk server-side te regelen en zal ik verschillende stappen ondernemen, om onder andere de laatsnelheid en de grote van de website zo klein en snel mogelijk te maken.</p>
+The make the website preforme better, I will try to make the website mostly server-side, to make to prefent the most browser problems. Also, because Tauw (the client) uses IE11, I will need to change/ make fallbacks for the IE version, so even the IE users can use the site like it supposed to be.
 
 ##### Browser Technologies
-Bij dit onderdeel ga ik beginnen met een goed werkend html en css. De Javascript zal daarna als enhancemet worden toegevoegd. Daarnaast zal er rekening gehouden worden met de verschillende web browser en waar nodig zullen fallback wordt geschreven.
+During Browser Technologies I learned the importance of a good HTML and CSS structure. Thats why, I will begin with a clean HTML and CSS structure and will only use the Clien-side Javascript, as enhancements. So even when the user has Javascript turned off, the site will still be accessible and usable.
+
+</details>
+
+#### My work
+<details>
+
+##### /lib/
+- **[search.js](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/lib/search.js)** : Completly made by me.
+- **[connector.js](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/lib/connector.js)**: I made the:
+    - Functions, to edit a Sensors data and send those changes to the database.
+    - Functions, to update the settings document in the database.
+    - Functions, to remove a item from the databse.
+    [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/lib/connector.js)
+
+##### /public/javascripts/
+- **[countItems.js](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/javascripts/countItems.js)**: Completly made by me.
+- **[filters.js](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/javascripts/filters.js)**: Partly made by me. [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/public/javascripts/filters.js)
+- **[imagePreview.js](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/javascripts/imagePreview.js)**: Completly made by me.
+- **[requiredInputs.js](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/javascripts/requiredInputs.js)**: Completly made by me.
+- **[rotateArrows.js](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/javascripts/rotateArrows.js)**: Completly made by me.
+
+##### /public/stylesheets/
+- **[_detail.scss](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/stylesheets/_detail.scss)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/public/stylesheets/_detail.scss)
+- **[_filters.scss](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/stylesheets/_filters.scss)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/public/stylesheets/_filters.scss)
+- **[_header.scss](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/stylesheets/_header.scss)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/public/stylesheets/_header.scss)
+- **[_results.scss](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/stylesheets/_results.scss)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/public/stylesheets/_results.scss)
+- **[aside.scss](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/stylesheets/aside.scss)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/public/stylesheets/aside.scss)
+- **[category.scss](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/stylesheets/category.scss)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/public/stylesheets/category.scss)
+
+##### /routes/
+-  **[cms.js](https://github.com/ColinDorr/minor-tauw-sensoren/tree/master/TauwApp/routes/cms.js)**: Completly made by me.
+- **[detail.js](https://github.com/ColinDorr/minor-tauw-sensoren/tree/master/TauwApp/routes/cms)**: Mostly made by me. [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/routes/detail.js)
+- **[form.js](https://github.com/ColinDorr/minor-tauw-sensoren/tree/master/TauwApp/routes/form.js)**: Completly made by me.
+- **[index.js](https://github.com/ColinDorr/minor-tauw-sensoren/tree/master/TauwApp/routes/index.js)**: Completly made by me.
+
+
+##### /views/
+- **[cms.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/cms.ejs)**: Completly made by me.
+- **[form.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/form.ejs)**: Completly made by me.
+- **[edit.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/edit.ejs)**: Completly made by me.
+
+##### /views/partials/
+- **[aside.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/aside.ejs)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/views/partials/aside.ejs)
+- **[category.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/category.ejs)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/views/partials/category.ejs)
+- **[detail.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/detail.ejs)**:Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/views/partials/detail.ejs)
+- **[filters.ejs.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/filters.ejs)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/views/partials/filters.ejs)
+- **[results.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/results.ejs)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/views/partials/results.ejs)
+- **[search_results.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/search_results.ejs)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/views/partials/search_results.ejs)
+
+##### sensorseed.json
+- **[sensorseed.json](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/sensorseed.json)**: Mostly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/sensorseed.json)
+
+##### settingsseed.json
+- **[settingsseed.json](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/settingsseed.json)**: Completly made by me.
 
 </details>
 

@@ -1,6 +1,3 @@
-var htmlElements = {
-}
-
 var app = {
   init: function () {
     animate.results();

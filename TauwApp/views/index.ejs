@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet' href='/build/css/main.css' />
-  </head>
-  <body>
+<% include partials/head %>
 
       <% include partials/header %>
       <% include partials/aside %>
       <% include partials/map %>
-
-    <script src="/javascripts/search.js"></script>
-  </body>
-</html>
+  <script src="/javascripts/map.js"></script>
+  <script src="/javascripts/asside.js"></script>
+<% include partials/footer %>
