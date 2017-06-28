@@ -61,4 +61,4 @@ gulp.task('start', function () {
   })
 })
 
-gulp.task('default', ['sass','start-mongo', 'watch','start']);
+gulp.task('default', ['sass','scripts','start-mongo', 'watch','start']);
