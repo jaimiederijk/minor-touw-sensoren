@@ -24,30 +24,36 @@ main.category {
       }
       .drone {
         position: absolute;
-        top: 2rem;
-        left: 4rem;
-        background-image: url(/images/drone.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
+        top: 0rem;
+        left: 8rem;
+        // background-image: url(/images/drone.svg);
+        // background-repeat: no-repeat;
+        // background-size: contain;
         width: 3em;
         height: 3em;
         display: block;
         @include breakpoint(mobileonly) {
           left: 1rem;
         }
+        svg {
+          width: 3rem;
+        }
       }
       .satellite {
         position: absolute;
         top: 0;
         right: 4rem;
-        background-image: url(/images/satellite.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 3em;
-        height: 3em;
+        // background-image: url(/images/satellite.svg);
+        // background-repeat: no-repeat;
+        // background-size: contain;
+        width: 3rem;
+        height: 3rem;
         display: block;
         @include breakpoint(mobileonly) {
           right: 1rem;
+        }
+        svg {
+          width: 3rem;
         }
       }
     }

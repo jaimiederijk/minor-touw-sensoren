@@ -6,8 +6,12 @@
     <!-- <h1><%= currentSector %></h1> -->
 
     <div class="category-img">
-      <span class="drone"></span>
-      <span class="satellite"></span>
+      <span class="drone">
+        <% include svg/drone %>
+      </span>
+      <span class="satellite">
+        <% include svg/satellite %>
+      </span>
       <img src="/images/<%= currentSector %>.svg" alt="Currently in sector: <%= currentSector %>" />
     </div>
 
