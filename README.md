@@ -1,5 +1,3 @@
-# Master is up to date. Please review the content in the master.
-
 # Minor Webdevelopment | Tauw-sensoren
 Repository for the "Tauw Sensor Selectiontool"
 <!-- `
