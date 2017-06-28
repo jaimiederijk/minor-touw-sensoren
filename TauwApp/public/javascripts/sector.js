@@ -17,14 +17,16 @@
       var tlFly = new TimelineMax({repeat:-1 })
 
       tlFly.to(drone,1,{rotation:20},"start")
-      tlFly.to(drone,3,{x:100,y:-50, ease:Power2.easeOut}, "start")
+      tlFly.to(drone,3,{x:100,y:-50, ease:Power1.easeOut}, "start")
       tlFly.to(drone,0.5,{rotation:0}, "start+=1.5")
-      tlFly.to(drone,3,{x:150,y:-20, ease:Power2.easeOut},"second")
-      tlFly.to(drone,0.5,{rotation:10}, "second-=0.5");
-      tlFly.to(drone,0.5,{rotation:0}, "second+=1");
-      tlFly.to(drone,2,{x:0,y:0,ease:Power2.easeOut}, "third")
-      tlFly.to(drone,0.5,{rotation:-30}, "third");
-      tlFly.to(drone,0.5,{rotation:0}, "third+=1");
+      tlFly.to(drone,3,{x:150,y:10, ease:Power4.easeInOut},"second")
+      tlFly.to(drone,0.5,{rotation:10}, "second-=0.2");
+      tlFly.to(drone,2,{rotation:-20 ,ease:Power1.easeInOut}, "second+=1")
+      // tlFly.to(drone,0.5,{rotation:0}, "second+=2");
+      // tlFly.to(drone,1,{x:160,y:-15, ease:Power1.easeOut},"third")
+      tlFly.to(drone,4,{x:0,y:0,ease:Power4s.easeInOut}, "third")
+      // tlFly.to(drone,1.5,{rotation:-30 ,ease:Power1.easeOut}, "second")
+      // tlFly.to(drone,0.5,{rotation:0}, "third+=1");
     }
 
   }
