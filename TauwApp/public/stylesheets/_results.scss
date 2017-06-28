@@ -1,6 +1,10 @@
 @import 'common/_breakpoint';
 @import 'common/_colors';
 
+h1{
+    color: $color_pink;
+}
+
 ul.branch {
   padding: 0;
   margin: 1rem 0 0;
@@ -28,7 +32,7 @@ ul.branch {
     }
     @include breakpoint(phablet) {
       float: none;
-      width: 55%;
+      width: 100%;
     }
     &:nth-child(even) {
       float: right;
