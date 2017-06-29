@@ -55,8 +55,12 @@
 
     @include breakpoint(tablet) {
         display: inline-block;
+        width: 80%;
+        max-width: 40em;
+        padding: 2.5rem 1rem 2.5rem 0;
+    }
+    @include breakpoint(desktop) {
         width: 50%;
-        padding: 2.5rem 1rem;
     }
     h2 {
       margin-bottom: .5rem;
@@ -71,6 +75,7 @@
     display: block;
         h3{
             margin: 0;
+            font-size: 1em;
         }
         .img-wrap{
             float: left;
@@ -80,8 +85,9 @@
             }
         }
         .contactInfo{
-            float: right;
-            width: 70%;
+          float: left;
+          width: 70%;
+          margin-left: 5%;
         }
         p{
             display: inline;
@@ -133,17 +139,23 @@
     @include breakpoint(mobileonly) {
       width: 100%;
     }
-    @include breakpoint(laptop) {
+    @include breakpoint(tablet) {
+        display: inline-block;
+        width: 80%;
+        max-width: 40em;
+        padding: 2.5rem 1rem 2.5rem 0;
+    }
+    @include breakpoint(desktop) {
         width: 35%;
     }
     > div:first-of-type {
-      padding-top: 3rem;
+      // padding-top: 3rem;
       @include breakpoint(mobileonly) {
         padding-top: 0.5rem;
       }
     }
     > div {
-      padding-top: 1rem;
+      // padding-top: 1rem;
     }
   }
   a.referencelink, a.referencelink:visited {
