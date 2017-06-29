@@ -61,4 +61,13 @@ gulp.task('start', function () {
   })
 })
 
+gulp.task('start-live', function () {
+  nodemon({
+    script: 'bin/www'
+  , ext: 'js html ejs'
+  , env: { 'NODE_ENV': 'development' }
+  })
+})
+gulp.task('live',['start-live']);
+
 gulp.task('default', ['sass','scripts','start-mongo', 'watch','start']);

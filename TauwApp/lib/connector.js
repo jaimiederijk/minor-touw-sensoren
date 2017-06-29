@@ -2,7 +2,8 @@ var MongoClient = require('mongodb').MongoClient
 var ObjectId = require('mongodb').ObjectID;
 var assert = require('assert');
 
-var url = 'mongodb://localhost:27017/tauw';
+var dbPassword = "tauw22"//ask jaimie
+var url = 'mongodb://jaimie2:'+ dbPassword +'@tauw-shard-00-00-rkjng.mongodb.net:27017,tauw-shard-00-01-rkjng.mongodb.net:27017,tauw-shard-00-02-rkjng.mongodb.net:27017/tauw?ssl=true&replicaSet=tauw-shard-0&authSource=admin';
 
 var findDocuments = function(collection, query, db, callback) {
   // Get the documents collection
