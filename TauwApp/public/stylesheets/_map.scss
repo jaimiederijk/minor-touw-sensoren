@@ -3,6 +3,7 @@
 
 .map {
 //  width: 100%;
+margin-top: 4rem;
 float:left;
 display: flex;
 justify-content: center;
@@ -21,7 +22,11 @@ align-items: center;
       margin-top: 1rem;
     }
   }
-
+  #clouds {
+    z-index: 99;
+    position: absolute;
+    width:100%;
+  }
   .full-map {
     width: 100%;
     position: relative;
@@ -40,7 +45,7 @@ align-items: center;
       &:visited {
         color: $color_pink;
       }
-      img {
+      svg {
         height: 100vw;
         width: auto;
       }
@@ -130,7 +135,7 @@ align-items: center;
     // width: 74%;
     // float: left;
 
-    .full-map a img {
+    .full-map a svg {
       height: 41vw;
     }
   }
@@ -143,7 +148,7 @@ align-items: center;
       display: flex;
       justify-content: center;
 
-      a img {
+      a svg {
         height: 16rem;
       }
     }
@@ -153,7 +158,7 @@ align-items: center;
 @include breakpoint(laptop) {
   .map {
 
-    .full-map a img {
+    .full-map a svg {
       height: 20rem;
     }
   }
@@ -162,7 +167,7 @@ align-items: center;
 @include breakpoint(desktop) {
   .map {
 
-    .full-map a img {
+    .full-map a svg {
       height: 24rem;
     }
   }
