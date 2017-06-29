@@ -12,7 +12,17 @@
       <span class="satellite">
         <% include svg/satellite %>
       </span>
-      <img src="/images/<%= currentSector %>.svg" alt="Currently in sector: <%= currentSector %>" />
+      <!--  -->
+      <% if (currentSector === "Industrie") { %>
+        <% include svg/industrie %>
+      <% } else if (currentSector === "Stedelijk") { %>
+        <% include svg/stedelijk %>
+      <% } else if (currentSector === "Landelijk") { %>
+          <% include svg/landelijk %>
+      <% } else { %>
+        <img src="/images/<%= currentSector %>.svg" alt="Currently in sector: <%= currentSector %>" />
+
+      <% } %>
     </div>
 
     <h2>Werkgebieden binnen <span><%= currentSector %></span></h2>
