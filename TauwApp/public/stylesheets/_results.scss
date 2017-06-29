@@ -7,7 +7,7 @@ header.results-header {
   top: 2.5rem;
   background: $color_lightbackground;
   width: 100%;
-  z-index: 9999;
+  z-index: 9998;
   @include breakpoint(mobileonly) {
     top: 3.5rem;
     padding: 1rem 0;
