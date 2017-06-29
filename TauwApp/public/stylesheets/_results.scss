@@ -109,6 +109,9 @@ ul.branch {
     box-sizing: border-box;
     @include breakpoint(tablet) {
       width: 70%;
+      width: 70%;
+      float: left;
+      margin-left: 1rem;
     }
     @include breakpoint(desktop) {
       width: 75%;
