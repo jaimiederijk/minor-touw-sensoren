@@ -147,7 +147,7 @@ During Browser Technologies I learned the importance of a good HTML and CSS stru
 - **[settingsseed.json](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/settingsseed.json)**: Completly made by me.
 
 ##### most proud of
-I am most proud on the way the team has worked together, to develop sensor selection tool for Tauw. During that process, we began with a idea and slowly made that idea better and bigger, until it formed into a working web tool, that satifies everyone who is concerned in this project.
+I am most proud of, the way the team has worked together, to develop sensor selection tool for Tauw. During that process, we began with a idea and slowly made that idea better and bigger, until it formed into a working web tool, that satifies everyone who is concerned in this project.
 
 In this group I was the one, that know most of the serverside and the javascripts, and I thought it was nice to work with someone, that was more backside development and a good designer. Because of the good teamwork and the great communication. I also had the oppertunity, to learn more about the backend development and the working of the server, what was nice.
 
@@ -201,8 +201,8 @@ There are also solutions with JavaScript-tricks. However, this methode is html &
 
 https://github.com/ColinDorr/minor-tauw-sensoren/commit/5dd83e1549707c031f2c3901d6b6c6d6c18cafd9
 
-###### Most proud on
-I am most proud on the way we have develop the interface during this weeks. We started with the idea of the client and after that we gave it an totally own twist as experts, which totally was accepted by the client. Everyone who is concerned in this project is satisfied.
+###### Most proud of
+I am most proud of the way we have develop the interface during this weeks. We started with the idea of the client and after that we gave it an totally own twist as experts, which totally was accepted by the client. Everyone who is concerned in this project is satisfied.
 
 In this group I was the least technical. Nevertheless, It was very instructive to work with people who were technically set up. You learn about their way of working and how to address certain problems. On the other hand, you notice that, as a designer, you may sometimes be bothering what you really mean. That's the advantage to me that I can also go with html, css and javascript and you can customize it all.
 
