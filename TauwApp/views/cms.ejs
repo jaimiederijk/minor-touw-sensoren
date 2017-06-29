@@ -6,28 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
-  <style>
-  th, td{
-      font-size: 0.9em;
-  }
-      tr:nth-of-type(even){
-          background: #ccc;
-      }
-      tr, th{
-        width: min-content;
-        text-align: center;
-        padding: 0.5rem;
-      }
-      td{
-          padding: 0.5rem;
-          max-width: 7em;
-          word-wrap: break-word;
-      }
-  </style>
-
   <body>
       <% include partials/aside %>
-      <main>
+      <main class="cms">
           <% if (logged_in !== true) { %>
               <form class="userInput" action="/cms" method="post">
                   <label for="username">Accountnaam</label>

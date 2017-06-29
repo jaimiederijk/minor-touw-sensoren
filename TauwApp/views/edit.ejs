@@ -6,35 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
-  <style>
-  fieldset{
-      column-count: 3;
-  }
-  form label{
-      margin: 0;
-  }
-  form{
-      display: flex;
-      flex-direction: column;
-  }
-  #contact{order:1;}
-  #sensor{order:2;}
-  #reference{order:1;}
-  input[type="submit"]{order:4;}
-
-  fieldset fieldset{
-     padding: 0.5rem;
-  }
-  fieldset fieldset label{
-     display: inline-block;
-     width: 45%;
-  }
-
-  </style>
-
   <body>
      <% include partials/aside %>
-     <main>
+     <main class="edit">
          <section>
     <h1>Edit the <%=allSensors.name%> sensor</h1>
     <form class="userInput" method="post" >

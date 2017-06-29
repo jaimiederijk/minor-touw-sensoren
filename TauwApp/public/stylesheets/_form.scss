@@ -1,0 +1,64 @@
+@import 'common/_breakpoint';
+@import 'common/_colors';
+
+.cms{
+    h1{
+        color: $color_pink;
+    }
+    th, td{
+        font-size: 0.9em;
+    }
+        tr:nth-of-type(even){
+            background: #ccc;
+        }
+        tr, th{
+          width: min-content;
+          text-align: center;
+          padding: 0.5rem;
+        }
+        td{
+            padding: 0.5rem;
+            max-width: 7em;
+            word-wrap: break-word;
+        }
+}
+.edit{
+    h1{
+        color: $color_pink;
+    }
+    fieldset{
+        column-count: 3;
+    }
+    form label{
+        margin: 0;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+    #contact{order:1;}
+    #sensor{order:2;}
+    #reference{order:1;}
+    input[type="submit"]{order:4;}
+
+    fieldset fieldset{
+       padding: 0.5rem;
+    }
+    fieldset fieldset label{
+       display: inline-block;
+       width: 45%;
+    }
+}
+.add{
+    h1{
+        color: $color_pink;
+    }
+    form{
+  display: flex;
+  flex-direction: column;
+}
+  #contact{order:1;}
+  #sensor{order:2;}
+  #reference{order:3;}
+  input[type="submit"]{order:4;}
+}
