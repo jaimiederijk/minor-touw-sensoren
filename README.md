@@ -146,6 +146,11 @@ During Browser Technologies I learned the importance of a good HTML and CSS stru
 ##### settingsseed.json
 - **[settingsseed.json](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/settingsseed.json)**: Completly made by me.
 
+##### most proud of
+I am most proud on the way the team has worked together, to develop sensor selection tool for Tauw. During that process, we began with a idea and slowly made that idea better and bigger, until it formed into a working web tool, that satifies everyone who is concerned in this project.
+
+In this group I was the one, that know most of the serverside and the javascripts, and I thought it was nice to work with someone, that was more backside development and a good designer. Because of the good teamwork and the great communication. I also had the oppertunity, to learn more about the backend development and the working of the server, what was nice.
+
 </details>
 
 
