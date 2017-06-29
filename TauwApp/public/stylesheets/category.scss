@@ -2,6 +2,9 @@
 @import 'common/_colors';
 
 main.category {
+    > section {
+      margin-top: 7rem;
+    }
     h2 {
       text-align: center;
       font-family: 'open_sansregular', Helvetica, Arial, sans-serif;
@@ -13,6 +16,7 @@ main.category {
       }
     }
     .category-img {
+      margin-top: 20rem;
       position: relative;
       width: 60%;
       height: 15rem;
@@ -24,34 +28,42 @@ main.category {
       }
       .drone {
         position: absolute;
-        top: 2rem;
-        left: 4rem;
-        background-image: url(/images/drone.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
+        top: 0rem;
+        left: 8rem;
+        // background-image: url(/images/drone.svg);
+        // background-repeat: no-repeat;
+        // background-size: contain;
         width: 3em;
         height: 3em;
         display: block;
         @include breakpoint(mobileonly) {
           left: 1rem;
         }
+        svg {
+          width: 3rem;
+          height: 3rem;
+        }
       }
       .satellite {
         position: absolute;
         top: 0;
-        right: 4rem;
-        background-image: url(/images/satellite.svg);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 3em;
-        height: 3em;
+        right: 0;
+        // background-image: url(/images/satellite.svg);
+        // background-repeat: no-repeat;
+        // background-size: contain;
+        width: 3rem;
+        height: 3rem;
         display: block;
         @include breakpoint(mobileonly) {
           right: 1rem;
         }
+        svg {
+          width: 3rem;
+          height: 3rem;
+        }
       }
     }
-    img {
+    img, svg {
         width: auto;
         height: 100%;
         // @include breakpoint(tablet) {

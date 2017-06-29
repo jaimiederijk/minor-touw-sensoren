@@ -11,16 +11,13 @@
           for (var i = 0; i < htmlElements.filters.length; i++) {
             htmlElements.filters[i].addEventListener('click', function(e){events.handleCheckboxClick(e);})
           }
-          if(typeof document.createRange().createContextualFragment === "function") {
-            htmlElements.formSubmit.classList.add('hide');
-          }
+          htmlElements.formSubmit.classList.add('hide');
 
       },
       handleCheckboxClick(e) {
         var currentHref = window.location.href;
 
         if(typeof document.createRange().createContextualFragment === "function") {
-
           actions.getResultsClientside(currentHref);
 
         } else {

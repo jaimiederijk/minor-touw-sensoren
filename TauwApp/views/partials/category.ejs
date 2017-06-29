@@ -6,9 +6,23 @@
     <!-- <h1><%= currentSector %></h1> -->
 
     <div class="category-img">
-      <span class="drone"></span>
-      <span class="satellite"></span>
-      <img src="/images/<%= currentSector %>.svg" alt="Currently in sector: <%= currentSector %>" />
+      <span class="drone">
+        <% include svg/drone %>
+      </span>
+      <span class="satellite">
+        <% include svg/satellite %>
+      </span>
+      <!--  -->
+      <% if (currentSector === "Industrie") { %>
+        <% include svg/industrie %>
+      <% } else if (currentSector === "Stedelijk") { %>
+        <% include svg/stedelijk %>
+      <% } else if (currentSector === "Landelijk") { %>
+          <% include svg/landelijk %>
+      <% } else { %>
+        <img src="/images/<%= currentSector %>.svg" alt="Currently in sector: <%= currentSector %>" />
+
+      <% } %>
     </div>
 
     <h2>Werkgebieden binnen <span><%= currentSector %></span></h2>

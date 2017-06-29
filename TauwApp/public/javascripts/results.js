@@ -1,7 +1,7 @@
 var app = {
   init: function () {
-
     animate.results();
+
   }
 }
 
@@ -21,6 +21,14 @@ var animate = {
     // var tlAnimateFilter = new TimelineMax({repeat:0});
     // tlAnimateFilter.set(filters,{zIndex:-1})
     // tlAnimateFilter.to(filters,0.1,{opacity:0.1,zIndex:-1,height:0, ease:Power2.easeOut})
+  },
+  orbitSatellite : function () {
+    console.log("orbit");
+    var sat = document.querySelector(".satellite svg");
+    var tlOrbit = new TimelineMax({repeat:-1});
+
+    tlOrbit.set(sat,{x:200});
+    tlOrbit.to(sat,1,{x:500});
   }
 
 }
