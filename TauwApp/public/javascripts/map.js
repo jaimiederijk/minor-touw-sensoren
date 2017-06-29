@@ -110,14 +110,14 @@
 
       var eventHandlers = {
         handleMapClick : function(e, sector) {
-          e.preventDefault();
+          //e.preventDefault();
           // var sectorSensorEl = 'satelliteSensor' + sector;
           // var sectorDroneEl = 'droneSensor' + sector;
           //
           // htmlElements[sectorSensorEl].classList.remove('hide');
           // htmlElements[sectorDroneEl].classList.remove('hide');
 
-          setTimeout(function(){ window.location.href = e.target.parentElement.href; }, 700);
+          //setTimeout(function(){ window.location.href = e.target.parentElement.href; }, 700);
         },
         handleArrowClick : function () {
           var allSectors = htmlElements.allSections;
