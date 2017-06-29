@@ -23,7 +23,7 @@
                             <% if (page === "search") { %> <h5 class="sector"><%= sensorID.sector%></h5> <% } %>
                           </header>
                       <p><%= sensorID.summary_small %></p>
-                      <a href="/details/<%= currentSector %>/<%= currentBranch  %>/<%= sensorID.name %>" title="meer..." class="more-url">meer...</a>
+                      <a href="/details/<%= currentSector %>/<%= currentBranch  %>/<%= sensorID.name %>" title="meer informatie" class="more-url">meer informatie</a>
                     </section>
                   </li>
               <% } %>
@@ -37,6 +37,6 @@
            <p>Geen overeenkomende sensoren gevonden.</p>
        </section>
     <% } %>
-    
+
 
 </main>
