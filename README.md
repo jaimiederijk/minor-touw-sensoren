@@ -181,6 +181,7 @@ I applied some stuffs which improve the performance of the app, like:
 
 - Compression
 - Browserify
+- Service Worker
 
 Compression will applied on every request.
 
@@ -205,6 +206,31 @@ https://github.com/ColinDorr/minor-tauw-sensoren/commit/5dd83e1549707c031f2c3901
 I am most proud of the way we have develop the interface during this weeks. We started with the idea of the client and after that we gave it an totally own twist as experts, which totally was accepted by the client. Everyone who is concerned in this project is satisfied.
 
 In this group I was the least technical. Nevertheless, It was very instructive to work with people who were technically set up. You learn about their way of working and how to address certain problems. On the other hand, you notice that, as a designer, you may sometimes be bothering what you really mean. That's the advantage to me that I can also go with html, css and javascript and you can customize it all.
+
+###### Specific files
+Here is a list of specific files I've been working on:
+
+**/public/stylesheets/**
+**[_detail.scss](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/stylesheets/_detail.scss)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/public/stylesheets/_detail.scss)
+- **[_filters.scss](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/stylesheets/_filters.scss)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/public/stylesheets/_filters.scss)
+- **[_header.scss](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/stylesheets/_header.scss)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/public/stylesheets/_header.scss)
+- **[_results.scss](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/stylesheets/_results.scss)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/public/stylesheets/_results.scss)
+- **[aside.scss](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/stylesheets/aside.scss)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/public/stylesheets/aside.scss)
+- **[category.scss](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/stylesheets/category.scss)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/public/stylesheets/category.scss)
+- **[style.scss](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/stylesheets/category.scss)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/public/stylesheets/map.scss)
+
+**/public/javascript/**
+- **[map.js](https://github.com/ColinDorr/minor-tauw-sensoren/blame/Backup/TauwApp/public/javascripts/map.js)**: Completly made by me.
+
+**/views/partials/**
+- **[aside.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/aside.ejs)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/views/partials/aside.ejs)
+- **[category.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/category.ejs)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/views/partials/category.ejs)
+- **[detail.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/detail.ejs)**:Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/views/partials/detail.ejs)
+- **[filters.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/filters.ejs)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/views/partials/filters.ejs)
+- **[results.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/results.ejs)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/views/partials/results.ejs)
+- **[search_results.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/search_results.ejs)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/views/partials/search_results.ejs)
+- **[head.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/search_results.ejs)**: Completly made [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/views/partials/head.ejs)
+- **[footer.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/search_results.ejs)**: Completly made [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/views/partials/footer.ejs)
 
 
 ###### Documentation

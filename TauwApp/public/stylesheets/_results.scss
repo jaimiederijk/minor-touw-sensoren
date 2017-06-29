@@ -7,10 +7,18 @@ header.results-header {
   top: 2.5rem;
   background: $color_lightbackground;
   width: 100%;
+  z-index: 9998;
   @include breakpoint(mobileonly) {
     top: 3.5rem;
     padding: 1rem 0;
-    z-index: 1;
+  }
+  @include breakpoint(phablet) {
+    top: 3.5rem;
+    padding: 1rem 0;
+  }
+  @include breakpoint(tablet) {
+    top: 0rem;
+    padding: 1.5rem 0;
   }
   h1 {
     color: $color_pink;
@@ -23,6 +31,12 @@ ul.branch {
   list-style-type: none;
   @include breakpoint(mobileonly) {
     margin-top: 8rem;
+  }
+  @include breakpoint(phablet) {
+    margin-top: 8rem;
+  }
+  @include breakpoint(tablet) {
+    margin-top: 5.5rem;
   }
   li {
     position: relative;
