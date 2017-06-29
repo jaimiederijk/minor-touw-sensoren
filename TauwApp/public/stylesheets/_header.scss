@@ -9,7 +9,7 @@ header.mobile-header{
   height: 3.5rem;
   line-height: 3.5rem;
   background-color: $color_background;
-  z-index: 1;
+  z-index: 99999;
   display: block;
   @include breakpoint(tablet) {
     display: none;
