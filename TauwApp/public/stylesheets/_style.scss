@@ -44,6 +44,7 @@ main {
 }
 
 main > section {
+  position: relative;
   width: 90%;
   margin: 2.5rem auto 0;
   @include breakpoint(desktop) {
