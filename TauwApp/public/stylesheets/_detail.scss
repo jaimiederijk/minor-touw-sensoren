@@ -95,9 +95,12 @@
                 display: block;
             }
         }
-        p:nth-of-type(2), a{
+        p:nth-of-type(2), a, a:visited{
             color: $color_pink;
             text-decoration: none;
+        }
+        a:hover {
+          text-decoration: underline;
         }
     }
 
