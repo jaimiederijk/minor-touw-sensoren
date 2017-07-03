@@ -20,8 +20,8 @@
                 <input id="name" type="text" name="name" required><span></span><br/>
 
                 <label for="image">Profielfoto</label>
-                <input id="image" type="url" name="image">
-                <img id="output"/>
+                <input id="image" type="url" name="image" class="input-sensor-img">
+                <img class="output-sensor-img"/>
 
                 <% Object.keys(AllSettings).forEach(function(key) { %>
                     <% if(key !== "_id"){ %>
@@ -61,8 +61,8 @@
                  <input id="contactMail" type="contactMail" name="contactMail" required> <span>*required</span><br/>
 
                  <label for="contactPhoto">Profielfoto</label>
-                 <input id="contactPhoto" type="url" name="contactPhoto">
-                 <img id="output"/>
+                 <input id="contactPhoto" type="url" name="contactPhoto" class="input-contact-pf">
+                 <img class="output-contact-pf"/>
             </fieldset>
 
             <fieldset id="reference">
@@ -77,8 +77,8 @@
                  <input id="referenceLink" type="url" name="referenceLink"><br/>
 
                  <label for="referenceImage">Reference image</label>
-                 <input id="referenceImage" type="url" name="referenceImage">
-                 <img id="output"/>
+                 <input id="referenceImage" type="url" name="referenceImage" class="input-reference-image">
+                 <img class="output-reference-image"/>
             </fieldset>
 
             <input type="submit" value="Submit">
