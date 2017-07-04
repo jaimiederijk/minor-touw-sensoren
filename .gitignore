@@ -4,5 +4,3 @@ thumbs.db
 .env
 node_modules
 mongodb/
-build/
-public/build/
