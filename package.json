@@ -2,7 +2,8 @@
   "name": "tauwapp",
   "version": "0.0.0",
   "engines": {
-    "node": "6.11.0"
+    "node": "6.11.0",
+    "npm": "4.4.4"
     },
   "private": true,
   "scripts": {
