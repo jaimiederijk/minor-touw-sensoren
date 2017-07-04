@@ -1,0 +1,114 @@
+<!-- <header class="aside">
+    <a href="#" title="Filter" id="open-menu">Menu</a>
+    <a href="#" title="Filter" id="close-menu">Close</a>
+</header> -->
+
+<aside id="menu">
+    <div class="content">
+    <a href="../../../" title="Tauw">
+        <img src="/images/tauw_logo_white.svg" alt="Tauw logo">
+    </a>
+
+    <% if (page === "index") { %>
+        <h2>Tauw sensor selectietool</h2>
+        <p>De Tauw sensor selectietool brengt je <strong>in drie stappennaar de gewenste sensor</strong> uit een verzameling van circa. 200 sensoren</p>
+        <p class="strong italic">Kies een sector op de kaart hiernaast</p>
+        <p>of</p>
+        <form>
+            <span class="search-icon"></span>
+            <input type="search" name="search" id="search" class="search" placeholder="voer een zoekopdracht in">
+        </form>
+    <% }
+
+    else if (page === "sector") { %>
+        <ul class="breadcrumbs">
+          <li><a href="../../../" title="Home">Home</a></li>
+          <li><%= currentSector %></li>
+        </ul>
+        <form>
+            <span class="search-icon"></span>
+            <input type="search" name="search" id="search" class="search" placeholder="voer een zoekopdracht in">
+        </form>
+        <div class="img-sector">
+          <img src="/images/<%= currentSector %>.svg" class="sector" alt="sector <%= currentSector %>">
+        </div>
+        <h3>Uw keuzes</h3>
+        <ul class="user-choice">
+          <li>Sector: <span class="strong"><%= currentSector %></span></li>
+        </ul>
+    <% }
+
+    else if (page === "branch") { %>
+        <ul class="breadcrumbs">
+          <li><a href="../../../" title="Home">Home</a></li>
+          <li><a href="./" title="<%= currentSector %>"><%= currentSector %></a></li>
+          <li><%= currentBranch %></li>
+        </ul>
+        <form>
+            <span class="search-icon"></span>
+            <input type="search" name="search" id="search" class="search" placeholder="voer een zoekopdracht in">
+        </form>
+        <div class="img-sector">
+          <img src="/images/<%= currentSector %>.svg" class="sector" alt="sector industrie">
+        </div>
+
+        <h3>Uw keuzes</h3>
+        <ul class="user-choice">
+          <li>Sector: <span class="strong"><%= currentSector %></span></li>
+          <li>Werkgebied: <span class="strong"><%= currentBranch %></span></li>
+        </ul>
+        <% include filters %>
+
+    <% }
+
+    else if (page === "detail") { %>
+        <ul class="breadcrumbs">
+          <li><a href="../../../" title="Home">Home</a></li>
+          <li><a href="../" title="<%= currentSector %>"><%= currentSector %></a></li>
+          <li><a href="./" title="<%= currentBranch %>"><%= currentBranch %></a></li>
+        </ul>
+        <form>
+            <span class="search-icon"></span>
+            <input type="search" name="search" id="search" class="search" placeholder="voer een zoekopdracht in">
+        </form>
+        <div class="img-sector">
+          <img src="/images/<%= currentSector %>.svg" class="sector" alt="sector industrie">
+        </div>
+
+        <h3>Uw keuzes</h3>
+        <ul class="user-choice">
+          <li>Sector: <span class="strong"><%= currentSector %></span></li>
+          <li>Werkgebied: <span class="strong"><%= currentBranch %></span></li>
+          <li>Sensor: <span class="strong"><%= currentSensor %></span></li>
+        </ul>
+    <% }
+    else if (page === "search") { %>
+        <ul class="breadcrumbs">
+          <li><a href="../../../" title="Home">Home</a></li>
+          <li><%= searchQuery %></li>
+        </ul>
+        <form>
+            <span class="search-icon"></span>
+            <input type="search" name="search" id="search" class="search" placeholder="voer een zoekopdracht in">
+        </form>
+
+        <h3>Uw keuzes</h3>
+        <ul class="user-choice">
+          <li>Zoekopdracht: <span class="strong"><%= searchQuery %></span></li>
+        </ul>
+
+    <% }
+
+    else if (page === "cms") { %>
+        <ul class="breadcrumbs">
+          <li><a href="../../../" title="Home">Home</a></li>
+          <li><a href="/cms" title="Home">CMS</a></li>
+        </ul>
+    <% }
+
+    else { %>
+        <h2>Aside not found</h2>
+    <% } %>
+</div>
+<script src="/javascripts/aside.js"></script>
+</aside>
