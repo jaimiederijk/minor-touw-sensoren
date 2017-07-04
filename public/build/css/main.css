@@ -68,7 +68,7 @@ main {
     main {
       float: right;
       width: 70%;
-      height: 100vh; } }
+      height: 100%; } }
 
 main > section {
   position: relative;
@@ -814,7 +814,7 @@ aside {
       padding-top: 0; } }
   @media (min-width: 50em) {
     aside {
-      position: relative;
+      position: fixed;
       width: 30%;
       margin: 0;
       display: block; } }

@@ -50,7 +50,7 @@ aside {
       padding-top: 0; } }
   @media (min-width: 50em) {
     aside {
-      position: relative;
+      position: fixed;
       width: 30%;
       margin: 0;
       display: block; } }
