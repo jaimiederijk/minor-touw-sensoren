@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/build/css/main.css' />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-
-  <body>
+      <% include partials/head %>
       <% include partials/aside %>
       <main class="cms">
           <% if (logged_in !== true) { %>
@@ -26,7 +18,7 @@
                   <input type="submit" value="Submit">
               </form>
 
-            <a href="./cms/add" alt="add a new sensor"><button>Nieuw (+)</button></a>
+            <a href="./cms/add" title="add a new sensor" class="button">Nieuw (+)</a>
 
               <table>
                   <tr>
@@ -47,7 +39,7 @@
                           <td><%= sensor.sector %></td>
                           <td><%= sensor.branch %></td>
                               <% if(sensor.name !== "" && sensor.sector !== "" && sensor.branch !== ""){ %>
-                                   <td><a href="/details/<%= sensor.sector[0]%>/<%= sensor.branch[0] %>/<%= sensor.name %>">Link</a></td>
+                                   <td><a href="/details/<%= sensor.sector[0]%>/<%= sensor.branch[0] %>/<%= sensor.name.replace(/ /g, '%20') %>">Link</a></td>
                               <% } else{ %>
                                   <td>Link</td>
                               <% } %>

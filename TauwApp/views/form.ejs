@@ -1,15 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/build/css/main.css' />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-
+     <% include partials/head %>
+     <% include partials/header %>
      <% include partials/aside %>
-     <main class="add">
 
+     <main class="add">
         <section>
             <h1>Add a sensor</h1>
         <form class="userInput" method="post" >
@@ -21,7 +14,8 @@
 
                 <label for="image">Profielfoto</label>
                 <input id="image" type="url" name="image" class="input-sensor-img">
-                <img class="output-sensor-img"/>
+                <img class="output output-sensor-img" src="/images/tauw_logo_zonder.png" alt="preview of profile image"/>
+
 
                 <% Object.keys(AllSettings).forEach(function(key) { %>
                     <% if(key !== "_id"){ %>
@@ -33,10 +27,9 @@
                                            <input type="checkbox" name="<%= key %>" value="<%= value %>"> <%= value %> <br/>
                                     </label>
                                 <% }) %>
-                                    <label for="nieuw-<%= key%>" class="nieuw">
-                                        <input type="checkbox" name="<%= key %>" id="nieuw-<%= key %>" value="nieuw">Nieuw
-                                        <input type="text" name="<%= key %>" id="nieuw-<%= key %>">
-                                    </label>
+                                    <input type="checkbox" name="<%= key %>" id="nieuw-<%= key %>" value="nieuw">
+                                    <label for="nieuw-<%= key%>" class="nieuw">Nieuw</label>
+                                    <input type="text" name="<%= key %>" id="nieuw-<%= key %>2">
                         </fieldset>
                     <% } %>
                 <% }) %>
@@ -58,11 +51,12 @@
                  <input id="contactPhone" type="tel" name="contactPhone"> <span>*required</span><br/>
 
                  <label for="contactMail">Email adres</label>
-                 <input id="contactMail" type="contactMail" name="contactMail" required> <span>*required</span><br/>
+                 <input id="contactMail" type="email" name="contactMail" required> <span>*required</span><br/>
 
                  <label for="contactPhoto">Profielfoto</label>
                  <input id="contactPhoto" type="url" name="contactPhoto" class="input-contact-pf">
-                 <img class="output-contact-pf"/>
+                 <img class="output output-contact-pf" src="/images/tauw_logo_zonder.png" alt="preview of contactPhoto"/>
+
             </fieldset>
 
             <fieldset id="reference">
@@ -78,7 +72,8 @@
 
                  <label for="referenceImage">Reference image</label>
                  <input id="referenceImage" type="url" name="referenceImage" class="input-reference-image">
-                 <img class="output-reference-image"/>
+                 <img class="output output-reference-image" src="/images/tauw_logo_zonder.png" alt="preview of referenceImage"/>
+
             </fieldset>
 
             <input type="submit" value="Submit">

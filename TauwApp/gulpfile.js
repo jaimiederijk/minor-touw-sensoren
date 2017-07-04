@@ -70,4 +70,4 @@ gulp.task('start-live', function () {
 })
 gulp.task('live',['start-live']);
 
-gulp.task('default', ['sass','scripts','start-mongo', 'watch','start']);
+// gulp.task('default', ['sass','scripts','start-mongo', 'watch','start']);
