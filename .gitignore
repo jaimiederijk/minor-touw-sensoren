@@ -2,7 +2,7 @@
 thumbs.db
 *log
 .env
-node_modules/
-TauwApp/build/
+node_modules
 mongodb/
-TauwApp/public/build/
+build/
+public/build/

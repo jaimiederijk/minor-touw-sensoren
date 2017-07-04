@@ -1,0 +1,286 @@
+@import 'common/_breakpoint';
+@import 'common/_colors';
+
+.map {
+//  width: 100%;
+margin-top: 4rem;
+float:left;
+display: flex;
+justify-content: center;
+align-items: center;
+@include breakpoint(tablet) {
+  width: 60%;
+  margin-left: 8%;
+}
+
+  p.instruction {
+    display: none;
+    @include breakpoint(mobileonly) {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+  #clouds {
+    z-index: 99;
+    position: absolute;
+    width:100%;
+  }
+  .full-map {
+    width: 100%;
+    position: relative;
+    background-color: $color_lightbackground;
+    padding-top: 2rem;
+    padding-bottom: 8rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    a {
+      display: inline-block;
+      position: relative;
+      transition: 1s;
+      left: 0;
+      color: $color_pink;
+      font-family: 'open_sansbold', Helvetica, Arial, sans-serif;
+      &:visited {
+        color: $color_pink;
+      }
+      svg {
+        height: 100vw;
+        width: auto;
+      }
+      span {
+        position: absolute;
+        display: block;
+        text-align: center;
+        padding: .8rem 1rem;
+        box-sizing: border-box;
+      }
+      &:hover span {
+        box-shadow: inset 0 0 0 2px $color_pink;
+      }
+      .industrial-text {
+        top: 8rem;
+        left: 4rem;
+      }
+      .urban-text {
+        top: 7rem;
+        left: -3rem;
+      }
+      .rural-text {
+        top: 8rem;
+        right: 6rem;
+      }
+    }
+    button {
+      position: absolute;
+      top: 40%;
+      right: 2%;
+      background-image: url(/images/arrow-map.svg);
+      background-color: transparent;
+      border-style: none;
+      height: 2rem;
+      width: 2rem;
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      -webkit-transform: rotate(-90deg);
+      -moz-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      -o-transform: rotate(-90deg);
+      transform: rotate(-90deg);
+    }
+    button:first-of-type {
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg);
+      left: 2%;
+      right: auto;
+
+    }
+    .satellite {
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+      background-image: url('/images/satellite.svg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 4rem;
+      height: 4rem;
+      display: inline-block;
+    }
+    .drone {
+      position: absolute;
+      top: .9rem;
+      left: 1.2rem;
+      background-image: url('/images/drone.svg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      width: 3rem;
+      height: 3rem;
+      display: inline-block;
+    }
+    .hide {
+      display: none !important;
+    }
+  }
+  .removedScroll {
+    overflow-x: hidden;
+  }
+}
+@include breakpoint(mobile) {
+  .map {
+    // width: 74%;
+    // float: left;
+
+    .full-map a svg {
+      height: 41vw;
+    }
+  }
+
+}
+@include breakpoint(tablet) {
+  .map {
+
+    .full-map {
+      display: flex;
+      justify-content: center;
+
+      a svg {
+        height: 16rem;
+      }
+    }
+  }
+
+}
+@include breakpoint(laptop) {
+  .map {
+
+    .full-map a svg {
+      height: 20rem;
+    }
+  }
+
+}
+@include breakpoint(desktop) {
+  .map {
+
+    .full-map a svg {
+      height: 24rem;
+    }
+  }
+
+}
+
+/* animaties */
+.expandUp{
+  animation-name:expandUp;
+  -webkit-animation-name:expandUp;
+  animation-duration:.7s;
+  -webkit-animation-duration:.7s;
+  animation-timing-function:ease;
+  -webkit-animation-timing-function:ease;
+  visibility:visible!important}@keyframes expandUp {
+	0% {
+		transform: translateY(100%) scale(0.6) scaleY(0.5);
+	}
+	60%{
+		transform: translateY(-7%) scaleY(1.12);
+	}
+	75%{
+		transform: translateY(3%);
+	}
+	100% {
+		transform: translateY(0%) scale(1) scaleY(1);
+	}
+}@-webkit-keyframes expandUp {
+	0% {
+		-webkit-transform: translateY(100%) scale(0.6) scaleY(0.5);
+	}
+	60%{
+		-webkit-transform: translateY(-7%) scaleY(1.12);
+	}
+	75%{
+		-webkit-transform: translateY(3%);
+	}
+	100% {
+		-webkit-transform: translateY(0%) scale(1) scaleY(1);
+	}
+}
+.bigEntrance{animation-name:bigEntrance;-webkit-animation-name:bigEntrance;animation-duration:1.6s;-webkit-animation-duration:1.6s;animation-timing-function:ease-out;-webkit-animation-timing-function:ease-out;visibility:visible!important}@keyframes bigEntrance {
+	0% {
+		transform: scale(0.3) rotate(6deg) translateX(-30%) translateY(30%);
+		opacity: 0.2;
+	}
+	30% {
+		transform: scale(1.03) rotate(-2deg) translateX(2%) translateY(-2%);
+		opacity: 1;
+	}
+	90% {
+		transform: scale(1.01) rotate(0deg) translateX(0%) translateY(0%);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1) rotate(0deg) translateX(0%) translateY(0%);
+		opacity: 1;
+	}
+}@-webkit-keyframes bigEntrance {
+	0% {
+		-webkit-transform: scale(0.3) rotate(6deg) translateX(-30%) translateY(30%);
+		opacity: 0.2;
+	}
+	30% {
+		-webkit-transform: scale(1.03) rotate(-2deg) translateX(2%) translateY(-2%);
+		opacity: 1;
+	}
+	90% {
+		-webkit-transform: scale(1.01) rotate(0deg) translateX(0%) translateY(0%);
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: scale(1) rotate(0deg) translateX(0%) translateY(0%);
+		opacity: 1;
+	}
+}
+.fadeIn{
+  animation-name:fadeIn;
+  -webkit-animation-name:fadeIn;
+  animation-duration:1.5s;
+  -webkit-animation-duration:1.5s;
+  animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+  visibility:visible!important}@keyframes fadeIn {
+	0% {
+		transform: scale(0);
+		opacity: 0.0;
+	}
+	60% {
+		transform: scale(1.1);
+	}
+	80% {
+		transform: scale(0.9);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}@-webkit-keyframes fadeIn {
+	0% {
+		-webkit-transform: scale(0);
+		opacity: 0.0;
+	}
+	60% {
+		-webkit-transform: scale(1.1);
+	}
+	80% {
+		-webkit-transform: scale(0.9);
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: scale(1);
+		opacity: 1;
+	}
+}
