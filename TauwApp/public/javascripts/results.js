@@ -35,11 +35,10 @@ var animate = {
 
 var minCharacters = {
   resultsBlock: function () {
-    console.log('hallo');
-    var resultsParagraph = document.querySelector('results-paragraph');
-    if (resultsParagraph) {
-      if (resultsParagraph.text().length > 5)
-                resultsParagraph.text(resultsParagraph.text().substr(0,5))
+    var i;
+    var divs = document.querySelectorAll('.results-paragraph');
+    for(i=0;i<divs.length;i++) {
+      divs[i].innerHTML = divs[i].innerHTML.substring(0,100) + ' ' + '<a href="#">...</a>';
     }
   }
 }
