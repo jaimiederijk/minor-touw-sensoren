@@ -116,13 +116,13 @@
                 <% if(sensor.contactMail.length > 1){ %>
                     <div>
                         <p>Email</p>
-                        <p><a href="mailto:<%= sensor.contactMail %>" alt="mail to <%= sensor.contactName %>"><%= sensor.contactMail %></a></p>
+                        <p><a href="mailto:<%= sensor.contactMail %>" title="mail to <%= sensor.contactName %>"><%= sensor.contactMail %></a></p>
                     </div>
                 <% } %>
                 <% if(sensor.contactPhone.length > 1){ %>
                     <div>
                         <p>Telefoon</p>
-                        <p><a href="tel:<%= sensor.contactPhone %>" alt="Phone number of <%= sensor.contactName %>"><%= sensor.contactPhone %></a></p>
+                        <p><a href="tel:<%= sensor.contactPhone %>" title="Phone number of <%= sensor.contactName %>"><%= sensor.contactPhone %></a></p>
                     </div>
                 <% } %>
             </div>
