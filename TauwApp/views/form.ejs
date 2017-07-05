@@ -13,8 +13,9 @@
                 <input id="name" type="text" name="name" required><span></span><br/>
 
                 <label for="image">Profielfoto</label>
-                <input id="image" type="url" name="image">
-                <img class="output" src="/images/tauw_logo_zonder.png" alt="preview of profile image"/>
+                <input id="image" type="url" name="image" class="input-sensor-img">
+                <img class="output output-sensor-img" src="/images/tauw_logo_zonder.png" alt="preview of profile image"/>
+
 
                 <% Object.keys(AllSettings).forEach(function(key) { %>
                     <% if(key !== "_id"){ %>
@@ -53,8 +54,9 @@
                  <input id="contactMail" type="email" name="contactMail" required> <span>*required</span><br/>
 
                  <label for="contactPhoto">Profielfoto</label>
-                 <input id="contactPhoto" type="url" name="contactPhoto">
-                 <img class="output" src="/images/tauw_logo_zonder.png" alt="preview of contactPhoto"/>
+                 <input id="contactPhoto" type="url" name="contactPhoto" class="input-contact-pf">
+                 <img class="output output-contact-pf" src="/images/tauw_logo_zonder.png" alt="preview of contactPhoto"/>
+
             </fieldset>
 
             <fieldset id="reference">
@@ -69,8 +71,9 @@
                  <input id="referenceLink" type="url" name="referenceLink"><br/>
 
                  <label for="referenceImage">Reference image</label>
-                 <input id="referenceImage" type="url" name="referenceImage">
-                 <img class="output" src="/images/tauw_logo_zonder.png" alt="preview of referenceImage"/>
+                 <input id="referenceImage" type="url" name="referenceImage" class="input-reference-image">
+                 <img class="output output-reference-image" src="/images/tauw_logo_zonder.png" alt="preview of referenceImage"/>
+
             </fieldset>
 
             <input type="submit" value="Submit">
@@ -79,7 +82,7 @@
        </section>
 
     </main>
-    <!-- <script src="/javascripts/imagePreview.js"></script> -->
+    <script src="/javascripts/imagePreview.js"></script>
     <script src="/javascripts/requiredInputs.js"></script>
   </body>
 </html>

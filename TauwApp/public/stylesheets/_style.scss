@@ -39,7 +39,7 @@ main {
   @include breakpoint(tablet) {
       float: right;
       width: 70%;
-      height: 100vh;
+      height: 100%;
   }
 }
 

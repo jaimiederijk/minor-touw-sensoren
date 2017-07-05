@@ -1,7 +1,7 @@
 var app = {
   init: function () {
     animate.results();
-
+    minCharacters.resultsBlock();
   }
 }
 
@@ -32,4 +32,16 @@ var animate = {
   }
 
 }
+
+var minCharacters = {
+  resultsBlock: function () {
+    console.log('hallo');
+    var resultsParagraph = document.querySelector('results-paragraph');
+    if (resultsParagraph) {
+      if (resultsParagraph.text().length > 5)
+                resultsParagraph.text(resultsParagraph.text().substr(0,5))
+    }
+  }
+}
+
 app.init();

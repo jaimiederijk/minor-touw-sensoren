@@ -28,7 +28,7 @@
                                 <h5 class="sector"><%= sensorID.sector%></h5>
                             <% } %>
                           </header>
-                      <p><%= sensorID.summary_small %></p>
+                      <p class="results-paragraph"><%= sensorID.summary_small %></p>
                       <a href="/details/<%= currentSector %>/<%= currentBranch  %>/<%= sensorID.name.replace(/ /g, '%20')  %>" title="meer informatie" class="more-url">meer informatie</a>
                     </section>
                   </li>
