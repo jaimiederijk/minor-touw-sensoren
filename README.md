@@ -222,6 +222,7 @@ Here is a list of specific files I've been working on:
 **/public/javascript/**
 - **[map.js](https://github.com/ColinDorr/minor-tauw-sensoren/blame/Backup/TauwApp/public/javascripts/map.js)**: Completly made by me.
 - **[imagePreview.js](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/javascripts/imagePreview.js)**: Partly made by me.
+- **[results.js](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/public/javascripts/results.js)**: Partly made by me.
 
 **/views/partials/**
 - **[aside.ejs](https://github.com/ColinDorr/minor-tauw-sensoren/blob/master/TauwApp/views/aside.ejs)**: Partly made by me [(see commits)](https://github.com/ColinDorr/minor-tauw-sensoren/blame/master/TauwApp/views/partials/aside.ejs)
