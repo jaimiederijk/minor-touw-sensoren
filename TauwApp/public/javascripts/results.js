@@ -37,9 +37,9 @@
   var minCharacters = {
     resultsBlock: function () {
       var i;
-      var divs = document.querySelectorAll('.results-paragraph');
-      for(i=0;i<divs.length;i++) {
-        divs[i].innerHTML = divs[i].innerHTML.substring(0,100) + ' ' + '<a href="#">...</a>';
+      var resultsParagraph = document.querySelectorAll('.results-paragraph');
+      for(i=0;i<resultsParagraph.length;i++) {
+        resultsParagraph[i].innerHTML = resultsParagraph[i].innerHTML.substring(0,100) + ' ' + '...';
       }
     }
   }
