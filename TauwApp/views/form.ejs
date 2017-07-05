@@ -7,10 +7,10 @@
             <h1>Add a sensor</h1>
         <form class="userInput" method="post" >
             <fieldset id="sensor">
+                <legend>Algemene informatie</legend>
 
-                <legend>Sensor information</legend>
                 <label for="name">Naam</label>
-                <input id="name" type="text" name="name" required><span></span><br/>
+                <input id="name" type="text" name="name" required><span></span>
 
                 <label for="image">Profielfoto</label>
                 <input id="image" type="url" name="image" class="input-sensor-img">
@@ -19,39 +19,57 @@
 
                 <% Object.keys(AllSettings).forEach(function(key) { %>
                     <% if(key !== "_id"){ %>
-                        <fieldset>
-                            <legend><%= key %></legend>
-                            <p>Please select the corresponding <%= key %>.</p>
-                                <% AllSettings[key].forEach(function(value) { %>
-                                    <label>
-                                           <input type="checkbox" name="<%= key %>" value="<%= value %>"> <%= value %> <br/>
-                                    </label>
-                                <% }) %>
-                                    <input type="checkbox" name="<%= key %>" id="nieuw-<%= key %>" value="nieuw">
-                                    <label for="nieuw-<%= key%>" class="nieuw">Nieuw</label>
-                                    <input type="text" name="<%= key %>" id="nieuw-<%= key %>2">
-                        </fieldset>
+                        <% if(  key === "sector" ||
+                                    key ==="branch" ||
+                                    key ==="tags" ||
+                                    key ==="level" ||
+                                    key ==="scale"){ %>
+                            <fieldset>
+                                <legend><%= key %></legend>
+                                <p>Please select the corresponding <%= key %>.</p>
+                                    <% AllSettings[key].forEach(function(value) { %>
+                                        <label for="<%= key %>_<%= value %>">
+                                            <input type="checkbox" name="<%= key %>" id="<%= key %>_<%= value %>" value="<%= value %>"><%= value %>
+                                        </label>
+
+                                    <% }) %>
+                                        <input type="checkbox" name="<%= key %>" id="nieuw-<%= key %>" value="nieuw">
+                                        <label for="nieuw-<%= key%>" class="nieuw">Nieuw</label>
+                                        <input type="text" name="<%= key %>" id="nieuw-<%= key %>2">
+                            </fieldset>
+                        <% } else{ %>
+                            <fieldset>
+                                <legend><%= key %></legend>
+                                    <select name="<%= key %>" id="<%= key %>" required>
+                                        <% AllSettings[key].forEach(function(value) { %>
+                                              <option value="<%= value %>"><%= value %></option>
+                                          <% }) %>
+                                    </select>
+
+                            </fieldset>
+
+                        <% } %>
                     <% } %>
                 <% }) %>
 
-                     <label for="summary_smal">Short summary</label><br/>
-                     <textarea id="summary_smal" name="summary_smal" rows="4" cols="50"></textarea><br/>
+                     <label for="summary_smal">Short summary</label>
+                     <textarea id="summary_smal" name="summary_smal" rows="4" cols="50"></textarea>
 
-                     <label for="summary_big">Long summary</label><br/>
-                     <textarea id="summary_big" name="summary_big" rows="4" cols="50"></textarea><br/>
+                     <label for="summary_big">Long summary</label>
+                     <textarea id="summary_big" name="summary_big" rows="4" cols="50"></textarea>
 
             </fieldset>
 
             <fieldset id="contact">
                 <legend>Contact information</legend>
-                 <label for="contactName">Voor- en achternaam</label>
-                 <input id="contactName" type="text" name="contactName" required> <span>*required</span><br/>
+                 <label for="contactName">Voor- en achternaam</label> <span>*required</span>
+                 <input id="contactName" type="text" name="contactName" required>
 
-                 <label for="contactPhone">Telefoon nummer</label>
-                 <input id="contactPhone" type="tel" name="contactPhone"> <span>*required</span><br/>
+                 <label for="contactPhone">Telefoon nummer</label><span>*required</span>
+                 <input id="contactPhone" type="tel" name="contactPhone">
 
-                 <label for="contactMail">Email adres</label>
-                 <input id="contactMail" type="email" name="contactMail" required> <span>*required</span><br/>
+                 <label for="contactMail">Email adres</label><span>*required</span>
+                 <input id="contactMail" type="email" name="contactMail" required>
 
                  <label for="contactPhoto">Profielfoto</label>
                  <input id="contactPhoto" type="url" name="contactPhoto" class="input-contact-pf">
@@ -62,13 +80,13 @@
             <fieldset id="reference">
                 <legend>Reference project information</legend>
                 <label for="referenceTitle">Reference title</label>
-                <input id="referenceTitle" type="text" name="referenceTitle"> <span>*required</span><br/>
+                <input id="referenceTitle" type="text" name="referenceTitle"> <span>*required</span>
 
-                <label for="referenceSummary">reference Summary</label><br/>
-                <textarea id="referenceSummary" name="referenceSummary" rows="4" cols="50"></textarea><br/>
+                <label for="referenceSummary">reference Summary</label>
+                <textarea id="referenceSummary" name="referenceSummary" rows="4" cols="50"></textarea>
 
                  <label for="referenceLink">Reference Link</label>
-                 <input id="referenceLink" type="url" name="referenceLink"><br/>
+                 <input id="referenceLink" type="url" name="referenceLink">
 
                  <label for="referenceImage">Reference image</label>
                  <input id="referenceImage" type="url" name="referenceImage" class="input-reference-image">

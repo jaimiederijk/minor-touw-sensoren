@@ -49,18 +49,68 @@
        width: 45%;
     }
 }
+
+
+
+
 .add{
     h1{
         color: $color_pink;
     }
-    form{
-  display: flex;
-  flex-direction: column;
-}
-  #contact{order:1;}
-  #sensor{order:2;}
-  #reference{order:3;}
-  input[type="submit"]{order:4;}
+    form {
+        display: flex;
+        flex-direction: column;
+        > fieldset{
+            margin: 0;
+            padding: 0.5rem;
+            width: 100%;
+            box-sizing: border-box;
+            label{
+                display: inline;
+                box-sizing: border-box;
+                width: 100%;
+            }
+            label + span{
+                color: $color_pink;
+                float: right;
+            }
+            input{
+                display: block;
+                padding: 0.5rem;
+                box-sizing: border-box;
+                width: 100%;
+            }
+            img.output{
+                display:block;
+                width: auto;
+                margin: 1rem auto;
+                max-width: 10em;
+                max-height: 10em;
+            }
+            textarea{
+                width: 100%;
+                box-sizing: border-box;
+            }
+            > fieldset{
+                    label{
+                        width: auto;
+                        display: block;
+                    }
+                }
+            }
+        }
+        #contact{
+            order:1;
+        }
+        #sensor{
+            order:2;
+        }
+        #reference{
+            order:3;
+        }
+        input[type="submit"]{
+            order:4;
+        }
 }
 
 
@@ -77,9 +127,5 @@ fieldset {
     input[type=checkbox]:checked + label + input[type=text]{
         display: block;
     }
-    img.output{
-        width: auto;
-        max-width: 5em;
-        max-height: 7em;
-    }
+
 }
