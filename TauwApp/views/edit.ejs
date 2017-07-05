@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/build/css/main.css' />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
+<% include partials/head %>
+<% include partials/header %>
+<% include partials/aside %>
 
-  <body>
-     <% include partials/aside %>
      <main class="edit">
          <section>
     <h1>Edit the <%=allSensors.name%> sensor</h1>
@@ -18,8 +12,8 @@
             <input id="name" type="text" name="name" value="<%=allSensors.name%>"><span>*required</span><br/>
 
             <label for="image">Profielfoto</label>
-            <input id="image" type="url" name="image" value="<%=allSensors.image%>">
-            <img id="output"/>
+            <input id="image" class="input-sensor-img" type="url" name="image" value="<%=allSensors.image%>">
+            <img class="output-sensor-img" src="<%=allSensors.image%>"/>
 
             <% Object.keys(AllSettings).forEach(function(key) { %>
                 <% if(key !== "_id"){ %>
@@ -39,10 +33,9 @@
                                     <% } %>
                                 </label>
                             <% }) %>
-                                <label for="nieuw-<%= key%>" class="nieuw">
-                                    <input type="checkbox" name="<%= key %>" id="nieuw-<%= key %>" value="nieuw">Nieuw
-                                    <input type="text" name="<%= key %>" id="nieuw-<%= key %>">
-                                </label>
+                                <input type="checkbox" name="<%= key %>" id="nieuw-<%= key %>" value="nieuw">
+                                <label for="nieuw-<%= key%>" class="nieuw">Nieuw</label>
+                                <input type="text" name="<%= key %>" id="nieuw-<%= key %>2">
                     </fieldset>
                 <% } %>
             <% }) %>
@@ -63,11 +56,11 @@
              <input id="contactPhone" type="tel" name="contactPhone" value="<%=allSensors.contactPhone%>"> <span>*required</span><br/>
 
              <label for="contactMail">Email adres</label>
-             <input id="contactMail" type="contactMail" name="contactMail" value="<%=allSensors.contactMail%>"> <span>*required</span><br/>
+             <input id="contactMail" type="email" name="contactMail" value="<%=allSensors.contactMail%>"> <span>*required</span><br/>
 
              <label for="contactPhoto">Profielfoto</label>
-             <input id="contactPhoto" type="url" name="contactPhoto" value="<%=allSensors.contactPhoto%>">
-             <img id="output"/>
+             <input id="contactPhoto" class="input-contact-pf" type="url" name="contactPhoto" value="<%=allSensors.contactPhoto%>">
+             <img class="output-contact-pf" src="<%=allSensors.contactPhoto%>"/>
         </fieldset>
 
         <fieldset id="reference">
@@ -82,8 +75,8 @@
              <input id="referenceLink" type="url" name="referenceLink" value="<%=allSensors.referenceLink%>"><br/>
 
              <label for="referenceImage">Reference image</label>
-             <input id="referenceImage" type="url" name="referenceImage" value="<%=allSensors.referenceImage%>">
-             <img id="output"/>
+             <input id="referenceImage" class="input-reference-image" type="url" name="referenceImage" value="<%=allSensors.referenceImage%>">
+             <img class="output-reference-image" src="<%=allSensors.referenceImage%>"/>
         </fieldset>
 
         <input type="submit" value="Submit">

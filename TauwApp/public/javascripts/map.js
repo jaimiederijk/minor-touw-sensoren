@@ -25,7 +25,7 @@
         animate.stedlijk();
         animate.industrie();
         animate.landelijk();
-        // animate.clouds();
+        animate.clouds();
       };
 
       var htmlElements = {

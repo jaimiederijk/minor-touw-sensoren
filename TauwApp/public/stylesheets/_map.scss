@@ -9,8 +9,11 @@ display: flex;
 justify-content: center;
 align-items: center;
 @include breakpoint(tablet) {
-  width: 60%;
-  margin-left: 8%;
+  // width: 60%;
+  margin-right: 2%;
+  float: right;
+  width: 70%;
+  height: 100%;
 }
 
   p.instruction {

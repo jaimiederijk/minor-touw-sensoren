@@ -38,7 +38,7 @@
     }
     #contact{order:1;}
     #sensor{order:2;}
-    #reference{order:1;}
+    #reference{order:3;}
     input[type="submit"]{order:4;}
 
     fieldset fieldset{
@@ -61,4 +61,25 @@
   #sensor{order:2;}
   #reference{order:3;}
   input[type="submit"]{order:4;}
+}
+
+
+fieldset {
+    > input[type="checkbox"]{
+        margin-left: 0.75rem;
+    }
+    > input[type="checkbox"] + label {
+        margin-left: 0;
+    }
+    input[type=checkbox] + label + input[type=text]{
+        display: none;
+    }
+    input[type=checkbox]:checked + label + input[type=text]{
+        display: block;
+    }
+    img.output{
+        width: auto;
+        max-width: 5em;
+        max-height: 7em;
+    }
 }

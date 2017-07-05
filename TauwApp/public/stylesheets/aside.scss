@@ -49,7 +49,7 @@ aside {
       padding-top: 0;
     }
     @include breakpoint(tablet) {
-      position: relative;
+      position: fixed;
       width: 30%;
       margin: 0;
       display: block;
