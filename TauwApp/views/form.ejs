@@ -13,9 +13,9 @@
                 <input id="name" type="text" name="name" required><span></span><br/>
 
                 <label for="image">Profielfoto</label>
-                <input id="image" type="url" name="image" class="input-sensor-img">
-                <img class="output output-sensor-img" src="/images/tauw_logo_zonder.png" alt="preview of profile image"/>
-
+                <input id="image" type="url" name="image" class="input-img">
+                <img class="output-img output-sensor-img" src="/images/tauw_logo_zonder.png" alt="preview of profile image"/>
+                <span class="url-img-failed hide">De url van de afbeelding is onjuist. Probeer het nogmaals</span>
 
                 <% Object.keys(AllSettings).forEach(function(key) { %>
                     <% if(key !== "_id"){ %>
@@ -54,8 +54,9 @@
                  <input id="contactMail" type="email" name="contactMail" required> <span>*required</span><br/>
 
                  <label for="contactPhoto">Profielfoto</label>
-                 <input id="contactPhoto" type="url" name="contactPhoto" class="input-contact-pf">
-                 <img class="output output-contact-pf" src="/images/tauw_logo_zonder.png" alt="preview of contactPhoto"/>
+                 <input id="contactPhoto" type="url" name="contactPhoto" class="input-img">
+                 <img class="output-img output-contact-pf" src="/images/tauw_logo_zonder.png" alt="preview of contactPhoto"/>
+                 <span class="url-img-failed hide">De url van de afbeelding is onjuist. Probeer het nogmaals</span>
 
             </fieldset>
 
@@ -71,8 +72,9 @@
                  <input id="referenceLink" type="url" name="referenceLink"><br/>
 
                  <label for="referenceImage">Reference image</label>
-                 <input id="referenceImage" type="url" name="referenceImage" class="input-reference-image">
-                 <img class="output output-reference-image" src="/images/tauw_logo_zonder.png" alt="preview of referenceImage"/>
+                 <input id="referenceImage" type="url" name="referenceImage" class="input-img">
+                 <img class="output-img output-reference-image" src="/images/tauw_logo_zonder.png" alt="preview of referenceImage"/>
+                 <span class="url-img-failed hide">De url van de afbeelding is onjuist. Probeer het nogmaals</span>
 
             </fieldset>
 
@@ -83,6 +85,7 @@
 
     </main>
     <script src="/javascripts/imagePreview.js"></script>
+    <script src="/javascripts/errorImagePreview.js"></script>
     <script src="/javascripts/requiredInputs.js"></script>
   </body>
 </html>
