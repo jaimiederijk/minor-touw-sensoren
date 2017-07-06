@@ -1589,7 +1589,7 @@ fieldset input[type=checkbox] + label + input[type=text] {
 fieldset input[type=checkbox]:checked + label + input[type=text] {
   display: block; }
 
-fieldset img.output {
+fieldset img.output-img {
   width: auto;
   max-width: 5em;
   max-height: 7em; }
