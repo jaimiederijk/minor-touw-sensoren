@@ -50,9 +50,6 @@
     }
 }
 
-
-
-
 .add{
     h1{
         color: $color_pink;
@@ -70,9 +67,14 @@
                 box-sizing: border-box;
                 width: 100%;
             }
-            label + span{
+            p{
+                width: 80%;
+            }
+            p  span,
+            label span{
                 color: $color_pink;
-                float: right;
+                position: absolute;
+                right: 5%;
             }
             input{
                 display: block;
@@ -87,16 +89,42 @@
                 max-width: 10em;
                 max-height: 10em;
             }
+            select{
+                width: 90%;
+                display: block;
+                margin: 0 auto;
+            }
             textarea{
                 width: 100%;
                 box-sizing: border-box;
             }
             > fieldset{
+                border: none;
+                padding: 0;
+                margin: 0 0 1rem 0;
                     label{
                         width: auto;
                         display: block;
+                        padding: 0 0.5rem;
+                    }
+                    input{
+                        display: inline;
+                        padding:  0 0.5rem;
+                        box-sizing: border-box;
+                        width: auto;
+                    }
+                    input[value="nieuw"],
+                    label.nieuw{
+                        padding:  0;
+                        display: inline;
                     }
                 }
+            }
+            .small-textarea{
+                height: 5em;
+            }
+            .large-textarea{
+                height: 10em;
             }
         }
         #contact{
@@ -110,22 +138,33 @@
         }
         input[type="submit"]{
             order:4;
+            margin: 1rem;
+            padding: 0.5rem;
+            border: none;
+            background: $color_pink;
+            color: $color_white;
+        }
+        input[type="submit"]:hover,
+        input[type="submit"]:focus{
+            background: $color_black;
         }
 }
 
 
 fieldset {
     > input[type="checkbox"]{
-        margin-left: 0.75rem;
+        margin-left: 1.25rem;
     }
     > input[type="checkbox"] + label {
         margin-left: 0;
+        padding: 0;
     }
     input[type=checkbox] + label + input[type=text]{
         display: none;
     }
     input[type=checkbox]:checked + label + input[type=text]{
         display: block;
+        margin-left: 1.25rem;
     }
 
 }

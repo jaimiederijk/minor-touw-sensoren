@@ -1571,9 +1571,13 @@ VARIABLES
       display: inline;
       box-sizing: border-box;
       width: 100%; }
-    .add form > fieldset label + span {
+    .add form > fieldset p {
+      width: 80%; }
+    .add form > fieldset p span,
+    .add form > fieldset label span {
       color: #eb008b;
-      float: right; }
+      position: absolute;
+      right: 5%; }
     .add form > fieldset input {
       display: block;
       padding: 0.5rem;
@@ -1585,12 +1589,34 @@ VARIABLES
       margin: 1rem auto;
       max-width: 10em;
       max-height: 10em; }
+    .add form > fieldset select {
+      width: 90%;
+      display: block;
+      margin: 0 auto; }
     .add form > fieldset textarea {
       width: 100%;
       box-sizing: border-box; }
-    .add form > fieldset > fieldset label, .add form > fieldset > fieldset input {
-      width: auto;
-      display: inline; }
+    .add form > fieldset > fieldset {
+      border: none;
+      padding: 0;
+      margin: 0 0 1rem 0; }
+      .add form > fieldset > fieldset label {
+        width: auto;
+        display: block;
+        padding: 0 0.5rem; }
+      .add form > fieldset > fieldset input {
+        display: inline;
+        padding: 0 0.5rem;
+        box-sizing: border-box;
+        width: auto; }
+      .add form > fieldset > fieldset input[value="nieuw"],
+      .add form > fieldset > fieldset label.nieuw {
+        padding: 0;
+        display: inline; }
+  .add form .small-textarea {
+    height: 5em; }
+  .add form .large-textarea {
+    height: 10em; }
 
 .add #contact {
   order: 1; }
@@ -1602,16 +1628,27 @@ VARIABLES
   order: 3; }
 
 .add input[type="submit"] {
-  order: 4; }
+  order: 4;
+  margin: 1rem;
+  padding: 0.5rem;
+  border: none;
+  background: #eb008b;
+  color: #f5f5f5; }
+
+.add input[type="submit"]:hover,
+.add input[type="submit"]:focus {
+  background: #333333; }
 
 fieldset > input[type="checkbox"] {
-  margin-left: 0.75rem; }
+  margin-left: 1.25rem; }
 
 fieldset > input[type="checkbox"] + label {
-  margin-left: 0; }
+  margin-left: 0;
+  padding: 0; }
 
 fieldset input[type=checkbox] + label + input[type=text] {
   display: none; }
 
 fieldset input[type=checkbox]:checked + label + input[type=text] {
-  display: block; }
+  display: block;
+  margin-left: 1.25rem; }
