@@ -1,6 +1,7 @@
 @import 'common/_breakpoint';
 @import 'common/_colors';
 
+
 header.aside {
     height: 2rem;
     top: 0;
@@ -118,6 +119,7 @@ aside {
                 position: relative;
                 padding: .5rem 1rem .5rem 2rem;
                 width: 100%;
+                min-height: 2rem;
                 border: 1px solid $color_white;
                 color: $color_black;
                 background-color: $color_white;
@@ -151,6 +153,8 @@ aside {
             ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
                 color: $color_black;
                 font-family: 'open_sansitalic', Helvetica, Arial, sans-serif;
+                position: relative;
+    
             }
             :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
                color: $color_black;
