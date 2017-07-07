@@ -7,80 +7,127 @@
     <h1>Edit the <%=allSensors.name%> sensor</h1>
     <form class="userInput" method="post" >
         <fieldset id="sensor">
-            <legend>Sensor information</legend>
-            <label for="name">Naam</label>
-            <input id="name" type="text" name="name" value="<%=allSensors.name%>"><span>*required</span><br/>
+            <legend>Sensor informatie</legend>
 
-            <label for="image">Profielfoto</label>
-            <input id="image" class="input-sensor-img" type="url" name="image" value="<%=allSensors.image%>">
-            <img class="output-sensor-img" src="<%=allSensors.image%>"/>
+            <label for="name">Naam <span>*required</span></label>
+            <input id="name" type="text" name="name" placeholder="XRF" value="<%=allSensors.name%>" required>
+
+            <label for="image">Sensor foto <span>*required</span></label>
+            <input id="image" type="url" name="image" class="input-sensor-img" placeholder="https://www.example.nl/example-image.jpg" value="<%=allSensors.image%>"required>
+
+            <% if(allSensors.image.length > 4){ %>
+                <img class="output output-sensor-img" src="<%=allSensors.image%>" alt="preview of profile image"/>
+            <% } else{ %>
+                <img class="output output-sensor-img" src="/images/tauw_logo_zonder.png" alt="preview of profile image"/>
+            <% } %>
 
             <% Object.keys(AllSettings).forEach(function(key) { %>
-                <% if(key !== "_id"){ %>
-                    <fieldset>
-                        <legend><%= key %></legend>
-                        <p>Please select the corresponding <%= key %>.</p>
-                            <% AllSettings[key].forEach(function(value) { %>
+                <% if(key !== "_id" && key !== "filters"){ %>
+                    <% if(  key === "sector" || key ==="branch" || key ==="tags" || key ==="level" || key ==="scale"){ %>
+                        <fieldset class="checkbox">
+                            <legend><%= key %></legend>
+                            <p>Selecteer passende <%= key %>. <span>*required</span></p>
 
-                                <label>
-
+                                <% AllSettings[key].forEach(function(value) { %>
                                     <% if(allSensors[key]== value){ %>
-                                       <input type="checkbox" name="<%= key %>" value="<%= value %>" checked> <%= value %> <br/>
+                                        <label for="<%= key %>_<%= value %>">
+                                            <input type="checkbox" name="<%= key %>" id="<%= key %>_<%= value %>" value="<%= value %>" checked><%= value %>
+                                        </label>
                                     <% } else if (typeof(allSensors[key]) == "object" && allSensors[key].indexOf(value) >= 0){ %>
-                                        <input type="checkbox" name="<%= key %>" value="<%= value %>" checked> <%= value %> <br/>
+                                        <label for="<%= key %>_<%= value %>">
+                                            <input type="checkbox" name="<%= key %>" id="<%= key %>_<%= value %>" value="<%= value %>" checked><%= value %>
+                                        </label>
                                     <% } else{ %>
-                                       <input type="checkbox" name="<%= key %>" value="<%= value %>"> <%= value %> <br/>
+                                        <label for="<%= key %>_<%= value %>">
+                                            <input type="checkbox" name="<%= key %>" id="<%= key %>_<%= value %>" value="<%= value %>"><%= value %>
+                                        </label>
                                     <% } %>
-                                </label>
-                            <% }) %>
+                                <% }) %>
+
                                 <input type="checkbox" name="<%= key %>" id="nieuw-<%= key %>" value="nieuw">
                                 <label for="nieuw-<%= key%>" class="nieuw">Nieuw</label>
                                 <input type="text" name="<%= key %>" id="nieuw-<%= key %>2">
-                    </fieldset>
+
+                        </fieldset>
+                    <% } else{ %>
+                        <fieldset class="selection">
+                            <legend><%= key %></legend>
+                            <p>Selecteer de overeenkomende <%= key %>.</p>
+
+                                <select name="<%= key %>" id="<%= key %>">
+                                    <% AllSettings[key].forEach(function(value) { %>
+                                        <% if(allSensors[key] == value){ %>
+                                            <option value="<%= value %>" selected="selected"><%= value %></option>
+                                        <% } else if (typeof(allSensors[key]) == "object" && allSensors[key].indexOf(value) >= 0){ %>
+                                            <option value="<%= value %>" selected="selected"><%= value %></option>
+                                        <% } else{ %>
+                                            <option value="<%= value %>"><%= value %></option>
+                                        <% } %>
+                                    <% }) %>
+                                </select>
+
+                        </fieldset>
+                    <% } %>
                 <% } %>
             <% }) %>
 
-            <label for="summary_smal">Short summary</label><br/>
-            <textarea id="summary_smal" name="summary_smal" rows="4" cols="50"><%=allSensors.summary_smal%></textarea><br/>
+                 <label for="summary_smal">Korte samenvatting</label>
+                 <textarea id="summary_smal" name="summary_smal" maxlength="100" class="small-textarea" placeholder="Samenvatting..."><%=allSensors.summary_smal %></textarea>
 
-            <label for="summary_big">Long summary</label><br/>
-            <textarea id="summary_big" name="summary_big" rows="4" cols="50" ><%=allSensors.summary_big%></textarea><br/>
+                 <label for="summary_big">Lange samenvatting</label>
+                 <textarea id="summary_big" name="summary_big" class="large-textarea" placeholder="Samenvatting..."><%=allSensors.summary_big %></textarea>
+
         </fieldset>
 
         <fieldset id="contact">
             <legend>Contact information</legend>
-             <label for="contactName">Voor- en achternaam</label>
-             <input id="contactName" type="text" name="contactName" value="<%=allSensors.contactName%>"> <span>*required</span><br/>
+             <label for="contactName">Voor- en achternaam <span>*required</span></label>
+             <input id="contactName" type="text" name="contactName" placeholder="John Doe" value="<%=allSensors.contactName%>" required>
 
              <label for="contactPhone">Telefoon nummer</label>
-             <input id="contactPhone" type="tel" name="contactPhone" value="<%=allSensors.contactPhone%>"> <span>*required</span><br/>
+             <input id="contactPhone" type="tel" placeholder="0612345678" value="<%=allSensors.contactPhone %>" name="contactPhone">
 
-             <label for="contactMail">Email adres</label>
-             <input id="contactMail" type="email" name="contactMail" value="<%=allSensors.contactMail%>"> <span>*required</span><br/>
+             <label for="contactMail">Email adres <span>*required</span></label>
+             <input id="contactMail" type="email" name="contactMail"  placeholder="example@mail.com" value="<%=allSensors.contactMail %>" required>
 
-             <label for="contactPhoto">Profielfoto</label>
-             <input id="contactPhoto" class="input-contact-pf" type="url" name="contactPhoto" value="<%=allSensors.contactPhoto%>">
-             <img class="output-contact-pf" src="<%=allSensors.contactPhoto%>"/>
+             <label for="contactPhoto">Profielfoto <span>*required</span></label>
+             <input id="contactPhoto" type="url" name="contactPhoto" class="input-contact-pf" placeholder="https://www.example.nl/example-image.jpg" value="<%=allSensors.contactPhoto %>">
+             <% if(allSensors.image.length > 4){ %>
+                 <img class="output output-sensor-img" src="<%=allSensors.contactPhoto%>" alt="preview of contactPhoto"/>
+             <% } else{ %>
+                 <img class="output output-sensor-img" src="/images/tauw_logo_zonder.png" alt="preview of contactPhoto"/>
+             <% } %>
+
         </fieldset>
 
         <fieldset id="reference">
-            <legend>Reference project information</legend>
-            <label for="referenceTitle">Reference title</label>
-            <input id="referenceTitle" type="text" name="referenceTitle" value="<%=allSensors.referenceTitle%>"> <span>*required</span><br/>
+            <legend>Referentie project informatie</legend>
+            <label for="referenceTitle">Project titel</label>
+            <input id="referenceTitle" type="text" name="referenceTitle" placeholder="Voorbeeld titel" value="<%=allSensors.referenceTitle %>">
 
-            <label for="referenceSummary">reference Summary</label><br/>
-            <textarea id="referenceSummary" name="referenceSummary" rows="4" cols="50"><%=allSensors.referenceSummary%></textarea><br/>
+            <label for="referenceSummary">Project samenvatting</label>
+            <textarea id="referenceSummary" name="referenceSummary" class="large-textarea" placeholder="Samenvatting..."><%=allSensors.referenceSummary %></textarea>
 
-             <label for="referenceLink">Reference Link</label>
-             <input id="referenceLink" type="url" name="referenceLink" value="<%=allSensors.referenceLink%>"><br/>
+             <label for="referenceLink">Project link</label>
+             <input id="referenceLink" type="url" name="referenceLink" placeholder="https://www.example.nl/example-project.html" value="<%=allSensors.referenceLink %>">
 
-             <label for="referenceImage">Reference image</label>
-             <input id="referenceImage" class="input-reference-image" type="url" name="referenceImage" value="<%=allSensors.referenceImage%>">
-             <img class="output-reference-image" src="<%=allSensors.referenceImage%>"/>
+             <label for="referenceImage">Project foto</label>
+             <input id="referenceImage" type="url" name="referenceImage" class="input-reference-image" placeholder="https://www.example.nl/example-image.jpg" value="<%=allSensors.referenceImage %>">
+             <% if(allSensors.image.length > 4){ %>
+                 <img class="output output-reference-image" src="<%=allSensors.referenceImage%>" alt="preview of referenceImage"/>
+             <% } else{ %>
+                 <img class="output output-reference-image" src="/images/tauw_logo_zonder.png" alt="preview of referenceImage"/>
+             <% } %>
+
         </fieldset>
 
         <input type="submit" value="Submit">
     </form>
-</section>
- </main>
+
+   </section>
+
+</main>
+<script src="/javascripts/imagePreview.js"></script>
+<script src="/javascripts/requiredInputs.js"></script>
 </body>
+</html>

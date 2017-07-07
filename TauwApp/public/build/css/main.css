@@ -1556,129 +1556,131 @@ VARIABLES
   display: inline-block;
   width: 45%; }
 
-.add h1 {
+.add h1, .edit h1 {
   color: #eb008b; }
 
-.add form {
+.add form, .edit form {
   display: flex;
   flex-direction: column; }
-  .add form > fieldset {
+  .add form > fieldset, .edit form > fieldset {
     margin: 0;
     padding: 0.5rem;
     width: 100%;
     box-sizing: border-box; }
-    .add form > fieldset label {
+    .add form > fieldset label, .edit form > fieldset label {
       display: inline;
       box-sizing: border-box;
       width: 100%; }
-    .add form > fieldset p {
+    .add form > fieldset p, .edit form > fieldset p {
       width: 80%; }
     .add form > fieldset p span,
-    .add form > fieldset label span {
+    .add form > fieldset label span, .edit form > fieldset p span,
+    .edit form > fieldset label span {
       color: #eb008b; }
-    .add form > fieldset input {
+    .add form > fieldset input, .edit form > fieldset input {
       display: block;
       padding: 0.5rem;
       box-sizing: border-box;
       width: 100%; }
-    .add form > fieldset img.output {
+    .add form > fieldset img.output, .edit form > fieldset img.output {
       display: block;
       width: auto;
       margin: 1rem auto;
       max-width: 10em;
       max-height: 10em; }
-    .add form > fieldset select {
+    .add form > fieldset select, .edit form > fieldset select {
       width: 100%;
       padding: 0.25rem;
       display: block;
       margin: 0 auto; }
-    .add form > fieldset textarea {
+    .add form > fieldset textarea, .edit form > fieldset textarea {
       width: 100%;
       box-sizing: border-box; }
-    .add form > fieldset > fieldset {
+    .add form > fieldset > fieldset, .edit form > fieldset > fieldset {
       border: none;
       padding: 0;
       margin: 0 0 1rem 0; }
-      .add form > fieldset > fieldset label {
+      .add form > fieldset > fieldset label, .edit form > fieldset > fieldset label {
         width: auto;
         display: block;
         padding: 0 0.5rem; }
-      .add form > fieldset > fieldset input {
+      .add form > fieldset > fieldset input, .edit form > fieldset > fieldset input {
         display: inline;
         box-sizing: border-box;
         width: auto; }
       .add form > fieldset > fieldset input[value="nieuw"],
-      .add form > fieldset > fieldset label.nieuw {
+      .add form > fieldset > fieldset label.nieuw, .edit form > fieldset > fieldset input[value="nieuw"],
+      .edit form > fieldset > fieldset label.nieuw {
         padding: 0;
         display: inline; }
-      .add form > fieldset > fieldset > input[type="checkbox"] {
+      .add form > fieldset > fieldset > input[type="checkbox"], .edit form > fieldset > fieldset > input[type="checkbox"] {
         margin-left: 1.25rem; }
-      .add form > fieldset > fieldset > input[type="checkbox"] + label {
+      .add form > fieldset > fieldset > input[type="checkbox"] + label, .edit form > fieldset > fieldset > input[type="checkbox"] + label {
         margin-left: 0;
         padding: 0; }
-      .add form > fieldset > fieldset input[type=checkbox] + label + input[type=text] {
+      .add form > fieldset > fieldset input[type=checkbox] + label + input[type=text], .edit form > fieldset > fieldset input[type=checkbox] + label + input[type=text] {
         display: none; }
-      .add form > fieldset > fieldset input[type=checkbox]:checked + label + input[type=text] {
+      .add form > fieldset > fieldset input[type=checkbox]:checked + label + input[type=text], .edit form > fieldset > fieldset input[type=checkbox]:checked + label + input[type=text] {
         display: block;
         margin-left: 1.25rem; }
-    .add form > fieldset .small-textarea {
+    .add form > fieldset .small-textarea, .edit form > fieldset .small-textarea {
       height: 5em; }
-    .add form > fieldset .large-textarea {
+    .add form > fieldset .large-textarea, .edit form > fieldset .large-textarea {
       height: 10em; }
   @media (min-width: 50em) {
-    .add form fieldset {
+    .add form fieldset, .edit form fieldset {
       position: relative; }
-      .add form fieldset label {
+      .add form fieldset label, .edit form fieldset label {
         display: block;
         width: 50%; }
-      .add form fieldset input {
+      .add form fieldset input, .edit form fieldset input {
         display: inline;
         padding: 0.5rem;
         box-sizing: border-box;
         width: 50%; }
-      .add form fieldset > fieldset.checkbox label {
+      .add form fieldset > fieldset.checkbox label, .edit form fieldset > fieldset.checkbox label {
         width: 48%;
         box-sizing: border-box;
         display: inline-block;
         padding: 0.25rem; }
-      .add form fieldset > fieldset.checkbox input {
+      .add form fieldset > fieldset.checkbox input, .edit form fieldset > fieldset.checkbox input {
         position: relative;
         display: inline;
         box-sizing: border-box;
         width: auto; }
-      .add form fieldset > fieldset.checkbox > input[type="checkbox"] {
+      .add form fieldset > fieldset.checkbox > input[type="checkbox"], .edit form fieldset > fieldset.checkbox > input[type="checkbox"] {
         margin-left: 1rem; }
-      .add form fieldset > fieldset.checkbox input[type="checkbox"] + label {
+      .add form fieldset > fieldset.checkbox input[type="checkbox"] + label, .edit form fieldset > fieldset.checkbox input[type="checkbox"] + label {
         width: auto; }
-      .add form fieldset img.output {
+      .add form fieldset img.output, .edit form fieldset img.output {
         position: absolute;
         right: 12.5%; }
-      .add form fieldset img.output {
+      .add form fieldset img.output, .edit form fieldset img.output {
         top: 25%; }
-      .add form fieldset img.output.output-sensor-img {
+      .add form fieldset img.output.output-sensor-img, .edit form fieldset img.output.output-sensor-img {
         top: 1%; }
-      .add form fieldset img.output.output-reference-image {
+      .add form fieldset img.output.output-reference-image, .edit form fieldset img.output.output-reference-image {
         top: 25%; }
-      .add form fieldset textarea {
+      .add form fieldset textarea, .edit form fieldset textarea {
         width: 50%; }
-    .add form fieldset.selection {
+    .add form fieldset.selection, .edit form fieldset.selection {
       display: inline-block;
       width: 48%; }
-      .add form fieldset.selection p {
+      .add form fieldset.selection p, .edit form fieldset.selection p {
         width: 100%; }
-      .add form fieldset.selection select {
+      .add form fieldset.selection select, .edit form fieldset.selection select {
         width: 95%;
         margin: 0; } }
   @media (min-width: 64em) {
-    .add form fieldset > fieldset.checkbox label {
+    .add form fieldset > fieldset.checkbox label, .edit form fieldset > fieldset.checkbox label {
       width: 30%; } }
-  .add form #contact {
+  .add form #contact, .edit form #contact {
     order: 1; }
-  .add form #sensor {
+  .add form #sensor, .edit form #sensor {
     order: 2; }
-  .add form #reference {
+  .add form #reference, .edit form #reference {
     order: 3; }
-  .add form input[type="submit"] {
+  .add form input[type="submit"], .edit form input[type="submit"] {
     order: 4;
     margin: 1rem;
     padding: 0.5rem;
@@ -1686,5 +1688,6 @@ VARIABLES
     background: #eb008b;
     color: #f5f5f5; }
   .add form input[type="submit"]:hover,
-  .add form input[type="submit"]:focus {
+  .add form input[type="submit"]:focus, .edit form input[type="submit"]:hover,
+  .edit form input[type="submit"]:focus {
     background: #333333; }
