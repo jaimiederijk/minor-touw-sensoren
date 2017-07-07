@@ -22,33 +22,33 @@
             word-wrap: break-word;
         }
 }
-.edit{
-    h1{
-        color: $color_pink;
-    }
-    fieldset{
-        column-count: 3;
-    }
-    form label{
-        margin: 0;
-    }
-    form{
-        display: flex;
-        flex-direction: column;
-    }
-    #contact{order:1;}
-    #sensor{order:2;}
-    #reference{order:3;}
-    input[type="submit"]{order:4;}
-
-    fieldset fieldset{
-       padding: 0.5rem;
-    }
-    fieldset fieldset label{
-       display: inline-block;
-       width: 45%;
-    }
-}
+// .edit{
+//     h1{
+//         color: $color_pink;
+//     }
+//     fieldset{
+//         column-count: 3;
+//     }
+//     form label{
+//         margin: 0;
+//     }
+//     form{
+//         display: flex;
+//         flex-direction: column;
+//     }
+//     #contact{order:1;}
+//     #sensor{order:2;}
+//     #reference{order:3;}
+//     input[type="submit"]{order:4;}
+//
+//     fieldset fieldset{
+//        padding: 0.5rem;
+//     }
+//     fieldset fieldset label{
+//        display: inline-block;
+//        width: 45%;
+//     }
+// }
 
 .add, .edit{
     h1{
@@ -80,7 +80,7 @@
                 box-sizing: border-box;
                 width: 100%;
             }
-            img.output{
+            img.output-img{
                 display:block;
                 width: auto;
                 margin: 1rem auto;
@@ -171,17 +171,17 @@
                         width: auto;
                     }
                 }
-                img.output{
+                img.output-img{
                     position: absolute;
                     right: 12.5%;
                 }
-                img.output{
+                img.output-img{
                     top: 25%;
                 }
-                img.output.output-sensor-img{
+                img.output-img.output-sensor-img{
                     top: 1%;
                 }
-                img.output.output-reference-image{
+                img.output-img.output-reference-image{
                     top: 25%;
                 }
                 textarea{

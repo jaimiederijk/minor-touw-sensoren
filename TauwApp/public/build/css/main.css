@@ -1524,38 +1524,6 @@ VARIABLES
   max-width: 7em;
   word-wrap: break-word; }
 
-.edit h1 {
-  color: #eb008b; }
-
-.edit fieldset {
-  column-count: 3; }
-
-.edit form label {
-  margin: 0; }
-
-.edit form {
-  display: flex;
-  flex-direction: column; }
-
-.edit #contact {
-  order: 1; }
-
-.edit #sensor {
-  order: 2; }
-
-.edit #reference {
-  order: 3; }
-
-.edit input[type="submit"] {
-  order: 4; }
-
-.edit fieldset fieldset {
-  padding: 0.5rem; }
-
-.edit fieldset fieldset label {
-  display: inline-block;
-  width: 45%; }
-
 .add h1, .edit h1 {
   color: #eb008b; }
 
@@ -1582,7 +1550,7 @@ VARIABLES
       padding: 0.5rem;
       box-sizing: border-box;
       width: 100%; }
-    .add form > fieldset img.output, .edit form > fieldset img.output {
+    .add form > fieldset img.output-img, .edit form > fieldset img.output-img {
       display: block;
       width: auto;
       margin: 1rem auto;
@@ -1652,14 +1620,14 @@ VARIABLES
         margin-left: 1rem; }
       .add form fieldset > fieldset.checkbox input[type="checkbox"] + label, .edit form fieldset > fieldset.checkbox input[type="checkbox"] + label {
         width: auto; }
-      .add form fieldset img.output, .edit form fieldset img.output {
+      .add form fieldset img.output-img, .edit form fieldset img.output-img {
         position: absolute;
         right: 12.5%; }
-      .add form fieldset img.output, .edit form fieldset img.output {
+      .add form fieldset img.output-img, .edit form fieldset img.output-img {
         top: 25%; }
-      .add form fieldset img.output.output-sensor-img, .edit form fieldset img.output.output-sensor-img {
+      .add form fieldset img.output-img.output-sensor-img, .edit form fieldset img.output-img.output-sensor-img {
         top: 1%; }
-      .add form fieldset img.output.output-reference-image, .edit form fieldset img.output.output-reference-image {
+      .add form fieldset img.output-img.output-reference-image, .edit form fieldset img.output-img.output-reference-image {
         top: 25%; }
       .add form fieldset textarea, .edit form fieldset textarea {
         width: 50%; }
