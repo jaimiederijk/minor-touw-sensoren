@@ -16,9 +16,9 @@
             <input id="image" type="url" name="image" class="input-sensor-img" placeholder="https://www.example.nl/example-image.jpg" value="<%=allSensors.image%>"required>
 
             <% if(allSensors.image.length > 4){ %>
-                <img class="output output-sensor-img" src="<%=allSensors.image%>" alt="preview of profile image"/>
+                <img class="output-img output-sensor-img" src="<%=allSensors.image%>" alt="preview of profile image"/>
             <% } else{ %>
-                <img class="output output-sensor-img" src="/images/tauw_logo_zonder.png" alt="preview of profile image"/>
+                <img class="output-img output-sensor-img" src="/images/tauw_logo_zonder.png" alt="preview of profile image"/>
             <% } %>
 
             <% Object.keys(AllSettings).forEach(function(key) { %>
@@ -93,9 +93,9 @@
              <label for="contactPhoto">Profielfoto <span>*required</span></label>
              <input id="contactPhoto" type="url" name="contactPhoto" class="input-contact-pf" placeholder="https://www.example.nl/example-image.jpg" value="<%=allSensors.contactPhoto %>">
              <% if(allSensors.image.length > 4){ %>
-                 <img class="output output-sensor-img" src="<%=allSensors.contactPhoto%>" alt="preview of contactPhoto"/>
+                 <img class="output-img output-sensor-img" src="<%=allSensors.contactPhoto%>" alt="preview of contactPhoto"/>
              <% } else{ %>
-                 <img class="output output-sensor-img" src="/images/tauw_logo_zonder.png" alt="preview of contactPhoto"/>
+                 <img class="output-img output-sensor-img" src="/images/tauw_logo_zonder.png" alt="preview of contactPhoto"/>
              <% } %>
 
         </fieldset>
@@ -114,9 +114,9 @@
              <label for="referenceImage">Project foto</label>
              <input id="referenceImage" type="url" name="referenceImage" class="input-reference-image" placeholder="https://www.example.nl/example-image.jpg" value="<%=allSensors.referenceImage %>">
              <% if(allSensors.image.length > 4){ %>
-                 <img class="output output-reference-image" src="<%=allSensors.referenceImage%>" alt="preview of referenceImage"/>
+                 <img class="output-img output-reference-image" src="<%=allSensors.referenceImage%>" alt="preview of referenceImage"/>
              <% } else{ %>
-                 <img class="output output-reference-image" src="/images/tauw_logo_zonder.png" alt="preview of referenceImage"/>
+                 <img class="output-img output-reference-image" src="/images/tauw_logo_zonder.png" alt="preview of referenceImage"/>
              <% } %>
 
         </fieldset>
