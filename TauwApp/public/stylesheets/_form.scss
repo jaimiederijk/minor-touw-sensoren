@@ -73,8 +73,6 @@
             p  span,
             label span{
                 color: $color_pink;
-                position: absolute;
-                right: 5%;
             }
             input{
                 display: block;
@@ -90,7 +88,8 @@
                 max-height: 10em;
             }
             select{
-                width: 90%;
+                width: 100%;
+                padding: 0.25rem;
                 display: block;
                 margin: 0 auto;
             }
@@ -109,7 +108,6 @@
                     }
                     input{
                         display: inline;
-                        padding:  0 0.5rem;
                         box-sizing: border-box;
                         width: auto;
                     }
@@ -118,13 +116,98 @@
                         padding:  0;
                         display: inline;
                     }
+                    > input[type="checkbox"]{
+                        margin-left: 1.25rem;
+                    }
+                    > input[type="checkbox"] + label {
+                        margin-left: 0;
+                        padding: 0;
+                    }
+                    input[type=checkbox] + label + input[type=text]{
+                        display: none;
+                    }
+                    input[type=checkbox]:checked + label + input[type=text]{
+                        display: block;
+                        margin-left: 1.25rem;
+                    }
+                }
+                .small-textarea{
+                    height: 5em;
+                }
+                .large-textarea{
+                    height: 10em;
                 }
             }
-            .small-textarea{
-                height: 5em;
+            @include breakpoint(tablet) {
+                fieldset{
+                    position: relative;
+                    label{
+                        display: block;
+                        width: 50%;
+                    }
+                    input {
+                        display: inline;
+                        padding: 0.5rem;
+                        box-sizing: border-box;
+                        width: 50%;
+                    }
+                > fieldset.checkbox{
+                    label{
+                        width: 48%;
+                        box-sizing: border-box;
+                        display: inline-block;
+                        padding: 0.25rem
+                    }
+                    input{
+                        position: relative;
+                        display: inline;
+                        box-sizing: border-box;
+                        width: auto;
+                    }
+                    > input[type="checkbox"] {
+                        margin-left: 1rem;
+                    }
+                    input[type="checkbox"] + label {
+                        width: auto;
+                    }
+                }
+                img.output{
+                    position: absolute;
+                    right: 12.5%;
+                }
+                img.output{
+                    top: 25%;
+                }
+                img.output.output-sensor-img{
+                    top: 1%;
+                }
+                img.output.output-reference-image{
+                    top: 25%;
+                }
+                textarea{
+                    width: 50%;
+                }
             }
-            .large-textarea{
-                height: 10em;
+
+            fieldset.selection{
+                display: inline-block;
+                width: 48%;
+                p{
+                    width: 100%;
+                }
+                select{
+                    width: 95%;
+                    margin: 0;
+                }
+            }
+        }
+        @include breakpoint(laptop) {
+            fieldset{
+                > fieldset.checkbox{
+                    label{
+                        width: 30%;
+                    }
+                }
             }
         }
         #contact{
@@ -148,23 +231,5 @@
         input[type="submit"]:focus{
             background: $color_black;
         }
-}
-
-
-fieldset {
-    > input[type="checkbox"]{
-        margin-left: 1.25rem;
     }
-    > input[type="checkbox"] + label {
-        margin-left: 0;
-        padding: 0;
-    }
-    input[type=checkbox] + label + input[type=text]{
-        display: none;
-    }
-    input[type=checkbox]:checked + label + input[type=text]{
-        display: block;
-        margin-left: 1.25rem;
-    }
-
 }

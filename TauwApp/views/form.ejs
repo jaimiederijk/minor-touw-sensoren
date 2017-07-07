@@ -10,10 +10,10 @@
                 <legend>Sensor informatie</legend>
 
                 <label for="name">Naam <span>*required</span></label>
-                <input id="name" type="text" name="name" placeholder="XRF"required>
+                <input id="name" type="text" name="name" placeholder="XRF" required>
 
-                <label for="image">Sensor foto</label>
-                <input id="image" type="url" name="image" class="input-sensor-img" placeholder="https://www.example.nl/example-image.jpg">
+                <label for="image">Sensor foto <span>*required</span></label>
+                <input id="image" type="url" name="image" class="input-sensor-img" placeholder="https://www.example.nl/example-image.jpg" required>
                 <img class="output output-sensor-img" src="/images/tauw_logo_zonder.png" alt="preview of profile image"/>
 
 
@@ -24,7 +24,7 @@
                                     key ==="tags" ||
                                     key ==="level" ||
                                     key ==="scale"){ %>
-                            <fieldset>
+                            <fieldset class="checkbox">
                                 <legend><%= key %></legend>
                                 <p>Selecteer passende <%= key %>. <span>*required</span></p>
 
@@ -39,7 +39,7 @@
                                         <input type="text" name="<%= key %>" id="nieuw-<%= key %>2">
                             </fieldset>
                         <% } else{ %>
-                            <fieldset>
+                            <fieldset class="selection">
                                 <legend><%= key %></legend>
                                 <p>Selecteer de overeenkomende <%= key %>.</p>
 
@@ -55,10 +55,10 @@
                     <% } %>
                 <% }) %>
 
-                     <label for="summary_smal">Short summary</label>
-                     <textarea id="summary_smal" name="summary_smal" class="small-textarea" placeholder="Samenvatting..."></textarea>
+                     <label for="summary_smal">Korte samenvatting</label>
+                     <textarea id="summary_smal" name="summary_smal" maxlength="100" class="small-textarea" placeholder="Samenvatting..."></textarea>
 
-                     <label for="summary_big">Long summary</label>
+                     <label for="summary_big">Lange samenvatting</label>
                      <textarea id="summary_big" name="summary_big" class="large-textarea" placeholder="Samenvatting..."></textarea>
 
             </fieldset>
