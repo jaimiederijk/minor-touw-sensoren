@@ -1,62 +1,19 @@
 @import 'common/_breakpoint';
 @import 'common/_colors';
 
-.cms{
-    h1{
-        color: $color_pink;
-    }
-    th, td{
-        font-size: 0.9em;
-    }
-        tr:nth-of-type(even){
-            background: #ccc;
-        }
-        tr, th{
-          width: min-content;
-          text-align: center;
-          padding: 0.5rem;
-        }
-        td{
-            padding: 0.5rem;
-            max-width: 7em;
-            word-wrap: break-word;
-        }
-}
-// .edit{
-//     h1{
-//         color: $color_pink;
-//     }
-//     fieldset{
-//         column-count: 3;
-//     }
-//     form label{
-//         margin: 0;
-//     }
-//     form{
-//         display: flex;
-//         flex-direction: column;
-//     }
-//     #contact{order:1;}
-//     #sensor{order:2;}
-//     #reference{order:3;}
-//     input[type="submit"]{order:4;}
-//
-//     fieldset fieldset{
-//        padding: 0.5rem;
-//     }
-//     fieldset fieldset label{
-//        display: inline-block;
-//        width: 45%;
-//     }
-// }
-
-.add, .edit{
+.add, .edit, .cms{
     h1{
         color: $color_pink;
     }
     form {
         display: flex;
         flex-direction: column;
+        legend, > fieldset > label{
+            text-transform: capitalize;
+            margin-left: 0;
+            font-weight: 600;
+            font-size: 1em;
+        }
         > fieldset{
             margin: 0;
             padding: 0.5rem;
@@ -117,6 +74,7 @@
                         display: inline;
                     }
                     > input[type="checkbox"]{
+                        margin-right: 0;
                         margin-left: 1.25rem;
                     }
                     > input[type="checkbox"] + label {
@@ -156,7 +114,8 @@
                         width: 48%;
                         box-sizing: border-box;
                         display: inline-block;
-                        padding: 0.25rem
+                        padding: 0.25rem;
+                        vertical-align: top;
                     }
                     input{
                         position: relative;
@@ -166,6 +125,7 @@
                     }
                     > input[type="checkbox"] {
                         margin-left: 1rem;
+                        margin-top: 0.5rem;
                     }
                     input[type="checkbox"] + label {
                         width: auto;
@@ -191,22 +151,13 @@
 
             fieldset.selection{
                 display: inline-block;
-                width: 48%;
+                width: 49%;
                 p{
                     width: 100%;
                 }
                 select{
                     width: 95%;
                     margin: 0;
-                }
-            }
-        }
-        @include breakpoint(laptop) {
-            fieldset{
-                > fieldset.checkbox{
-                    label{
-                        width: 30%;
-                    }
                 }
             }
         }
@@ -231,5 +182,88 @@
         input[type="submit"]:focus{
             background: $color_black;
         }
+        br{
+            display: none;
+        }
+        @media (min-width: 50em) and (max-width: 53em){
+            br{
+                display: block;
+            }
+        }
+    }
+    div{
+        overflow-x: auto;
+        table{
+            margin-top: 1rem;
+            border-collapse: collapse;
+            width: 100%;
+            tr{
+                text-align: center;
+                display: inline-block;
+                th{
+                    color: $color_white;
+                    background-color: $color_background;
+                }
+                th,td{
+                    font-size: 0.9em;
+                    min-width: 6em;
+                    max-width: 6em;
+                    padding: 0.5rem;
+                    word-wrap: break-word;
+                    a{
+                        color: $color_pink;
+                    }
+                }
+            }
+            tr:nth-of-type(even){
+                background: $color_shadow;
+            }
+        }
+    }
+}
+
+.cms{
+    form {
+        margin-right: 0.5rem;
+        display: inline-block;
+        width: 60%;
+        span{
+            position: absolute;
+            margin-top: 0.5rem;
+            left: .5rem;
+            display: inline-block;
+            background-image: url(/images/search.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100%;
+            width: 1em;
+            height: 1em;
+            z-index: 1;
+        }
+        input{
+            width: 100%;
+            position: relative;
+            padding: .5rem 1rem .5rem 2rem;
+            border: 2px solid #f5f5f5;
+            color: $color_black;
+            background-color: $color_white;
+            -webkit-box-shadow: 3px 3px 0px -1px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 3px 3px 0px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 3px 3px 0px -1px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+        }
+    }
+    form + a{
+        color: $color_white;
+        text-decoration: none;
+        border: none;
+        padding: 0.25rem 1rem;
+        background-color: $color_pink;
+        box-sizing: border-box;
+        position: absolute;
+    }
+    form + a:hover,
+    form + a:focus{
+        background: $color_black;
     }
 }
