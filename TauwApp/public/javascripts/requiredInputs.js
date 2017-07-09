@@ -5,7 +5,7 @@
                 for (i = 0; i < requiredCheckboxes.length; i++) {
                     requiredCheckboxes[i].required = true;
                 }
-                console.log(requiredCheckboxes)
+                // console.log(requiredCheckboxes)
             checkboxes.addEventListeners(requiredCheckboxes);
         },
         addEventListeners: function(requiredCheckboxes) {

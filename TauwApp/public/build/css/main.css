@@ -1585,7 +1585,7 @@ VARIABLES
       height: 5em; }
     .add form > fieldset .large-textarea, .edit form > fieldset .large-textarea, .cms form > fieldset .large-textarea {
       height: 10em; }
-  @media (min-width: 50em) {
+  @media (min-width: 5
     .add form fieldset, .edit form fieldset, .cms form fieldset {
       position: relative; }
       .add form fieldset label, .edit form fieldset label, .cms form fieldset label {
@@ -1717,4 +1717,5 @@ VARIABLES
 
 .cms form + a:hover,
 .cms form + a:focus {
-  background: #333333; }
+  background: #333333; 
+}

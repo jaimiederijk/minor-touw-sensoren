@@ -17,8 +17,9 @@
                 <input id="name" type="text" name="name" placeholder="XRF" required>
 
                 <label for="image">Sensor foto <span>*required</span></label>
-                <input id="image" type="url" name="image" class="input-sensor-img" placeholder="https://www.example.nl/example-image.jpg" required>
+                <input id="image" type="url" name="image" class="input-img input-sensor-img" placeholder="https://www.example.nl/example-image.jpg" required>
                 <img class="output-img output-sensor-img" src="/images/tauw_logo_zonder.png" alt="preview of profile image"/>
+                <span class="url-img-failed hide">De url van de afbeelding is onjuist. Probeer het nogmaals</span>
 
 
                 <% Object.keys(AllSettings).forEach(function(key) { %>
@@ -80,8 +81,9 @@
                  <input id="contactMail" type="email" name="contactMail"  placeholder="example@mail.com" required>
 
                  <label for="contactPhoto">Profielfoto <span>*required</span></label>
-                 <input id="contactPhoto" type="url" name="contactPhoto" class="input-contact-pf" placeholder="https://www.example.nl/example-image.jpg">
+                 <input id="contactPhoto" type="url" name="contactPhoto" class="input-img input-contact-pf" placeholder="https://www.example.nl/example-image.jpg">
                  <img class="output-img output-contact-pf" src="/images/tauw_logo_zonder.png" alt="preview of contactPhoto"/>
+                 <span class="url-img-failed hide">De url van de afbeelding is onjuist. Probeer het nogmaals</span>
 
             </fieldset>
 
@@ -96,9 +98,11 @@
                  <label for="referenceLink">Project link</label>
                  <input id="referenceLink" type="url" name="referenceLink" placeholder="https://www.example.nl/example-project.html">
 
+
                  <label for="referenceImage">Project foto</label>
-                 <input id="referenceImage" type="url" name="referenceImage" class="input-reference-image" placeholder="https://www.example.nl/example-image.jpg">
+                 <input id="referenceImage" type="url" name="referenceImage" class="input-img input-reference-image" placeholder="https://www.example.nl/example-image.jpg">
                  <img class="output-img output-reference-image" src="/images/tauw_logo_zonder.png" alt="preview of referenceImage"/>
+                 <span class="url-img-failed hide">De url van de afbeelding is onjuist. Probeer het nogmaals</span>
 
             </fieldset>
 
@@ -109,6 +113,7 @@
 
     </main>
     <script src="/javascripts/imagePreview.js"></script>
+    <script src="/javascripts/errorImagePreview.js"></script>
     <script src="/javascripts/requiredInputs.js"></script>
   </body>
 </html>
