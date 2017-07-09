@@ -4,43 +4,52 @@
 
      <main class="add">
         <section>
-            <h1>Add a sensor</h1>
+            <h1>Nieuwe sensor</h1>
+            <% if(retryForm == true){ %>
+                <p>Er is helaas iets fout gegaan. Controleer of u alle verplichte velden heeft ingevuld.</p>
+            <%}%>
+
         <form class="userInput" method="post" >
             <fieldset id="sensor">
-                <legend>Algemene informatie</legend>
+                <legend>Sensor informatie</legend>
 
-                <label for="name">Naam</label>
-                <input id="name" type="text" name="name" required><span></span>
+                <label for="name">Naam <span>*required</span></label>
+                <input id="name" type="text" name="name" placeholder="XRF" required>
 
-                <label for="image">Profielfoto</label>
-                <input id="image" type="url" name="image" class="input-img">
+                <label for="image">Sensor foto <span>*required</span></label>
+                <input id="image" type="url" name="image" class="input-img input-sensor-img" placeholder="https://www.example.nl/example-image.jpg" required>
                 <img class="output-img output-sensor-img" src="/images/tauw_logo_zonder.png" alt="preview of profile image"/>
                 <span class="url-img-failed hide">De url van de afbeelding is onjuist. Probeer het nogmaals</span>
 
+
                 <% Object.keys(AllSettings).forEach(function(key) { %>
-                    <% if(key !== "_id"){ %>
+                    <% if(key !== "_id" && key !== "filters"){ %>
                         <% if(  key === "sector" ||
                                     key ==="branch" ||
                                     key ==="tags" ||
                                     key ==="level" ||
                                     key ==="scale"){ %>
-                            <fieldset>
+                            <fieldset class="checkbox">
                                 <legend><%= key %></legend>
-                                <p>Please select the corresponding <%= key %>.</p>
+                                <p>Selecteer passende <%= key %>. <span>*required</span></p>
+
                                     <% AllSettings[key].forEach(function(value) { %>
                                         <label for="<%= key %>_<%= value %>">
                                             <input type="checkbox" name="<%= key %>" id="<%= key %>_<%= value %>" value="<%= value %>"><%= value %>
                                         </label>
 
                                     <% }) %>
+                                    <br/>
                                         <input type="checkbox" name="<%= key %>" id="nieuw-<%= key %>" value="nieuw">
                                         <label for="nieuw-<%= key%>" class="nieuw">Nieuw</label>
                                         <input type="text" name="<%= key %>" id="nieuw-<%= key %>2">
                             </fieldset>
                         <% } else{ %>
-                            <fieldset>
+                            <fieldset class="selection">
                                 <legend><%= key %></legend>
-                                    <select name="<%= key %>" id="<%= key %>" required>
+                                <p>Selecteer de overeenkomende <%= key %>.</p>
+
+                                    <select name="<%= key %>" id="<%= key %>">
                                         <% AllSettings[key].forEach(function(value) { %>
                                               <option value="<%= value %>"><%= value %></option>
                                           <% }) %>
@@ -52,45 +61,46 @@
                     <% } %>
                 <% }) %>
 
-                     <label for="summary_smal">Short summary</label>
-                     <textarea id="summary_smal" name="summary_smal" rows="4" cols="50"></textarea>
+                     <label for="summary_smal">Korte samenvatting</label>
+                     <textarea id="summary_smal" name="summary_smal" maxlength="100" class="small-textarea" placeholder="Samenvatting..."></textarea>
 
-                     <label for="summary_big">Long summary</label>
-                     <textarea id="summary_big" name="summary_big" rows="4" cols="50"></textarea>
+                     <label for="summary_big">Lange samenvatting</label>
+                     <textarea id="summary_big" name="summary_big" class="large-textarea" placeholder="Samenvatting..."></textarea>
 
             </fieldset>
 
             <fieldset id="contact">
                 <legend>Contact information</legend>
-                 <label for="contactName">Voor- en achternaam</label> <span>*required</span>
-                 <input id="contactName" type="text" name="contactName" required>
+                 <label for="contactName">Voor- en achternaam <span>*required</span></label>
+                 <input id="contactName" type="text" name="contactName" placeholder="John Doe"required>
 
-                 <label for="contactPhone">Telefoon nummer</label><span>*required</span>
-                 <input id="contactPhone" type="tel" name="contactPhone">
+                 <label for="contactPhone">Telefoon nummer</label>
+                 <input id="contactPhone" type="tel" placeholder="0612345678" name="contactPhone">
 
-                 <label for="contactMail">Email adres</label><span>*required</span>
-                 <input id="contactMail" type="email" name="contactMail" required>
+                 <label for="contactMail">Email adres <span>*required</span></label>
+                 <input id="contactMail" type="email" name="contactMail"  placeholder="example@mail.com" required>
 
-                 <label for="contactPhoto">Profielfoto</label>
-                 <input id="contactPhoto" type="url" name="contactPhoto" class="input-img">
+                 <label for="contactPhoto">Profielfoto <span>*required</span></label>
+                 <input id="contactPhoto" type="url" name="contactPhoto" class="input-img input-contact-pf" placeholder="https://www.example.nl/example-image.jpg">
                  <img class="output-img output-contact-pf" src="/images/tauw_logo_zonder.png" alt="preview of contactPhoto"/>
                  <span class="url-img-failed hide">De url van de afbeelding is onjuist. Probeer het nogmaals</span>
 
             </fieldset>
 
             <fieldset id="reference">
-                <legend>Reference project information</legend>
-                <label for="referenceTitle">Reference title</label>
-                <input id="referenceTitle" type="text" name="referenceTitle"> <span>*required</span>
+                <legend>Referentie project informatie</legend>
+                <label for="referenceTitle">Project titel</label>
+                <input id="referenceTitle" type="text" name="referenceTitle" placeholder="Voorbeeld titel">
 
-                <label for="referenceSummary">reference Summary</label>
-                <textarea id="referenceSummary" name="referenceSummary" rows="4" cols="50"></textarea>
+                <label for="referenceSummary">Project samenvatting</label>
+                <textarea id="referenceSummary" name="referenceSummary" class="large-textarea" placeholder="Samenvatting..."></textarea>
 
-                 <label for="referenceLink">Reference Link</label>
-                 <input id="referenceLink" type="url" name="referenceLink">
+                 <label for="referenceLink">Project link</label>
+                 <input id="referenceLink" type="url" name="referenceLink" placeholder="https://www.example.nl/example-project.html">
 
-                 <label for="referenceImage">Reference image</label>
-                 <input id="referenceImage" type="url" name="referenceImage" class="input-img">
+
+                 <label for="referenceImage">Project foto</label>
+                 <input id="referenceImage" type="url" name="referenceImage" class="input-img input-reference-image" placeholder="https://www.example.nl/example-image.jpg">
                  <img class="output-img output-reference-image" src="/images/tauw_logo_zonder.png" alt="preview of referenceImage"/>
                  <span class="url-img-failed hide">De url van de afbeelding is onjuist. Probeer het nogmaals</span>
 

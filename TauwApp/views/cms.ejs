@@ -1,7 +1,8 @@
       <% include partials/head %>
+      <% include partials/header %>
       <% include partials/aside %>
       <main class="cms">
-          <% if (logged_in !== true) { %>
+          <% if (logged_in !== logged_in) { %>
               <form class="userInput" action="/cms" method="post">
                   <label for="username">Accountnaam</label>
                   <input id="username" type="text" name="username">
@@ -10,19 +11,20 @@
                   <input type="submit" value="Submit">
               </form>
           <% } else{ %>
+              <section>
               <h1>Data in Database</h1>
 
-              <form >
-                  <label for="search">search</label>
-                  <input id="search" type="text" name="search">
-                  <input type="submit" value="Submit">
+              <form>
+                  <span class="search-icon"></span>
+                  <input type="search" name="search" id="search" class="search" placeholder="voer een zoekopdracht in">
               </form>
 
-            <a href="./cms/add" title="add a new sensor" class="button">Nieuw (+)</a>
+            <a href="./cms/add" title="add a new sensor" class="button">Nieuwe sensor</a>
 
+            <div>
               <table>
                   <tr>
-                     <th>id</th>
+                     <!-- <th>id</th> -->
                     <th>Name</th>
                     <th>Sector</th>
                     <th>Branch</th>
@@ -34,7 +36,7 @@
 
                   <% allSensors.forEach(function(sensor) { %>
                       <tr>
-                          <td><%= sensor._id %></td>
+                          <!-- <td><%= sensor._id %></td> -->
                           <td><%= sensor.name %></td>
                           <td><%= sensor.sector %></td>
                           <td><%= sensor.branch %></td>
@@ -49,7 +51,9 @@
                       </tr>
                   <% }) %>
             </table>
-          <% } %>
+          </div>
+      </section>
+      <% } %>
     </main>
 
   </body>

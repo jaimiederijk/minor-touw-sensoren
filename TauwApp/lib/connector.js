@@ -123,7 +123,6 @@ var find = {
      console.log("Connected successfully to server");
 
      findDocumentsWithField("settings", query, field, db, function(docs) {
-         console.log(docs)
        callback(docs);
        db.close();
      });
