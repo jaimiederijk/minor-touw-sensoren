@@ -10,9 +10,6 @@ var index = require('./routes/index').router;
 var detail = require('./routes/detail').router;
 var cms = require('./routes/cms').router;
 
-var appJS = require('./routes/form.js');
-var filters = appJS.filters;
-
 var app = express();
 
 // compress all requests
@@ -52,4 +49,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = {app: app, filters: filters}
+module.exports = {app: app}

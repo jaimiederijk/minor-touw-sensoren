@@ -5,6 +5,10 @@
      <main class="add">
         <section>
             <h1>Nieuwe sensor</h1>
+            <% if(retryForm == true){ %>
+                <p>Er is helaas iets fout gegaan. Controleer of u alle verplichte velden heeft ingevuld.</p>
+            <%}%>
+
         <form class="userInput" method="post" >
             <fieldset id="sensor">
                 <legend>Sensor informatie</legend>

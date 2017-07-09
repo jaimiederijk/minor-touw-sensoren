@@ -4,7 +4,10 @@
 
      <main class="edit">
          <section>
-    <h1>Edit the <%=allSensors.name%> sensor</h1>
+        <h1>Wijzig de <%=allSensors.name%> sensor</h1>
+        <% if(retryForm == true){ %>
+            <p>Er is helaas iets fout gegaan. Controleer of u alle verplichte velden heeft ingevuld.</p>
+        <%}%>
     <form class="userInput" method="post" >
         <fieldset id="sensor">
             <legend>Sensor informatie</legend>
