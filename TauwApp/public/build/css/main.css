@@ -1524,7 +1524,8 @@ VARIABLES
     .add form > fieldset label, .edit form > fieldset label, .cms form > fieldset label {
       display: inline;
       box-sizing: border-box;
-      width: 100%; }
+      width: 100%;
+      text-transform: capitalize; }
     .add form > fieldset p, .edit form > fieldset p, .cms form > fieldset p {
       width: 80%; }
     .add form > fieldset p span,
