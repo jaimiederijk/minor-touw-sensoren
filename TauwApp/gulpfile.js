@@ -30,6 +30,8 @@ gulp.task('import-data', runCommand('mongoimport --db tauw --collection sensors 
 gulp.task('import-data2', runCommand('mongoimport --db tauw --collection settings --drop --file ./settingsseed.json'));
 gulp.task('drop-collection', runCommand('mongo tauw --eval "db.sensors.drop()"'));
 
+gulp.task('import-data-live', runCommand('mongoimport --host "tauw-shard-00-00-rkjng.mongodb.net:27017,tauw-shard-00-01-rkjng.mongodb.net:27017,tauw-shard-00-02-rkjng.mongodb.net:27017" --authenticationDatabase admin --ssl --username jaimie2 --password tauw22 --db tauw --collection sensors --drop  --jsonArray --file "./generated.json"'));
+
 gulp.task('setup-db',['create-data-folder','start-mongo','create-db','import-data', 'import-data2']);
 
 gulp.task('sass', function() {
