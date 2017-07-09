@@ -7,33 +7,49 @@
 
 
 [
-  '{{repeat(5, 7)}}',
+  '{{repeat(250, 250)}}',
   {
 
     name: function (tags) {
-      var name = ['XRF', 'bananameter', 'berr','deeltjesversneller', 'star', 'b-22','jan','hydrofoon','TRC'];
+      var name = ['XRF', 'bananameter', 'BAR','deeltjesversneller', 'star', 'b-22','THC','Hydrofoon','TRC','Tot meter', 'Drukmeter', 'Laser','Lab onderzoek', 'Drone', 'Sateliet','Potmeter','Oscilloscoop','Anemometer','Spectrumanalysator', 'telescoop'];
       return name[tags.integer(0, name.length - 1)];
     },
     image: function (tags) {
-      var image = ['https://www.olympus-ims.com/data/Image/appnotes/xrf_delta_right_product_shot.JPG?rev=2702','https://www.polymersolutions.com/blog/wp-content/uploads/2014/05/SCiO-In-Hand.png','https://www.aerialmediapros.com/wp-content/uploads/2015/07/Map-Scout-Pro-DJI-Matrice-100-Dronedeploy-Drone-Precision-Construction-Inspection-mapping-Drone-UAV-best-main-4-e1491336663414.png'];
+      var image = [
+        'https://asset.conrad.com/media10/isa/160267/c1/-/nl/102201_BB_00_FB/testo-417-fluegelrad-anemometer-wind-anemometer-03-tot-20-ms-voor-gecontroleerde-woningventilatie-luchtaan-en-afvoe.jpg?x=520&y=520',
+        'http://www.testandmeasurementtips.com/wp-content/uploads/2011/05/analog-oscilloscope.jpg',
+        'https://www.polymersolutions.com/blog/wp-content/uploads/2014/05/SCiO-In-Hand.png',
+        'https://www.aerialmediapros.com/wp-content/uploads/2015/07/Map-Scout-Pro-DJI-Matrice-100-Dronedeploy-Drone-Precision-Construction-Inspection-mapping-Drone-UAV-best-main-4-e1491336663414.png',
+        'http://esero_production.67a9f12c562e4385958ef41a7bba215b.objectstore.eu/system/insets/images/000/002/911/original/les-35-telescoop.jpg?1342467789',
+        'http://deredactie.be/polopoly_fs/1.1659857!image/2430941114.jpg_gen/derivatives/landscape670/2430941114.jpg',
+        'http://www.centralauto.be/uploads/assets/96035/1494542709316-35023624_resize-920x920.jpg',
+        'https://ae01.alicdn.com/kf/HTB1WInlQXXXXXXhXVXXq6xXFXXXO/ZF-25-11A-and-14A-font-b-Hydrophone-b-font-used-in-OBC-can-be-customed.jpg',
+        'http://surveyequipment.com/media/catalog/product/cache/1/image/903be06a881aa18fc50d3dc96e8b9fba/l/e/leica-disto-x310-790656.jpg?1496774957',
+        'http://www.pngall.com/wp-content/uploads/2016/04/Satellite-PNG-File.png',
+        'https://www.snoesjes.com/dynamic/media/34/images/Doopsuiker/Reageerbuisje%20voor%20bedankjes.jpg'
+      ];
       return image[tags.integer(0, image.length - 1)];
     },
     sector: function (tags) {
       var sector = ['Landelijk','Stedelijk','Industrie'];
       return sector[tags.integer(0, sector.length - 1)];
     },
-    branch: function (tags) {
+    branch: ['{{repeat(1,2)}}',
+      function (tags) {
       var branch = ["Bodem", "Afval", "Grondstoffen", "Ecologie", "Water", "Inspectie", "Waterbodem", "Infrastructuur"];
       return branch[tags.integer(0, branch.length - 1)];
-    },
-    tags: function (t) {
+    }],
+    tags: [ '{{repeat(1,3)}}',
+      function (t) {
       var tags = ["Chemisch", "3D model", "Volume bepaling", "Fysisch"];
       return tags[t.integer(0, tags.length - 1)];
-    },
-    level: function (tags) {
+    }],
+    level: [ '{{repeat(1,3)}}',
+     function (tags) {
       var level = ["Bodemlucht", "Maaiveld", "Textruur", "Lutum", "Organisch stof", "Metalen", "PAK", "PCB", "Bodemvreemde materialen", "Onderscheidt in chemische verbindingen"];
       return level[tags.integer(0, level.length - 1)];
-    },
+     }
+    ],
     scale: function (tags) {
       var scale = ["Handmatig", "Lokaal", "Regionaal", "Provinciaal", "Landelijk", "Internationaal", "n.v.t"];
       return scale[tags.integer(0, scale.length - 1)];
@@ -67,10 +83,7 @@
       var summary_small =  ["Can create a perfect 3D map of any town.", "resolution accuracy interval duration innovation"];
       return summary_small[tags.integer(0, summary_small.length - 1)];
     },
-    summary_big: function (tags) {
-      var summary_big =  ["Can create a perfect 3D map of any town.", "resolution accuracy interval duration innovation"];
-      return summary_big[tags.integer(0, summary_big.length - 1)];
-    },
+    summary_big: '{{lorem(1, "paragraphs")}}',
     contactName: function (tags) {
       var contactName =  ["Jan", "Jesper"];
       return contactName[tags.integer(0, contactName.length - 1)];
