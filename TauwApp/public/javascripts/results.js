@@ -2,7 +2,7 @@
 
   var app = {
     init: function () {
-      animate.results();
+      //animate.results();
       minCharacters.resultsBlock();
     }
   }

@@ -76,7 +76,7 @@
           var newResults = document.createRange().createContextualFragment(doc);
 
           document.querySelector('body').replaceChild(newResults, document.querySelector('main'));
-          animate.results();
+          //animate.results();
       });
     },
     getNewFilters : function (url) {
