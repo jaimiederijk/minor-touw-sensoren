@@ -409,7 +409,7 @@ $cloudduration: 16s;
 		transform: translateX(100vw);
 
 	}
-}@-webkit-keyframes fadeIn {
+}@-webkit-keyframes clouds {
 	0% {
 		-webkit-transform: translateX(-100vw);
 
@@ -420,6 +420,119 @@ $cloudduration: 16s;
 	}
 }
 
+
+#industrie_water {
+  animation-name:water;
+  -webkit-animation-name:water;
+  animation-duration:2s;
+  -webkit-animation-duration:2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+  visibility:visible!important
+}
+@keyframes water {
+  0% {
+		transform: translateX(-2px);
+	}
+  50% {
+		transform: translateX(-4px);
+	}
+  100% {
+    transform: translateX(-2px);
+  }
+}@-webkit-keyframes water {
+  0% {
+		-webkit-transform: translateX(-2px);
+	}
+  50% {
+		-webkit-transform: translateX(-4px);
+	}
+  100% {
+    -webkit-transform: translateX(-2px);
+  }
+}
+
+.stedelijk_flat g rect {
+  transform-origin: center bottom;
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-name:windows;
+      -webkit-animation-name:windows;
+      animation-duration:5s;
+      -webkit-animation-duration:5s;
+      -webkit-animation-delay: 0.1-(0.1s * $i) ;
+      animation-delay: 0.1-(0.1s * $i) ;
+      animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+      animation-timing-function:ease;
+      -webkit-animation-timing-function:ease;
+      visibility:visible!important
+    }
+  }
+}
+@keyframes windows {
+  0% {
+		fill: white;
+	}
+  50% {
+		fill: yellow;
+	}
+  0% {
+    fill: white;
+  }
+}@-webkit-keyframes windows {
+  0% {
+		-webkit-transform: translateX(-2px);
+	}
+  50% {
+		-webkit-transform: translateX(-4px);
+	}
+  100% {
+    -webkit-transform: translateX(-2px);
+  }
+}
+
+.trees g  {
+  transform-origin: center bottom;
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation-name:wiggle;
+      -webkit-animation-name:wiggle;
+      animation-duration:5s;
+      -webkit-animation-duration:5s;
+      -webkit-animation-delay: 0.1-(0.1s * $i) ;
+      animation-delay: 0.1-(0.1s * $i) ;
+      animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+      animation-timing-function:ease;
+      -webkit-animation-timing-function:ease;
+      visibility:visible!important
+    }
+  }
+}
+@keyframes wiggle {
+	0% {
+		transform: rotate(0deg);
+	}
+  50% {
+		transform: rotate(5deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
+}@-webkit-keyframes wiggle {
+  0% {
+		-webkit-transform: rotate(0deg);
+	}
+  50% {
+		-webkit-transform: rotate(5deg);
+	}
+	100% {
+		-webkit-transform: rotate(0deg);
+	}
+}
 .fadeIn{
   animation-name:fadeIn;
   -webkit-animation-name:fadeIn;
