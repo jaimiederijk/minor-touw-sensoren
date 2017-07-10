@@ -3,16 +3,16 @@
 
   var animate = {
     init : function () {
-      animate.orbitSatellite();
-      animate.flyDrone();
-      animate.sectors();
-      if (window.location.href.indexOf("Stedelijk") > -1) {
-        animate.stedlijk();
-      } else if (window.location.href.indexOf("Industrie") > -1) {
-        animate.industrie();
-      } else if (window.location.href.indexOf("Landelijk") > -1) {
-        animate.landelijk();
-      }
+      // animate.orbitSatellite();
+      // animate.flyDrone();
+      // animate.sectors();
+      // if (window.location.href.indexOf("Stedelijk") > -1) {
+      //   animate.stedlijk();
+      // } else if (window.location.href.indexOf("Industrie") > -1) {
+      //   animate.industrie();
+      // } else if (window.location.href.indexOf("Landelijk") > -1) {
+      //   animate.landelijk();
+      // }
 
     },
     orbitSatellite : function () {

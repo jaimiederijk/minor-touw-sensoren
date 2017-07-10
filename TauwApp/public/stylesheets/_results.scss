@@ -150,16 +150,19 @@ ul.branch {
 /* animaties */
 
 .expandUp2 li {
+  transform: translateY(200%) scale(0) scaleY(0.5);
   @for $i from 1 through 20 {
     &:nth-child(#{$i}) {
       animation-name:expandUp2;
       -webkit-animation-name:expandUp2;
       animation-duration:1s;
       -webkit-animation-duration:1s;
-      -webkit-animation-delay: 0.1-(0.1s * $i) ;
-      animation-delay: 0.1-(0.1s * $i) ;
+      -webkit-animation-delay: (0.1s * $i)-0.1 ;
+      animation-delay: (0.1s * $i)-0.1 ;
       animation-timing-function:ease;
       -webkit-animation-timing-function:ease;
+      animation-fill-mode: forwards;
+      -webkit-animation-fill-mode: forwards;
       visibility:visible!important
     }
   }
