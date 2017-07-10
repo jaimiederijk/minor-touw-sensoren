@@ -22,10 +22,10 @@
             htmlElements.allSvg[i].style.width = "auto";
           }
         }
-        animate.stedlijk();
-        animate.industrie();
-        animate.landelijk();
-        animate.clouds();
+        // animate.stedlijk();
+        // animate.industrie();
+        // animate.landelijk();
+        // animate.clouds();
       };
 
       var htmlElements = {

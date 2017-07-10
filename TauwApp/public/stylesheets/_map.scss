@@ -247,6 +247,179 @@ align-items: center;
 		opacity: 1;
 	}
 }
+$cloudduration: 16s;
+#cloud1 {
+  animation-name:clouds;
+  -webkit-animation-name:clouds;
+  animation-duration:$cloudduration;
+  -webkit-animation-duration:$cloudduration;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+  visibility:visible!important
+}
+#cloud2 {
+  animation-name:clouds;
+  -webkit-animation-name:clouds;
+  animation-duration:$cloudduration;
+  -webkit-animation-duration:$cloudduration;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+  visibility:visible!important
+}
+#cloud3 {
+  animation-name:clouds;
+  -webkit-animation-name:clouds;
+  animation-duration:$cloudduration;
+  -webkit-animation-duration:$cloudduration;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+  -webkit-animation-delay: -4s;
+  animation-delay: -4s;
+  visibility:visible!important
+}
+#cloud4 {
+  animation-name:clouds;
+  -webkit-animation-name:clouds;
+  animation-duration:$cloudduration;
+  -webkit-animation-duration:$cloudduration;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+  -webkit-animation-delay: -8s;
+  animation-delay: -8s;
+  visibility:visible!important
+}
+#cloud5 {
+  animation-name:clouds;
+  -webkit-animation-name:clouds;
+  animation-duration:$cloudduration;
+  -webkit-animation-duration:$cloudduration;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+  -webkit-animation-delay: -10s;
+  animation-delay: -10s;
+  visibility:visible!important
+}
+#cloud6 {
+  animation-name:clouds;
+  -webkit-animation-name:clouds;
+  animation-duration:$cloudduration;
+  -webkit-animation-duration:$cloudduration;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+  -webkit-animation-delay: -16s;
+  animation-delay: -16s;
+  visibility:visible!important
+}
+#cloud7 {
+  animation-name:clouds;
+  -webkit-animation-name:clouds;
+  animation-duration:$cloudduration;
+  -webkit-animation-duration:$cloudduration;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+  visibility:visible!important
+}
+#cloud8 {
+  animation-name:clouds;
+  -webkit-animation-name:clouds;
+  animation-duration:$cloudduration;
+  -webkit-animation-duration:$cloudduration;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+  visibility:visible!important
+}
+#cloud9 {
+  animation-name:clouds;
+  -webkit-animation-name:clouds;
+  animation-duration:$cloudduration;
+  -webkit-animation-duration:$cloudduration;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+  -webkit-animation-delay: -4s;
+  animation-delay: -4s;
+  visibility:visible!important
+}
+#cloud10 {
+  animation-name:clouds;
+  -webkit-animation-name:clouds;
+  animation-duration:$cloudduration;
+  -webkit-animation-duration:$cloudduration;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+  -webkit-animation-delay: -8s;
+  animation-delay: -8s;
+  visibility:visible!important
+}
+#cloud11 {
+  animation-name:clouds;
+  -webkit-animation-name:clouds;
+  animation-duration:$cloudduration;
+  -webkit-animation-duration:$cloudduration;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+  -webkit-animation-delay: -10s;
+  animation-delay: -10s;
+  visibility:visible!important
+}
+#cloud12 {
+  animation-name:clouds;
+  -webkit-animation-name:clouds;
+  animation-duration:$cloudduration;
+  -webkit-animation-duration:$cloudduration;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+  -webkit-animation-delay: -15s;
+  animation-delay: -15s;
+  visibility:visible!important
+}
+@keyframes clouds {
+  0% {
+		transform: translateX(-100vw);
+	}
+
+	100% {
+		transform: translateX(100vw);
+
+	}
+}@-webkit-keyframes fadeIn {
+	0% {
+		-webkit-transform: translateX(-100vw);
+
+	}
+	100% {
+		-webkit-transform: translateX(100vw);
+
+	}
+}
+
 .fadeIn{
   animation-name:fadeIn;
   -webkit-animation-name:fadeIn;
