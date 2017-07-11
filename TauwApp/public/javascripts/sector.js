@@ -3,16 +3,16 @@
 
   var animate = {
     init : function () {
-      // animate.orbitSatellite();
-      // animate.flyDrone();
-      // animate.sectors();
-      // if (window.location.href.indexOf("Stedelijk") > -1) {
-      //   animate.stedlijk();
-      // } else if (window.location.href.indexOf("Industrie") > -1) {
-      //   animate.industrie();
-      // } else if (window.location.href.indexOf("Landelijk") > -1) {
-      //   animate.landelijk();
-      // }
+      animate.orbitSatellite();
+      animate.flyDrone();
+      //animate.sectors();
+      if (window.location.href.indexOf("Stedelijk") > -1) {
+        animate.stedlijk();
+      } else if (window.location.href.indexOf("Industrie") > -1) {
+        animate.industrie();
+      } else if (window.location.href.indexOf("Landelijk") > -1) {
+        animate.landelijk();
+      }
 
     },
     orbitSatellite : function () {
@@ -77,12 +77,12 @@
 
 
     },
-    sectors: function () {
-      var sectors = document.querySelectorAll(".branches li");
-      var tlSectors = new TimelineMax({repeat:0, repeatDelay:-0});
-      tlSectors.staggerFrom(sectors,0.8,{opacity:0.5,scale:0.5,x:0,y:1000, ease:Power2.easeOut,force3D:true},0.1);
-
-    },
+    // sectors: function () {
+    //   var sectors = document.querySelectorAll(".branches li");
+    //   var tlSectors = new TimelineMax({repeat:0, repeatDelay:-0});
+    //   tlSectors.staggerFrom(sectors,0.8,{opacity:0.5,scale:0.5,x:0,y:1000, ease:Power2.easeOut,force3D:true},0.1);
+    //
+    // },
     flyDrone : function () {
       var drone = document.querySelector(".drone svg");
       var tlFly = new TimelineMax({repeat:-1 })
