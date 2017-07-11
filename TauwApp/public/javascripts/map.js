@@ -22,10 +22,10 @@
             //htmlElements.allSvg[i].style.width = "auto";
           }
         }
-        // animate.stedlijk();
-        // animate.industrie();
-        // animate.landelijk();
-        // animate.clouds();
+        animate.stedlijk();
+        animate.industrie();
+        animate.landelijk();
+        animate.clouds();
       };
 
       var htmlElements = {
@@ -47,12 +47,29 @@
 
       var animate = {
         industrie : function () {
-          var industriewater = document.querySelectorAll("#industrie_water");
+          var industriewater = document.querySelector("#industrie_water");
+          var smokestack = document.querySelectorAll(".smokestack");
+          var smokestack2 = document.querySelectorAll(".smokestack2");
+          var smoke = document.querySelectorAll(".smoke");
+          var smoke2 = document.querySelectorAll(".smoke2");
+          var names = ["a","b","c","d","e","f","g","h","i","j","k","m","n"];
 
+          var tlStack1 = new TimelineMax({repeat:-1 })
+          var tlStack2 = new TimelineMax({repeat:-1 , delay:1})
           var tlIndustrie = new TimelineMax({repeat:-1 })
 
           tlIndustrie.to(industriewater,1,{scale:1.1,x:-1})
           tlIndustrie.to(industriewater,1,{scale:1, x:0})
+
+          tlStack1.to(smokestack,1,{scale:1, y:10},"first")
+          tlStack1.to(smokestack,1,{scale:1, y:0},"2nd")
+          tlStack1.to(smoke,2,{scale:1, y:-20,x:10, opacity:0},"first")
+
+          tlStack2.to(smokestack2,1,{scale:1, y:10},"first")
+          tlStack2.to(smokestack2,1,{scale:1, y:0},"2nd")
+          tlStack2.to(smoke2,2,{scale:1, y:-20,x:10, opacity:0},"first")
+          // tlStack.to(smoke2,1,{scale:1, y:0},"2nd")
+
         },
         landelijk : function () {
           var boom = document.querySelectorAll(".landelijk_boom");
@@ -73,7 +90,7 @@
           tlLandelijk.to(boom[5],2,{rotation:0, transformOrigin:'50% 100%'}, "return+=0.5")
         },
         stedlijk : function () {
-          var flatramen = document.querySelectorAll("#stedelijk_flat g > rect");
+          var flatramen = document.querySelectorAll(".stedelijk_flat g > rect");
 
           var tlStedlijk = new TimelineMax({repeat:-1 })
 
@@ -93,17 +110,23 @@
         },
         clouds : function () {
           var clouds = document.querySelectorAll(".cloud");
-          var clouds2 = document.querySelectorAll(".cloud2");
+          var names = ["a","b","c","d","e","f","g","h","i","j","k","m","n"];
+          //var clouds2 = document.querySelector(".cloud2");
+          var tlClouds = {};
 
-          var tlClouds = new TimelineMax({repeat:-1 })
+          for (var i = 0; i < clouds.length; i++) {
+            tlClouds[names[i]] = new TimelineMax({repeat:-1,delay:(i*1.3) });
 
-          tlClouds.set(clouds,{zIndex:99,x:-htmlElements.fullMap.clientWidth})
-          tlClouds.staggerTo(clouds,16,{x:(htmlElements.fullMap.clientWidth/1.5) }, 2);
+            tlClouds[names[i]].set(clouds[i],{zIndex:99,x:-htmlElements.fullMap.clientWidth*0.8});
+            tlClouds[names[i]].to(clouds[i],16+i,{x:(htmlElements.fullMap.clientWidth*0.8),ease: Power0.easeNone }, 2);
+          }
 
-          var tlClouds2 = new TimelineMax({repeat:-1,delay:10 })
 
-          tlClouds2.set(clouds2,{zIndex:99,x:-htmlElements.fullMap.clientWidth})
-          tlClouds2.staggerTo(clouds2,20,{x:(htmlElements.fullMap.clientWidth/1.5)}, 4);
+
+          //var tlClouds2 = new TimelineMax({repeat:-1 })
+
+          // tlClouds2.set(clouds2,{zIndex:99,x:-htmlElements.fullMap.clientWidth})
+          // tlClouds2.staggerTo(clouds2,20,{x:(htmlElements.fullMap.clientWidth/1.5)}, 4);
 
         }
       }
