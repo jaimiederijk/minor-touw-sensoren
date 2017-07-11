@@ -10,18 +10,18 @@
     area: function () {
       // declare html elements
       var init = function () {
-        interaction.createEventListeners();
-        var mapWidth = htmlElements.fullMap.clientWidth;
-        if (mapWidth < 680) {
-            interaction.createArrowNav();
-
-        } else {
-          //1038 450   715 310px  verschil 328 140 = 0.42682927
-          for (var i = 0; i < htmlElements.allSvg.length; i++) {
-            htmlElements.allSvg[i].style.height = mapWidth * 0.43 + "px";
-            //htmlElements.allSvg[i].style.width = "auto";
-          }
-        }
+        // interaction.createEventListeners();
+        // var mapWidth = htmlElements.fullMap.clientWidth;
+        // if (mapWidth < 680) {
+        //     interaction.createArrowNav();
+        //
+        // } else {
+        //   //1038 450   715 310px  verschil 328 140 = 0.42682927
+        //   for (var i = 0; i < htmlElements.allSvg.length; i++) {
+        //     htmlElements.allSvg[i].style.height = mapWidth * 0.43 + "px";
+        //     //htmlElements.allSvg[i].style.width = "auto";
+        //   }
+        // }
         animate.stedlijk();
         animate.industrie();
         animate.landelijk();
@@ -117,8 +117,8 @@
           for (var i = 0; i < clouds.length; i++) {
             tlClouds[names[i]] = new TimelineMax({repeat:-1,delay:(i*1.3) });
 
-            tlClouds[names[i]].set(clouds[i],{zIndex:99,x:-htmlElements.fullMap.clientWidth*0.8});
-            tlClouds[names[i]].to(clouds[i],16+i,{x:(htmlElements.fullMap.clientWidth*0.8),ease: Power0.easeNone }, 2);
+            tlClouds[names[i]].set(clouds[i],{zIndex:99,x:-htmlElements.fullMap.clientWidth});
+            tlClouds[names[i]].to(clouds[i],16+i,{x:(htmlElements.fullMap.clientWidth),ease: Power0.easeNone }, 2);
           }
 
 

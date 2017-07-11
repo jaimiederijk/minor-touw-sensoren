@@ -26,9 +26,12 @@ align-items: center;
     }
   }
   #clouds {
-    z-index: 99;
     position: absolute;
     width:100%;
+    pointer-events: none;
+  }
+  #mapsvg {
+    margin-top: 150px;
   }
   .full-map {
     width: 100%;
@@ -38,19 +41,27 @@ align-items: center;
     padding-bottom: 8rem;
     overflow-x: auto;
     white-space: nowrap;
+    svg {
+      width: 100%;
+    }
+    #industrial, #urban, #rural {
+      position: absolute;
+      top:30%;
+    }
+    #industrial {
+      left: 10%;
+    }
+    #urban {
+      left: 55%;
+    }
+    #rural {
+      left: 75%;
+    }
     a {
-      display: inline-block;
-      position: relative;
-      transition: 1s;
-      left: 0;
       color: $color_pink;
       font-family: 'open_sansbold', Helvetica, Arial, sans-serif;
       &:visited {
         color: $color_pink;
-      }
-      svg {
-        height: 100vw;
-        overflow-x: hidden;
       }
       @media not all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
         svg {
@@ -58,26 +69,13 @@ align-items: center;
         }
       }
       span {
-        position: absolute;
-        display: block;
+
         text-align: center;
         padding: .8rem 1rem;
         box-sizing: border-box;
       }
       &:hover span {
         box-shadow: inset 0 0 0 2px $color_pink;
-      }
-      .industrial-text {
-        top: 8rem;
-        left: 4rem;
-      }
-      .urban-text {
-        top: 7rem;
-        left: -3rem;
-      }
-      .rural-text {
-        top: 8rem;
-        right: 6rem;
       }
     }
     button {
@@ -108,28 +106,6 @@ align-items: center;
       right: auto;
 
     }
-    .satellite {
-      position: absolute;
-      top: .5rem;
-      right: .5rem;
-      background-image: url('/images/satellite.svg');
-      background-repeat: no-repeat;
-      background-size: 100%;
-      width: 4rem;
-      height: 4rem;
-      display: inline-block;
-    }
-    .drone {
-      position: absolute;
-      top: .9rem;
-      left: 1.2rem;
-      background-image: url('/images/drone.svg');
-      background-repeat: no-repeat;
-      background-size: 100%;
-      width: 3rem;
-      height: 3rem;
-      display: inline-block;
-    }
     .hide {
       display: none !important;
     }
@@ -138,46 +114,46 @@ align-items: center;
     overflow-x: hidden;
   }
 }
-@include breakpoint(mobile) {
-  .map {
-    // width: 74%;
-    // float: left;
-
-    .full-map a svg {
-      height: 41vw;
-    }
-  }
-
-}
-@include breakpoint(tablet) {
-  .map {
-
-    .full-map {
-      display: flex;
-      justify-content: center;
-
-      a svg {
-        height: 16rem;
-      }
-    }
-  }
-
-}
-@include breakpoint(laptop) {
-  .map {
-
-    .full-map a svg {
-      height: 20rem;
-    }
-  }
-
-}
-@include breakpoint(desktop) {
-  .map {
-
-    .full-map a svg {
-      height: 24rem;
-    }
-  }
-
-}
+// @include breakpoint(mobile) {
+//   .map {
+//     // width: 74%;
+//     // float: left;
+//
+//     .full-map a svg {
+//       height: 41vw;
+//     }
+//   }
+//
+// }
+// @include breakpoint(tablet) {
+//   .map {
+//
+//     .full-map {
+//       display: flex;
+//       justify-content: center;
+//
+//       a svg {
+//         height: 16rem;
+//       }
+//     }
+//   }
+//
+// }
+// @include breakpoint(laptop) {
+//   .map {
+//
+//     .full-map a svg {
+//       height: 20rem;
+//     }
+//   }
+//
+// }
+// @include breakpoint(desktop) {
+//   .map {
+//
+//     .full-map a svg {
+//       height: 24rem;
+//     }
+//   }
+//
+// }
