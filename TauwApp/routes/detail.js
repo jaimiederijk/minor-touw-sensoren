@@ -14,8 +14,8 @@ router.get('/:sectorName', function(req, res, next) {
   if (req.query.search !== undefined){
       searchMachine.search.renderSearchResults(req, res, req.query.search);
   }
-  else { 
-
+  else {
+    
       connector.find.findSettings (query, field, function(docs) {
         res.render('sector', {
             title: req.params.sectorName,
@@ -76,7 +76,10 @@ router.get('/db/:x/:sectorName/:branchName', function(req, res, next) {
       if (req.params.x == "f") {
         var filterObj = filterUtils.utils.filterBuilder(docs, filters);
         var reqQuery = Object.keys(req.query).length === 0 ? "false" : req.query;
-        
+        if (docs.length == 1) {
+          filters = Object.keys(reqQuery);
+        }
+
         res.render('partials/filters', {
             page: "filters",
             activeFilters: filterObj,
