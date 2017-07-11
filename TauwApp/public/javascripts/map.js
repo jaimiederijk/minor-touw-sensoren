@@ -19,7 +19,7 @@
           //1038 450   715 310px  verschil 328 140 = 0.42682927
           for (var i = 0; i < htmlElements.allSvg.length; i++) {
             htmlElements.allSvg[i].style.height = mapWidth * 0.43 + "px";
-            htmlElements.allSvg[i].style.width = "auto";
+            //htmlElements.allSvg[i].style.width = "auto";
           }
         }
         animate.stedlijk();
