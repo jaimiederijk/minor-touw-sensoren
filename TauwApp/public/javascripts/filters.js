@@ -14,7 +14,7 @@
           htmlElements.formSubmit.classList.add('hide');
 
       },
-      handleCheckboxClick: function (e) {
+      handleCheckboxClick: function(e) {
         var currentHref = window.location.href;
 
         if(typeof document.createRange().createContextualFragment === "function") {

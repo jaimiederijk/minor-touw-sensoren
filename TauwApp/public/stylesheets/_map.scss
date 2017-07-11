@@ -50,7 +50,12 @@ align-items: center;
       }
       svg {
         height: 100vw;
-        width: auto;
+        overflow-x: hidden;
+      }
+      @media not all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        svg {
+          width: auto;
+        }
       }
       span {
         position: absolute;
