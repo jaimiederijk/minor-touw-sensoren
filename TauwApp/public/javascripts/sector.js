@@ -32,12 +32,29 @@
       // tlOrbit.to(sat,10,{x:-600, y:0});
     },
     industrie : function () {
-      var industriewater = document.querySelectorAll(".category-img #industrie_water");
+      var industriewater = document.querySelector("#industrie_water");
+      var smokestack = document.querySelectorAll(".smokestack");
+      var smokestack2 = document.querySelectorAll(".smokestack2");
+      var smoke = document.querySelectorAll(".smoke");
+      var smoke2 = document.querySelectorAll(".smoke2");
+      var names = ["a","b","c","d","e","f","g","h","i","j","k","m","n"];
 
+      var tlStack1 = new TimelineMax({repeat:-1 })
+      var tlStack2 = new TimelineMax({repeat:-1 , delay:1})
       var tlIndustrie = new TimelineMax({repeat:-1 })
 
       tlIndustrie.to(industriewater,1,{scale:1.1,x:-1})
       tlIndustrie.to(industriewater,1,{scale:1, x:0})
+
+      tlStack1.to(smokestack,1,{scale:1, y:10},"first")
+      tlStack1.to(smokestack,1,{scale:1, y:0},"2nd")
+      tlStack1.to(smoke,2,{scale:1, y:-20,x:10, opacity:0},"first")
+
+      tlStack2.to(smokestack2,1,{scale:1, y:10},"first")
+      tlStack2.to(smokestack2,1,{scale:1, y:0},"2nd")
+      tlStack2.to(smoke2,2,{scale:1, y:-20,x:10, opacity:0},"first")
+      // tlStack.to(smoke2,1,{scale:1, y:0},"2nd")
+
     },
     landelijk : function () {
       var boom = document.querySelectorAll(".category-img .landelijk_boom");
