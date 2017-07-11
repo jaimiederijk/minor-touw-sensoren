@@ -46,11 +46,8 @@ main.category {
       }
       .satellite {
         position: absolute;
-        top: 0;
-        right: 0;
-        // background-image: url(/images/satellite.svg);
-        // background-repeat: no-repeat;
-        // background-size: contain;
+        bottom: -70%;
+        right: 50%;
         width: 3rem;
         height: 3rem;
         display: block;

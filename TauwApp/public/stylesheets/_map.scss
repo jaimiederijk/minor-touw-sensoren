@@ -402,30 +402,181 @@ $cloudduration: 16s;
 }
 @keyframes clouds {
   0% {
-		transform: translateX(-100vw);
+		transform: translateX(-70vw);
 	}
 
 	100% {
-		transform: translateX(100vw);
+		transform: translateX(70vw);
 
 	}
 }@-webkit-keyframes clouds {
 	0% {
-		-webkit-transform: translateX(-100vw);
+		-webkit-transform: translateX(-70vw);
 
 	}
 	100% {
-		-webkit-transform: translateX(100vw);
+		-webkit-transform: translateX(70vw);
 
 	}
 }
 
+.smoke {
+  animation-name:smoke;
+  -webkit-animation-name:smoke;
+  animation-duration:2s;
+  -webkit-animation-duration:2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:linear;
+  -webkit-animation-timing-function:linear;
+  visibility:visible!important
+}
+@keyframes smoke {
+  0% {
+		transform: translateY(20px);
+	}
+  50% {
+		transform: translateY(0px) translateX(100%);
+	}
+  100% {
+    transform: translateY(-10px) translateX(22px);
+    opacity: 0.0;
+  }
+}@-webkit-keyframes smoke {
+  0% {
+		-webkit-transform: translateY(20px);
+	}
+  50% {
+		-webkit-transform: translateY(0px) translateX(100%);
+	}
+  100% {
+    -webkit-transform: translateY(-10px) translateX(22px);
+    opacity: 0.0;
+  }
+}
+.smoke2 {
+  animation-name:smoke2;
+  -webkit-animation-name:smoke2;
+  animation-duration:2s;
+  -webkit-animation-duration:2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:linear;
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+  visibility:visible!important
+}
+@keyframes smoke2 {
+  0% {
+		transform: translateY(20px);
+	}
+  50% {
+		transform: translateY(0px) translateX(100%);
+	}
+  100% {
+    transform: translateY(-10px) translateX(22px);
+    opacity: 0.0;
+  }
+}@-webkit-keyframes smoke2 {
+  0% {
+		-webkit-transform: translateY(20px);
+	}
+  50% {
+		-webkit-transform: translateY(0px) translateX(100%);
+	}
+  100% {
+    -webkit-transform: translateY(-10px) translateX(22px);
+    opacity: 0.0;
+  }
+}
+.smoke3 {
+  animation-name:smoke3;
+  -webkit-animation-name:smoke3;
+  animation-duration:2s;
+  -webkit-animation-duration:2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:linear;
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+  visibility:visible!important
+}
+@keyframes smoke3 {
+  0% {
+		transform: translateY(20px);
+	}
+  50% {
+		transform: translateY(-20px) translateX(20%);
+	}
+  100% {
+    transform: translateY(-30px) translateX(30%);
+    opacity: 0.0;
+  }
+}@-webkit-keyframes smoke3 {
+  0% {
+		-webkit-transform: translateY(20px);
+	}
+  50% {
+		-webkit-transform: translateY(-20px) translateX(20%);
+	}
+  100% {
+    -webkit-transform: translateY(-30px) translateX(30%);
+    opacity: 0.0;
+  }
+}
+.smokestack2 {
+  animation-name:smokestack;
+  -webkit-animation-name:smokestack;
+  animation-duration:2s;
+  -webkit-animation-duration:2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:linear;
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+  visibility:visible!important
+}
+.smokestack {
+  animation-name:smokestack;
+  -webkit-animation-name:smokestack;
+  animation-duration:2s;
+  -webkit-animation-duration:2s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function:linear;
+  -webkit-animation-timing-function:linear;
+  visibility:visible!important
+}
+@keyframes smokestack {
+  0% {
+		transform: translateY(0px);
+	}
+  50% {
+		transform: translateY(10px);
+	}
+  100% {
+    transform: translateY(0px);
+  }
+}@-webkit-keyframes smokestack {
+  0% {
+		-webkit-transform: translateY(0px);
+	}
+  50% {
+		-webkit-transform: translateY(10px);
+	}
+  100% {
+    -webkit-transform: translateY(0px);
+  }
+}
 
 #industrie_water {
   animation-name:water;
   -webkit-animation-name:water;
-  animation-duration:2s;
-  -webkit-animation-duration:2s;
+  animation-duration:3s;
+  -webkit-animation-duration:3s;
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
   animation-timing-function:ease-in-out;
@@ -437,7 +588,7 @@ $cloudduration: 16s;
 		transform: translateX(-2px);
 	}
   50% {
-		transform: translateX(-4px);
+		transform: translateX(-10px);
 	}
   100% {
     transform: translateX(-2px);
@@ -447,7 +598,7 @@ $cloudduration: 16s;
 		-webkit-transform: translateX(-2px);
 	}
   50% {
-		-webkit-transform: translateX(-4px);
+		-webkit-transform: translateX(-10px);
 	}
   100% {
     -webkit-transform: translateX(-2px);
@@ -484,18 +635,19 @@ $cloudduration: 16s;
   }
 }@-webkit-keyframes windows {
   0% {
-		-webkit-transform: translateX(-2px);
+		fill: white;
 	}
   50% {
-		-webkit-transform: translateX(-4px);
+		fill: yellow;
 	}
   100% {
-    -webkit-transform: translateX(-2px);
+    fill: white;
   }
 }
 
 .trees g  {
-  transform-origin: center bottom;
+  transform-origin: 50% 100%;
+  -webkit-transform-origin:  50% 100%;
   @for $i from 1 through 10 {
     &:nth-child(#{$i}) {
       animation-name:wiggle;
@@ -572,4 +724,84 @@ $cloudduration: 16s;
 		-webkit-transform: scale(1);
 		opacity: 1;
 	}
+}
+
+.drone{
+  animation-name:fly;
+  -webkit-animation-name:fly;
+  animation-duration:4.5s;
+  -webkit-animation-duration:4.5s;
+  animation-timing-function:ease-in-out;
+  -webkit-animation-timing-function:ease-in-out;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  visibility:visible!important
+}@keyframes fly {
+	0% {
+		transform: translateY(0px) translateX(0%);
+	}
+	30% {
+		transform: translateY(20%) translateX(100%);
+	}
+	60% {
+		transform: translateY(100%) translateX(150%);
+	}
+  80% {
+    transform: translateY(50%) translateX(30%);
+  }
+	100% {
+		transform: translateY(0%) translateX(0%);
+	}
+}@-webkit-keyframes fly {
+	0% {
+		-webkit-transform: translateY(0px) translateX(0%);
+	}
+	60% {
+		-webkit-transform: translateY(-20px) translateX(20%);
+	}
+	80% {
+		-webkit-transform: translateY(-20px) translateX(20%);
+	}
+	100% {
+		-webkit-transform: translateY(-20px) translateX(20%);
+	}
+}
+
+.satellite {
+  animation-name:myOrbit;
+  -webkit-animation-name:myOrbit;
+  animation-duration:15.5s;
+  -webkit-animation-duration:15.5s;
+  animation-timing-function:linear;
+  -webkit-animation-timing-function:linear;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  visibility:visible!important
+}
+@keyframes myOrbit {
+    from { transform: rotate(0deg) translateX(25vw) rotate(0deg); }
+    to   { transform: rotate(-180deg) translateX(25vw) rotate(180deg); }
+}
+@-webkit-keyframes myOrbit {
+    from { -webkit-transform: rotate(0deg) translateX(25vw) rotate(0deg); }
+    to   { -webkit-transform: rotate(-180deg) translateX(25vw) rotate(180deg); }
+}
+.satellite svg {
+  animation-name:myOrbitRotate;
+  -webkit-animation-name:myOrbitRotate;
+  animation-duration:15.5s;
+  -webkit-animation-duration:15.5s;
+  animation-timing-function:linear;
+  -webkit-animation-timing-function:linear;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  visibility:visible!important
+}
+@keyframes myOrbitRotate {
+    from { transform: rotate(50deg) }
+    to   { transform: rotate(-130deg) }
+}
+@-webkit-keyframes myOrbitRotate {
+    from { -webkit-transform: rotate(-50deg); }
+    to   { -webkit-transform: rotate(-130deg); }
 }

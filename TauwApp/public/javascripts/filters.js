@@ -14,7 +14,7 @@
           htmlElements.formSubmit.classList.add('hide');
 
       },
-      handleCheckboxClick(e) {
+      handleCheckboxClick: function (e) {
         var currentHref = window.location.href;
 
         if(typeof document.createRange().createContextualFragment === "function") {
@@ -30,11 +30,11 @@
           } else {
             document.filter.submit();
           }
-        }
+        };
 
 
       }
-  }
+  };
 
   var actions = {
     getResultsClientside : function (currentHref) {

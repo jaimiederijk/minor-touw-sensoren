@@ -3,6 +3,7 @@ var exec = require('child_process').exec;
 var mkdirs = require('mkdirs');
 var browserify = require('gulp-browserify');
 var rename = require('gulp-rename');
+var autoprefixer = require('gulp-autoprefixer');
 
 var sass = require('gulp-sass');
 var nodemon = require('gulp-nodemon')
@@ -37,6 +38,10 @@ gulp.task('setup-db',['create-data-folder','start-mongo','create-db','import-dat
 gulp.task('sass', function() {
     return gulp.src('public/stylesheets/*.scss')
         .pipe(sass())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
         .pipe(gulp.dest('public/build/css'));
 });
 
